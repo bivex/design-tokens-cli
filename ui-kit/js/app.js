@@ -32,7 +32,8 @@ function initializeDemo() {
     const demoCard = document.querySelector('.demo-card');
     const demoBtn = document.querySelector('.demo-btn');
 
-    // Set initial values
+    // Set initial values - use luxury champagne gold
+    primaryColorInput.value = '#d3ac74';
     updateRadiusValue(borderRadiusInput.value);
     updateFontValue(fontSizeInput.value);
 
@@ -150,28 +151,28 @@ const DesignTokens = {
     },
 
     /**
-     * Apply a theme preset using generated tokens
-     * @param {string} theme - Theme name ('light', 'dark', 'colorful')
+     * Apply a theme preset using luxury generated tokens
+     * @param {string} theme - Theme name ('light', 'dark', 'elegant')
      */
     applyTheme: function(theme) {
         const themes = {
             light: {
-                'base-primary-500': '#007bff',
-                'base-secondary-500': '#6c757d',
-                'base-secondary-50': '#ffffff',
-                'base-secondary-900': '#212529'
+                'base-primary-500': '#d3ac74',     // Champagne gold
+                'base-secondary-500': '#dbd3c1',   // Warm ivory
+                'base-secondary-50': '#fefefc',   // Pure ivory
+                'base-secondary-900': '#5b4d30'   // Deep charcoal
             },
             dark: {
-                'base-primary-500': '#4dabf7',
-                'base-secondary-500': '#868e96',
-                'base-secondary-50': '#212529',
-                'base-secondary-900': '#ffffff'
+                'base-primary-500': '#bb8f57',     // Rich gold
+                'base-secondary-500': '#bcb19b',   // Warm taupe
+                'base-secondary-50': '#352b18',    // Deep espresso
+                'base-secondary-900': '#fefefc'    // Ivory accent
             },
-            colorful: {
-                'base-primary-500': '#ff6b35',
-                'base-secondary-500': '#f7931e',
-                'semantic-success-success': '#28a745',
-                'base-accent-500': '#dc3545'
+            elegant: {
+                'base-primary-500': '#9b4d88',     // Deep plum
+                'base-secondary-500': '#9b8f74',   // Antique gold
+                'semantic-success-success': '#15674d', // Forest green
+                'base-accent-500': '#7f2a6b'      // Burgundy
             }
         };
 
