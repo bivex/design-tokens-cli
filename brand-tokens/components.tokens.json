@@ -1,0 +1,41 @@
+{
+  "component": {
+    "$description": "Component-specific design tokens",
+    "button": {
+      "primary": {
+        "background": { "$value": "{brand.primary.600}" },
+        "hover": { "$value": "{brand.primary.700}" },
+        "active": { "$value": "{brand.primary.800}" },
+        "text": { "$value": "{semantic.content.inverse}" },
+        "border": { "$value": "{brand.primary.600}" }
+      },
+      "secondary": {
+        "background": { "$value": "{semantic.background.primary}" },
+        "hover": { "$value": "{semantic.background.secondary}" },
+        "active": { "$value": "{semantic.border.default}" },
+        "text": { "$value": "{semantic.content.primary}" },
+        "border": { "$value": "{semantic.border.default}" }
+      },
+      "danger": {
+        "background": { "$value": "{brand.accent.600}" },
+        "hover": { "$value": "{brand.accent.700}" },
+        "active": { "$value": "{brand.accent.800}" },
+        "text": { "$value": "{semantic.content.inverse}" },
+        "border": { "$value": "{brand.accent.600}" }
+      }
+    },
+    "input": {
+      "background": { "$value": "{semantic.background.primary}" },
+      "border": { "$value": "{semantic.border.default}" },
+      "focus": { "$value": "{brand.primary.500}" },
+      "error": { "$value": "{semantic.status.error.border}" },
+      "text": { "$value": "{semantic.content.primary}" },
+      "placeholder": { "$value": "{semantic.content.tertiary}" }
+    },
+    "card": {
+      "background": { "$value": "{semantic.background.primary}" },
+      "border": { "$value": "{semantic.border.subtle}" },
+      "shadow": { "$value": "{shadow.sm}" }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "brand": {
+    "$description": "Bivex brand identity tokens",
+    "name": { "$value": "Bivex" },
+    "tagline": { "$value": "AI-Powered Design Excellence" },
+    "url": { "$value": "https://bivex.com" },
+    "email": { "$value": "support@b-b.top" },
+    "logo": {
+      "width": { "$value": "40px" },
+      "height": { "$value": "40px" },
+      "color": { "$value": "{brand.primary.600}" }
+    },
+    "colors": {
+      "main": { "$value": "{brand.primary.600}" },
+      "secondary": { "$value": "{brand.secondary.600}" },
+      "accent": { "$value": "{brand.accent.600}" }
+    }
+  },
+  "breakpoint": {
+    "$description": "Responsive breakpoints",
+    "sm": { "$value": "640px" },
+    "md": { "$value": "768px" },
+    "lg": { "$value": "1024px" },
+    "xl": { "$value": "1280px" },
+    "2xl": { "$value": "1536px" }
+  },
+  "z-index": {
+    "$description": "Z-index scale for layering",
+    "dropdown": { "$value": "1000" },
+    "sticky": { "$value": "1020" },
+    "fixed": { "$value": "1030" },
+    "modal-backdrop": { "$value": "1040" },
+    "modal": { "$value": "1050" },
+    "popover": { "$value": "1060" },
+    "tooltip": { "$value": "1070" }
+  }
+}

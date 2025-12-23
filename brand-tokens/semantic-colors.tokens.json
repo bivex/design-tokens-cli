@@ -1,0 +1,44 @@
+{
+  "semantic": {
+    "$description": "Semantic color tokens referencing brand colors",
+    "background": {
+      "primary": { "$value": "{brand.secondary.50}" },
+      "secondary": { "$value": "{brand.secondary.100}" },
+      "tertiary": { "$value": "{brand.secondary.200}" },
+      "inverse": { "$value": "{brand.secondary.900}" }
+    },
+    "content": {
+      "primary": { "$value": "{brand.secondary.900}" },
+      "secondary": { "$value": "{brand.secondary.700}" },
+      "tertiary": { "$value": "{brand.secondary.500}" },
+      "inverse": { "$value": "{brand.secondary.50}" }
+    },
+    "border": {
+      "subtle": { "$value": "{brand.secondary.200}" },
+      "default": { "$value": "{brand.secondary.300}" },
+      "strong": { "$value": "{brand.secondary.400}" }
+    },
+    "status": {
+      "success": {
+        "background": { "$value": "#dcfce7" },
+        "content": { "$value": "#166534" },
+        "border": { "$value": "#bbf7d0" }
+      },
+      "warning": {
+        "background": { "$value": "#fef3c7" },
+        "content": { "$value": "#92400e" },
+        "border": { "$value": "#fde68a" }
+      },
+      "error": {
+        "background": { "$value": "#fef2f2" },
+        "content": { "$value": "{brand.accent.700}" },
+        "border": { "$value": "{brand.accent.200}" }
+      },
+      "info": {
+        "background": { "$value": "#eff6ff" },
+        "content": { "$value": "{brand.primary.700}" },
+        "border": { "$value": "{brand.primary.200}" }
+      }
+    }
+  }
+}

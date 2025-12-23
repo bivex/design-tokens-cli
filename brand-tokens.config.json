@@ -1,0 +1,40 @@
+{
+  "globalPrefix": "",
+  "keepReferences": true,
+  "preserveOrder": true,
+  "prefixes": {
+    "brand": "",
+    "semantic": "",
+    "typography": "",
+    "spacing": "space-",
+    "border": "",
+    "shadow": "",
+    "component": "",
+    "breakpoint": "",
+    "z-index": "z-"
+  },
+  "transforms": [
+    {
+      "name": "brand-system",
+      "from": "brand-tokens",
+      "to": [
+        {
+          "as": "css",
+          "to": "brand-output/css"
+        },
+        {
+          "as": "scss",
+          "to": "brand-output/scss"
+        },
+        {
+          "as": "mjs",
+          "to": "brand-output/js"
+        },
+        {
+          "as": "json",
+          "to": "brand-output/json"
+        }
+      ]
+    }
+  ]
+}
