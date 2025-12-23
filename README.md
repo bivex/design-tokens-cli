@@ -1,6 +1,6 @@
 # Design Tokens CLI
 
-A design-tokens-format-adhering token transformation CLI (Command Line Interface) implementing the [2025.10 Design Tokens Format specification](https://www.designtokens.org/TR/2025.10/format/).
+A comprehensive design tokens transformation CLI implementing the latest [2025.10 Design Tokens Format specification](https://www.designtokens.org/TR/2025.10/format/). Transform design tokens to CSS, SCSS, JavaScript, JSON, and Tailwind CSS with advanced features like group extensions, JSON Pointer references, and type inheritance.
 
 ## Supports
 
@@ -39,6 +39,53 @@ Install the CLI globally using **npm**:
 
 ```
 npm i -g design-tokens-cli
+```
+
+Or install locally in your project:
+
+```
+npm i --save-dev design-tokens-cli
+```
+
+### Quick Start
+
+1. Create a tokens configuration file:
+```json
+{
+  "transforms": [
+    {
+      "from": "tokens",
+      "to": [
+        {"as": "css", "to": "build/css"},
+        {"as": "scss", "to": "build/scss"},
+        {"as": "mjs", "to": "build/js"}
+      ]
+    }
+  ]
+}
+```
+
+2. Create your design tokens file (`tokens/colors.tokens.json`):
+```json
+{
+  "color": {
+    "$type": "color",
+    "base": {
+      "$root": {"$value": "#808080"},
+      "red": {"$value": "#ff0000"},
+      "blue": {"$value": "#0000ff"}
+    },
+    "semantic": {
+      "$extends": "{color.base}",
+      "primary": {"$value": "{color.base.blue}"}
+    }
+  }
+}
+```
+
+3. Run the transformation:
+```bash
+npx design-tokens-cli transform
 ```
 
 ### Configuration
@@ -90,16 +137,45 @@ The `to` array for each transformation lists the formats you want and their resp
 
 ### Running the transforms
 
-Either you explicitly define the path to the config file&hellip;
+Either specify the path to the config file:
 
-```
+```bash
 designTokens transform ./path/to/my-config.json
 ```
 
-&hellip;or you leave that argument out and the CLI will look for a `tokens.config.json` file anywhere in the current working directory:
+Or let the CLI find a `tokens.config.json` file in the current working directory:
 
-```
+```bash
 designTokens transform
+```
+
+If using npm scripts, you can also use:
+
+```bash
+npm run design-tokens
+```
+
+**CLI Usage:**
+```bash
+designTokens <command>
+
+Commands:
+  transform [configPath]  Process design tokens using config file
+```
+
+### Testing & Verification
+
+This implementation includes comprehensive test coverage with 93 passing tests covering:
+
+- ✅ All 2025.10 specification features (group extensions, root tokens, JSON Pointer references, type inheritance)
+- ✅ Reference resolution (both curly brace `{token}` and JSON Pointer `$ref` syntax)
+- ✅ All output formats (CSS, SCSS, ESM, JSON, Tailwind v3/v4)
+- ✅ Cross-transform references and concatenation
+- ✅ Color format conversion and composite token handling
+
+Run tests with:
+```bash
+npm test
 ```
 
 ## File names and groups
@@ -587,3 +663,46 @@ Groups support additional metadata:
   }
 }
 ```
+
+## Changelog
+
+### v0.3.0 - 2025.10 Specification Compliance
+
+- ✅ **Full 2025.10 Design Tokens Format support**
+- ✅ **Group Extensions**: `$extends` property for group inheritance with deep merge semantics
+- ✅ **Root Tokens**: `$root` tokens in groups for base values with variants
+- ✅ **JSON Pointer References**: `$ref` syntax alongside existing `{token}` references
+- ✅ **Enhanced Type System**: Composite types and automatic type inheritance
+- ✅ **Group Properties**: Support for `$deprecated`, `$extensions`, and `$type` inheritance
+- ✅ **Comprehensive Test Suite**: 93 tests covering all new features and edge cases
+- ✅ **Backward Compatibility**: All existing token files continue to work unchanged
+
+### v0.2.x - Tailwind CSS Support
+
+- ✅ **Tailwind CSS v3 Configuration**: Generate JavaScript config files
+- ✅ **Tailwind CSS v4 @theme**: Generate CSS with @theme directive
+- ✅ **Automatic Token Mapping**: Smart categorization of tokens to Tailwind theme sections
+- ✅ **Nested Token Support**: Proper handling of nested color palettes
+
+### v0.1.x - Core Features
+
+- ✅ **Multiple Output Formats**: CSS, SCSS, ESM, JSON
+- ✅ **Reference Resolution**: Cross-file and cross-transform references
+- ✅ **Composite Tokens**: Full support for shadow, border, gradient, typography tokens
+- ✅ **Color Format Conversion**: Standardize colors to hex, RGB, or HSL
+- ✅ **Concatenation**: Merge multiple token files into single outputs
+
+## Contributing
+
+Contributions are welcome! The codebase includes comprehensive tests to ensure all features work correctly. Please run the test suite before submitting changes:
+
+```bash
+npm test
+```
+
+For new features, please include:
+- Implementation code
+- Comprehensive tests
+- Updated documentation
+- Examples demonstrating usage
+

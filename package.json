@@ -2,7 +2,7 @@
   "name": "design-tokens-cli",
   "version": "0.3.0",
   "type": "module",
-  "description": "A powerful CLI tool implementing the 2025.10 Design Tokens Format specification for transforming tokens to CSS, SCSS, JavaScript, and JSON with advanced features like group extensions, JSON Pointer references, and type inheritance",
+  "description": "A comprehensive design tokens transformation CLI implementing the 2025.10 Design Tokens Format specification. Transform tokens to CSS, SCSS, ESM, JSON, and Tailwind CSS with group extensions, JSON Pointer references, and type inheritance",
   "keywords": [
     "design-tokens",
     "design-system",
