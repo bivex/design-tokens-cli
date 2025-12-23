@@ -25,15 +25,23 @@ document.addEventListener('DOMContentLoaded', function() {
  */
 function initializeDemo() {
     const primaryColorInput = document.getElementById('primary-color');
+    const accentColorInput = document.getElementById('accent-color');
     const borderRadiusInput = document.getElementById('border-radius');
     const fontSizeInput = document.getElementById('font-size');
     const radiusValue = document.getElementById('radius-value');
     const fontValue = document.getElementById('font-value');
-    const demoCard = document.querySelector('.demo-card');
-    const demoBtn = document.querySelector('.demo-btn');
+
+    // Demo elements
+    const demoTitle = document.getElementById('demo-title');
+    const demoSubtitle = document.getElementById('demo-subtitle');
+    const demoButton = document.getElementById('demo-button');
+    const demoStat1 = document.getElementById('demo-stat1');
+    const demoStat2 = document.getElementById('demo-stat2');
+    const demoStat3 = document.getElementById('demo-stat3');
 
     // Set initial values - use luxury champagne gold
     primaryColorInput.value = '#d3ac74';
+    accentColorInput.value = '#9b4d88';
     updateRadiusValue(borderRadiusInput.value);
     updateFontValue(fontSizeInput.value);
 
@@ -42,9 +50,19 @@ function initializeDemo() {
         const color = e.target.value;
         // Update the generated token directly
         document.documentElement.style.setProperty('--base-primary-500', color);
-        // Update button background
-        demoBtn.style.backgroundColor = color;
-        demoBtn.style.borderColor = color;
+        // Update demo elements
+        demoButton.style.backgroundColor = color;
+        demoButton.style.borderColor = color;
+        demoStat1.style.color = color;
+    });
+
+    // Accent color change
+    accentColorInput.addEventListener('input', function(e) {
+        const color = e.target.value;
+        // Update the generated accent token
+        document.documentElement.style.setProperty('--base-accent-500', color);
+        // Update demo elements that might use accent color
+        demoTitle.style.color = color;
     });
 
     // Border radius change
@@ -52,6 +70,8 @@ function initializeDemo() {
         const radius = e.target.value + 'px';
         // Update the generated radius token
         document.documentElement.style.setProperty('--radius-md', radius);
+        // Update demo button border radius
+        demoButton.style.borderRadius = radius;
         updateRadiusValue(e.target.value);
     });
 
@@ -60,6 +80,9 @@ function initializeDemo() {
         const fontSize = e.target.value + 'px';
         // Update the generated size token
         document.documentElement.style.setProperty('--size-base', fontSize);
+        // Update demo text sizes
+        demoSubtitle.style.fontSize = `calc(${fontSize} * 0.875)`;
+        demoButton.style.fontSize = fontSize;
         updateFontValue(e.target.value);
     });
 
@@ -336,35 +359,36 @@ document.head.appendChild(notificationStyles);
 
 // Console welcome message
 console.log(`
-🎨 LuxeDesign UI Kit Demo (Italian Vogue Luxury)
-================================================
+🚀 LuxeDesign Landing Page UI Kit (Итальянская Роскошь)
+======================================================
 
-Premium typography with Crimson Text, Playfair Display, and Source Sans Pro!
-Champagne gold, ivory, and jewel tone palettes inspired by Italian Vogue luxury!
+Премиум компоненты для конверсионных landing pages!
+Роскошная типографика: Crimson Text, Playfair Display, Source Sans Pro!
+Палитра шампанского золота, слоновой кости и драгоценных тонов в стиле итальянской моды!
 
-Try these commands in the console:
+Попробуйте команды в консоли:
 
-// Change primary color using luxury token names
+// Изменить основной цвет
 DesignTokens.setToken('base-primary-500', '#d3ac74');
 
-// Apply a luxury theme
+// Применить роскошную тему
 DesignTokens.applyTheme('elegant');
 
-// View all available luxury tokens
+// Посмотреть все доступные токены
 console.table(DesignTokens.getAllTokens());
 
-// Generate random luxury color
+// Сгенерировать случайный цвет
 DesignTokens.randomColor();
 
-// Keyboard shortcuts:
-// Ctrl/Cmd + Shift + R: Random champagne gold
-// Ctrl/Cmd + Shift + T: Cycle themes (light/dark/elegant)
+// Горячие клавиши:
+// Ctrl/Cmd + Shift + R: Случайный золотой цвет
+// Ctrl/Cmd + Shift + T: Переключить темы (light/dark/elegant)
 
-Luxury Token System:
-🎨 Colors: --base-primary-500 (champagne), --base-secondary-500 (ivory)
-✍️  Fonts: --font-family-primary (Crimson Text), --font-family-accent (Playfair)
-📏 Spacing: --space-1 to --space-96 (generous luxury spacing)
-🎯 Typography: --size-xs to --size-6xl with sophisticated letter spacing
+Система Дизайн-Токенов:
+🎨 Цвета: --base-primary-500 (шампанское золото), --base-secondary-500 (слоновая кость)
+✍️  Шрифты: --typography-font-family-heading (Crimson Text), --typography-font-family-accent (Playfair)
+📏 Отступы: --spacing-1 до --spacing-96 (генеративные отступы)
+🎯 Типографика: --typography-size-xs до --typography-size-6xl с элегантным керning
 
-Experience Italian Vogue luxury in your design system! 🇮🇹✨
+Создавайте landing pages премиум-класса! 🇮🇹✨
 `);
