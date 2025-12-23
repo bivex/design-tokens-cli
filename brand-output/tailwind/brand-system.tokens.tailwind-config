@@ -172,21 +172,21 @@ export default {
                       "base": {
                               "colorSpace": "srgb",
                               "components": [
-                                      0.067,
-                                      0.267,
-                                      0.478
+                                      0.094,
+                                      0.063,
+                                      0.094
                               ],
-                              "hex": "#114477",
+                              "hex": "#181018",
                               "alpha": 1
                       },
                       "$root": {
                               "colorSpace": "srgb",
                               "components": [
-                                      0.067,
-                                      0.267,
-                                      0.478
+                                      0.094,
+                                      0.063,
+                                      0.094
                               ],
-                              "hex": "#114477",
+                              "hex": "#181018",
                               "alpha": 1,
                               "$type": "typography"
                       },
@@ -194,111 +194,111 @@ export default {
                               "50": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.941,
-                                              0.976,
-                                              1
+                                              0.996,
+                                              0.988,
+                                              0.973
                                       ],
-                                      "hex": "#f0f9ff",
+                                      "hex": "#fefdfb",
                                       "$type": "color"
                               },
                               "100": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.878,
-                                              0.949,
-                                              0.996
+                                              0.988,
+                                              0.969,
+                                              0.941
                                       ],
-                                      "hex": "#e0f2fe",
+                                      "hex": "#fcf7f0",
                                       "$type": "color"
                               },
                               "200": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.729,
-                                              0.902,
-                                              0.992
+                                              0.973,
+                                              0.929,
+                                              0.863
                                       ],
-                                      "hex": "#bae6fd",
+                                      "hex": "#f8eddc",
                                       "$type": "color"
                               },
                               "300": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.49,
-                                              0.827,
-                                              0.988
+                                              0.949,
+                                              0.871,
+                                              0.749
                                       ],
-                                      "hex": "#7dd3fc",
+                                      "hex": "#f2debf",
                                       "$type": "color"
                               },
                               "400": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.22,
-                                              0.741,
-                                              0.973
+                                              0.902,
+                                              0.773,
+                                              0.584
                                       ],
-                                      "hex": "#38bdf8",
+                                      "hex": "#e6c595",
                                       "$type": "color"
                               },
                               "500": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.059,
-                                              0.647,
-                                              0.914
+                                              0.827,
+                                              0.675,
+                                              0.455
                                       ],
-                                      "hex": "#0ea5e9",
+                                      "hex": "#d3ac74",
                                       "$type": "color"
                               },
                               "600": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.016,
-                                              0.518,
-                                              0.78
+                                              0.733,
+                                              0.561,
+                                              0.341
                                       ],
-                                      "hex": "#0284c7",
+                                      "hex": "#bb8f57",
                                       "$type": "color"
                               },
                               "700": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.012,
-                                              0.392,
-                                              0.631
+                                              0.627,
+                                              0.443,
+                                              0.227
                                       ],
-                                      "hex": "#0369a1",
+                                      "hex": "#a0713a",
                                       "$type": "color"
                               },
                               "800": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.027,
-                                              0.302,
-                                              0.522
+                                              0.529,
+                                              0.341,
+                                              0.141
                                       ],
-                                      "hex": "#075985",
+                                      "hex": "#875724",
                                       "$type": "color"
                               },
                               "900": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.047,
-                                              0.231,
-                                              0.42
+                                              0.431,
+                                              0.259,
+                                              0.082
                                       ],
-                                      "hex": "#0c4a6e",
+                                      "hex": "#6e4215",
                                       "$type": "color"
                               },
                               "950": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.031,
-                                              0.149,
-                                              0.286
+                                              0.298,
+                                              0.165,
+                                              0.047
                                       ],
-                                      "hex": "#082f49",
+                                      "hex": "#4c2a0c",
                                       "$type": "color"
                               }
                       },
@@ -306,111 +306,111 @@ export default {
                               "50": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.973,
-                                              0.98,
-                                              0.988
+                                              0.996,
+                                              0.996,
+                                              0.992
                                       ],
-                                      "hex": "#f8fafc",
+                                      "hex": "#fefefc",
                                       "$type": "color"
                               },
                               "100": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.945,
-                                              0.976,
+                                              0.992,
+                                              0.988,
                                               0.976
                                       ],
-                                      "hex": "#f1f5f9",
+                                      "hex": "#fdfcf9",
                                       "$type": "color"
                               },
                               "200": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.886,
-                                              0.91,
-                                              0.941
+                                              0.98,
+                                              0.973,
+                                              0.953
                                       ],
-                                      "hex": "#e2e8f0",
+                                      "hex": "#faf8f3",
                                       "$type": "color"
                               },
                               "300": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.796,
-                                              0.835,
-                                              0.882
+                                              0.957,
+                                              0.945,
+                                              0.918
                                       ],
-                                      "hex": "#cbd5e1",
+                                      "hex": "#f4f1ea",
                                       "$type": "color"
                               },
                               "400": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.58,
-                                              0.639,
-                                              0.722
+                                              0.918,
+                                              0.898,
+                                              0.851
                                       ],
-                                      "hex": "#94a3b8",
+                                      "hex": "#eae5d9",
                                       "$type": "color"
                               },
                               "500": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.392,
-                                              0.482,
-                                              0.545
+                                              0.859,
+                                              0.827,
+                                              0.757
                                       ],
-                                      "hex": "#64748b",
+                                      "hex": "#dbd3c1",
                                       "$type": "color"
                               },
                               "600": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.278,
-                                              0.341,
-                                              0.416
+                                              0.737,
+                                              0.694,
+                                              0.608
                                       ],
-                                      "hex": "#475569",
+                                      "hex": "#bcb19b",
                                       "$type": "color"
                               },
                               "700": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.2,
-                                              0.255,
-                                              0.314
+                                              0.608,
+                                              0.561,
+                                              0.455
                                       ],
-                                      "hex": "#334155",
+                                      "hex": "#9b8f74",
                                       "$type": "color"
                               },
                               "800": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.118,
-                                              0.165,
-                                              0.235
+                                              0.482,
+                                              0.431,
+                                              0.322
                                       ],
-                                      "hex": "#1e293b",
+                                      "hex": "#7b6e52",
                                       "$type": "color"
                               },
                               "900": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.059,
-                                              0.09,
-                                              0.157
+                                              0.357,
+                                              0.302,
+                                              0.188
                                       ],
-                                      "hex": "#0f172a",
+                                      "hex": "#5b4d30",
                                       "$type": "color"
                               },
                               "950": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.008,
-                                              0.02,
-                                              0.039
+                                              0.208,
+                                              0.169,
+                                              0.094
                                       ],
-                                      "hex": "#020617",
+                                      "hex": "#352b18",
                                       "$type": "color"
                               }
                       },
@@ -418,91 +418,91 @@ export default {
                               "50": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.996,
+                                              0.984,
                                               0.949,
-                                              0.949
+                                              0.973
                                       ],
-                                      "hex": "#fef2f2",
+                                      "hex": "#fbf2f8",
                                       "$type": "color"
                               },
                               "100": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.996,
-                                              0.886,
-                                              0.886
+                                              0.961,
+                                              0.89,
+                                              0.937
                                       ],
-                                      "hex": "#fee2e2",
+                                      "hex": "#f5e4ef",
                                       "$type": "color"
                               },
                               "200": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.996,
-                                              0.792,
-                                              0.792
+                                              0.918,
+                                              0.808,
+                                              0.878
                                       ],
-                                      "hex": "#fecaca",
+                                      "hex": "#eacee0",
                                       "$type": "color"
                               },
                               "300": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.988,
-                                              0.671,
-                                              0.671
+                                              0.875,
+                                              0.729,
+                                              0.808
                                       ],
-                                      "hex": "#fca5a5",
+                                      "hex": "#dfbacf",
                                       "$type": "color"
                               },
                               "400": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.969,
-                                              0.529,
-                                              0.529
+                                              0.749,
+                                              0.522,
+                                              0.682
                                       ],
-                                      "hex": "#f87171",
+                                      "hex": "#bf85ae",
                                       "$type": "color"
                               },
                               "500": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.937,
-                                              0.267,
-                                              0.267
+                                              0.608,
+                                              0.302,
+                                              0.533
                                       ],
-                                      "hex": "#ef4444",
+                                      "hex": "#9b4d88",
                                       "$type": "color"
                               },
                               "600": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.863,
-                                              0.149,
-                                              0.149
+                                              0.498,
+                                              0.165,
+                                              0.42
                                       ],
-                                      "hex": "#dc2626",
+                                      "hex": "#7f2a6b",
                                       "$type": "color"
                               },
                               "700": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.725,
-                                              0.11,
-                                              0.11
+                                              0.408,
+                                              0.086,
+                                              0.337
                                       ],
-                                      "hex": "#b91c1c",
+                                      "hex": "#681656",
                                       "$type": "color"
                               },
                               "800": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.6,
-                                              0.098,
-                                              0.098
+                                              0.325,
+                                              0.047,
+                                              0.267
                                       ],
-                                      "hex": "#991b1b",
+                                      "hex": "#530c44",
                                       "$type": "color"
                               },
                               "900": {
@@ -541,40 +541,40 @@ export default {
                               "success": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0,
-                                              0.588,
-                                              0.337
+                                              0.082,
+                                              0.404,
+                                              0.302
                                       ],
-                                      "hex": "#009647"
+                                      "hex": "#15674d"
                               },
                               "$root": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0,
-                                              0.588,
-                                              0.337
+                                              0.082,
+                                              0.404,
+                                              0.302
                                       ],
-                                      "hex": "#009647",
+                                      "hex": "#15674d",
                                       "$type": "color"
                               },
                               "light": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.941,
-                                              0.973,
-                                              0.949
+                                              0.949,
+                                              0.976,
+                                              0.957
                                       ],
-                                      "hex": "#f0f9f4",
+                                      "hex": "#f2f9f5",
                                       "$type": "color"
                               },
                               "dark": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0,
-                                              0.357,
-                                              0.204
+                                              0.047,
+                                              0.231,
+                                              0.173
                                       ],
-                                      "hex": "#005a2d",
+                                      "hex": "#0c3b2c",
                                       "$type": "color"
                               }
                       },
@@ -582,28 +582,28 @@ export default {
                               "warning": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.992,
-                                              0.804,
-                                              0.267
+                                              0.698,
+                                              0.459,
+                                              0.086
                                       ],
-                                      "hex": "#fdd835"
+                                      "hex": "#b27516"
                               },
                               "$root": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.992,
-                                              0.804,
-                                              0.267
+                                              0.698,
+                                              0.459,
+                                              0.086
                                       ],
-                                      "hex": "#fdd835",
+                                      "hex": "#b27516",
                                       "$type": "color"
                               },
                               "light": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              1,
-                                              0.973,
-                                              0.918
+                                              0.996,
+                                              0.976,
+                                              0.937
                                       ],
                                       "hex": "#fff9e6",
                                       "$type": "color"
@@ -663,21 +663,21 @@ export default {
                       "semantic": {
                               "colorSpace": "srgb",
                               "components": [
-                                      0.067,
-                                      0.267,
-                                      0.478
+                                      0.094,
+                                      0.063,
+                                      0.094
                               ],
-                              "hex": "#114477",
+                              "hex": "#181018",
                               "alpha": 1
                       },
                       "$root": {
                               "colorSpace": "srgb",
                               "components": [
-                                      0.067,
-                                      0.267,
-                                      0.478
+                                      0.094,
+                                      0.063,
+                                      0.094
                               ],
-                              "hex": "#114477",
+                              "hex": "#181018",
                               "alpha": 1,
                               "$type": "color"
                       },
@@ -685,111 +685,111 @@ export default {
                               "50": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.941,
-                                              0.976,
-                                              1
+                                              0.996,
+                                              0.988,
+                                              0.973
                                       ],
-                                      "hex": "#f0f9ff",
+                                      "hex": "#fefdfb",
                                       "$type": "color"
                               },
                               "100": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.878,
-                                              0.949,
-                                              0.996
+                                              0.988,
+                                              0.969,
+                                              0.941
                                       ],
-                                      "hex": "#e0f2fe",
+                                      "hex": "#fcf7f0",
                                       "$type": "color"
                               },
                               "200": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.729,
-                                              0.902,
-                                              0.992
+                                              0.973,
+                                              0.929,
+                                              0.863
                                       ],
-                                      "hex": "#bae6fd",
+                                      "hex": "#f8eddc",
                                       "$type": "color"
                               },
                               "300": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.49,
-                                              0.827,
-                                              0.988
+                                              0.949,
+                                              0.871,
+                                              0.749
                                       ],
-                                      "hex": "#7dd3fc",
+                                      "hex": "#f2debf",
                                       "$type": "color"
                               },
                               "400": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.22,
-                                              0.741,
-                                              0.973
+                                              0.902,
+                                              0.773,
+                                              0.584
                                       ],
-                                      "hex": "#38bdf8",
+                                      "hex": "#e6c595",
                                       "$type": "color"
                               },
                               "500": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.059,
-                                              0.647,
-                                              0.914
+                                              0.827,
+                                              0.675,
+                                              0.455
                                       ],
-                                      "hex": "#0ea5e9",
+                                      "hex": "#d3ac74",
                                       "$type": "color"
                               },
                               "600": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.016,
-                                              0.518,
-                                              0.78
+                                              0.733,
+                                              0.561,
+                                              0.341
                                       ],
-                                      "hex": "#0284c7",
+                                      "hex": "#bb8f57",
                                       "$type": "color"
                               },
                               "700": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.012,
-                                              0.392,
-                                              0.631
+                                              0.627,
+                                              0.443,
+                                              0.227
                                       ],
-                                      "hex": "#0369a1",
+                                      "hex": "#a0713a",
                                       "$type": "color"
                               },
                               "800": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.027,
-                                              0.302,
-                                              0.522
+                                              0.529,
+                                              0.341,
+                                              0.141
                                       ],
-                                      "hex": "#075985",
+                                      "hex": "#875724",
                                       "$type": "color"
                               },
                               "900": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.047,
-                                              0.231,
-                                              0.42
+                                              0.431,
+                                              0.259,
+                                              0.082
                                       ],
-                                      "hex": "#0c4a6e",
+                                      "hex": "#6e4215",
                                       "$type": "color"
                               },
                               "950": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.031,
-                                              0.149,
-                                              0.286
+                                              0.298,
+                                              0.165,
+                                              0.047
                                       ],
-                                      "hex": "#082f49",
+                                      "hex": "#4c2a0c",
                                       "$type": "color"
                               }
                       },
@@ -797,111 +797,111 @@ export default {
                               "50": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.973,
-                                              0.98,
-                                              0.988
+                                              0.996,
+                                              0.996,
+                                              0.992
                                       ],
-                                      "hex": "#f8fafc",
+                                      "hex": "#fefefc",
                                       "$type": "color"
                               },
                               "100": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.945,
-                                              0.976,
+                                              0.992,
+                                              0.988,
                                               0.976
                                       ],
-                                      "hex": "#f1f5f9",
+                                      "hex": "#fdfcf9",
                                       "$type": "color"
                               },
                               "200": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.886,
-                                              0.91,
-                                              0.941
+                                              0.98,
+                                              0.973,
+                                              0.953
                                       ],
-                                      "hex": "#e2e8f0",
+                                      "hex": "#faf8f3",
                                       "$type": "color"
                               },
                               "300": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.796,
-                                              0.835,
-                                              0.882
+                                              0.957,
+                                              0.945,
+                                              0.918
                                       ],
-                                      "hex": "#cbd5e1",
+                                      "hex": "#f4f1ea",
                                       "$type": "color"
                               },
                               "400": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.58,
-                                              0.639,
-                                              0.722
+                                              0.918,
+                                              0.898,
+                                              0.851
                                       ],
-                                      "hex": "#94a3b8",
+                                      "hex": "#eae5d9",
                                       "$type": "color"
                               },
                               "500": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.392,
-                                              0.482,
-                                              0.545
+                                              0.859,
+                                              0.827,
+                                              0.757
                                       ],
-                                      "hex": "#64748b",
+                                      "hex": "#dbd3c1",
                                       "$type": "color"
                               },
                               "600": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.278,
-                                              0.341,
-                                              0.416
+                                              0.737,
+                                              0.694,
+                                              0.608
                                       ],
-                                      "hex": "#475569",
+                                      "hex": "#bcb19b",
                                       "$type": "color"
                               },
                               "700": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.2,
-                                              0.255,
-                                              0.314
+                                              0.608,
+                                              0.561,
+                                              0.455
                                       ],
-                                      "hex": "#334155",
+                                      "hex": "#9b8f74",
                                       "$type": "color"
                               },
                               "800": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.118,
-                                              0.165,
-                                              0.235
+                                              0.482,
+                                              0.431,
+                                              0.322
                                       ],
-                                      "hex": "#1e293b",
+                                      "hex": "#7b6e52",
                                       "$type": "color"
                               },
                               "900": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.059,
-                                              0.09,
-                                              0.157
+                                              0.357,
+                                              0.302,
+                                              0.188
                                       ],
-                                      "hex": "#0f172a",
+                                      "hex": "#5b4d30",
                                       "$type": "color"
                               },
                               "950": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.008,
-                                              0.02,
-                                              0.039
+                                              0.208,
+                                              0.169,
+                                              0.094
                                       ],
-                                      "hex": "#020617",
+                                      "hex": "#352b18",
                                       "$type": "color"
                               }
                       },
@@ -909,91 +909,91 @@ export default {
                               "50": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.996,
+                                              0.984,
                                               0.949,
-                                              0.949
+                                              0.973
                                       ],
-                                      "hex": "#fef2f2",
+                                      "hex": "#fbf2f8",
                                       "$type": "color"
                               },
                               "100": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.996,
-                                              0.886,
-                                              0.886
+                                              0.961,
+                                              0.89,
+                                              0.937
                                       ],
-                                      "hex": "#fee2e2",
+                                      "hex": "#f5e4ef",
                                       "$type": "color"
                               },
                               "200": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.996,
-                                              0.792,
-                                              0.792
+                                              0.918,
+                                              0.808,
+                                              0.878
                                       ],
-                                      "hex": "#fecaca",
+                                      "hex": "#eacee0",
                                       "$type": "color"
                               },
                               "300": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.988,
-                                              0.671,
-                                              0.671
+                                              0.875,
+                                              0.729,
+                                              0.808
                                       ],
-                                      "hex": "#fca5a5",
+                                      "hex": "#dfbacf",
                                       "$type": "color"
                               },
                               "400": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.969,
-                                              0.529,
-                                              0.529
+                                              0.749,
+                                              0.522,
+                                              0.682
                                       ],
-                                      "hex": "#f87171",
+                                      "hex": "#bf85ae",
                                       "$type": "color"
                               },
                               "500": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.937,
-                                              0.267,
-                                              0.267
+                                              0.608,
+                                              0.302,
+                                              0.533
                                       ],
-                                      "hex": "#ef4444",
+                                      "hex": "#9b4d88",
                                       "$type": "color"
                               },
                               "600": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.863,
-                                              0.149,
-                                              0.149
+                                              0.498,
+                                              0.165,
+                                              0.42
                                       ],
-                                      "hex": "#dc2626",
+                                      "hex": "#7f2a6b",
                                       "$type": "color"
                               },
                               "700": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.725,
-                                              0.11,
-                                              0.11
+                                              0.408,
+                                              0.086,
+                                              0.337
                                       ],
-                                      "hex": "#b91c1c",
+                                      "hex": "#681656",
                                       "$type": "color"
                               },
                               "800": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.6,
-                                              0.098,
-                                              0.098
+                                              0.325,
+                                              0.047,
+                                              0.267
                                       ],
-                                      "hex": "#991b1b",
+                                      "hex": "#530c44",
                                       "$type": "color"
                               },
                               "900": {
@@ -1021,41 +1021,41 @@ export default {
                               "primary": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.973,
-                                              0.98,
-                                              0.988
+                                              0.996,
+                                              0.996,
+                                              0.992
                                       ],
-                                      "hex": "#f8fafc",
+                                      "hex": "#fefefc",
                                       "$type": "color"
                               },
                               "secondary": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.945,
-                                              0.976,
+                                              0.992,
+                                              0.988,
                                               0.976
                                       ],
-                                      "hex": "#f1f5f9",
+                                      "hex": "#fdfcf9",
                                       "$type": "color"
                               },
                               "tertiary": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.886,
-                                              0.91,
-                                              0.941
+                                              0.98,
+                                              0.973,
+                                              0.953
                                       ],
-                                      "hex": "#e2e8f0",
+                                      "hex": "#faf8f3",
                                       "$type": "color"
                               },
                               "inverse": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.059,
-                                              0.09,
-                                              0.157
+                                              0.357,
+                                              0.302,
+                                              0.188
                                       ],
-                                      "hex": "#0f172a",
+                                      "hex": "#5b4d30",
                                       "$type": "color"
                               }
                       },
@@ -1063,41 +1063,41 @@ export default {
                               "primary": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.059,
-                                              0.09,
-                                              0.157
+                                              0.357,
+                                              0.302,
+                                              0.188
                                       ],
-                                      "hex": "#0f172a",
+                                      "hex": "#5b4d30",
                                       "$type": "color"
                               },
                               "secondary": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.2,
-                                              0.255,
-                                              0.314
+                                              0.608,
+                                              0.561,
+                                              0.455
                                       ],
-                                      "hex": "#334155",
+                                      "hex": "#9b8f74",
                                       "$type": "color"
                               },
                               "tertiary": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.392,
-                                              0.482,
-                                              0.545
+                                              0.859,
+                                              0.827,
+                                              0.757
                                       ],
-                                      "hex": "#64748b",
+                                      "hex": "#dbd3c1",
                                       "$type": "color"
                               },
                               "inverse": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.973,
-                                              0.98,
-                                              0.988
+                                              0.996,
+                                              0.996,
+                                              0.992
                                       ],
-                                      "hex": "#f8fafc",
+                                      "hex": "#fefefc",
                                       "$type": "color"
                               }
                       },
@@ -1105,31 +1105,31 @@ export default {
                               "subtle": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.886,
-                                              0.91,
-                                              0.941
+                                              0.98,
+                                              0.973,
+                                              0.953
                                       ],
-                                      "hex": "#e2e8f0",
+                                      "hex": "#faf8f3",
                                       "$type": "color"
                               },
                               "default": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.796,
-                                              0.835,
-                                              0.882
+                                              0.957,
+                                              0.945,
+                                              0.918
                                       ],
-                                      "hex": "#cbd5e1",
+                                      "hex": "#f4f1ea",
                                       "$type": "color"
                               },
                               "strong": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.58,
-                                              0.639,
-                                              0.722
+                                              0.918,
+                                              0.898,
+                                              0.851
                                       ],
-                                      "hex": "#94a3b8",
+                                      "hex": "#eae5d9",
                                       "$type": "color"
                               }
                       },
@@ -1149,21 +1149,21 @@ export default {
                                       "content": {
                                               "colorSpace": "srgb",
                                               "components": [
-                                                      0.725,
-                                                      0.11,
-                                                      0.11
+                                                      0.408,
+                                                      0.086,
+                                                      0.337
                                               ],
-                                              "hex": "#b91c1c",
+                                              "hex": "#681656",
                                               "$type": "color"
                                       },
                                       "border": {
                                               "colorSpace": "srgb",
                                               "components": [
-                                                      0.996,
-                                                      0.792,
-                                                      0.792
+                                                      0.918,
+                                                      0.808,
+                                                      0.878
                                               ],
-                                              "hex": "#fecaca",
+                                              "hex": "#eacee0",
                                               "$type": "color"
                                       }
                               },
@@ -1172,21 +1172,21 @@ export default {
                                       "content": {
                                               "colorSpace": "srgb",
                                               "components": [
-                                                      0.012,
-                                                      0.392,
-                                                      0.631
+                                                      0.627,
+                                                      0.443,
+                                                      0.227
                                               ],
-                                              "hex": "#0369a1",
+                                              "hex": "#a0713a",
                                               "$type": "color"
                                       },
                                       "border": {
                                               "colorSpace": "srgb",
                                               "components": [
-                                                      0.729,
-                                                      0.902,
-                                                      0.992
+                                                      0.973,
+                                                      0.929,
+                                                      0.863
                                               ],
-                                              "hex": "#bae6fd",
+                                              "hex": "#f8eddc",
                                               "$type": "color"
                                       }
                               }
@@ -1203,40 +1203,40 @@ export default {
                               "color": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.016,
-                                              0.518,
-                                              0.78
+                                              0.733,
+                                              0.561,
+                                              0.341
                                       ],
-                                      "hex": "#0284c7"
+                                      "hex": "#bb8f57"
                               }
                       },
                       "colors": {
                               "main": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.016,
-                                              0.518,
-                                              0.78
+                                              0.733,
+                                              0.561,
+                                              0.341
                                       ],
-                                      "hex": "#0284c7"
+                                      "hex": "#bb8f57"
                               },
                               "secondary": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.278,
-                                              0.341,
-                                              0.416
+                                              0.737,
+                                              0.694,
+                                              0.608
                                       ],
-                                      "hex": "#475569"
+                                      "hex": "#bcb19b"
                               },
                               "accent": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.863,
-                                              0.149,
-                                              0.149
+                                              0.498,
+                                              0.165,
+                                              0.42
                                       ],
-                                      "hex": "#dc2626"
+                                      "hex": "#7f2a6b"
                               }
                       }
               },
@@ -1260,152 +1260,152 @@ export default {
                               "50": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.941,
-                                              0.976,
-                                              1
+                                              0.996,
+                                              0.988,
+                                              0.973
                                       ],
-                                      "hex": "#f0f9ff",
+                                      "hex": "#fefdfb",
                                       "$type": "color"
                               },
                               "100": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.878,
-                                              0.949,
-                                              0.996
+                                              0.988,
+                                              0.969,
+                                              0.941
                                       ],
-                                      "hex": "#e0f2fe",
+                                      "hex": "#fcf7f0",
                                       "$type": "color"
                               },
                               "200": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.729,
-                                              0.902,
-                                              0.992
+                                              0.973,
+                                              0.929,
+                                              0.863
                                       ],
-                                      "hex": "#bae6fd",
+                                      "hex": "#f8eddc",
                                       "$type": "color"
                               },
                               "300": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.49,
-                                              0.827,
-                                              0.988
+                                              0.949,
+                                              0.871,
+                                              0.749
                                       ],
-                                      "hex": "#7dd3fc",
+                                      "hex": "#f2debf",
                                       "$type": "color"
                               },
                               "400": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.22,
-                                              0.741,
-                                              0.973
+                                              0.902,
+                                              0.773,
+                                              0.584
                                       ],
-                                      "hex": "#38bdf8",
+                                      "hex": "#e6c595",
                                       "$type": "color"
                               },
                               "500": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.059,
-                                              0.647,
-                                              0.914
+                                              0.827,
+                                              0.675,
+                                              0.455
                                       ],
-                                      "hex": "#0ea5e9",
+                                      "hex": "#d3ac74",
                                       "$type": "color"
                               },
                               "600": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.016,
-                                              0.518,
-                                              0.78
+                                              0.733,
+                                              0.561,
+                                              0.341
                                       ],
-                                      "hex": "#0284c7",
+                                      "hex": "#bb8f57",
                                       "$type": "color"
                               },
                               "700": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.012,
-                                              0.392,
-                                              0.631
+                                              0.627,
+                                              0.443,
+                                              0.227
                                       ],
-                                      "hex": "#0369a1",
+                                      "hex": "#a0713a",
                                       "$type": "color"
                               },
                               "800": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.027,
-                                              0.302,
-                                              0.522
+                                              0.529,
+                                              0.341,
+                                              0.141
                                       ],
-                                      "hex": "#075985",
+                                      "hex": "#875724",
                                       "$type": "color"
                               },
                               "900": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.047,
-                                              0.231,
-                                              0.42
+                                              0.431,
+                                              0.259,
+                                              0.082
                                       ],
-                                      "hex": "#0c4a6e",
+                                      "hex": "#6e4215",
                                       "$type": "color"
                               },
                               "950": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.031,
-                                              0.149,
-                                              0.286
+                                              0.298,
+                                              0.165,
+                                              0.047
                                       ],
-                                      "hex": "#082f49",
+                                      "hex": "#4c2a0c",
                                       "$type": "color"
                               },
                               "background": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.016,
-                                              0.518,
-                                              0.78
+                                              0.733,
+                                              0.561,
+                                              0.341
                                       ],
-                                      "hex": "#0284c7",
+                                      "hex": "#bb8f57",
                                       "$type": "color"
                               },
                               "hover": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.012,
-                                              0.392,
-                                              0.631
+                                              0.627,
+                                              0.443,
+                                              0.227
                                       ],
-                                      "hex": "#0369a1",
+                                      "hex": "#a0713a",
                                       "$type": "color"
                               },
                               "active": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.027,
-                                              0.302,
-                                              0.522
+                                              0.529,
+                                              0.341,
+                                              0.141
                                       ],
-                                      "hex": "#075985",
+                                      "hex": "#875724",
                                       "$type": "color"
                               },
                               "text": "#ffffff",
                               "border": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.016,
-                                              0.518,
-                                              0.78
+                                              0.733,
+                                              0.561,
+                                              0.341
                                       ],
-                                      "hex": "#0284c7",
+                                      "hex": "#bb8f57",
                                       "$type": "color"
                               }
                       },
@@ -1413,152 +1413,152 @@ export default {
                               "50": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.973,
-                                              0.98,
-                                              0.988
+                                              0.996,
+                                              0.996,
+                                              0.992
                                       ],
-                                      "hex": "#f8fafc",
+                                      "hex": "#fefefc",
                                       "$type": "color"
                               },
                               "100": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.945,
-                                              0.976,
+                                              0.992,
+                                              0.988,
                                               0.976
                                       ],
-                                      "hex": "#f1f5f9",
+                                      "hex": "#fdfcf9",
                                       "$type": "color"
                               },
                               "200": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.886,
-                                              0.91,
-                                              0.941
+                                              0.98,
+                                              0.973,
+                                              0.953
                                       ],
-                                      "hex": "#e2e8f0",
+                                      "hex": "#faf8f3",
                                       "$type": "color"
                               },
                               "300": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.796,
-                                              0.835,
-                                              0.882
+                                              0.957,
+                                              0.945,
+                                              0.918
                                       ],
-                                      "hex": "#cbd5e1",
+                                      "hex": "#f4f1ea",
                                       "$type": "color"
                               },
                               "400": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.58,
-                                              0.639,
-                                              0.722
+                                              0.918,
+                                              0.898,
+                                              0.851
                                       ],
-                                      "hex": "#94a3b8",
+                                      "hex": "#eae5d9",
                                       "$type": "color"
                               },
                               "500": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.392,
-                                              0.482,
-                                              0.545
+                                              0.859,
+                                              0.827,
+                                              0.757
                                       ],
-                                      "hex": "#64748b",
+                                      "hex": "#dbd3c1",
                                       "$type": "color"
                               },
                               "600": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.278,
-                                              0.341,
-                                              0.416
+                                              0.737,
+                                              0.694,
+                                              0.608
                                       ],
-                                      "hex": "#475569",
+                                      "hex": "#bcb19b",
                                       "$type": "color"
                               },
                               "700": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.2,
-                                              0.255,
-                                              0.314
+                                              0.608,
+                                              0.561,
+                                              0.455
                                       ],
-                                      "hex": "#334155",
+                                      "hex": "#9b8f74",
                                       "$type": "color"
                               },
                               "800": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.118,
-                                              0.165,
-                                              0.235
+                                              0.482,
+                                              0.431,
+                                              0.322
                                       ],
-                                      "hex": "#1e293b",
+                                      "hex": "#7b6e52",
                                       "$type": "color"
                               },
                               "900": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.059,
-                                              0.09,
-                                              0.157
+                                              0.357,
+                                              0.302,
+                                              0.188
                                       ],
-                                      "hex": "#0f172a",
+                                      "hex": "#5b4d30",
                                       "$type": "color"
                               },
                               "950": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.008,
-                                              0.02,
-                                              0.039
+                                              0.208,
+                                              0.169,
+                                              0.094
                                       ],
-                                      "hex": "#020617",
+                                      "hex": "#352b18",
                                       "$type": "color"
                               },
                               "background": "#ffffff",
                               "hover": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.973,
-                                              0.98,
-                                              0.988
+                                              0.996,
+                                              0.996,
+                                              0.992
                                       ],
-                                      "hex": "#f8fafc",
+                                      "hex": "#fefefc",
                                       "$type": "color"
                               },
                               "active": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.945,
-                                              0.976,
+                                              0.992,
+                                              0.988,
                                               0.976
                                       ],
-                                      "hex": "#f1f5f9",
+                                      "hex": "#fdfcf9",
                                       "$type": "color"
                               },
                               "text": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.059,
-                                              0.09,
-                                              0.157
+                                              0.357,
+                                              0.302,
+                                              0.188
                                       ],
-                                      "hex": "#0f172a",
+                                      "hex": "#5b4d30",
                                       "$type": "color"
                               },
                               "border": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.796,
-                                              0.835,
-                                              0.882
+                                              0.957,
+                                              0.945,
+                                              0.918
                                       ],
-                                      "hex": "#cbd5e1",
+                                      "hex": "#f4f1ea",
                                       "$type": "color"
                               }
                       },
@@ -1566,135 +1566,135 @@ export default {
                               "success": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0,
-                                              0.588,
-                                              0.337
+                                              0.082,
+                                              0.404,
+                                              0.302
                                       ],
-                                      "hex": "#009647"
+                                      "hex": "#15674d"
                               },
                               "$root": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0,
-                                              0.588,
-                                              0.337
+                                              0.082,
+                                              0.404,
+                                              0.302
                                       ],
-                                      "hex": "#009647",
+                                      "hex": "#15674d",
                                       "$type": "color"
                               },
                               "light": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.941,
-                                              0.973,
-                                              0.949
+                                              0.949,
+                                              0.976,
+                                              0.957
                                       ],
-                                      "hex": "#f0f9f4",
+                                      "hex": "#f2f9f5",
                                       "$type": "color"
                               },
                               "dark": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0,
-                                              0.357,
-                                              0.204
+                                              0.047,
+                                              0.231,
+                                              0.173
                                       ],
-                                      "hex": "#005a2d",
+                                      "hex": "#0c3b2c",
                                       "$type": "color"
                               },
                               "background": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0,
-                                              0.588,
-                                              0.337
+                                              0.082,
+                                              0.404,
+                                              0.302
                                       ],
-                                      "hex": "#009647",
+                                      "hex": "#15674d",
                                       "$type": "color"
                               },
                               "hover": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.941,
-                                              0.973,
-                                              0.949
+                                              0.949,
+                                              0.976,
+                                              0.957
                                       ],
-                                      "hex": "#f0f9f4",
+                                      "hex": "#f2f9f5",
                                       "$type": "color"
                               },
                               "active": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0,
-                                              0.357,
-                                              0.204
+                                              0.047,
+                                              0.231,
+                                              0.173
                                       ],
-                                      "hex": "#005a2d",
+                                      "hex": "#0c3b2c",
                                       "$type": "color"
                               },
                               "text": "#ffffff",
-                              "border": "#009647"
+                              "border": "#15674d"
                       },
                       "danger": {
                               "background": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.863,
-                                              0.149,
-                                              0.149
+                                              0.498,
+                                              0.165,
+                                              0.42
                                       ],
-                                      "hex": "#dc2626",
+                                      "hex": "#7f2a6b",
                                       "$type": "color"
                               },
                               "hover": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.725,
-                                              0.11,
-                                              0.11
+                                              0.408,
+                                              0.086,
+                                              0.337
                                       ],
-                                      "hex": "#b91c1c",
+                                      "hex": "#681656",
                                       "$type": "color"
                               },
                               "active": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.6,
-                                              0.098,
-                                              0.098
+                                              0.325,
+                                              0.047,
+                                              0.267
                                       ],
-                                      "hex": "#991b1b",
+                                      "hex": "#530c44",
                                       "$type": "color"
                               },
                               "text": "#ffffff",
-                              "border": "#dc2626"
+                              "border": "#7f2a6b"
                       },
                       "warning": {
                               "warning": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.992,
-                                              0.804,
-                                              0.267
+                                              0.698,
+                                              0.459,
+                                              0.086
                                       ],
-                                      "hex": "#fdd835"
+                                      "hex": "#b27516"
                               },
                               "$root": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.992,
-                                              0.804,
-                                              0.267
+                                              0.698,
+                                              0.459,
+                                              0.086
                                       ],
-                                      "hex": "#fdd835",
+                                      "hex": "#b27516",
                                       "$type": "color"
                               },
                               "light": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              1,
-                                              0.973,
-                                              0.918
+                                              0.996,
+                                              0.976,
+                                              0.937
                                       ],
                                       "hex": "#fff9e6",
                                       "$type": "color"
@@ -1754,21 +1754,21 @@ export default {
                       "button": {
                               "colorSpace": "srgb",
                               "components": [
-                                      0.067,
-                                      0.267,
-                                      0.478
+                                      0.094,
+                                      0.063,
+                                      0.094
                               ],
-                              "hex": "#114477",
+                              "hex": "#181018",
                               "alpha": 1
                       },
                       "$root": {
                               "colorSpace": "srgb",
                               "components": [
-                                      0.067,
-                                      0.267,
-                                      0.478
+                                      0.094,
+                                      0.063,
+                                      0.094
                               ],
-                              "hex": "#114477",
+                              "hex": "#181018",
                               "alpha": 1,
                               "$type": "color"
                       },
@@ -1776,91 +1776,91 @@ export default {
                               "50": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.996,
+                                              0.984,
                                               0.949,
-                                              0.949
+                                              0.973
                                       ],
-                                      "hex": "#fef2f2",
+                                      "hex": "#fbf2f8",
                                       "$type": "color"
                               },
                               "100": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.996,
-                                              0.886,
-                                              0.886
+                                              0.961,
+                                              0.89,
+                                              0.937
                                       ],
-                                      "hex": "#fee2e2",
+                                      "hex": "#f5e4ef",
                                       "$type": "color"
                               },
                               "200": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.996,
-                                              0.792,
-                                              0.792
+                                              0.918,
+                                              0.808,
+                                              0.878
                                       ],
-                                      "hex": "#fecaca",
+                                      "hex": "#eacee0",
                                       "$type": "color"
                               },
                               "300": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.988,
-                                              0.671,
-                                              0.671
+                                              0.875,
+                                              0.729,
+                                              0.808
                                       ],
-                                      "hex": "#fca5a5",
+                                      "hex": "#dfbacf",
                                       "$type": "color"
                               },
                               "400": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.969,
-                                              0.529,
-                                              0.529
+                                              0.749,
+                                              0.522,
+                                              0.682
                                       ],
-                                      "hex": "#f87171",
+                                      "hex": "#bf85ae",
                                       "$type": "color"
                               },
                               "500": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.937,
-                                              0.267,
-                                              0.267
+                                              0.608,
+                                              0.302,
+                                              0.533
                                       ],
-                                      "hex": "#ef4444",
+                                      "hex": "#9b4d88",
                                       "$type": "color"
                               },
                               "600": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.863,
-                                              0.149,
-                                              0.149
+                                              0.498,
+                                              0.165,
+                                              0.42
                                       ],
-                                      "hex": "#dc2626",
+                                      "hex": "#7f2a6b",
                                       "$type": "color"
                               },
                               "700": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.725,
-                                              0.11,
-                                              0.11
+                                              0.408,
+                                              0.086,
+                                              0.337
                                       ],
-                                      "hex": "#b91c1c",
+                                      "hex": "#681656",
                                       "$type": "color"
                               },
                               "800": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.6,
-                                              0.098,
-                                              0.098
+                                              0.325,
+                                              0.047,
+                                              0.267
                                       ],
-                                      "hex": "#991b1b",
+                                      "hex": "#530c44",
                                       "$type": "color"
                               },
                               "900": {
@@ -1890,21 +1890,21 @@ export default {
                       "border": {
                               "colorSpace": "srgb",
                               "components": [
-                                      0.796,
-                                      0.835,
-                                      0.882
+                                      0.957,
+                                      0.945,
+                                      0.918
                               ],
-                              "hex": "#cbd5e1",
+                              "hex": "#f4f1ea",
                               "$type": "color"
                       },
                       "focus": {
                               "colorSpace": "srgb",
                               "components": [
-                                      0.059,
-                                      0.647,
-                                      0.914
+                                      0.827,
+                                      0.675,
+                                      0.455
                               ],
-                              "hex": "#0ea5e9",
+                              "hex": "#d3ac74",
                               "$type": "color"
                       },
                       "error": {
@@ -1920,21 +1920,21 @@ export default {
                       "text": {
                               "colorSpace": "srgb",
                               "components": [
-                                      0.059,
-                                      0.09,
-                                      0.157
+                                      0.357,
+                                      0.302,
+                                      0.188
                               ],
-                              "hex": "#0f172a",
+                              "hex": "#5b4d30",
                               "$type": "color"
                       },
                       "placeholder": {
                               "colorSpace": "srgb",
                               "components": [
-                                      0.392,
-                                      0.482,
-                                      0.545
+                                      0.859,
+                                      0.827,
+                                      0.757
                               ],
-                              "hex": "#64748b",
+                              "hex": "#dbd3c1",
                               "$type": "color"
                       }
               },
@@ -1943,22 +1943,22 @@ export default {
                       "border": {
                               "colorSpace": "srgb",
                               "components": [
-                                      0.886,
-                                      0.91,
-                                      0.941
+                                      0.98,
+                                      0.973,
+                                      0.953
                               ],
-                              "hex": "#e2e8f0",
+                              "hex": "#faf8f3",
                               "$type": "color"
                       },
                       "shadow": {
                               "color": {
                                       "colorSpace": "srgb",
                                       "components": [
-                                              0.059,
-                                              0.09,
-                                              0.157
+                                              0.357,
+                                              0.302,
+                                              0.188
                                       ],
-                                      "hex": "#0f172a"
+                                      "hex": "#5b4d30"
                               }
                       }
               },
@@ -1966,11 +1966,11 @@ export default {
                       "color": {
                               "colorSpace": "srgb",
                               "components": [
-                                      0.796,
-                                      0.835,
-                                      0.882
+                                      0.957,
+                                      0.945,
+                                      0.918
                               ],
-                              "hex": "#cbd5e1"
+                              "hex": "#f4f1ea"
                       },
                       "width": {
                               "value": 1,
@@ -1983,11 +1983,11 @@ export default {
                       "color": {
                               "colorSpace": "srgb",
                               "components": [
-                                      0.059,
-                                      0.647,
-                                      0.914
+                                      0.827,
+                                      0.675,
+                                      0.455
                               ],
-                              "hex": "#0ea5e9"
+                              "hex": "#d3ac74"
                       },
                       "width": {
                               "value": 2,
@@ -2071,11 +2071,13 @@ export default {
                       "system-ui",
                       "sans-serif"
               ],
-              "primary": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+              "primary": "'Crimson Text', 'Times New Roman', serif",
+              "secondary": "'Source Sans Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
               "mono": "'JetBrains Mono', 'Fira Code', Monaco, 'Cascadia Code', monospace",
-              "heading": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-              "body": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-              "code": "'JetBrains Mono', 'Fira Code', Monaco, 'Cascadia Code', monospace"
+              "heading": "'Crimson Text', 'Times New Roman', serif",
+              "body": "'Source Sans Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+              "code": "'JetBrains Mono', 'Fira Code', Monaco, 'Cascadia Code', monospace",
+              "accent": "'Playfair Display', 'Times New Roman', serif"
       },
       fontSize: {
               "base-base-fontSize": {
