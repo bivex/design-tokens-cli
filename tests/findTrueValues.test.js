@@ -7,7 +7,7 @@
  * https://github.com/bivex
  *
  * Created: 2025-12-23T03:04:36
- * Last Updated: 2025-12-23T03:06:29
+ * Last Updated: 2025-12-23T03:09:10
  *
  * Licensed under the MIT License.
  * Commercial licensing available upon request.
@@ -133,4 +133,23 @@ test('configurable prefixes allow custom or no prefixes per group', () => {
   expect(withPrefixes['size-small']).toBe('16px');
   expect(withPrefixes['size-large']).toBe('32px');
   expect(withPrefixes['spacing-margin']).toBe('8px');
+});
+
+test('cross-transform reference resolution works globally', () => {
+  // Test the scenario where tokens from different transforms reference each other
+  const globalTokens = {
+    'primary': 'blue',
+    'secondary': 'gray',
+    'primary-bg': '{primary}',
+    'secondary-bg': '{secondary}'
+  };
+
+  // Resolve references globally (as the new implementation does)
+  const resolved = findTrueValues({ global: globalTokens });
+
+  // Check that cross-transform references were resolved
+  expect(resolved['primary-bg']).toBe('blue');
+  expect(resolved['secondary-bg']).toBe('gray');
+  expect(resolved['primary']).toBe('blue');
+  expect(resolved['secondary']).toBe('gray');
 });

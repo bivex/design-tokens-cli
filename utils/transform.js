@@ -7,7 +7,7 @@
  * https://github.com/bivex
  *
  * Created: 2025-12-23T03:06:01
- * Last Updated: 2025-12-23T03:06:19
+ * Last Updated: 2025-12-23T03:09:00
  *
  * Licensed under the MIT License.
  * Commercial licensing available upon request.
@@ -31,45 +31,57 @@ const transform = (configPath, options) => {
   // Read the config file as JSON
   const config = jetpack.read(configPath, 'json');
 
-  config.transforms.forEach(transform => {
+  // First pass: collect all tokens from all transforms into a global set
+  const globalTokens = {};
+  const transformTokens = {}; // Track which tokens belong to which transform
+
+  config.transforms.forEach((transform, transformIndex) => {
     let from = jetpack.cwd(transform.from);
-    // Keep track of tokens in one object
-    let allTokens = {};
+    let transformTokenSet = {};
     from.find({ matching: ['*.tokens.json', '*.tokens'] }).forEach(path => {
       const json = from.read(path, 'json');
       let pairs = flattenJSON(json, config);
-      allTokens[path.split('.')[0]] = pairs;
-    });
-    
-    // Resolve token references or keep them as variable references
-    let processedTokens;
-    if (config.keepReferences) {
-      processedTokens = keepReferences(allTokens);
-      // Exit if there are duplicate token names
-      const duplicates = findDuplicates(Object.keys(processedTokens.pairs));
-      if (duplicates.length) {
-        throw new Error(`You have duplicate token names: ${duplicates.join(', ')}`);
-      }
-    } else {
-      processedTokens = { pairs: findTrueValues(allTokens) };
-      // Exit if there are duplicate token names
-      const duplicates = findDuplicates(Object.keys(processedTokens.pairs));
-      if (duplicates.length) {
-        throw new Error(`You have duplicate token names: ${duplicates.join(', ')}`);
-      }
-    }
+      transformTokenSet[path.split('.')[0]] = pairs;
 
-    // Place processed values back into categorized object
-    for (let group in allTokens) {
-      Object.keys(allTokens[group]).forEach(token => {
-        allTokens[group][token] = processedTokens.pairs[token];
+      // Add to global tokens for cross-transform reference resolution
+      Object.assign(globalTokens, pairs);
+    });
+    transformTokens[transformIndex] = transformTokenSet;
+  });
+
+  // Resolve references globally across all transforms
+  let globallyResolvedTokens;
+  if (config.keepReferences) {
+    // For keepReferences, we still need to maintain per-transform structure
+    // but resolve references within the global context
+    globallyResolvedTokens = { pairs: globalTokens };
+  } else {
+    globallyResolvedTokens = { pairs: findTrueValues({ global: globalTokens }) };
+  }
+
+  // Check for duplicates in the global token set
+  const duplicates = findDuplicates(Object.keys(globallyResolvedTokens.pairs));
+  if (duplicates.length) {
+    throw new Error(`You have duplicate token names across all transforms: ${duplicates.join(', ')}`);
+  }
+
+  // Second pass: generate output for each transform using globally resolved tokens
+  config.transforms.forEach((transform, transformIndex) => {
+    const transformTokenSet = transformTokens[transformIndex];
+    let allTokens = {};
+
+    // Update tokens with globally resolved values
+    for (let group in transformTokenSet) {
+      allTokens[group] = {};
+      Object.keys(transformTokenSet[group]).forEach(token => {
+        allTokens[group][token] = globallyResolvedTokens.pairs[token];
       });
     }
 
     // If the transform has a name, concatenate under name
     if (transform.name) {
       transform.to.forEach(format => {
-        let code = chooseTransform(processedTokens.pairs, format.as, transform.name, config);
+        let code = chooseTransform(globallyResolvedTokens.pairs, format.as, transform.name, config);
         let formatTo = jetpack.cwd(format.to);
         let newPath = `${transform.name}.tokens.${format.as}`;
         formatTo.write(newPath, code);

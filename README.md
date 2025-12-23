@@ -12,7 +12,7 @@ A design-tokens-format-adhering token transformation CLI (Command Line Interface
 - [x] (Chained) token reference resolution
 - [x] **Keeping references as variable references** (optional)
 - [x] Reference resolution _between_ separate tokens files in one transform
-- [ ] Reference resolution _between_ separate tokens _between_ separate transforms
+- [x] Reference resolution _between_ separate tokens _between_ separate transforms
 - [x] Composite tokens (`$value`s as objects)
 - [x] `*.tokens.json` and `*.tokens` file types
 - [x] Concatenation of separate token files under a single name
@@ -196,6 +196,48 @@ $token-color-weiss: $token-color-blanche;
 ```
 
 This ensures proper dependency ordering and allows for more maintainable stylesheets where changing a base token automatically updates all dependent tokens.
+
+## Cross-Transform References
+
+The CLI supports reference resolution across different transforms in your configuration. This means tokens in one transform can reference tokens from any other transform.
+
+**Example:**
+```json
+{
+  "transforms": [
+    {
+      "from": "tokens/colors",
+      "to": [...]
+    },
+    {
+      "from": "tokens/components",
+      "to": [...]
+    }
+  ]
+}
+```
+
+If your `tokens/components/button.tokens.json` contains:
+```json
+{
+  "buttons": {
+    "primary": {
+      "background": { "$value": "{primary}" }
+    }
+  }
+}
+```
+
+And your `tokens/colors/color.tokens.json` contains:
+```json
+{
+  "colors": {
+    "primary": { "$value": "#007bff" }
+  }
+}
+```
+
+The reference `{primary}` in the components transform will correctly resolve to `#007bff` from the colors transform.
 
 ## Concatenation 
 

@@ -84,5 +84,13 @@
 				"comment": "4rem, 64px."
 			}
 		}
+	},
+	"borders": {
+		"error": {
+			"$value": "{error}"
+		},
+		"success": {
+			"$value": "{success}"
+		}
 	}
 }
