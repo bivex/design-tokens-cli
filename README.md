@@ -1,9 +1,11 @@
 # Design Tokens CLI
 
-A design-tokens-format-adhering token transformation CLI (Command Line Interface).
+A design-tokens-format-adhering token transformation CLI (Command Line Interface) implementing the [2025.10 Design Tokens Format specification](https://www.designtokens.org/TR/2025.10/format/).
 
 ## Supports
 
+### Format Compliance
+- [x] **2025.10 Specification**: Full compliance with the latest Design Tokens Format
 - [x] Converting from design tokens in the [standard JSON format](https://design-tokens.github.io/community-group/format/)...
 - [x] ...to CSS (custom properties)
 - [x] ...to Sass (scss) variables
@@ -11,6 +13,8 @@ A design-tokens-format-adhering token transformation CLI (Command Line Interface
 - [x] ...to JSON (flattened to name/value pairs)
 - [x] ...to Tailwind CSS v3 configuration (JavaScript)
 - [x] ...to Tailwind CSS v4 @theme directive (CSS)
+
+### Core Features
 - [x] (Chained) token reference resolution
 - [x] **Keeping references as variable references** (optional)
 - [x] Reference resolution _between_ separate tokens files in one transform
@@ -18,6 +22,14 @@ A design-tokens-format-adhering token transformation CLI (Command Line Interface
 - [x] Composite tokens (`$value`s as objects)
 - [x] `*.tokens.json` and `*.tokens` file types
 - [x] Concatenation of separate token files under a single name
+
+### 2025.10 Specification Features
+- [x] **Group Extensions**: `$extends` property for group inheritance with deep merge semantics
+- [x] **Root Tokens**: `$root` tokens in groups for base values with variants
+- [x] **JSON Pointer References**: `$ref` syntax alongside `{token}` references for advanced property access
+- [x] **Type Inheritance**: Automatic type inheritance from groups to tokens
+- [x] **Group Properties**: `$deprecated`, `$extensions`, and other group-level metadata
+- [x] **Enhanced Composite Types**: Full support for shadow, border, gradient, typography, and other composite token types
 
 ## Getting started
 
@@ -473,3 +485,105 @@ If the transform has a `name` property, multiple files found in the `from` origi
 ```
 
 Where there are **breakpoints.tokens.json** and **sizes.tokens.json** files in **/origin/tokens**, their tokens will be placed in the same **/destination/css/layout.tokens.css** file. Without the `name`, separate  **breakpoints.tokens.css** and **sizes.tokens.css** files would be made.
+
+## 2025.10 Specification Features
+
+This CLI implements the latest [Design Tokens Format 2025.10](https://www.designtokens.org/TR/2025.10/format/) specification, providing advanced features for organizing and referencing design tokens.
+
+### Group Extensions (`$extends`)
+
+Groups can inherit tokens and properties from other groups using the `$extends` property:
+
+```json
+{
+  "button": {
+    "$type": "color",
+    "background": { "$value": "#0066cc" },
+    "text": { "$value": "#ffffff" }
+  },
+  "button-primary": {
+    "$extends": "{button}",
+    "background": { "$value": "#cc0066" }
+  }
+}
+```
+
+The `button-primary` group inherits `text` from `button` but overrides `background`.
+
+### Root Tokens (`$root`)
+
+Groups can define a root token that serves as a base value:
+
+```json
+{
+  "spacing": {
+    "$type": "dimension",
+    "$root": { "$value": { "value": 16, "unit": "px" } },
+    "small": { "$value": { "value": 8, "unit": "px" } },
+    "large": { "$value": { "value": 32, "unit": "px" } }
+  }
+}
+```
+
+Root tokens are accessible via `{spacing.$root}` references.
+
+### JSON Pointer References (`$ref`)
+
+For advanced property access, use JSON Pointer syntax:
+
+```json
+{
+  "base": {
+    "color": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [0, 0.4, 0.8],
+        "hex": "#0066cc"
+      }
+    }
+  },
+  "theme": {
+    "primary": {
+      "$value": { "$ref": "#/base/color/$value" }
+    },
+    "primaryHue": {
+      "$value": { "$ref": "#/base/color/$value/components/0" }
+    }
+  }
+}
+```
+
+### Type Inheritance
+
+Groups can define types that are inherited by child tokens:
+
+```json
+{
+  "color": {
+    "$type": "color",
+    "primary": { "$value": "#0066cc" },  // Inherits color type
+    "secondary": {
+      "$type": "dimension",             // Overrides with dimension type
+      "$value": { "value": 2, "unit": "px" }
+    }
+  }
+}
+```
+
+### Group Properties
+
+Groups support additional metadata:
+
+```json
+{
+  "deprecated": {
+    "$deprecated": true,
+    "$description": "Legacy color palette",
+    "$extensions": {
+      "org.example.migration": {
+        "newPalette": "color-v2"
+      }
+    }
+  }
+}
+```

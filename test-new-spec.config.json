@@ -1,0 +1,16 @@
+{
+  "globalPrefix": "",
+  "keepReferences": false,
+  "preserveOrder": true,
+  "transforms": [
+    {
+      "from": "test-tokens",
+      "to": [
+        {
+          "as": "json",
+          "to": "test-output"
+        }
+      ]
+    }
+  ]
+}

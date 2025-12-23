@@ -1,0 +1,11 @@
+{
+	"spacing-small-value": 8,
+	"spacing-small-unit": "px",
+	"spacing-small-$type": "dimension",
+	"spacing-medium-value": 16,
+	"spacing-medium-unit": "px",
+	"spacing-medium-$type": "dimension",
+	"spacing-large-value": 32,
+	"spacing-large-unit": "px",
+	"spacing-large-$type": "dimension"
+}

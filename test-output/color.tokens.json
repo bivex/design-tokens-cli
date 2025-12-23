@@ -1,0 +1,80 @@
+{
+	"color-base-base-colorSpace": "srgb",
+	"color-base-base-components": [
+		0.5,
+		0.5,
+		0.5
+	],
+	"color-base-base-hex": "#808080",
+	"color-base-$root-colorSpace": "srgb",
+	"color-base-$root-components": [
+		0.5,
+		0.5,
+		0.5
+	],
+	"color-base-$root-hex": "#808080",
+	"color-base-$root-$type": "color",
+	"color-base-red-colorSpace": "srgb",
+	"color-base-red-components": [
+		1,
+		0,
+		0
+	],
+	"color-base-red-hex": "#ff0000",
+	"color-base-red-$type": "color",
+	"color-base-blue-colorSpace": "srgb",
+	"color-base-blue-components": [
+		0,
+		0,
+		1
+	],
+	"color-base-blue-hex": "#0000ff",
+	"color-base-blue-$type": "color",
+	"color-semantic-primary-colorSpace": "srgb",
+	"color-semantic-primary-components": [
+		0,
+		0,
+		1
+	],
+	"color-semantic-primary-hex": "#0000ff",
+	"color-semantic-primary-$type": "color",
+	"color-semantic-secondary-colorSpace": "srgb",
+	"color-semantic-secondary-components": [
+		1,
+		0,
+		0
+	],
+	"color-semantic-secondary-hex": "#ff0000",
+	"color-semantic-secondary-$type": "color",
+	"color-semantic-semantic-colorSpace": "srgb",
+	"color-semantic-semantic-components": [
+		0.5,
+		0.5,
+		0.5
+	],
+	"color-semantic-semantic-hex": "#808080",
+	"color-semantic-$root-colorSpace": "srgb",
+	"color-semantic-$root-components": [
+		0.5,
+		0.5,
+		0.5
+	],
+	"color-semantic-$root-hex": "#808080",
+	"color-semantic-$root-$type": "color",
+	"color-semantic-red-colorSpace": "srgb",
+	"color-semantic-red-components": [
+		1,
+		0,
+		0
+	],
+	"color-semantic-red-hex": "#ff0000",
+	"color-semantic-red-$type": "color",
+	"color-semantic-blue-colorSpace": "srgb",
+	"color-semantic-blue-components": [
+		0,
+		0,
+		1
+	],
+	"color-semantic-blue-hex": "#0000ff",
+	"color-semantic-blue-$type": "color"
+}

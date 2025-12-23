@@ -14,29 +14,69 @@
  */
 
 import { refToName } from "./refToName.js";
+import { resolveAllJsonPointers, isJsonPointerRef, parseJsonPointer, resolveJsonPointer } from "./jsonPointer.js";
 
 /**
  * Searches through chained references to replace reference with originating value
- * @param {Object} pairs The flattened token key/value pairs
+ * @param {Object} groups The flattened token key/value pairs
+ * @param {Object} rootDocument The root document for JSON Pointer resolution
  * @returns {Object}
  */
-const findTrueValues = groups => {
+const findTrueValues = (groups, rootDocument = null) => {
   const newGroups = JSON.parse(JSON.stringify(groups));
   let justPairs = {};
   Object.keys(newGroups).forEach(group => {
     Object.assign(justPairs, newGroups[group]);
   });
-  for (const pair in justPairs) {
-    let val = justPairs[pair];
-    while (val.startsWith('{')) {
-      let name = refToName(justPairs[pair]);
-      if (!justPairs[name]) {
-        throw new Error(`The token reference name '${name}' does not exist.`);
+
+  // Resolve references in a specific order:
+  // 1. First resolve JSON Pointer references within the token values themselves
+  // 2. Then resolve curly brace references
+
+  const resolveValue = (value, visited = new Set()) => {
+    if (typeof value === 'string') {
+      if (value.startsWith('{')) {
+        const refName = refToName(value);
+        if (!justPairs[refName]) {
+          console.log('Available tokens:', Object.keys(justPairs));
+          throw new Error(`The token reference name '${refName}' does not exist.`);
+        }
+        if (visited.has(refName)) {
+          throw new Error(`Circular reference detected: ${refName}`);
+        }
+        visited.add(refName);
+        return resolveValue(justPairs[refName], visited);
       }
-      val = justPairs[name];
+      return value;
+    } else if (typeof value === 'object' && value !== null) {
+      if (Array.isArray(value)) {
+        return value.map(item => resolveValue(item, visited));
+      } else {
+        const result = {};
+        for (const [key, val] of Object.entries(value)) {
+          if (key === '$ref' && isJsonPointerRef(val)) {
+            // Resolve JSON Pointer reference
+            const pathSegments = parseJsonPointer(val);
+            const resolved = resolveJsonPointer(rootDocument, pathSegments);
+            if (resolved === undefined) {
+              throw new Error(`JSON Pointer reference not found: ${val}`);
+            }
+            return resolveValue(resolved, visited);
+          } else {
+            result[key] = resolveValue(val, visited);
+          }
+        }
+        return result;
+      }
     }
-    justPairs[pair] = val;
+    return value;
+  };
+
+  // Resolve all references in the token values
+  for (const pair in justPairs) {
+    justPairs[pair] = resolveValue(justPairs[pair]);
   }
+
   return justPairs;
 }
 
@@ -44,9 +84,10 @@ const findTrueValues = groups => {
  * Keeps references as variable references instead of resolving to values
  * @param {Object} groups The grouped token pairs
  * @param {Object} config The configuration object
+ * @param {Object} rootDocument The root document for JSON Pointer resolution
  * @returns {Object} Object with ordered pairs and dependency info
  */
-const keepReferences = groups => {
+const keepReferences = (groups, rootDocument = null) => {
   const newGroups = JSON.parse(JSON.stringify(groups));
   let justPairs = {};
   Object.keys(newGroups).forEach(group => {
@@ -62,7 +103,7 @@ const keepReferences = groups => {
     dependents[token] = [];
   });
 
-  // Find all references
+  // Find all references (both curly brace and JSON Pointer)
   Object.keys(justPairs).forEach(token => {
     const value = justPairs[token];
     if (typeof value === 'string' && value.startsWith('{')) {
@@ -73,6 +114,8 @@ const keepReferences = groups => {
       dependencies[token].push(refName);
       dependents[refName].push(token);
     }
+    // Note: JSON Pointer references in $ref properties are handled differently
+    // and don't create the same dependency relationships as curly brace references
   });
 
   // Topological sort to resolve dependencies

@@ -12,56 +12,707 @@
 	"width-2": "2px",
 	"width-4": "4px",
 	"width-8": "8px",
-	"sm": "640px",
-	"md": "768px",
-	"lg": "1024px",
-	"xl": "1280px",
-	"2xl": "1536px",
+	"sm": "0 1px 2px 0 rgb(0 0 0 / 0.05)",
+	"md": "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
+	"lg": "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
+	"xl": "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
+	"2xl": "0 25px 50px -12px rgb(0 0 0 / 0.25)",
 	"inner": "inset 0 2px 4px 0 rgb(0 0 0 / 0.05)",
 	"none": "0 0 #0000",
-	"primary-50": "#f0f9ff",
-	"primary-100": "#e0f2fe",
-	"primary-200": "#bae6fd",
-	"primary-300": "#7dd3fc",
-	"primary-400": "#38bdf8",
-	"primary-500": "#0ea5e9",
-	"primary-600": "#0284c7",
-	"primary-700": "#0369a1",
-	"primary-800": "#075985",
-	"primary-900": "#0c4a6e",
-	"primary-950": "#082f49",
-	"secondary-50": "#f8fafc",
-	"secondary-100": "#f1f5f9",
-	"secondary-200": "#e2e8f0",
-	"secondary-300": "#cbd5e1",
-	"secondary-400": "#94a3b8",
-	"secondary-500": "#64748b",
-	"secondary-600": "#475569",
-	"secondary-700": "#334155",
-	"secondary-800": "#1e293b",
-	"secondary-900": "#0f172a",
-	"secondary-950": "#020617",
-	"accent-50": "#fef2f2",
-	"accent-100": "#fee2e2",
-	"accent-200": "#fecaca",
-	"accent-300": "#fca5a5",
-	"accent-400": "#f87171",
-	"accent-500": "#ef4444",
-	"accent-600": "#dc2626",
-	"accent-700": "#b91c1c",
-	"accent-800": "#991b1b",
-	"accent-900": "#7f1d1d",
-	"accent-950": "#450a0a",
-	"name": "Bivex",
-	"tagline": "AI-Powered Design Excellence",
-	"url": "https://bivex.com",
-	"email": "support@b-b.top",
-	"logo-width": "40px",
-	"logo-height": "40px",
-	"logo-color": "{brand.primary.600}",
-	"colors-main": "{brand.primary.600}",
-	"colors-secondary": "{brand.secondary.600}",
-	"colors-accent": "{brand.accent.600}",
+	"base-base-colorSpace": "srgb",
+	"base-base-components": [
+		0.067,
+		0.267,
+		0.478
+	],
+	"base-base-hex": "#114477",
+	"base-base-alpha": 1,
+	"base-$root-colorSpace": "srgb",
+	"base-$root-components": [
+		0.067,
+		0.267,
+		0.478
+	],
+	"base-$root-hex": "#114477",
+	"base-$root-alpha": 1,
+	"base-$root-$type": "typography",
+	"base-primary-50-colorSpace": "srgb",
+	"base-primary-50-components": [
+		0.941,
+		0.976,
+		1
+	],
+	"base-primary-50-hex": "#f0f9ff",
+	"base-primary-50-$type": "color",
+	"base-primary-100-colorSpace": "srgb",
+	"base-primary-100-components": [
+		0.878,
+		0.949,
+		0.996
+	],
+	"base-primary-100-hex": "#e0f2fe",
+	"base-primary-100-$type": "color",
+	"base-primary-200-colorSpace": "srgb",
+	"base-primary-200-components": [
+		0.729,
+		0.902,
+		0.992
+	],
+	"base-primary-200-hex": "#bae6fd",
+	"base-primary-200-$type": "color",
+	"base-primary-300-colorSpace": "srgb",
+	"base-primary-300-components": [
+		0.49,
+		0.827,
+		0.988
+	],
+	"base-primary-300-hex": "#7dd3fc",
+	"base-primary-300-$type": "color",
+	"base-primary-400-colorSpace": "srgb",
+	"base-primary-400-components": [
+		0.22,
+		0.741,
+		0.973
+	],
+	"base-primary-400-hex": "#38bdf8",
+	"base-primary-400-$type": "color",
+	"base-primary-500-colorSpace": "srgb",
+	"base-primary-500-components": [
+		0.059,
+		0.647,
+		0.914
+	],
+	"base-primary-500-hex": "#0ea5e9",
+	"base-primary-500-$type": "color",
+	"base-primary-600-colorSpace": "srgb",
+	"base-primary-600-components": [
+		0.016,
+		0.518,
+		0.78
+	],
+	"base-primary-600-hex": "#0284c7",
+	"base-primary-600-$type": "color",
+	"base-primary-700-colorSpace": "srgb",
+	"base-primary-700-components": [
+		0.012,
+		0.392,
+		0.631
+	],
+	"base-primary-700-hex": "#0369a1",
+	"base-primary-700-$type": "color",
+	"base-primary-800-colorSpace": "srgb",
+	"base-primary-800-components": [
+		0.027,
+		0.302,
+		0.522
+	],
+	"base-primary-800-hex": "#075985",
+	"base-primary-800-$type": "color",
+	"base-primary-900-colorSpace": "srgb",
+	"base-primary-900-components": [
+		0.047,
+		0.231,
+		0.42
+	],
+	"base-primary-900-hex": "#0c4a6e",
+	"base-primary-900-$type": "color",
+	"base-primary-950-colorSpace": "srgb",
+	"base-primary-950-components": [
+		0.031,
+		0.149,
+		0.286
+	],
+	"base-primary-950-hex": "#082f49",
+	"base-primary-950-$type": "color",
+	"base-secondary-50-colorSpace": "srgb",
+	"base-secondary-50-components": [
+		0.973,
+		0.98,
+		0.988
+	],
+	"base-secondary-50-hex": "#f8fafc",
+	"base-secondary-50-$type": "color",
+	"base-secondary-100-colorSpace": "srgb",
+	"base-secondary-100-components": [
+		0.945,
+		0.976,
+		0.976
+	],
+	"base-secondary-100-hex": "#f1f5f9",
+	"base-secondary-100-$type": "color",
+	"base-secondary-200-colorSpace": "srgb",
+	"base-secondary-200-components": [
+		0.886,
+		0.91,
+		0.941
+	],
+	"base-secondary-200-hex": "#e2e8f0",
+	"base-secondary-200-$type": "color",
+	"base-secondary-300-colorSpace": "srgb",
+	"base-secondary-300-components": [
+		0.796,
+		0.835,
+		0.882
+	],
+	"base-secondary-300-hex": "#cbd5e1",
+	"base-secondary-300-$type": "color",
+	"base-secondary-400-colorSpace": "srgb",
+	"base-secondary-400-components": [
+		0.58,
+		0.639,
+		0.722
+	],
+	"base-secondary-400-hex": "#94a3b8",
+	"base-secondary-400-$type": "color",
+	"base-secondary-500-colorSpace": "srgb",
+	"base-secondary-500-components": [
+		0.392,
+		0.482,
+		0.545
+	],
+	"base-secondary-500-hex": "#64748b",
+	"base-secondary-500-$type": "color",
+	"base-secondary-600-colorSpace": "srgb",
+	"base-secondary-600-components": [
+		0.278,
+		0.341,
+		0.416
+	],
+	"base-secondary-600-hex": "#475569",
+	"base-secondary-600-$type": "color",
+	"base-secondary-700-colorSpace": "srgb",
+	"base-secondary-700-components": [
+		0.2,
+		0.255,
+		0.314
+	],
+	"base-secondary-700-hex": "#334155",
+	"base-secondary-700-$type": "color",
+	"base-secondary-800-colorSpace": "srgb",
+	"base-secondary-800-components": [
+		0.118,
+		0.165,
+		0.235
+	],
+	"base-secondary-800-hex": "#1e293b",
+	"base-secondary-800-$type": "color",
+	"base-secondary-900-colorSpace": "srgb",
+	"base-secondary-900-components": [
+		0.059,
+		0.09,
+		0.157
+	],
+	"base-secondary-900-hex": "#0f172a",
+	"base-secondary-900-$type": "color",
+	"base-secondary-950-colorSpace": "srgb",
+	"base-secondary-950-components": [
+		0.008,
+		0.02,
+		0.039
+	],
+	"base-secondary-950-hex": "#020617",
+	"base-secondary-950-$type": "color",
+	"base-accent-50-colorSpace": "srgb",
+	"base-accent-50-components": [
+		0.996,
+		0.949,
+		0.949
+	],
+	"base-accent-50-hex": "#fef2f2",
+	"base-accent-50-$type": "color",
+	"base-accent-100-colorSpace": "srgb",
+	"base-accent-100-components": [
+		0.996,
+		0.886,
+		0.886
+	],
+	"base-accent-100-hex": "#fee2e2",
+	"base-accent-100-$type": "color",
+	"base-accent-200-colorSpace": "srgb",
+	"base-accent-200-components": [
+		0.996,
+		0.792,
+		0.792
+	],
+	"base-accent-200-hex": "#fecaca",
+	"base-accent-200-$type": "color",
+	"base-accent-300-colorSpace": "srgb",
+	"base-accent-300-components": [
+		0.988,
+		0.671,
+		0.671
+	],
+	"base-accent-300-hex": "#fca5a5",
+	"base-accent-300-$type": "color",
+	"base-accent-400-colorSpace": "srgb",
+	"base-accent-400-components": [
+		0.969,
+		0.529,
+		0.529
+	],
+	"base-accent-400-hex": "#f87171",
+	"base-accent-400-$type": "color",
+	"base-accent-500-colorSpace": "srgb",
+	"base-accent-500-components": [
+		0.937,
+		0.267,
+		0.267
+	],
+	"base-accent-500-hex": "#ef4444",
+	"base-accent-500-$type": "color",
+	"base-accent-600-colorSpace": "srgb",
+	"base-accent-600-components": [
+		0.863,
+		0.149,
+		0.149
+	],
+	"base-accent-600-hex": "#dc2626",
+	"base-accent-600-$type": "color",
+	"base-accent-700-colorSpace": "srgb",
+	"base-accent-700-components": [
+		0.725,
+		0.11,
+		0.11
+	],
+	"base-accent-700-hex": "#b91c1c",
+	"base-accent-700-$type": "color",
+	"base-accent-800-colorSpace": "srgb",
+	"base-accent-800-components": [
+		0.6,
+		0.098,
+		0.098
+	],
+	"base-accent-800-hex": "#991b1b",
+	"base-accent-800-$type": "color",
+	"base-accent-900-colorSpace": "srgb",
+	"base-accent-900-components": [
+		0.498,
+		0.086,
+		0.086
+	],
+	"base-accent-900-hex": "#7f1d1d",
+	"base-accent-900-$type": "color",
+	"base-accent-950-colorSpace": "srgb",
+	"base-accent-950-components": [
+		0.271,
+		0.039,
+		0.039
+	],
+	"base-accent-950-hex": "#450a0a",
+	"base-accent-950-$type": "color",
+	"semantic-success-success-colorSpace": "srgb",
+	"semantic-success-success-components": [
+		0,
+		0.588,
+		0.337
+	],
+	"semantic-success-success-hex": "#009647",
+	"semantic-success-$root-colorSpace": "srgb",
+	"semantic-success-$root-components": [
+		0,
+		0.588,
+		0.337
+	],
+	"semantic-success-$root-hex": "#009647",
+	"semantic-success-$root-$type": "color",
+	"semantic-success-light-colorSpace": "srgb",
+	"semantic-success-light-components": [
+		0.941,
+		0.973,
+		0.949
+	],
+	"semantic-success-light-hex": "#f0f9f4",
+	"semantic-success-light-$type": "color",
+	"semantic-success-dark-colorSpace": "srgb",
+	"semantic-success-dark-components": [
+		0,
+		0.357,
+		0.204
+	],
+	"semantic-success-dark-hex": "#005a2d",
+	"semantic-success-dark-$type": "color",
+	"semantic-warning-warning-colorSpace": "srgb",
+	"semantic-warning-warning-components": [
+		0.992,
+		0.804,
+		0.267
+	],
+	"semantic-warning-warning-hex": "#fdd835",
+	"semantic-warning-$root-colorSpace": "srgb",
+	"semantic-warning-$root-components": [
+		0.992,
+		0.804,
+		0.267
+	],
+	"semantic-warning-$root-hex": "#fdd835",
+	"semantic-warning-$root-$type": "color",
+	"semantic-warning-light-colorSpace": "srgb",
+	"semantic-warning-light-components": [
+		1,
+		0.973,
+		0.918
+	],
+	"semantic-warning-light-hex": "#fff9e6",
+	"semantic-warning-light-$type": "color",
+	"semantic-warning-dark-colorSpace": "srgb",
+	"semantic-warning-dark-components": [
+		0.498,
+		0.412,
+		0.031
+	],
+	"semantic-warning-dark-hex": "#7f6613",
+	"semantic-warning-dark-$type": "color",
+	"semantic-error-error-colorSpace": "srgb",
+	"semantic-error-error-components": [
+		0.863,
+		0.149,
+		0.149
+	],
+	"semantic-error-error-hex": "#dc2626",
+	"semantic-error-$root-colorSpace": "srgb",
+	"semantic-error-$root-components": [
+		0.863,
+		0.149,
+		0.149
+	],
+	"semantic-error-$root-hex": "#dc2626",
+	"semantic-error-$root-$type": "color",
+	"semantic-error-light-colorSpace": "srgb",
+	"semantic-error-light-components": [
+		0.996,
+		0.949,
+		0.949
+	],
+	"semantic-error-light-hex": "#fef2f2",
+	"semantic-error-light-$type": "color",
+	"semantic-error-dark-colorSpace": "srgb",
+	"semantic-error-dark-components": [
+		0.498,
+		0.086,
+		0.086
+	],
+	"semantic-error-dark-hex": "#7f1d1d",
+	"semantic-error-dark-$type": "color",
+	"semantic-semantic-colorSpace": "srgb",
+	"semantic-semantic-components": [
+		0.067,
+		0.267,
+		0.478
+	],
+	"semantic-semantic-hex": "#114477",
+	"semantic-semantic-alpha": 1,
+	"semantic-$root-colorSpace": "srgb",
+	"semantic-$root-components": [
+		0.067,
+		0.267,
+		0.478
+	],
+	"semantic-$root-hex": "#114477",
+	"semantic-$root-alpha": 1,
+	"semantic-$root-$type": "color",
+	"semantic-primary-50-colorSpace": "srgb",
+	"semantic-primary-50-components": [
+		0.941,
+		0.976,
+		1
+	],
+	"semantic-primary-50-hex": "#f0f9ff",
+	"semantic-primary-50-$type": "color",
+	"semantic-primary-100-colorSpace": "srgb",
+	"semantic-primary-100-components": [
+		0.878,
+		0.949,
+		0.996
+	],
+	"semantic-primary-100-hex": "#e0f2fe",
+	"semantic-primary-100-$type": "color",
+	"semantic-primary-200-colorSpace": "srgb",
+	"semantic-primary-200-components": [
+		0.729,
+		0.902,
+		0.992
+	],
+	"semantic-primary-200-hex": "#bae6fd",
+	"semantic-primary-200-$type": "color",
+	"semantic-primary-300-colorSpace": "srgb",
+	"semantic-primary-300-components": [
+		0.49,
+		0.827,
+		0.988
+	],
+	"semantic-primary-300-hex": "#7dd3fc",
+	"semantic-primary-300-$type": "color",
+	"semantic-primary-400-colorSpace": "srgb",
+	"semantic-primary-400-components": [
+		0.22,
+		0.741,
+		0.973
+	],
+	"semantic-primary-400-hex": "#38bdf8",
+	"semantic-primary-400-$type": "color",
+	"semantic-primary-500-colorSpace": "srgb",
+	"semantic-primary-500-components": [
+		0.059,
+		0.647,
+		0.914
+	],
+	"semantic-primary-500-hex": "#0ea5e9",
+	"semantic-primary-500-$type": "color",
+	"semantic-primary-600-colorSpace": "srgb",
+	"semantic-primary-600-components": [
+		0.016,
+		0.518,
+		0.78
+	],
+	"semantic-primary-600-hex": "#0284c7",
+	"semantic-primary-600-$type": "color",
+	"semantic-primary-700-colorSpace": "srgb",
+	"semantic-primary-700-components": [
+		0.012,
+		0.392,
+		0.631
+	],
+	"semantic-primary-700-hex": "#0369a1",
+	"semantic-primary-700-$type": "color",
+	"semantic-primary-800-colorSpace": "srgb",
+	"semantic-primary-800-components": [
+		0.027,
+		0.302,
+		0.522
+	],
+	"semantic-primary-800-hex": "#075985",
+	"semantic-primary-800-$type": "color",
+	"semantic-primary-900-colorSpace": "srgb",
+	"semantic-primary-900-components": [
+		0.047,
+		0.231,
+		0.42
+	],
+	"semantic-primary-900-hex": "#0c4a6e",
+	"semantic-primary-900-$type": "color",
+	"semantic-primary-950-colorSpace": "srgb",
+	"semantic-primary-950-components": [
+		0.031,
+		0.149,
+		0.286
+	],
+	"semantic-primary-950-hex": "#082f49",
+	"semantic-primary-950-$type": "color",
+	"semantic-secondary-50-colorSpace": "srgb",
+	"semantic-secondary-50-components": [
+		0.973,
+		0.98,
+		0.988
+	],
+	"semantic-secondary-50-hex": "#f8fafc",
+	"semantic-secondary-50-$type": "color",
+	"semantic-secondary-100-colorSpace": "srgb",
+	"semantic-secondary-100-components": [
+		0.945,
+		0.976,
+		0.976
+	],
+	"semantic-secondary-100-hex": "#f1f5f9",
+	"semantic-secondary-100-$type": "color",
+	"semantic-secondary-200-colorSpace": "srgb",
+	"semantic-secondary-200-components": [
+		0.886,
+		0.91,
+		0.941
+	],
+	"semantic-secondary-200-hex": "#e2e8f0",
+	"semantic-secondary-200-$type": "color",
+	"semantic-secondary-300-colorSpace": "srgb",
+	"semantic-secondary-300-components": [
+		0.796,
+		0.835,
+		0.882
+	],
+	"semantic-secondary-300-hex": "#cbd5e1",
+	"semantic-secondary-300-$type": "color",
+	"semantic-secondary-400-colorSpace": "srgb",
+	"semantic-secondary-400-components": [
+		0.58,
+		0.639,
+		0.722
+	],
+	"semantic-secondary-400-hex": "#94a3b8",
+	"semantic-secondary-400-$type": "color",
+	"semantic-secondary-500-colorSpace": "srgb",
+	"semantic-secondary-500-components": [
+		0.392,
+		0.482,
+		0.545
+	],
+	"semantic-secondary-500-hex": "#64748b",
+	"semantic-secondary-500-$type": "color",
+	"semantic-secondary-600-colorSpace": "srgb",
+	"semantic-secondary-600-components": [
+		0.278,
+		0.341,
+		0.416
+	],
+	"semantic-secondary-600-hex": "#475569",
+	"semantic-secondary-600-$type": "color",
+	"semantic-secondary-700-colorSpace": "srgb",
+	"semantic-secondary-700-components": [
+		0.2,
+		0.255,
+		0.314
+	],
+	"semantic-secondary-700-hex": "#334155",
+	"semantic-secondary-700-$type": "color",
+	"semantic-secondary-800-colorSpace": "srgb",
+	"semantic-secondary-800-components": [
+		0.118,
+		0.165,
+		0.235
+	],
+	"semantic-secondary-800-hex": "#1e293b",
+	"semantic-secondary-800-$type": "color",
+	"semantic-secondary-900-colorSpace": "srgb",
+	"semantic-secondary-900-components": [
+		0.059,
+		0.09,
+		0.157
+	],
+	"semantic-secondary-900-hex": "#0f172a",
+	"semantic-secondary-900-$type": "color",
+	"semantic-secondary-950-colorSpace": "srgb",
+	"semantic-secondary-950-components": [
+		0.008,
+		0.02,
+		0.039
+	],
+	"semantic-secondary-950-hex": "#020617",
+	"semantic-secondary-950-$type": "color",
+	"semantic-accent-50-colorSpace": "srgb",
+	"semantic-accent-50-components": [
+		0.996,
+		0.949,
+		0.949
+	],
+	"semantic-accent-50-hex": "#fef2f2",
+	"semantic-accent-50-$type": "color",
+	"semantic-accent-100-colorSpace": "srgb",
+	"semantic-accent-100-components": [
+		0.996,
+		0.886,
+		0.886
+	],
+	"semantic-accent-100-hex": "#fee2e2",
+	"semantic-accent-100-$type": "color",
+	"semantic-accent-200-colorSpace": "srgb",
+	"semantic-accent-200-components": [
+		0.996,
+		0.792,
+		0.792
+	],
+	"semantic-accent-200-hex": "#fecaca",
+	"semantic-accent-200-$type": "color",
+	"semantic-accent-300-colorSpace": "srgb",
+	"semantic-accent-300-components": [
+		0.988,
+		0.671,
+		0.671
+	],
+	"semantic-accent-300-hex": "#fca5a5",
+	"semantic-accent-300-$type": "color",
+	"semantic-accent-400-colorSpace": "srgb",
+	"semantic-accent-400-components": [
+		0.969,
+		0.529,
+		0.529
+	],
+	"semantic-accent-400-hex": "#f87171",
+	"semantic-accent-400-$type": "color",
+	"semantic-accent-500-colorSpace": "srgb",
+	"semantic-accent-500-components": [
+		0.937,
+		0.267,
+		0.267
+	],
+	"semantic-accent-500-hex": "#ef4444",
+	"semantic-accent-500-$type": "color",
+	"semantic-accent-600-colorSpace": "srgb",
+	"semantic-accent-600-components": [
+		0.863,
+		0.149,
+		0.149
+	],
+	"semantic-accent-600-hex": "#dc2626",
+	"semantic-accent-600-$type": "color",
+	"semantic-accent-700-colorSpace": "srgb",
+	"semantic-accent-700-components": [
+		0.725,
+		0.11,
+		0.11
+	],
+	"semantic-accent-700-hex": "#b91c1c",
+	"semantic-accent-700-$type": "color",
+	"semantic-accent-800-colorSpace": "srgb",
+	"semantic-accent-800-components": [
+		0.6,
+		0.098,
+		0.098
+	],
+	"semantic-accent-800-hex": "#991b1b",
+	"semantic-accent-800-$type": "color",
+	"semantic-accent-900-colorSpace": "srgb",
+	"semantic-accent-900-components": [
+		0.498,
+		0.086,
+		0.086
+	],
+	"semantic-accent-900-hex": "#7f1d1d",
+	"semantic-accent-900-$type": "color",
+	"semantic-accent-950-colorSpace": "srgb",
+	"semantic-accent-950-components": [
+		0.271,
+		0.039,
+		0.039
+	],
+	"semantic-accent-950-hex": "#450a0a",
+	"semantic-accent-950-$type": "color",
+	"brand-name": "Bivex",
+	"brand-tagline": "AI-Powered Design Excellence",
+	"brand-url": "https://bivex.com",
+	"brand-email": "support@b-b.top",
+	"brand-logo-width": "40px",
+	"brand-logo-height": "40px",
+	"brand-logo-color-colorSpace": "srgb",
+	"brand-logo-color-components": [
+		0.016,
+		0.518,
+		0.78
+	],
+	"brand-logo-color-hex": "#0284c7",
+	"brand-colors-main-colorSpace": "srgb",
+	"brand-colors-main-components": [
+		0.016,
+		0.518,
+		0.78
+	],
+	"brand-colors-main-hex": "#0284c7",
+	"brand-colors-secondary-colorSpace": "srgb",
+	"brand-colors-secondary-components": [
+		0.278,
+		0.341,
+		0.416
+	],
+	"brand-colors-secondary-hex": "#475569",
+	"brand-colors-accent-colorSpace": "srgb",
+	"brand-colors-accent-components": [
+		0.863,
+		0.149,
+		0.149
+	],
+	"brand-colors-accent-hex": "#dc2626",
+	"breakpoint-sm": "640px",
+	"breakpoint-md": "768px",
+	"breakpoint-lg": "1024px",
+	"breakpoint-xl": "1280px",
+	"breakpoint-2xl": "1536px",
 	"z-dropdown": "1000",
 	"z-sticky": "1020",
 	"z-fixed": "1030",
@@ -69,53 +720,963 @@
 	"z-modal": "1050",
 	"z-popover": "1060",
 	"z-tooltip": "1070",
-	"button-primary-background": "{brand.primary.600}",
-	"button-primary-hover": "{brand.primary.700}",
-	"button-primary-active": "{brand.primary.800}",
-	"button-primary-text": "{semantic.content.inverse}",
-	"button-primary-border": "{brand.primary.600}",
-	"button-secondary-background": "{semantic.background.primary}",
-	"button-secondary-hover": "{semantic.background.secondary}",
-	"button-secondary-active": "{semantic.border.default}",
-	"button-secondary-text": "{semantic.content.primary}",
-	"button-secondary-border": "{semantic.border.default}",
-	"button-danger-background": "{brand.accent.600}",
-	"button-danger-hover": "{brand.accent.700}",
-	"button-danger-active": "{brand.accent.800}",
-	"button-danger-text": "{semantic.content.inverse}",
-	"button-danger-border": "{brand.accent.600}",
-	"input-background": "{semantic.background.primary}",
-	"input-border": "{semantic.border.default}",
-	"input-focus": "{brand.primary.500}",
-	"input-error": "{semantic.status.error.border}",
-	"input-text": "{semantic.content.primary}",
-	"input-placeholder": "{semantic.content.tertiary}",
-	"card-background": "{semantic.background.primary}",
-	"card-border": "{semantic.border.subtle}",
-	"card-shadow": "{shadow.sm}",
-	"background-primary": "{brand.secondary.50}",
-	"background-secondary": "{brand.secondary.100}",
-	"background-tertiary": "{brand.secondary.200}",
-	"background-inverse": "{brand.secondary.900}",
-	"content-primary": "{brand.secondary.900}",
-	"content-secondary": "{brand.secondary.700}",
-	"content-tertiary": "{brand.secondary.500}",
-	"content-inverse": "{brand.secondary.50}",
-	"border-subtle": "{brand.secondary.200}",
-	"border-default": "{brand.secondary.300}",
-	"border-strong": "{brand.secondary.400}",
-	"status-success-background": "#dcfce7",
-	"status-success-content": "#166534",
-	"status-success-border": "#bbf7d0",
-	"status-warning-background": "#fef3c7",
-	"status-warning-content": "#92400e",
-	"status-warning-border": "#fde68a",
-	"status-error-background": "#fef2f2",
-	"status-error-content": "{brand.accent.700}",
-	"status-error-border": "{brand.accent.200}",
-	"status-info-background": "#eff6ff",
-	"status-info-content": "{brand.primary.700}",
-	"status-info-border": "{brand.primary.200}",
+	"button-primary-50-colorSpace": "srgb",
+	"button-primary-50-components": [
+		0.941,
+		0.976,
+		1
+	],
+	"button-primary-50-hex": "#f0f9ff",
+	"button-primary-50-$type": "color",
+	"button-primary-100-colorSpace": "srgb",
+	"button-primary-100-components": [
+		0.878,
+		0.949,
+		0.996
+	],
+	"button-primary-100-hex": "#e0f2fe",
+	"button-primary-100-$type": "color",
+	"button-primary-200-colorSpace": "srgb",
+	"button-primary-200-components": [
+		0.729,
+		0.902,
+		0.992
+	],
+	"button-primary-200-hex": "#bae6fd",
+	"button-primary-200-$type": "color",
+	"button-primary-300-colorSpace": "srgb",
+	"button-primary-300-components": [
+		0.49,
+		0.827,
+		0.988
+	],
+	"button-primary-300-hex": "#7dd3fc",
+	"button-primary-300-$type": "color",
+	"button-primary-400-colorSpace": "srgb",
+	"button-primary-400-components": [
+		0.22,
+		0.741,
+		0.973
+	],
+	"button-primary-400-hex": "#38bdf8",
+	"button-primary-400-$type": "color",
+	"button-primary-500-colorSpace": "srgb",
+	"button-primary-500-components": [
+		0.059,
+		0.647,
+		0.914
+	],
+	"button-primary-500-hex": "#0ea5e9",
+	"button-primary-500-$type": "color",
+	"button-primary-600-colorSpace": "srgb",
+	"button-primary-600-components": [
+		0.016,
+		0.518,
+		0.78
+	],
+	"button-primary-600-hex": "#0284c7",
+	"button-primary-600-$type": "color",
+	"button-primary-700-colorSpace": "srgb",
+	"button-primary-700-components": [
+		0.012,
+		0.392,
+		0.631
+	],
+	"button-primary-700-hex": "#0369a1",
+	"button-primary-700-$type": "color",
+	"button-primary-800-colorSpace": "srgb",
+	"button-primary-800-components": [
+		0.027,
+		0.302,
+		0.522
+	],
+	"button-primary-800-hex": "#075985",
+	"button-primary-800-$type": "color",
+	"button-primary-900-colorSpace": "srgb",
+	"button-primary-900-components": [
+		0.047,
+		0.231,
+		0.42
+	],
+	"button-primary-900-hex": "#0c4a6e",
+	"button-primary-900-$type": "color",
+	"button-primary-950-colorSpace": "srgb",
+	"button-primary-950-components": [
+		0.031,
+		0.149,
+		0.286
+	],
+	"button-primary-950-hex": "#082f49",
+	"button-primary-950-$type": "color",
+	"button-primary-background-colorSpace": "srgb",
+	"button-primary-background-components": [
+		0.016,
+		0.518,
+		0.78
+	],
+	"button-primary-background-hex": "#0284c7",
+	"button-primary-background-$type": "color",
+	"button-primary-hover-colorSpace": "srgb",
+	"button-primary-hover-components": [
+		0.012,
+		0.392,
+		0.631
+	],
+	"button-primary-hover-hex": "#0369a1",
+	"button-primary-hover-$type": "color",
+	"button-primary-active-colorSpace": "srgb",
+	"button-primary-active-components": [
+		0.027,
+		0.302,
+		0.522
+	],
+	"button-primary-active-hex": "#075985",
+	"button-primary-active-$type": "color",
+	"button-primary-text": "#ffffff",
+	"button-primary-border-colorSpace": "srgb",
+	"button-primary-border-components": [
+		0.016,
+		0.518,
+		0.78
+	],
+	"button-primary-border-hex": "#0284c7",
+	"button-primary-border-$type": "color",
+	"button-secondary-50-colorSpace": "srgb",
+	"button-secondary-50-components": [
+		0.973,
+		0.98,
+		0.988
+	],
+	"button-secondary-50-hex": "#f8fafc",
+	"button-secondary-50-$type": "color",
+	"button-secondary-100-colorSpace": "srgb",
+	"button-secondary-100-components": [
+		0.945,
+		0.976,
+		0.976
+	],
+	"button-secondary-100-hex": "#f1f5f9",
+	"button-secondary-100-$type": "color",
+	"button-secondary-200-colorSpace": "srgb",
+	"button-secondary-200-components": [
+		0.886,
+		0.91,
+		0.941
+	],
+	"button-secondary-200-hex": "#e2e8f0",
+	"button-secondary-200-$type": "color",
+	"button-secondary-300-colorSpace": "srgb",
+	"button-secondary-300-components": [
+		0.796,
+		0.835,
+		0.882
+	],
+	"button-secondary-300-hex": "#cbd5e1",
+	"button-secondary-300-$type": "color",
+	"button-secondary-400-colorSpace": "srgb",
+	"button-secondary-400-components": [
+		0.58,
+		0.639,
+		0.722
+	],
+	"button-secondary-400-hex": "#94a3b8",
+	"button-secondary-400-$type": "color",
+	"button-secondary-500-colorSpace": "srgb",
+	"button-secondary-500-components": [
+		0.392,
+		0.482,
+		0.545
+	],
+	"button-secondary-500-hex": "#64748b",
+	"button-secondary-500-$type": "color",
+	"button-secondary-600-colorSpace": "srgb",
+	"button-secondary-600-components": [
+		0.278,
+		0.341,
+		0.416
+	],
+	"button-secondary-600-hex": "#475569",
+	"button-secondary-600-$type": "color",
+	"button-secondary-700-colorSpace": "srgb",
+	"button-secondary-700-components": [
+		0.2,
+		0.255,
+		0.314
+	],
+	"button-secondary-700-hex": "#334155",
+	"button-secondary-700-$type": "color",
+	"button-secondary-800-colorSpace": "srgb",
+	"button-secondary-800-components": [
+		0.118,
+		0.165,
+		0.235
+	],
+	"button-secondary-800-hex": "#1e293b",
+	"button-secondary-800-$type": "color",
+	"button-secondary-900-colorSpace": "srgb",
+	"button-secondary-900-components": [
+		0.059,
+		0.09,
+		0.157
+	],
+	"button-secondary-900-hex": "#0f172a",
+	"button-secondary-900-$type": "color",
+	"button-secondary-950-colorSpace": "srgb",
+	"button-secondary-950-components": [
+		0.008,
+		0.02,
+		0.039
+	],
+	"button-secondary-950-hex": "#020617",
+	"button-secondary-950-$type": "color",
+	"button-secondary-background": "#ffffff",
+	"button-secondary-hover-colorSpace": "srgb",
+	"button-secondary-hover-components": [
+		0.973,
+		0.98,
+		0.988
+	],
+	"button-secondary-hover-hex": "#f8fafc",
+	"button-secondary-hover-$type": "color",
+	"button-secondary-active-colorSpace": "srgb",
+	"button-secondary-active-components": [
+		0.945,
+		0.976,
+		0.976
+	],
+	"button-secondary-active-hex": "#f1f5f9",
+	"button-secondary-active-$type": "color",
+	"button-secondary-text-colorSpace": "srgb",
+	"button-secondary-text-components": [
+		0.059,
+		0.09,
+		0.157
+	],
+	"button-secondary-text-hex": "#0f172a",
+	"button-secondary-text-$type": "color",
+	"button-secondary-border-colorSpace": "srgb",
+	"button-secondary-border-components": [
+		0.796,
+		0.835,
+		0.882
+	],
+	"button-secondary-border-hex": "#cbd5e1",
+	"button-secondary-border-$type": "color",
+	"button-success-success-colorSpace": "srgb",
+	"button-success-success-components": [
+		0,
+		0.588,
+		0.337
+	],
+	"button-success-success-hex": "#009647",
+	"button-success-$root-colorSpace": "srgb",
+	"button-success-$root-components": [
+		0,
+		0.588,
+		0.337
+	],
+	"button-success-$root-hex": "#009647",
+	"button-success-$root-$type": "color",
+	"button-success-light-colorSpace": "srgb",
+	"button-success-light-components": [
+		0.941,
+		0.973,
+		0.949
+	],
+	"button-success-light-hex": "#f0f9f4",
+	"button-success-light-$type": "color",
+	"button-success-dark-colorSpace": "srgb",
+	"button-success-dark-components": [
+		0,
+		0.357,
+		0.204
+	],
+	"button-success-dark-hex": "#005a2d",
+	"button-success-dark-$type": "color",
+	"button-success-background-colorSpace": "srgb",
+	"button-success-background-components": [
+		0,
+		0.588,
+		0.337
+	],
+	"button-success-background-hex": "#009647",
+	"button-success-background-$type": "color",
+	"button-success-hover-colorSpace": "srgb",
+	"button-success-hover-components": [
+		0.941,
+		0.973,
+		0.949
+	],
+	"button-success-hover-hex": "#f0f9f4",
+	"button-success-hover-$type": "color",
+	"button-success-active-colorSpace": "srgb",
+	"button-success-active-components": [
+		0,
+		0.357,
+		0.204
+	],
+	"button-success-active-hex": "#005a2d",
+	"button-success-active-$type": "color",
+	"button-success-text": "#ffffff",
+	"button-success-border": "#009647",
+	"button-danger-background-colorSpace": "srgb",
+	"button-danger-background-components": [
+		0.863,
+		0.149,
+		0.149
+	],
+	"button-danger-background-hex": "#dc2626",
+	"button-danger-background-$type": "color",
+	"button-danger-hover-colorSpace": "srgb",
+	"button-danger-hover-components": [
+		0.725,
+		0.11,
+		0.11
+	],
+	"button-danger-hover-hex": "#b91c1c",
+	"button-danger-hover-$type": "color",
+	"button-danger-active-colorSpace": "srgb",
+	"button-danger-active-components": [
+		0.6,
+		0.098,
+		0.098
+	],
+	"button-danger-active-hex": "#991b1b",
+	"button-danger-active-$type": "color",
+	"button-danger-text": "#ffffff",
+	"button-danger-border": "#dc2626",
+	"button-warning-warning-colorSpace": "srgb",
+	"button-warning-warning-components": [
+		0.992,
+		0.804,
+		0.267
+	],
+	"button-warning-warning-hex": "#fdd835",
+	"button-warning-$root-colorSpace": "srgb",
+	"button-warning-$root-components": [
+		0.992,
+		0.804,
+		0.267
+	],
+	"button-warning-$root-hex": "#fdd835",
+	"button-warning-$root-$type": "color",
+	"button-warning-light-colorSpace": "srgb",
+	"button-warning-light-components": [
+		1,
+		0.973,
+		0.918
+	],
+	"button-warning-light-hex": "#fff9e6",
+	"button-warning-light-$type": "color",
+	"button-warning-dark-colorSpace": "srgb",
+	"button-warning-dark-components": [
+		0.498,
+		0.412,
+		0.031
+	],
+	"button-warning-dark-hex": "#7f6613",
+	"button-warning-dark-$type": "color",
+	"button-error-error-colorSpace": "srgb",
+	"button-error-error-components": [
+		0.863,
+		0.149,
+		0.149
+	],
+	"button-error-error-hex": "#dc2626",
+	"button-error-$root-colorSpace": "srgb",
+	"button-error-$root-components": [
+		0.863,
+		0.149,
+		0.149
+	],
+	"button-error-$root-hex": "#dc2626",
+	"button-error-$root-$type": "color",
+	"button-error-light-colorSpace": "srgb",
+	"button-error-light-components": [
+		0.996,
+		0.949,
+		0.949
+	],
+	"button-error-light-hex": "#fef2f2",
+	"button-error-light-$type": "color",
+	"button-error-dark-colorSpace": "srgb",
+	"button-error-dark-components": [
+		0.498,
+		0.086,
+		0.086
+	],
+	"button-error-dark-hex": "#7f1d1d",
+	"button-error-dark-$type": "color",
+	"button-button-colorSpace": "srgb",
+	"button-button-components": [
+		0.067,
+		0.267,
+		0.478
+	],
+	"button-button-hex": "#114477",
+	"button-button-alpha": 1,
+	"button-$root-colorSpace": "srgb",
+	"button-$root-components": [
+		0.067,
+		0.267,
+		0.478
+	],
+	"button-$root-hex": "#114477",
+	"button-$root-alpha": 1,
+	"button-$root-$type": "color",
+	"button-accent-50-colorSpace": "srgb",
+	"button-accent-50-components": [
+		0.996,
+		0.949,
+		0.949
+	],
+	"button-accent-50-hex": "#fef2f2",
+	"button-accent-50-$type": "color",
+	"button-accent-100-colorSpace": "srgb",
+	"button-accent-100-components": [
+		0.996,
+		0.886,
+		0.886
+	],
+	"button-accent-100-hex": "#fee2e2",
+	"button-accent-100-$type": "color",
+	"button-accent-200-colorSpace": "srgb",
+	"button-accent-200-components": [
+		0.996,
+		0.792,
+		0.792
+	],
+	"button-accent-200-hex": "#fecaca",
+	"button-accent-200-$type": "color",
+	"button-accent-300-colorSpace": "srgb",
+	"button-accent-300-components": [
+		0.988,
+		0.671,
+		0.671
+	],
+	"button-accent-300-hex": "#fca5a5",
+	"button-accent-300-$type": "color",
+	"button-accent-400-colorSpace": "srgb",
+	"button-accent-400-components": [
+		0.969,
+		0.529,
+		0.529
+	],
+	"button-accent-400-hex": "#f87171",
+	"button-accent-400-$type": "color",
+	"button-accent-500-colorSpace": "srgb",
+	"button-accent-500-components": [
+		0.937,
+		0.267,
+		0.267
+	],
+	"button-accent-500-hex": "#ef4444",
+	"button-accent-500-$type": "color",
+	"button-accent-600-colorSpace": "srgb",
+	"button-accent-600-components": [
+		0.863,
+		0.149,
+		0.149
+	],
+	"button-accent-600-hex": "#dc2626",
+	"button-accent-600-$type": "color",
+	"button-accent-700-colorSpace": "srgb",
+	"button-accent-700-components": [
+		0.725,
+		0.11,
+		0.11
+	],
+	"button-accent-700-hex": "#b91c1c",
+	"button-accent-700-$type": "color",
+	"button-accent-800-colorSpace": "srgb",
+	"button-accent-800-components": [
+		0.6,
+		0.098,
+		0.098
+	],
+	"button-accent-800-hex": "#991b1b",
+	"button-accent-800-$type": "color",
+	"button-accent-900-colorSpace": "srgb",
+	"button-accent-900-components": [
+		0.498,
+		0.086,
+		0.086
+	],
+	"button-accent-900-hex": "#7f1d1d",
+	"button-accent-900-$type": "color",
+	"button-accent-950-colorSpace": "srgb",
+	"button-accent-950-components": [
+		0.271,
+		0.039,
+		0.039
+	],
+	"button-accent-950-hex": "#450a0a",
+	"button-accent-950-$type": "color",
+	"input-background": "#ffffff",
+	"input-border-colorSpace": "srgb",
+	"input-border-components": [
+		0.796,
+		0.835,
+		0.882
+	],
+	"input-border-hex": "#cbd5e1",
+	"input-border-$type": "color",
+	"input-focus-colorSpace": "srgb",
+	"input-focus-components": [
+		0.059,
+		0.647,
+		0.914
+	],
+	"input-focus-hex": "#0ea5e9",
+	"input-focus-$type": "color",
+	"input-error-colorSpace": "srgb",
+	"input-error-components": [
+		0.863,
+		0.149,
+		0.149
+	],
+	"input-error-hex": "#dc2626",
+	"input-error-$type": "color",
+	"input-text-colorSpace": "srgb",
+	"input-text-components": [
+		0.059,
+		0.09,
+		0.157
+	],
+	"input-text-hex": "#0f172a",
+	"input-text-$type": "color",
+	"input-placeholder-colorSpace": "srgb",
+	"input-placeholder-components": [
+		0.392,
+		0.482,
+		0.545
+	],
+	"input-placeholder-hex": "#64748b",
+	"input-placeholder-$type": "color",
+	"card-background": "#ffffff",
+	"card-border-colorSpace": "srgb",
+	"card-border-components": [
+		0.886,
+		0.91,
+		0.941
+	],
+	"card-border-hex": "#e2e8f0",
+	"card-border-$type": "color",
+	"card-shadow-color": {
+		"colorSpace": "srgb",
+		"components": [
+			0.059,
+			0.09,
+			0.157
+		],
+		"hex": "#0f172a"
+	},
+	"card-shadow-offsetX": {
+		"value": 0,
+		"unit": "px"
+	},
+	"card-shadow-offsetY": {
+		"value": 1,
+		"unit": "px"
+	},
+	"card-shadow-blur": {
+		"value": 3,
+		"unit": "px"
+	},
+	"card-shadow-spread": {
+		"value": 0,
+		"unit": "px"
+	},
+	"card-shadow-$type": "color",
+	"sm-0": {
+		"color": {
+			"colorSpace": "srgb",
+			"components": [
+				0,
+				0,
+				0
+			],
+			"alpha": 0.05
+		},
+		"offsetX": {
+			"value": 0,
+			"unit": "px"
+		},
+		"offsetY": {
+			"value": 1,
+			"unit": "px"
+		},
+		"blur": {
+			"value": 2,
+			"unit": "px"
+		},
+		"spread": {
+			"value": 0,
+			"unit": "px"
+		}
+	},
+	"sm-$type": "shadow",
+	"md-0": {
+		"color": {
+			"colorSpace": "srgb",
+			"components": [
+				0,
+				0,
+				0
+			],
+			"alpha": 0.1
+		},
+		"offsetX": {
+			"value": 0,
+			"unit": "px"
+		},
+		"offsetY": {
+			"value": 4,
+			"unit": "px"
+		},
+		"blur": {
+			"value": 6,
+			"unit": "px"
+		},
+		"spread": {
+			"value": -1,
+			"unit": "px"
+		}
+	},
+	"md-1": {
+		"color": {
+			"colorSpace": "srgb",
+			"components": [
+				0,
+				0,
+				0
+			],
+			"alpha": 0.06
+		},
+		"offsetX": {
+			"value": 0,
+			"unit": "px"
+		},
+		"offsetY": {
+			"value": 2,
+			"unit": "px"
+		},
+		"blur": {
+			"value": 4,
+			"unit": "px"
+		},
+		"spread": {
+			"value": -1,
+			"unit": "px"
+		}
+	},
+	"md-$type": "shadow",
+	"lg-0": {
+		"color": {
+			"colorSpace": "srgb",
+			"components": [
+				0,
+				0,
+				0
+			],
+			"alpha": 0.1
+		},
+		"offsetX": {
+			"value": 0,
+			"unit": "px"
+		},
+		"offsetY": {
+			"value": 10,
+			"unit": "px"
+		},
+		"blur": {
+			"value": 15,
+			"unit": "px"
+		},
+		"spread": {
+			"value": -3,
+			"unit": "px"
+		}
+	},
+	"lg-1": {
+		"color": {
+			"colorSpace": "srgb",
+			"components": [
+				0,
+				0,
+				0
+			],
+			"alpha": 0.05
+		},
+		"offsetX": {
+			"value": 0,
+			"unit": "px"
+		},
+		"offsetY": {
+			"value": 4,
+			"unit": "px"
+		},
+		"blur": {
+			"value": 6,
+			"unit": "px"
+		},
+		"spread": {
+			"value": -2,
+			"unit": "px"
+		}
+	},
+	"lg-$type": "shadow",
+	"default-color": {
+		"colorSpace": "srgb",
+		"components": [
+			0.796,
+			0.835,
+			0.882
+		],
+		"hex": "#cbd5e1"
+	},
+	"default-width": {
+		"value": 1,
+		"unit": "px"
+	},
+	"default-style": "solid",
+	"default-$type": "border",
+	"focus-color": {
+		"colorSpace": "srgb",
+		"components": [
+			0.059,
+			0.647,
+			0.914
+		],
+		"hex": "#0ea5e9"
+	},
+	"focus-width": {
+		"value": 2,
+		"unit": "px"
+	},
+	"focus-style": "solid",
+	"focus-$type": "border",
+	"error-color": {
+		"colorSpace": "srgb",
+		"components": [
+			0.863,
+			0.149,
+			0.149
+		],
+		"hex": "#dc2626"
+	},
+	"error-width": {
+		"value": 1,
+		"unit": "px"
+	},
+	"error-style": "solid",
+	"error-$type": "border",
+	"base-base-fontFamily": [
+		"Inter",
+		"system-ui",
+		"sans-serif"
+	],
+	"base-base-fontSize": {
+		"value": 16,
+		"unit": "px"
+	},
+	"base-base-fontWeight": 400,
+	"base-base-lineHeight": 1.5,
+	"base-base-letterSpacing": {
+		"value": 0,
+		"unit": "px"
+	},
+	"base-$root-fontFamily": [
+		"Inter",
+		"system-ui",
+		"sans-serif"
+	],
+	"base-$root-fontSize": {
+		"value": 16,
+		"unit": "px"
+	},
+	"base-$root-fontWeight": 400,
+	"base-$root-lineHeight": 1.5,
+	"base-$root-letterSpacing": {
+		"value": 0,
+		"unit": "px"
+	},
+	"base-heading-fontFamily": [
+		"Inter",
+		"system-ui",
+		"sans-serif"
+	],
+	"base-heading-fontSize": {
+		"value": 24,
+		"unit": "px"
+	},
+	"base-heading-fontWeight": 600,
+	"base-heading-lineHeight": 1.25,
+	"base-heading-letterSpacing": {
+		"value": -0.025,
+		"unit": "em"
+	},
+	"base-heading-$type": "typography",
+	"base-body-fontFamily": [
+		"Inter",
+		"system-ui",
+		"sans-serif"
+	],
+	"base-body-fontSize": {
+		"value": 16,
+		"unit": "px"
+	},
+	"base-body-fontWeight": 400,
+	"base-body-lineHeight": 1.6,
+	"base-body-letterSpacing": {
+		"value": 0.01,
+		"unit": "em"
+	},
+	"base-body-$type": "typography",
+	"base-caption-fontFamily": [
+		"Inter",
+		"system-ui",
+		"sans-serif"
+	],
+	"base-caption-fontSize": {
+		"value": 14,
+		"unit": "px"
+	},
+	"base-caption-fontWeight": 500,
+	"base-caption-lineHeight": 1.4,
+	"base-caption-letterSpacing": {
+		"value": 0.025,
+		"unit": "em"
+	},
+	"base-caption-$type": "typography",
+	"semantic-background-primary-colorSpace": "srgb",
+	"semantic-background-primary-components": [
+		0.973,
+		0.98,
+		0.988
+	],
+	"semantic-background-primary-hex": "#f8fafc",
+	"semantic-background-primary-$type": "color",
+	"semantic-background-secondary-colorSpace": "srgb",
+	"semantic-background-secondary-components": [
+		0.945,
+		0.976,
+		0.976
+	],
+	"semantic-background-secondary-hex": "#f1f5f9",
+	"semantic-background-secondary-$type": "color",
+	"semantic-background-tertiary-colorSpace": "srgb",
+	"semantic-background-tertiary-components": [
+		0.886,
+		0.91,
+		0.941
+	],
+	"semantic-background-tertiary-hex": "#e2e8f0",
+	"semantic-background-tertiary-$type": "color",
+	"semantic-background-inverse-colorSpace": "srgb",
+	"semantic-background-inverse-components": [
+		0.059,
+		0.09,
+		0.157
+	],
+	"semantic-background-inverse-hex": "#0f172a",
+	"semantic-background-inverse-$type": "color",
+	"semantic-content-primary-colorSpace": "srgb",
+	"semantic-content-primary-components": [
+		0.059,
+		0.09,
+		0.157
+	],
+	"semantic-content-primary-hex": "#0f172a",
+	"semantic-content-primary-$type": "color",
+	"semantic-content-secondary-colorSpace": "srgb",
+	"semantic-content-secondary-components": [
+		0.2,
+		0.255,
+		0.314
+	],
+	"semantic-content-secondary-hex": "#334155",
+	"semantic-content-secondary-$type": "color",
+	"semantic-content-tertiary-colorSpace": "srgb",
+	"semantic-content-tertiary-components": [
+		0.392,
+		0.482,
+		0.545
+	],
+	"semantic-content-tertiary-hex": "#64748b",
+	"semantic-content-tertiary-$type": "color",
+	"semantic-content-inverse-colorSpace": "srgb",
+	"semantic-content-inverse-components": [
+		0.973,
+		0.98,
+		0.988
+	],
+	"semantic-content-inverse-hex": "#f8fafc",
+	"semantic-content-inverse-$type": "color",
+	"semantic-border-subtle-colorSpace": "srgb",
+	"semantic-border-subtle-components": [
+		0.886,
+		0.91,
+		0.941
+	],
+	"semantic-border-subtle-hex": "#e2e8f0",
+	"semantic-border-subtle-$type": "color",
+	"semantic-border-default-colorSpace": "srgb",
+	"semantic-border-default-components": [
+		0.796,
+		0.835,
+		0.882
+	],
+	"semantic-border-default-hex": "#cbd5e1",
+	"semantic-border-default-$type": "color",
+	"semantic-border-strong-colorSpace": "srgb",
+	"semantic-border-strong-components": [
+		0.58,
+		0.639,
+		0.722
+	],
+	"semantic-border-strong-hex": "#94a3b8",
+	"semantic-border-strong-$type": "color",
+	"semantic-status-success-background": "#dcfce7",
+	"semantic-status-success-content": "#166534",
+	"semantic-status-success-border": "#bbf7d0",
+	"semantic-status-warning-background": "#fef3c7",
+	"semantic-status-warning-content": "#92400e",
+	"semantic-status-warning-border": "#fde68a",
+	"semantic-status-error-background": "#fef2f2",
+	"semantic-status-error-content-colorSpace": "srgb",
+	"semantic-status-error-content-components": [
+		0.725,
+		0.11,
+		0.11
+	],
+	"semantic-status-error-content-hex": "#b91c1c",
+	"semantic-status-error-content-$type": "color",
+	"semantic-status-error-border-colorSpace": "srgb",
+	"semantic-status-error-border-components": [
+		0.996,
+		0.792,
+		0.792
+	],
+	"semantic-status-error-border-hex": "#fecaca",
+	"semantic-status-error-border-$type": "color",
+	"semantic-status-info-background": "#eff6ff",
+	"semantic-status-info-content-colorSpace": "srgb",
+	"semantic-status-info-content-components": [
+		0.012,
+		0.392,
+		0.631
+	],
+	"semantic-status-info-content-hex": "#0369a1",
+	"semantic-status-info-content-$type": "color",
+	"semantic-status-info-border-colorSpace": "srgb",
+	"semantic-status-info-border-components": [
+		0.729,
+		0.902,
+		0.992
+	],
+	"semantic-status-info-border-hex": "#bae6fd",
+	"semantic-status-info-border-$type": "color",
 	"space-0": "0",
 	"space-1": "0.25rem",
 	"space-2": "0.5rem",
@@ -153,9 +1714,9 @@
 	"space-3.5": "0.875rem",
 	"font-family-primary": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
 	"font-family-mono": "'JetBrains Mono', 'Fira Code', Monaco, 'Cascadia Code', monospace",
-	"font-family-heading": "{typography.font.family.primary}",
-	"font-family-body": "{typography.font.family.primary}",
-	"font-family-code": "{typography.font.family.mono}",
+	"font-family-heading": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+	"font-family-body": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+	"font-family-code": "'JetBrains Mono', 'Fira Code', Monaco, 'Cascadia Code', monospace",
 	"font-weight-thin": "100",
 	"font-weight-light": "300",
 	"font-weight-regular": "400",

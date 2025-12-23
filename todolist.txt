@@ -1,0 +1,85 @@
+# Design Tokens CLI - Update to 2025.10 Specification
+
+## Completed Features ✅
+
+### Core Specification Updates
+- [x] **Group Extensions ($extends)**: Implemented JSON Schema $ref semantics for group inheritance
+- [x] **Root Tokens ($root)**: Added support for $root tokens in groups for base values with variants
+- [x] **JSON Pointer References**: Implemented $ref syntax alongside existing {token} syntax
+- [x] **Enhanced Type System**: Updated type handling with composite types and validation
+- [x] **Group Properties**: Added support for $deprecated, $extensions, and $type inheritance
+- [x] **Reference Resolution**: Updated to handle both curly brace and JSON Pointer syntax
+
+### Implementation Details
+- [x] **Group Extension Resolution**: resolveGroupExtensions() function with deep merge semantics
+- [x] **JSON Pointer Utilities**: parseJsonPointer(), resolveJsonPointer(), and related functions
+- [x] **Reference Resolution**: Updated findTrueValues() and keepReferences() for new syntax
+- [x] **FlattenJSON Updates**: Modified to handle $root tokens and group inheritance
+- [x] **Transform Logic**: Updated to resolve references before flattening tokens
+
+## Remaining Tasks ⏳
+
+### Testing & Validation
+- [ ] **Update Tests**: Update existing test suite to cover new specification features
+  - Add tests for group extensions ($extends)
+  - Add tests for $root tokens
+  - Add tests for JSON Pointer references ($ref)
+  - Add tests for group properties ($deprecated, $extensions)
+  - Add tests for type inheritance
+
+### Documentation
+- [ ] **Documentation Update**: Update README.md to reflect new specification compliance
+  - Document group extensions syntax and usage
+  - Document $root token functionality
+  - Document JSON Pointer reference syntax
+  - Update examples to show new features
+  - Add migration guide from previous versions
+
+### Additional Features (Future)
+- [ ] **Enhanced Error Handling**: Improve error messages for circular references and invalid references
+- [ ] **Performance Optimization**: Optimize reference resolution for large token sets
+- [ ] **Schema Validation**: Add JSON Schema validation support
+- [ ] **Advanced Group Features**: Support for more complex group inheritance patterns
+
+## Test Results ✅
+
+Successfully tested new features with `test-new-spec.tokens.json`:
+
+### Group Extensions
+- ✅ `$extends: "{color.base}"` correctly inherits tokens from referenced group
+- ✅ Local overrides work properly (semantic.primary overrides inherited values)
+- ✅ Deep merge semantics implemented correctly
+
+### Root Tokens
+- ✅ `$root` tokens are properly handled and flattened
+- ✅ Root token paths include `$root` in the path construction
+
+### JSON Pointer References
+- ✅ `$ref: "#/typography/base/$root/$value/fontFamily"` resolves correctly
+- ✅ Complex nested property references work
+
+### Type Inheritance
+- ✅ Group-level `$type` is inherited by child tokens
+- ✅ Token-level `$type` overrides group inheritance
+
+### Reference Resolution
+- ✅ Curly brace references `{color.base.blue}` resolve to correct values
+- ✅ Mixed reference types work together
+- ✅ Cross-group references work correctly
+
+## Files Modified
+
+### Core Utilities
+- `utils/flattenJSON.js` - Added group extensions, $root token support, type inheritance
+- `utils/findTrueValues.js` - Updated for JSON Pointer and improved reference resolution
+- `utils/transform.js` - Added reference resolution before flattening
+- `utils/jsonPointer.js` - New utility for JSON Pointer handling
+
+### Test Files
+- `test-new-spec.tokens.json` - Test file demonstrating new features
+- `test-new-spec.config.json` - Configuration for testing
+- `test-output/` - Generated output files showing correct functionality
+
+## Compatibility Notes
+
+The implementation maintains backward compatibility with existing token files while adding new specification features. Existing workflows should continue to work unchanged.

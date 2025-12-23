@@ -1,22 +1,24 @@
 {
   "semantic": {
-    "$description": "Semantic color tokens referencing brand colors",
+    "$type": "color",
+    "$description": "Semantic color tokens extending the base color system",
+    "$extends": "{color.semantic}",
     "background": {
-      "primary": { "$value": "{brand.secondary.50}" },
-      "secondary": { "$value": "{brand.secondary.100}" },
-      "tertiary": { "$value": "{brand.secondary.200}" },
-      "inverse": { "$value": "{brand.secondary.900}" }
+      "primary": { "$value": { "$ref": "#/color/base/secondary/50/$value" } },
+      "secondary": { "$value": { "$ref": "#/color/base/secondary/100/$value" } },
+      "tertiary": { "$value": { "$ref": "#/color/base/secondary/200/$value" } },
+      "inverse": { "$value": { "$ref": "#/color/base/secondary/900/$value" } }
     },
     "content": {
-      "primary": { "$value": "{brand.secondary.900}" },
-      "secondary": { "$value": "{brand.secondary.700}" },
-      "tertiary": { "$value": "{brand.secondary.500}" },
-      "inverse": { "$value": "{brand.secondary.50}" }
+      "primary": { "$value": { "$ref": "#/color/base/secondary/900/$value" } },
+      "secondary": { "$value": { "$ref": "#/color/base/secondary/700/$value" } },
+      "tertiary": { "$value": { "$ref": "#/color/base/secondary/500/$value" } },
+      "inverse": { "$value": { "$ref": "#/color/base/secondary/50/$value" } }
     },
     "border": {
-      "subtle": { "$value": "{brand.secondary.200}" },
-      "default": { "$value": "{brand.secondary.300}" },
-      "strong": { "$value": "{brand.secondary.400}" }
+      "subtle": { "$value": { "$ref": "#/color/base/secondary/200/$value" } },
+      "default": { "$value": { "$ref": "#/color/base/secondary/300/$value" } },
+      "strong": { "$value": { "$ref": "#/color/base/secondary/400/$value" } }
     },
     "status": {
       "success": {
@@ -31,13 +33,13 @@
       },
       "error": {
         "background": { "$value": "#fef2f2" },
-        "content": { "$value": "{brand.accent.700}" },
-        "border": { "$value": "{brand.accent.200}" }
+        "content": { "$value": { "$ref": "#/color/base/accent/700/$value" } },
+        "border": { "$value": { "$ref": "#/color/base/accent/200/$value" } }
       },
       "info": {
         "background": { "$value": "#eff6ff" },
-        "content": { "$value": "{brand.primary.700}" },
-        "border": { "$value": "{brand.primary.200}" }
+        "content": { "$value": { "$ref": "#/color/base/primary/700/$value" } },
+        "border": { "$value": { "$ref": "#/color/base/primary/200/$value" } }
       }
     }
   }

@@ -1,0 +1,140 @@
+{
+  "shadow": {
+    "$type": "shadow",
+    "$description": "Shadow system using composite tokens",
+    "sm": {
+      "$value": [
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [0, 0, 0],
+            "alpha": 0.05
+          },
+          "offsetX": { "value": 0, "unit": "px" },
+          "offsetY": { "value": 1, "unit": "px" },
+          "blur": { "value": 2, "unit": "px" },
+          "spread": { "value": 0, "unit": "px" }
+        }
+      ]
+    },
+    "md": {
+      "$value": [
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [0, 0, 0],
+            "alpha": 0.1
+          },
+          "offsetX": { "value": 0, "unit": "px" },
+          "offsetY": { "value": 4, "unit": "px" },
+          "blur": { "value": 6, "unit": "px" },
+          "spread": { "value": -1, "unit": "px" }
+        },
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [0, 0, 0],
+            "alpha": 0.06
+          },
+          "offsetX": { "value": 0, "unit": "px" },
+          "offsetY": { "value": 2, "unit": "px" },
+          "blur": { "value": 4, "unit": "px" },
+          "spread": { "value": -1, "unit": "px" }
+        }
+      ]
+    },
+    "lg": {
+      "$value": [
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [0, 0, 0],
+            "alpha": 0.1
+          },
+          "offsetX": { "value": 0, "unit": "px" },
+          "offsetY": { "value": 10, "unit": "px" },
+          "blur": { "value": 15, "unit": "px" },
+          "spread": { "value": -3, "unit": "px" }
+        },
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [0, 0, 0],
+            "alpha": 0.05
+          },
+          "offsetX": { "value": 0, "unit": "px" },
+          "offsetY": { "value": 4, "unit": "px" },
+          "blur": { "value": 6, "unit": "px" },
+          "spread": { "value": -2, "unit": "px" }
+        }
+      ]
+    }
+  },
+  "border": {
+    "$type": "border",
+    "$description": "Border system with composite tokens",
+    "default": {
+      "$value": {
+        "color": { "$ref": "#/color/base/secondary/300/$value" },
+        "width": { "value": 1, "unit": "px" },
+        "style": "solid"
+      }
+    },
+    "focus": {
+      "$value": {
+        "color": { "$ref": "#/color/base/primary/500/$value" },
+        "width": { "value": 2, "unit": "px" },
+        "style": "solid"
+      }
+    },
+    "error": {
+      "$value": {
+        "color": { "$ref": "#/color/semantic/error/$root/$value" },
+        "width": { "value": 1, "unit": "px" },
+        "style": "solid"
+      }
+    }
+  },
+  "typography": {
+    "$type": "typography",
+    "$description": "Typography system with composite tokens",
+    "base": {
+      "$root": {
+        "$value": {
+          "fontFamily": ["Inter", "system-ui", "sans-serif"],
+          "fontSize": { "value": 16, "unit": "px" },
+          "fontWeight": 400,
+          "lineHeight": 1.5,
+          "letterSpacing": { "value": 0, "unit": "px" }
+        }
+      },
+      "heading": {
+        "$value": {
+          "fontFamily": { "$ref": "#/typography/base/$root/$value/fontFamily" },
+          "fontSize": { "value": 24, "unit": "px" },
+          "fontWeight": 600,
+          "lineHeight": 1.25,
+          "letterSpacing": { "value": -0.025, "unit": "em" }
+        }
+      },
+      "body": {
+        "$value": {
+          "fontFamily": { "$ref": "#/typography/base/$root/$value/fontFamily" },
+          "fontSize": { "value": 16, "unit": "px" },
+          "fontWeight": 400,
+          "lineHeight": 1.6,
+          "letterSpacing": { "value": 0.01, "unit": "em" }
+        }
+      },
+      "caption": {
+        "$value": {
+          "fontFamily": { "$ref": "#/typography/base/$root/$value/fontFamily" },
+          "fontSize": { "value": 14, "unit": "px" },
+          "fontWeight": 500,
+          "lineHeight": 1.4,
+          "letterSpacing": { "value": 0.025, "unit": "em" }
+        }
+      }
+    }
+  }
+}

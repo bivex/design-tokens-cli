@@ -1,16 +1,19 @@
 {
   "globalPrefix": "",
-  "keepReferences": true,
+  "keepReferences": false,
   "preserveOrder": true,
+  "outputColorFormat": "hex",
   "prefixes": {
-    "brand": "",
-    "semantic": "",
+    "color": "",
+    "component": "",
+    "shadow": "",
+    "border": "",
     "typography": "",
     "spacing": "space-",
-    "border": "",
-    "shadow": "",
-    "component": "",
-    "breakpoint": "",
+    "brand-identity": "",
+    "brand-colors": "",
+    "semantic-colors": "",
+    "borders": "",
     "z-index": "z-"
   },
   "transforms": [
@@ -33,6 +36,14 @@
         {
           "as": "json",
           "to": "brand-output/json"
+        },
+        {
+          "as": "tailwind-config",
+          "to": "brand-output/tailwind"
+        },
+        {
+          "as": "tailwind-theme",
+          "to": "brand-output/tailwind"
         }
       ]
     }

@@ -1,41 +1,59 @@
 {
   "component": {
-    "$description": "Component-specific design tokens",
+    "$type": "color",
+    "$description": "Component-specific design tokens using 2025.10 features",
     "button": {
+      "$extends": "{color.semantic}",
+      "$description": "Button component color variants",
       "primary": {
-        "background": { "$value": "{brand.primary.600}" },
-        "hover": { "$value": "{brand.primary.700}" },
-        "active": { "$value": "{brand.primary.800}" },
-        "text": { "$value": "{semantic.content.inverse}" },
-        "border": { "$value": "{brand.primary.600}" }
+        "background": { "$value": { "$ref": "#/color/base/primary/600/$value" } },
+        "hover": { "$value": { "$ref": "#/color/base/primary/700/$value" } },
+        "active": { "$value": { "$ref": "#/color/base/primary/800/$value" } },
+        "text": { "$value": "#ffffff" },
+        "border": { "$value": { "$ref": "#/color/base/primary/600/$value" } }
       },
       "secondary": {
-        "background": { "$value": "{semantic.background.primary}" },
-        "hover": { "$value": "{semantic.background.secondary}" },
-        "active": { "$value": "{semantic.border.default}" },
-        "text": { "$value": "{semantic.content.primary}" },
-        "border": { "$value": "{semantic.border.default}" }
+        "background": { "$value": "#ffffff" },
+        "hover": { "$value": { "$ref": "#/color/base/secondary/50/$value" } },
+        "active": { "$value": { "$ref": "#/color/base/secondary/100/$value" } },
+        "text": { "$value": { "$ref": "#/color/base/secondary/900/$value" } },
+        "border": { "$value": { "$ref": "#/color/base/secondary/300/$value" } }
+      },
+      "success": {
+        "background": { "$value": { "$ref": "#/color/semantic/success/$root/$value" } },
+        "hover": { "$value": { "$ref": "#/color/semantic/success/light/$value" } },
+        "active": { "$value": { "$ref": "#/color/semantic/success/dark/$value" } },
+        "text": { "$value": "#ffffff" },
+        "border": { "$value": { "$ref": "#/color/semantic/success/$root/$value/hex" } }
       },
       "danger": {
-        "background": { "$value": "{brand.accent.600}" },
-        "hover": { "$value": "{brand.accent.700}" },
-        "active": { "$value": "{brand.accent.800}" },
-        "text": { "$value": "{semantic.content.inverse}" },
-        "border": { "$value": "{brand.accent.600}" }
+        "background": { "$value": { "$ref": "#/color/base/accent/600/$value" } },
+        "hover": { "$value": { "$ref": "#/color/base/accent/700/$value" } },
+        "active": { "$value": { "$ref": "#/color/base/accent/800/$value" } },
+        "text": { "$value": "#ffffff" },
+        "border": { "$value": { "$ref": "#/color/base/accent/600/$value/hex" } }
       }
     },
     "input": {
-      "background": { "$value": "{semantic.background.primary}" },
-      "border": { "$value": "{semantic.border.default}" },
-      "focus": { "$value": "{brand.primary.500}" },
-      "error": { "$value": "{semantic.status.error.border}" },
-      "text": { "$value": "{semantic.content.primary}" },
-      "placeholder": { "$value": "{semantic.content.tertiary}" }
+      "background": { "$value": "#ffffff" },
+      "border": { "$value": { "$ref": "#/color/base/secondary/300/$value" } },
+      "focus": { "$value": { "$ref": "#/color/base/primary/500/$value" } },
+      "error": { "$value": { "$ref": "#/color/semantic/error/$root/$value" } },
+      "text": { "$value": { "$ref": "#/color/base/secondary/900/$value" } },
+      "placeholder": { "$value": { "$ref": "#/color/base/secondary/500/$value" } }
     },
     "card": {
-      "background": { "$value": "{semantic.background.primary}" },
-      "border": { "$value": "{semantic.border.subtle}" },
-      "shadow": { "$value": "{shadow.sm}" }
+      "background": { "$value": "#ffffff" },
+      "border": { "$value": { "$ref": "#/color/base/secondary/200/$value" } },
+      "shadow": {
+        "$value": {
+          "color": { "$ref": "#/color/base/secondary/900/$value" },
+          "offsetX": { "value": 0, "unit": "px" },
+          "offsetY": { "value": 1, "unit": "px" },
+          "blur": { "value": 3, "unit": "px" },
+          "spread": { "value": 0, "unit": "px" }
+        }
+      }
     }
   }
 }

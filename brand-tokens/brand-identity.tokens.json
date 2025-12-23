@@ -8,12 +8,12 @@
     "logo": {
       "width": { "$value": "40px" },
       "height": { "$value": "40px" },
-      "color": { "$value": "{brand.primary.600}" }
+      "color": { "$value": { "$ref": "#/color/base/primary/600/$value" } }
     },
     "colors": {
-      "main": { "$value": "{brand.primary.600}" },
-      "secondary": { "$value": "{brand.secondary.600}" },
-      "accent": { "$value": "{brand.accent.600}" }
+      "main": { "$value": { "$ref": "#/color/base/primary/600/$value" } },
+      "secondary": { "$value": { "$ref": "#/color/base/secondary/600/$value" } },
+      "accent": { "$value": { "$ref": "#/color/base/accent/600/$value" } }
     }
   },
   "breakpoint": {

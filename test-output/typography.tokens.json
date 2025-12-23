@@ -1,0 +1,34 @@
+{
+	"typography-base-base-fontFamily": [
+		"Arial",
+		"sans-serif"
+	],
+	"typography-base-base-fontSize": {
+		"value": 16,
+		"unit": "px"
+	},
+	"typography-base-base-fontWeight": 400,
+	"typography-base-base-lineHeight": 1.5,
+	"typography-base-$root-fontFamily": [
+		"Arial",
+		"sans-serif"
+	],
+	"typography-base-$root-fontSize": {
+		"value": 16,
+		"unit": "px"
+	},
+	"typography-base-$root-fontWeight": 400,
+	"typography-base-$root-lineHeight": 1.5,
+	"typography-base-$root-$type": "typography",
+	"typography-base-heading-fontFamily": [
+		"Arial",
+		"sans-serif"
+	],
+	"typography-base-heading-fontSize": {
+		"value": 24,
+		"unit": "px"
+	},
+	"typography-base-heading-fontWeight": 700,
+	"typography-base-heading-lineHeight": 1.2,
+	"typography-base-heading-$type": "typography"
+}
