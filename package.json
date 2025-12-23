@@ -1,33 +1,60 @@
 {
   "name": "design-tokens-cli",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "type": "module",
-  "description": "Design tokens parser",
+  "description": "A powerful CLI tool for transforming design tokens from JSON format to CSS, SCSS, JavaScript, and JSON outputs with token reference resolution",
+  "keywords": [
+    "design-tokens",
+    "design-system",
+    "css",
+    "scss",
+    "javascript",
+    "cli",
+    "tokens",
+    "css-custom-properties",
+    "build-tool"
+  ],
   "main": "index.js",
-  "jest": {
-    "transform": {}
-  },
   "bin": {
-    "designTokens": "index.js"
+    "designTokens": "index.js",
+    "design-tokens-cli": "index.js"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   },
   "scripts": {
-    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest"
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest",
+    "test:watch": "NODE_OPTIONS=--experimental-vm-modules npx jest --watch",
+    "test:coverage": "NODE_OPTIONS=--experimental-vm-modules npx jest --coverage",
+    "build": "echo 'Build complete - this is a CLI tool'",
+    "example": "node index.js transform example/tokens.config.json",
+    "clean": "rm -rf example/output node_modules bun.lockb",
+    "lint": "echo 'No linter configured yet'",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Heydon/design-tokens-cli.git"
+    "url": "git+https://github.com/bivex/design-tokens-cli.git"
   },
-  "author": "Heydon Pickering",
+  "author": "Heydon Pickering (Fork maintained by Bivex)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Heydon/design-tokens-cli/issues"
+    "url": "https://github.com/bivex/design-tokens-cli/issues"
   },
-  "homepage": "https://github.com/Heydon/design-tokens-cli#readme",
+  "homepage": "https://github.com/bivex/design-tokens-cli#readme",
+  "jest": {
+    "transform": {},
+    "collectCoverageFrom": [
+      "utils/**/*.js",
+      "index.js",
+      "!utils/**/test/**"
+    ]
+  },
   "dependencies": {
-    "commander": "^9.3.0",
-    "fs-jetpack": "^4.3.1"
+    "commander": "^12.1.0",
+    "fs-jetpack": "^5.1.0"
   },
   "devDependencies": {
-    "jest": "^28.1.1"
+    "jest": "^29.7.0"
   }
 }
