@@ -119,9 +119,9 @@
 
         /* Layout */
         .container {
-            max-width: var(--layout-container-lg);
+            max-width: var(--layout-container-md);
             margin: 0 auto;
-            padding: 0 var(--size-4);
+            padding: 0 var(--size-6);
         }
 
         .section {
@@ -157,6 +157,7 @@
             cursor: pointer;
             transition: all 0.2s ease-in-out;
             white-space: nowrap;
+            min-height: 48px; /* WCAG AA compliance - minimum 48x48px touch target */
         }
 
         .btn:focus {
@@ -209,35 +210,35 @@
 
         /* Button Sizes */
         .btn-xs {
-            height: var(--component-button-size-xs-height);
+            height: var(--button-size-xs-height);
             padding: var(--component-button-size-xs-paddingY) var(--component-button-size-xs-paddingX);
             font-size: var(--component-button-size-xs-fontSize);
             border-radius: var(--component-button-size-xs-borderRadius);
         }
 
         .btn-sm {
-            height: var(--component-button-size-sm-height);
+            height: var(--button-size-sm-height);
             padding: var(--component-button-size-sm-paddingY) var(--component-button-size-sm-paddingX);
             font-size: var(--component-button-size-sm-fontSize);
             border-radius: var(--component-button-size-sm-borderRadius);
         }
 
         .btn-md {
-            height: var(--component-button-size-md-height);
+            height: var(--button-size-md-height);
             padding: var(--component-button-size-md-paddingY) var(--component-button-size-md-paddingX);
             font-size: var(--component-button-size-md-fontSize);
             border-radius: var(--component-button-size-md-borderRadius);
         }
 
         .btn-lg {
-            height: var(--component-button-size-lg-height);
+            height: var(--button-size-lg-height);
             padding: var(--component-button-size-lg-paddingY) var(--component-button-size-lg-paddingX);
             font-size: var(--component-button-size-lg-fontSize);
             border-radius: var(--component-button-size-lg-borderRadius);
         }
 
         .btn-xl {
-            height: var(--component-button-size-xl-height);
+            height: var(--button-size-xl-height);
             padding: var(--component-button-size-xl-paddingY) var(--component-button-size-xl-paddingX);
             font-size: var(--component-button-size-xl-fontSize);
             border-radius: var(--component-button-size-xl-borderRadius);
@@ -269,23 +270,24 @@
         /* Input Styles */
         .input {
             width: 100%;
-            height: var(--component-input-height-md);
-            padding: var(--component-input-paddingY) var(--component-input-paddingX);
-            border: var(--component-input-borderWidth) solid var(--component-input-borderColor-default);
-            border-radius: var(--component-input-borderRadius);
-            font-size: var(--component-input-fontSize);
-            background: var(--component-input-background);
+            height: var(--input-height-md);
+            min-height: 48px; /* WCAG AA compliance - minimum 48px height for form inputs */
+            padding: var(--input-paddingY) var(--input-paddingX);
+            border: var(--input-borderWidth) solid var(--input-borderColor-default);
+            border-radius: var(--input-borderRadius);
+            font-size: var(--input-fontSize);
+            background: var(--input-background);
             transition: border-color 0.2s ease;
         }
 
         .input:focus {
             outline: none;
-            border-color: var(--component-input-borderColor-focus);
+            border-color: var(--input-borderColor-focus);
             box-shadow: 0 0 0 3px rgba(168, 85, 247, var(--opacity10));
         }
 
         .input.error {
-            border-color: var(--component-input-borderColor-error);
+            border-color: var(--input-borderColor-error);
         }
 
         .input.error:focus {
