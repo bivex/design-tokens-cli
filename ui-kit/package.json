@@ -1,0 +1,28 @@
+{
+  "name": "design-tokens-ui-kit",
+  "version": "1.0.0",
+  "description": "A comprehensive UI kit demonstrating design tokens implementation",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve . -p 3000",
+    "dev": "npx serve . --open",
+    "build": "echo 'No build step required for static HTML/CSS/JS'"
+  },
+  "keywords": [
+    "design-tokens",
+    "ui-kit",
+    "css",
+    "design-system",
+    "demo"
+  ],
+  "author": "Design Tokens CLI",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bivex/design-tokens-cli",
+    "directory": "ui-kit"
+  }
+}

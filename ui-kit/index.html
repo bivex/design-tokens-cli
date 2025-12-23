@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Tokens UI Kit - Landing Page</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <h2>DesignTokens</h2>
+            </div>
+            <div class="navbar-menu">
+                <a href="#hero" class="nav-link">Home</a>
+                <a href="#components" class="nav-link">Components</a>
+                <a href="#tokens" class="nav-link">Design Tokens</a>
+                <a href="#demo" class="nav-link">Demo</a>
+            </div>
+            <button class="btn btn-primary">Get Started</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Build Beautiful UIs with Design Tokens</h1>
+                <p class="hero-subtitle">Create consistent, scalable design systems using our comprehensive design tokens CLI. Transform your design tokens into CSS, SCSS, JavaScript, and more.</p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary btn-lg">Start Building</button>
+                    <button class="btn btn-secondary btn-lg">View Documentation</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="code-preview">
+                    <pre><code>{
+  "color": {
+    "$type": "color",
+    "primary": { "$value": "#007bff" },
+    "semantic": {
+      "$extends": "{color.primary}",
+      "success": { "$value": "#28a745" }
+    }
+  }
+}</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Powerful Features</h2>
+                <p>Everything you need to build consistent design systems</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Group Extensions</h3>
+                    <p>Inherit and extend design token groups with deep merge semantics.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📍</div>
+                    <h3>JSON Pointer References</h3>
+                    <p>Advanced property access using JSON Pointer syntax for complex references.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏷️</div>
+                    <h3>Root Tokens</h3>
+                    <p>Define base values in groups that variants can inherit from.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Type Inheritance</h3>
+                    <p>Automatic type inheritance from groups to child tokens.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Multiple Formats</h3>
+                    <p>Export to CSS, SCSS, JavaScript, JSON, and Tailwind configurations.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>2025.10 Compliant</h3>
+                    <p>Full compliance with the latest Design Tokens Format specification.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Components Section -->
+    <section id="components" class="components">
+        <div class="container">
+            <div class="section-header">
+                <h2>UI Components</h2>
+                <p>Beautiful components built with design tokens</p>
+            </div>
+
+            <!-- Buttons -->
+            <div class="component-group">
+                <h3>Buttons</h3>
+                <div class="component-examples">
+                    <button class="btn btn-primary">Primary Button</button>
+                    <button class="btn btn-secondary">Secondary Button</button>
+                    <button class="btn btn-success">Success Button</button>
+                    <button class="btn btn-danger">Danger Button</button>
+                    <button class="btn btn-primary" disabled>Disabled</button>
+                </div>
+            </div>
+
+            <!-- Cards -->
+            <div class="component-group">
+                <h3>Cards</h3>
+                <div class="component-examples">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Card Title</h4>
+                        </div>
+                        <div class="card-body">
+                            <p>This is a sample card component built with design tokens. It demonstrates consistent spacing, colors, and typography.</p>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary btn-sm">Action</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Elements -->
+            <div class="component-group">
+                <h3>Form Elements</h3>
+                <div class="component-examples">
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-input" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-input" placeholder="Enter your password">
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="remember">
+                        <label class="form-check-label" for="remember">Remember me</label>
+                    </div>
+                    <button class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+
+            <!-- Typography -->
+            <div class="component-group">
+                <h3>Typography</h3>
+                <div class="component-examples">
+                    <h1>Heading 1</h1>
+                    <h2>Heading 2</h2>
+                    <h3>Heading 3</h3>
+                    <h4>Heading 4</h4>
+                    <p>This is a paragraph with <strong>bold text</strong> and <em>italic text</em>. It demonstrates the typography scale and spacing defined by our design tokens.</p>
+                    <blockquote>
+                        "This is a blockquote that showcases the typography system."
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Color Palette -->
+    <section id="tokens" class="color-palette">
+        <div class="container">
+            <div class="section-header">
+                <h2>Design Token Colors</h2>
+                <p>Explore the color system defined by our design tokens</p>
+            </div>
+            <div class="color-grid">
+                <div class="color-item">
+                    <div class="color-swatch primary"></div>
+                    <div class="color-info">
+                        <h4>Primary</h4>
+                        <code>--color-primary</code>
+                        <span class="color-hex">#007bff</span>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch secondary"></div>
+                    <div class="color-info">
+                        <h4>Secondary</h4>
+                        <code>--color-secondary</code>
+                        <span class="color-hex">#6c757d</span>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch success"></div>
+                    <div class="color-info">
+                        <h4>Success</h4>
+                        <code>--color-success</code>
+                        <span class="color-hex">#28a745</span>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch danger"></div>
+                    <div class="color-info">
+                        <h4>Danger</h4>
+                        <code>--color-danger</code>
+                        <span class="color-hex">#dc3545</span>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch warning"></div>
+                    <div class="color-info">
+                        <h4>Warning</h4>
+                        <code>--color-warning</code>
+                        <span class="color-hex">#ffc107</span>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch info"></div>
+                    <div class="color-info">
+                        <h4>Info</h4>
+                        <code>--color-info</code>
+                        <span class="color-hex">#17a2b8</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="demo">
+        <div class="container">
+            <div class="section-header">
+                <h2>Interactive Demo</h2>
+                <p>Try changing the design tokens and see the results instantly</p>
+            </div>
+            <div class="demo-container">
+                <div class="demo-controls">
+                    <div class="control-group">
+                        <label>Primary Color</label>
+                        <input type="color" id="primary-color" value="#007bff">
+                    </div>
+                    <div class="control-group">
+                        <label>Border Radius</label>
+                        <input type="range" id="border-radius" min="0" max="20" value="4">
+                        <span id="radius-value">4px</span>
+                    </div>
+                    <div class="control-group">
+                        <label>Font Size</label>
+                        <input type="range" id="font-size" min="14" max="20" value="16">
+                        <span id="font-value">16px</span>
+                    </div>
+                </div>
+                <div class="demo-preview">
+                    <div class="demo-card">
+                        <h3>Demo Card</h3>
+                        <p>This card updates in real-time as you change the design tokens.</p>
+                        <button class="btn btn-primary demo-btn">Demo Button</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>DesignTokens CLI</h4>
+                    <p>Transform design tokens into production-ready code for any platform.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">NPM</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Formats</h4>
+                    <ul>
+                        <li>CSS Custom Properties</li>
+                        <li>SCSS Variables</li>
+                        <li>JavaScript/ESM</li>
+                        <li>JSON</li>
+                        <li>Tailwind Config</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DesignTokens CLI. Built with design tokens.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
