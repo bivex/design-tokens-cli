@@ -19,7 +19,100 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeDemo();
     initializeNavigation();
     initializeThemeSwitcher();
+    initializeTokenWatcher();
 });
+
+/**
+ * Watch for token changes and apply them dynamically
+ */
+function initializeTokenWatcher() {
+    // Create a mutation observer to watch for CSS custom property changes
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+                applyTokenChanges();
+            }
+        });
+    });
+
+    // Observe the document element for style changes
+    observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['style']
+    });
+
+    // Initial application
+    applyTokenChanges();
+}
+
+/**
+ * Apply token changes to all elements on the page
+ */
+function applyTokenChanges() {
+    // Update all elements that use tokens dynamically
+    updateButtonTokens();
+    updateCardTokens();
+    updateTypographyTokens();
+    updateColorTokens();
+}
+
+/**
+ * Update button tokens dynamically
+ */
+function updateButtonTokens() {
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(button => {
+        if (button.classList.contains('btn-primary')) {
+            button.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--base-primary-600');
+            button.style.borderColor = getComputedStyle(document.documentElement).getPropertyValue('--base-primary-600');
+        }
+        if (button.classList.contains('btn-secondary')) {
+            button.style.borderColor = '#e5e5e5';
+        }
+    });
+}
+
+/**
+ * Update card tokens dynamically
+ */
+function updateCardTokens() {
+    const cards = document.querySelectorAll('.card, .stat-item, .testimonial-card, .pricing-card');
+    cards.forEach(card => {
+        card.style.borderRadius = getComputedStyle(document.documentElement).getPropertyValue('--radius-lg');
+        card.style.boxShadow = getComputedStyle(document.documentElement).getPropertyValue('--sm');
+    });
+}
+
+/**
+ * Update typography tokens dynamically
+ */
+function updateTypographyTokens() {
+    const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach(heading => {
+        heading.style.fontFamily = getComputedStyle(document.documentElement).getPropertyValue('--typography-font-family-heading');
+        heading.style.letterSpacing = getComputedStyle(document.documentElement).getPropertyValue('--typography-letter-spacing-tight');
+    });
+
+    const body = document.querySelectorAll('p, span, div');
+    body.forEach(element => {
+        element.style.fontFamily = getComputedStyle(document.documentElement).getPropertyValue('--typography-font-family-body');
+    });
+}
+
+/**
+ * Update color tokens dynamically
+ */
+function updateColorTokens() {
+    const statNumbers = document.querySelectorAll('.stat-number');
+    statNumbers.forEach(stat => {
+        stat.style.color = getComputedStyle(document.documentElement).getPropertyValue('--base-primary-600');
+    });
+
+    const links = document.querySelectorAll('a');
+    links.forEach(link => {
+        link.style.color = getComputedStyle(document.documentElement).getPropertyValue('--base-primary-600');
+    });
+}
 
 /**
  * Initialize the interactive demo controls
@@ -40,52 +133,65 @@ function initializeDemo() {
     const demoStat2 = document.getElementById('demo-stat2');
     const demoStat3 = document.getElementById('demo-stat3');
 
-    // Set initial values - use luxury champagne gold
-    primaryColorInput.value = '#d3ac74';
-    accentColorInput.value = '#9b4d88';
-    updateRadiusValue(borderRadiusInput.value);
-    updateFontValue(fontSizeInput.value);
+    // Set initial values from current tokens
+    if (primaryColorInput) primaryColorInput.value = getComputedStyle(document.documentElement).getPropertyValue('--base-primary-600').trim() || '#d3ac74';
+    if (accentColorInput) accentColorInput.value = getComputedStyle(document.documentElement).getPropertyValue('--base-accent-500').trim() || '#9b4d88';
+    if (borderRadiusInput) updateRadiusValue(parseInt(getComputedStyle(document.documentElement).getPropertyValue('--radius-md')) || 8);
+    if (fontSizeInput) updateFontValue(parseInt(getComputedStyle(document.documentElement).getPropertyValue('--typography-size-base')) || 16);
 
-    // Primary color change
-    primaryColorInput.addEventListener('input', function(e) {
-        const color = e.target.value;
-        // Update the generated token directly
-        document.documentElement.style.setProperty('--base-primary-500', color);
-        // Update demo elements
-        demoButton.style.backgroundColor = color;
-        demoButton.style.borderColor = color;
-        demoStat1.style.color = color;
-    });
+    // Primary color change - обновляет токены в реальном времени
+    if (primaryColorInput) {
+        primaryColorInput.addEventListener('input', function(e) {
+            const color = e.target.value;
+            // Update the generated token directly
+            document.documentElement.style.setProperty('--base-primary-600', color);
+            document.documentElement.style.setProperty('--base-primary-700', adjustColor(color, -20));
+            // Apply changes to all elements
+            applyTokenChanges();
+            showNotification(`🎨 Основной цвет: ${color}`);
+        });
+    }
 
     // Accent color change
-    accentColorInput.addEventListener('input', function(e) {
-        const color = e.target.value;
-        // Update the generated accent token
-        document.documentElement.style.setProperty('--base-accent-500', color);
-        // Update demo elements that might use accent color
-        demoTitle.style.color = color;
-    });
+    if (accentColorInput) {
+        accentColorInput.addEventListener('input', function(e) {
+            const color = e.target.value;
+            // Update the generated accent token
+            document.documentElement.style.setProperty('--base-accent-500', color);
+            document.documentElement.style.setProperty('--base-accent-600', adjustColor(color, -15));
+            // Apply changes to all elements
+            applyTokenChanges();
+            showNotification(`✨ Акцентный цвет: ${color}`);
+        });
+    }
 
     // Border radius change
-    borderRadiusInput.addEventListener('input', function(e) {
-        const radius = e.target.value + 'px';
-        // Update the generated radius token
-        document.documentElement.style.setProperty('--radius-md', radius);
-        // Update demo button border radius
-        demoButton.style.borderRadius = radius;
-        updateRadiusValue(e.target.value);
-    });
+    if (borderRadiusInput) {
+        borderRadiusInput.addEventListener('input', function(e) {
+            const radius = e.target.value + 'px';
+            // Update the generated radius token
+            document.documentElement.style.setProperty('--radius-md', radius);
+            document.documentElement.style.setProperty('--radius-lg', (parseInt(e.target.value) + 4) + 'px');
+            // Apply changes to all elements
+            applyTokenChanges();
+            updateRadiusValue(e.target.value);
+            showNotification(`🔄 Радиус скругления: ${radius}`);
+        });
+    }
 
     // Font size change
-    fontSizeInput.addEventListener('input', function(e) {
-        const fontSize = e.target.value + 'px';
-        // Update the generated size token
-        document.documentElement.style.setProperty('--size-base', fontSize);
-        // Update demo text sizes
-        demoSubtitle.style.fontSize = `calc(${fontSize} * 0.875)`;
-        demoButton.style.fontSize = fontSize;
-        updateFontValue(e.target.value);
-    });
+    if (fontSizeInput) {
+        fontSizeInput.addEventListener('input', function(e) {
+            const fontSize = e.target.value + 'px';
+            // Update the generated size token
+            document.documentElement.style.setProperty('--typography-size-base', fontSize);
+            document.documentElement.style.setProperty('--typography-size-lg', (parseInt(e.target.value) + 2) + 'px');
+            // Apply changes to all elements
+            applyTokenChanges();
+            updateFontValue(e.target.value);
+            showNotification(`📝 Размер шрифта: ${fontSize}`);
+        });
+    }
 
     function updateRadiusValue(value) {
         radiusValue.textContent = value + 'px';
@@ -183,60 +289,22 @@ function applyTheme(theme) {
 
     const themes = {
         light: {
-            // Background colors
-            '--color-core-neutral-0': '#ffffff',
-            '--color-core-neutral-50': '#fafafa',
-            '--color-core-neutral-900': '#111827',
-
-            // Content colors
-            '--color-semantic-content-primary': '#111827',
-            '--color-semantic-content-secondary': '#6b7280',
-            '--color-semantic-background-primary': '#ffffff',
-            '--color-semantic-background-secondary': '#f9fafb',
-
-            // Border colors
-            '--color-semantic-border-default': '#e5e5e5',
-            '--color-component-card-background': '#ffffff',
-            '--color-component-card-border': '#e5e5e5'
+            '--base-secondary-50': '#fafafa',
+            '--semantic-content-primary': '#111827',
+            '--semantic-content-secondary': '#6b7280'
         },
         luxury: {
-            // Background colors
-            '--color-core-neutral-0': '#ffffff',
-            '--color-core-neutral-50': '#fafafa',
-            '--color-core-neutral-900': '#181018',
-
-            // Luxury colors
-            '--color-core-luxury-secondary-50': '#fefdfb',
-            '--color-core-luxury-primary-600': '#bb8f57',
-            '--color-core-luxury-accent-500': '#9b4d88',
-
-            // Content colors
-            '--color-semantic-content-primary': '#181018',
-            '--color-semantic-content-secondary': '#6b7280',
-            '--color-semantic-background-primary': '#ffffff',
-            '--color-semantic-background-secondary': '#fefdfb',
-
-            // Border colors
-            '--color-semantic-border-default': '#e5e5e5',
-            '--color-component-card-background': '#ffffff',
-            '--color-component-card-border': '#e5e5e5'
+            '--base-secondary-50': '#fefdfb',
+            '--base-primary-600': '#bb8f57',
+            '--base-accent-600': '#9b4d88',
+            '--semantic-content-primary': '#181018',
+            '--semantic-content-secondary': '#6b7280'
         },
         dark: {
-            // Background colors
-            '--color-core-neutral-0': '#1f2937',
-            '--color-core-neutral-50': '#111827',
-            '--color-core-neutral-900': '#ffffff',
-
-            // Content colors
-            '--color-semantic-content-primary': '#ffffff',
-            '--color-semantic-content-secondary': '#9ca3af',
-            '--color-semantic-background-primary': '#1f2937',
-            '--color-semantic-background-secondary': '#111827',
-
-            // Border colors
-            '--color-semantic-border-default': '#374151',
-            '--color-component-card-background': '#1f2937',
-            '--color-component-card-border': '#374151'
+            '--base-secondary-50': '#111827',
+            '--semantic-content-primary': '#ffffff',
+            '--semantic-content-secondary': '#9ca3af',
+            '--semantic-background-primary': '#1f2937'
         }
     };
 
@@ -245,9 +313,58 @@ function applyTheme(theme) {
             root.style.setProperty(property, value);
         });
 
-        // Update body background for theme
-        document.body.style.backgroundColor = themes[theme]['--color-semantic-background-primary'] || '#ffffff';
+        // Apply changes dynamically
+        applyTokenChanges();
     }
+}
+
+/**
+ * Reload tokens from CSS file (for development/testing)
+ */
+function reloadTokens() {
+    // Force reload of CSS file
+    const links = document.querySelectorAll('link[rel="stylesheet"]');
+    links.forEach(link => {
+        const href = link.href;
+        link.href = '';
+        link.href = href;
+    });
+
+    // Apply changes after reload
+    setTimeout(() => {
+        applyTokenChanges();
+        showNotification('🎨 Токены перезагружены!');
+    }, 100);
+}
+
+/**
+ * Simulate token file changes (for demo purposes)
+ */
+function updatePrimaryColor(newColor) {
+    document.documentElement.style.setProperty('--base-primary-600', newColor);
+    document.documentElement.style.setProperty('--base-primary-700', adjustColor(newColor, -20));
+    applyTokenChanges();
+    showNotification(`🎨 Основной цвет изменен: ${newColor}`);
+}
+
+/**
+ * Helper function to adjust color brightness
+ */
+function adjustColor(color, amount) {
+    // Simple color adjustment for demo
+    const usePound = color[0] === '#';
+    const col = usePound ? color.slice(1) : color;
+
+    const num = parseInt(col, 16);
+    let r = (num >> 16) + amount;
+    let g = (num >> 8 & 0x00FF) + amount;
+    let b = (num & 0x0000FF) + amount;
+
+    r = r > 255 ? 255 : r < 0 ? 0 : r;
+    g = g > 255 ? 255 : g < 0 ? 0 : g;
+    b = b > 255 ? 255 : b < 0 ? 0 : b;
+
+    return (usePound ? '#' : '') + (r << 16 | g << 8 | b).toString(16);
 }
 
 /**

@@ -1,159 +1,22 @@
 /* Design Tokens UI Kit - Base Styles */
 
-/* Import Comprehensive Design Tokens */
-@import url('../brand-output/css/brand-system.tokens.css');
+/* =================================================================
+   ЧИСТАЯ СИСТЕМА СТИЛЕЙ НА БАЗЕ ДИЗАЙН-ТОКЕНОВ
+   Все стили генерируются исключительно через токены
+   ================================================================= */
 
-/* Advanced Design Token System Integration */
+@import url('../../brand-output/css/brand-system.tokens.css');
+
+/* Layout Constants */
 :root {
-  /* Core Color System - New Granular Control */
-  --color-core-neutral-0: var(--color-core-neutral-0);
-  --color-core-neutral-50: var(--color-core-neutral-50);
-  --color-core-neutral-100: var(--color-core-neutral-100);
-  --color-core-neutral-200: var(--color-core-neutral-200);
-  --color-core-neutral-300: var(--color-core-neutral-300);
-  --color-core-neutral-400: var(--color-core-neutral-400);
-  --color-core-neutral-500: var(--color-core-neutral-500);
-  --color-core-neutral-600: var(--color-core-neutral-600);
-  --color-core-neutral-700: var(--color-core-neutral-700);
-  --color-core-neutral-800: var(--color-core-neutral-800);
-  --color-core-neutral-900: var(--color-core-neutral-900);
-  --color-core-neutral-950: var(--color-core-neutral-950);
-
-  /* Luxury Brand Colors */
-  --color-core-luxury-primary-50: var(--color-core-luxury-primary-50);
-  --color-core-luxury-primary-500: var(--color-core-luxury-primary-500);
-  --color-core-luxury-primary-600: var(--color-core-luxury-primary-600);
-  --color-core-luxury-primary-700: var(--color-core-luxury-primary-700);
-  --color-core-luxury-primary-900: var(--color-core-luxury-primary-900);
-  --color-core-luxury-primary-950: var(--color-core-luxury-primary-950);
-
-  --color-core-luxury-secondary-50: var(--color-core-luxury-secondary-50);
-  --color-core-luxury-secondary-500: var(--color-core-luxury-secondary-500);
-  --color-core-luxury-secondary-600: var(--color-core-luxury-secondary-600);
-
-  --color-core-luxury-accent-500: var(--color-core-luxury-accent-500);
-  --color-core-luxury-accent-600: var(--color-core-luxury-accent-600);
-  --color-core-luxury-accent-700: var(--color-core-luxury-accent-700);
-
-  /* Semantic Colors with Full Control */
-  --color-semantic-background-primary: var(--color-semantic-background-primary);
-  --color-semantic-background-secondary: var(--color-semantic-background-secondary);
-  --color-semantic-content-primary: var(--color-semantic-content-primary);
-  --color-semantic-content-secondary: var(--color-semantic-content-secondary);
-  --color-semantic-border-default: var(--color-semantic-border-default);
-  --color-semantic-border-subtle: var(--color-semantic-border-subtle);
-
-  --color-semantic-feedback-success-default: var(--color-semantic-feedback-success-default);
-  --color-semantic-feedback-success-light: var(--color-semantic-feedback-success-light);
-  --color-semantic-feedback-warning-default: var(--color-semantic-feedback-warning-default);
-  --color-semantic-feedback-warning-light: var(--color-semantic-feedback-warning-light);
-  --color-semantic-feedback-error-default: var(--color-semantic-feedback-error-default);
-  --color-semantic-feedback-error-light: var(--color-semantic-feedback-error-light);
-
-  /* Action Colors - Complete State Control */
-  --color-semantic-action-primary-default: var(--color-semantic-action-primary-default);
-  --color-semantic-action-primary-hover: var(--color-semantic-action-primary-hover);
-  --color-semantic-action-primary-pressed: var(--color-semantic-action-primary-pressed);
-  --color-semantic-action-secondary-default: var(--color-semantic-action-secondary-default);
-  --color-semantic-action-secondary-hover: var(--color-semantic-action-secondary-hover);
-  --color-semantic-action-accent-default: var(--color-semantic-action-accent-default);
-
-  /* Component-Specific Colors */
-  --color-component-button-primary-background: var(--color-component-button-primary-background);
-  --color-component-button-primary-backgroundHover: var(--color-component-button-primary-backgroundHover);
-  --color-component-button-primary-backgroundPressed: var(--color-component-button-primary-backgroundPressed);
-  --color-component-button-primary-text: var(--color-component-button-primary-text);
-  --color-component-button-primary-border: var(--color-component-button-primary-border);
-
-  --color-component-button-secondary-background: var(--color-component-button-secondary-background);
-  --color-component-button-secondary-backgroundHover: var(--color-component-button-secondary-backgroundHover);
-  --color-component-button-secondary-text: var(--color-component-button-secondary-text);
-  --color-component-button-secondary-border: var(--color-component-button-secondary-border);
-
-  --color-component-card-background: var(--color-component-card-background);
-  --color-component-card-border: var(--color-component-card-border);
-
-  --color-component-input-background: var(--color-component-input-background);
-  --color-component-input-border: var(--color-component-input-border);
-  --color-component-input-borderFocus: var(--color-component-input-borderFocus);
-  --color-component-input-text: var(--color-component-input-text);
-  --color-component-input-placeholder: var(--color-component-input-placeholder);
-
-  /* Typography System - Complete Control */
-  --typography-font-family-body: var(--typography-font-family-body);
-  --typography-font-family-heading: var(--typography-font-family-heading);
-  --typography-font-family-accent: var(--typography-font-family-accent);
-
-  --typography-font-weight-thin: var(--typography-font-weight-thin);
-  --typography-font-weight-regular: var(--typography-font-weight-regular);
-  --typography-font-weight-medium: var(--typography-font-weight-medium);
-  --typography-font-weight-semibold: var(--typography-font-weight-semibold);
-  --typography-font-weight-bold: var(--typography-font-weight-bold);
-
-  /* Typography Scale - Comprehensive */
-  --typography-size-xs: var(--typography-size-xs);
-  --typography-size-sm: var(--typography-size-sm);
-  --typography-size-base: var(--typography-size-base);
-  --typography-size-lg: var(--typography-size-lg);
-  --typography-size-xl: var(--typography-size-xl);
-  --typography-size-2xl: var(--typography-size-2xl);
-  --typography-size-3xl: var(--typography-size-3xl);
-  --typography-size-4xl: var(--typography-size-4xl);
-  --typography-size-5xl: var(--typography-size-5xl);
-  --typography-size-6xl: var(--typography-size-6xl);
-
-  /* Line Heights */
-  --typography-line-height-tight: var(--typography-line-height-tight);
-  --typography-line-height-snug: var(--typography-line-height-snug);
-  --typography-line-height-normal: var(--typography-line-height-normal);
-  --typography-line-height-relaxed: var(--typography-line-height-relaxed);
-
-  /* Letter Spacing */
-  --typography-letter-spacing-tight: var(--typography-letter-spacing-tight);
-  --typography-letter-spacing-normal: var(--typography-letter-spacing-normal);
-  --typography-letter-spacing-wide: var(--typography-letter-spacing-wide);
-
-  /* Component-Specific Sizing - Complete Control */
-  --component-button-size-md-height: var(--component-button-size-md-height);
-  --component-button-size-md-paddingX: var(--component-button-size-md-paddingX);
-  --component-button-size-md-paddingY: var(--component-button-size-md-paddingY);
-  --component-button-size-md-fontSize: var(--component-button-size-md-fontSize);
-  --component-button-size-md-borderRadius: var(--component-button-size-md-borderRadius);
-
-  --component-card-padding-md: var(--component-card-padding-md);
-  --component-card-borderRadius-md: var(--component-card-borderRadius-md);
-  --component-card-shadow: var(--component-card-shadow);
-
-  --component-input-height-md: var(--component-input-height-md);
-  --component-input-paddingX-md: var(--component-input-paddingX-md);
-  --component-input-borderRadius-md: var(--component-input-borderRadius-md);
-  --component-input-fontSize-md: var(--component-input-fontSize-md);
-
-  /* Animation System - Complete Control */
-  --animation-duration-instant: var(--animation-duration-instant);
-  --animation-duration-fastest: var(--animation-duration-fastest);
-  --animation-duration-fast: var(--animation-duration-fast);
-  --animation-duration-normal: var(--animation-duration-normal);
-  --animation-duration-slow: var(--animation-duration-slow);
-
-  --animation-easing-linear: var(--animation-easing-linear);
-  --animation-easing-in: var(--animation-easing-in);
-  --animation-easing-out: var(--animation-easing-out);
-  --animation-easing-inOut: var(--animation-easing-inOut);
-  --animation-easing-smooth: var(--animation-easing-smooth);
-  --animation-easing-bounce: var(--animation-easing-bounce);
-
-  /* Layout and Spacing */
   --container-max-width: 1200px;
   --navbar-height: 4rem;
-
-  /* Z-index System */
   --z-dropdown: 1000;
   --z-sticky: 1020;
   --z-tooltip: 1030;
   --z-modal: 1040;
   --z-popover: 1050;
-  --z-sticky: 1020;
+}
   --z-fixed: 1030;
   --z-modal-backdrop: 1040;
   --z-modal: 1050;
@@ -185,17 +48,21 @@ html {
   line-height: var(--typography-line-height-normal);
 }
 
+/* =================================================================
+   БАЗОВЫЕ СТИЛИ - ЧИСТО НА ТОКЕНАХ
+   ================================================================= */
+
 body {
   font-family: var(--typography-font-family-body);
   font-size: var(--typography-size-base);
   font-weight: var(--typography-font-weight-regular);
   line-height: var(--typography-line-height-normal);
-  color: var(--color-semantic-content-primary);
-  background-color: var(--color-core-luxury-secondary-50);
+  color: var(--semantic-content-primary);
+  background-color: var(--base-secondary-50);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: var(--typography-letter-spacing-normal);
-  transition: background-color var(--animation-duration-normal) var(--animation-easing-smooth);
+  transition: background-color var(--a11y-interaction-transition-duration) ease-in-out;
 }
 
 /* Container */
@@ -207,42 +74,62 @@ body {
 }
 
 /* Typography */
+/* ТИПОГРАФИЯ - ЧИСТО НА ТОКЕНАХ */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-family-heading);
-  font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-tight);
-  margin-bottom: var(--spacing-md);
-  color: var(--color-gray-900);
-  letter-spacing: var(--letter-spacing-tight);
+  font-family: var(--typography-font-family-heading);
+  font-weight: var(--typography-font-weight-semibold);
+  line-height: var(--typography-line-height-tight);
+  margin-bottom: var(--spacing-6);
+  color: var(--semantic-content-primary);
+  letter-spacing: var(--typography-letter-spacing-tight);
 }
 
 h1 {
-  font-family: var(--font-family-accent);
-  font-size: var(--font-size-5xl);
-  font-weight: var(--font-weight-bold);
-  letter-spacing: var(--letter-spacing-tighter);
+  font-size: var(--typography-size-4xl);
+  font-weight: var(--typography-font-weight-bold);
 }
 
-h2 { font-size: var(--font-size-4xl); }
-h3 { font-size: var(--font-size-3xl); }
-h4 { font-size: var(--font-size-2xl); }
-h5 { font-size: var(--font-size-xl); }
-h6 { font-size: var(--font-size-lg); }
+h2 { font-size: var(--typography-size-3xl); }
+h3 { font-size: var(--typography-size-2xl); }
+h4 { font-size: var(--typography-size-xl); }
+h5 { font-size: var(--typography-size-lg); }
+h6 { font-size: var(--typography-size-base); }
 
 p {
   margin-bottom: var(--spacing-md);
   color: var(--color-gray-700);
 }
 
+/* ССЫЛКИ - ЧИСТО НА ТОКЕНАХ */
 a {
-  color: var(--color-primary);
+  color: var(--base-primary-600);
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: all var(--a11y-interaction-transition-duration) ease-in-out;
+  font-weight: var(--typography-font-weight-medium);
+  position: relative;
 }
 
 a:hover {
-  color: var(--color-primary);
-  text-decoration: underline;
+  color: var(--base-primary-700);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+    var(--base-primary-600),
+    var(--base-accent-600));
+  transition: width var(--a11y-interaction-transition-duration) ease-in-out;
+}
+
+a:hover::after {
+  width: 100%;
 }
 
 /* Utilities */
@@ -251,18 +138,19 @@ a:hover {
 .text-right { text-align: right; }
 
 .mb-0 { margin-bottom: 0; }
-.mb-1 { margin-bottom: var(--spacing-xs); }
-.mb-2 { margin-bottom: var(--spacing-sm); }
-.mb-3 { margin-bottom: var(--spacing-md); }
-.mb-4 { margin-bottom: var(--spacing-lg); }
-.mb-5 { margin-bottom: var(--spacing-xl); }
+/* SPACING UTILITIES - ЧИСТО НА ТОКЕНАХ */
+.mb-1 { margin-bottom: var(--spacing-1); }
+.mb-2 { margin-bottom: var(--spacing-2); }
+.mb-3 { margin-bottom: var(--spacing-4); }
+.mb-4 { margin-bottom: var(--spacing-6); }
+.mb-5 { margin-bottom: var(--spacing-8); }
 
 .mt-0 { margin-top: 0; }
-.mt-1 { margin-top: var(--spacing-xs); }
-.mt-2 { margin-top: var(--spacing-sm); }
-.mt-3 { margin-top: var(--spacing-md); }
-.mt-4 { margin-top: var(--spacing-lg); }
-.mt-5 { margin-top: var(--spacing-xl); }
+.mt-1 { margin-top: var(--spacing-1); }
+.mt-2 { margin-top: var(--spacing-2); }
+.mt-3 { margin-top: var(--spacing-4); }
+.mt-4 { margin-top: var(--spacing-6); }
+.mt-5 { margin-top: var(--spacing-8); }
 
 .d-flex { display: flex; }
 .d-block { display: block; }
@@ -283,7 +171,7 @@ a:hover {
 .w-100 { width: 100%; }
 .h-100 { height: 100%; }
 
-/* Advanced Section Headers with Luxury Styling */
+/* SECTION HEADERS - ЧИСТО НА ТОКЕНАХ */
 .section-header {
   text-align: center;
   margin-bottom: calc(var(--typography-size-4xl) * 1.5);
@@ -294,8 +182,8 @@ a:hover {
   font-family: var(--typography-font-family-accent);
   font-size: var(--typography-size-4xl);
   font-weight: var(--typography-font-weight-bold);
-  margin-bottom: var(--typography-size-base);
-  color: var(--color-semantic-content-primary);
+  margin-bottom: var(--spacing-4);
+  color: var(--semantic-content-primary);
   letter-spacing: var(--typography-letter-spacing-tight);
   position: relative;
   display: inline-block;
@@ -310,18 +198,18 @@ a:hover {
   width: 60px;
   height: 3px;
   background: linear-gradient(90deg,
-    var(--color-core-luxury-primary-600),
-    var(--color-core-luxury-accent-600));
-  border-radius: var(--component-card-borderRadius-sm);
+    var(--base-primary-600),
+    var(--base-accent-600));
+  border-radius: var(--radius-sm);
 }
 
 .section-header p {
   font-size: var(--typography-size-lg);
   font-weight: var(--typography-font-weight-regular);
   line-height: var(--typography-line-height-relaxed);
-  color: var(--color-semantic-content-secondary);
+  color: var(--semantic-content-secondary);
   max-width: 600px;
-  margin: 0 auto var(--typography-size-lg);
+  margin: 0 auto var(--spacing-6);
 }
 
 /* Code Styles */
@@ -377,42 +265,46 @@ pre code {
    Advanced Landing Page Component Styling
    ================================================== */
 
-/* Statistics Grid */
+/* =================================================================
+   КОМПОНЕНТЫ - ЧИСТО НА ТОКЕНАХ
+   ================================================================= */
+
+/* STATISTICS - ЧИСТО НА ТОКЕНАХ */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--typography-size-xl);
-  margin: var(--typography-size-2xl) 0;
+  gap: var(--spacing-8);
+  margin: var(--spacing-16) 0;
 }
 
 .stat-item {
   text-align: center;
-  padding: var(--typography-size-xl);
-  background: var(--color-component-card-background);
-  border: 1px solid var(--color-component-card-border);
-  border-radius: var(--component-card-borderRadius-lg);
-  box-shadow: var(--component-card-shadow);
-  transition: all var(--animation-duration-normal) var(--animation-easing-smooth);
+  padding: var(--spacing-8);
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--sm);
+  transition: all var(--a11y-interaction-transition-duration) ease-in-out;
 }
 
 .stat-item:hover {
   transform: translateY(-4px);
-  box-shadow: var(--component-card-shadow), 0 10px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--md), 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .stat-number {
   font-family: var(--typography-font-family-accent);
   font-size: var(--typography-size-5xl);
   font-weight: var(--typography-font-weight-bold);
-  color: var(--color-core-luxury-primary-600);
-  margin-bottom: var(--typography-size-sm);
+  color: var(--base-primary-600);
+  margin-bottom: var(--spacing-2);
   display: block;
 }
 
 .stat-label {
   font-size: var(--typography-size-base);
   font-weight: var(--typography-font-weight-medium);
-  color: var(--color-semantic-content-secondary);
+  color: var(--semantic-content-secondary);
   text-transform: uppercase;
   letter-spacing: var(--typography-letter-spacing-wide);
 }
@@ -634,12 +526,12 @@ pre code {
   box-shadow: var(--component-card-shadow);
 }
 
-/* Enhanced Button Styling */
+/* BUTTONS - ЧИСТО НА ТОКЕНАХ */
 .btn {
   font-family: var(--typography-font-family-body);
   font-weight: var(--typography-font-weight-semibold);
-  border-radius: var(--component-button-size-md-borderRadius);
-  transition: all var(--animation-duration-fast) var(--animation-easing-smooth);
+  border-radius: var(--radius-md);
+  transition: all var(--a11y-interaction-transition-duration) ease-in-out;
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -648,6 +540,8 @@ pre code {
   justify-content: center;
   text-decoration: none;
   border: 2px solid transparent;
+  padding: var(--spacing-3) var(--spacing-6);
+  font-size: var(--typography-size-base);
 }
 
 .btn::before {
@@ -660,7 +554,7 @@ pre code {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  transition: width var(--animation-duration-normal), height var(--animation-duration-normal);
+  transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
 }
 
 .btn:hover::before {
@@ -669,51 +563,51 @@ pre code {
 }
 
 .btn-primary {
-  background: var(--color-component-button-primary-background);
-  color: var(--color-component-button-primary-text);
-  border-color: var(--color-component-button-primary-border);
+  background: var(--base-primary-600);
+  color: #ffffff;
+  border-color: var(--base-primary-600);
 }
 
 .btn-primary:hover {
-  background: var(--color-component-button-primary-backgroundHover);
-  color: var(--color-component-button-primary-text);
-  border-color: var(--color-component-button-primary-borderHover);
+  background: var(--base-primary-700);
+  color: #ffffff;
+  border-color: var(--base-primary-700);
   transform: translateY(-2px);
-  box-shadow: var(--component-card-shadow);
+  box-shadow: var(--md);
 }
 
 .btn-secondary {
-  background: var(--color-component-button-secondary-background);
-  color: var(--color-component-button-secondary-text);
-  border-color: var(--color-component-button-secondary-border);
+  background: #ffffff;
+  color: var(--semantic-content-primary);
+  border-color: #e5e5e5;
 }
 
 .btn-secondary:hover {
-  background: var(--color-component-button-secondary-backgroundHover);
-  color: var(--color-component-button-secondary-textHover);
-  border-color: var(--color-component-button-secondary-borderHover);
+  background: #fafafa;
+  color: var(--semantic-content-primary);
+  border-color: #d4d4d4;
   transform: translateY(-2px);
-  box-shadow: var(--component-card-shadow);
+  box-shadow: var(--md);
 }
 
 .btn-lg {
-  padding: var(--component-button-size-lg-paddingY) var(--component-button-size-lg-paddingX);
-  font-size: var(--component-button-size-lg-fontSize);
-  border-radius: var(--component-button-size-lg-borderRadius);
+  padding: var(--spacing-4) var(--spacing-8);
+  font-size: var(--typography-size-lg);
+  border-radius: var(--radius-lg);
 }
 
-/* Card Enhancements */
+/* CARDS - ЧИСТО НА ТОКЕНАХ */
 .card {
-  background: var(--color-component-card-background);
-  border: 1px solid var(--color-component-card-border);
-  border-radius: var(--component-card-borderRadius-lg);
-  box-shadow: var(--component-card-shadow);
-  transition: all var(--animation-duration-normal) var(--animation-easing-smooth);
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--sm);
+  transition: all var(--a11y-interaction-transition-duration) ease-in-out;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--component-card-shadow), 0 15px 35px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--lg), 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
 /* Navigation Layout */
