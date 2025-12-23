@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Tokens UI Kit - Landing Page Demo</title>
+    <link rel="stylesheet" href="ui-kit-output/css/ui-kit.tokens.css">
+    <style>
+        /* Import Google Fonts for display typography */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+        /* Base styles using design tokens */
+        :root {
+            --font-family-display: 'Cal Sans', var(--typography-font-family-display);
+            --font-family-sans: var(--typography-font-family-sans);
+            --font-family-mono: var(--typography-font-family-mono);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--typography-font-family-sans);
+            line-height: var(--typography-font-lineHeight-relaxed);
+            color: var(--color-neutral-gray-900);
+            background-color: var(--color-neutral-white);
+        }
+
+        /* Typography Classes */
+        .text-display-1 {
+            font-size: var(--typography-text-display-1-fontSize);
+            line-height: var(--typography-text-display-1-lineHeight);
+            font-weight: var(--typography-text-display-1-fontWeight);
+            letter-spacing: var(--typography-text-display-1-letterSpacing);
+            font-family: var(--font-family-display);
+        }
+
+        .text-display-2 {
+            font-size: var(--typography-text-display-2-fontSize);
+            line-height: var(--typography-text-display-2-lineHeight);
+            font-weight: var(--typography-text-display-2-fontWeight);
+            letter-spacing: var(--typography-text-display-2-letterSpacing);
+            font-family: var(--font-family-display);
+        }
+
+        .text-heading-1 {
+            font-size: var(--typography-text-heading-1-fontSize);
+            line-height: var(--typography-text-heading-1-lineHeight);
+            font-weight: var(--typography-text-heading-1-fontWeight);
+            letter-spacing: var(--typography-text-heading-1-letterSpacing);
+        }
+
+        .text-heading-2 {
+            font-size: var(--typography-text-heading-2-fontSize);
+            line-height: var(--typography-text-heading-2-lineHeight);
+            font-weight: var(--typography-text-heading-2-fontWeight);
+            letter-spacing: var(--typography-text-heading-2-letterSpacing);
+        }
+
+        .text-heading-3 {
+            font-size: var(--typography-text-heading-3-fontSize);
+            line-height: var(--typography-text-heading-3-lineHeight);
+            font-weight: var(--typography-text-heading-3-fontWeight);
+            letter-spacing: var(--typography-text-heading-3-letterSpacing);
+        }
+
+        .text-body-large {
+            font-size: var(--typography-text-body-large-fontSize);
+            line-height: var(--typography-text-body-large-lineHeight);
+            font-weight: var(--typography-text-body-large-fontWeight);
+        }
+
+        .text-body-base {
+            font-size: var(--typography-text-body-base-fontSize);
+            line-height: var(--typography-text-body-base-lineHeight);
+            font-weight: var(--typography-text-body-base-fontWeight);
+        }
+
+        .text-body-small {
+            font-size: var(--typography-text-body-small-fontSize);
+            line-height: var(--typography-text-body-small-lineHeight);
+            font-weight: var(--typography-text-body-small-fontWeight);
+        }
+
+        .text-caption {
+            font-size: var(--typography-text-caption-fontSize);
+            line-height: var(--typography-text-caption-lineHeight);
+            font-weight: var(--typography-text-caption-fontWeight);
+            letter-spacing: var(--typography-text-caption-letterSpacing);
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--spacing-layout-container-xl);
+            margin: 0 auto;
+            padding: 0 var(--spacing-size-4);
+        }
+
+        .section {
+            padding: var(--spacing-layout-section-xl) 0;
+        }
+
+        .grid {
+            display: grid;
+            gap: var(--spacing-layout-gap-lg);
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        .grid-4 {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--typography-font-family-sans);
+            font-weight: var(--typography-font-weight-medium);
+            text-decoration: none;
+            border: var(--border-width-1) solid transparent;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            white-space: nowrap;
+        }
+
+        .btn:focus {
+            outline: 2px solid var(--color-brand-primary-500);
+            outline-offset: 2px;
+        }
+
+        /* Button Variants */
+        .btn-primary {
+            background: var(--component-button-variant-primary-background);
+            color: var(--component-button-variant-primary-color);
+            border-color: var(--component-button-variant-primary-borderColor);
+        }
+
+        .btn-primary:hover {
+            background: var(--component-button-variant-primary-hover-background);
+            border-color: var(--component-button-variant-primary-hover-borderColor);
+        }
+
+        .btn-secondary {
+            background: var(--component-button-variant-secondary-background);
+            color: var(--component-button-variant-secondary-color);
+            border-color: var(--component-button-variant-secondary-borderColor);
+        }
+
+        .btn-secondary:hover {
+            background: var(--component-button-variant-secondary-hover-background);
+            border-color: var(--component-button-variant-secondary-hover-borderColor);
+        }
+
+        .btn-outline {
+            background: var(--component-button-variant-outline-background);
+            color: var(--component-button-variant-outline-color);
+            border-color: var(--component-button-variant-outline-borderColor);
+        }
+
+        .btn-outline:hover {
+            background: var(--component-button-variant-outline-hover-background);
+        }
+
+        .btn-gradient {
+            background: var(--component-button-variant-gradient-background);
+            color: var(--component-button-variant-gradient-color);
+            border-color: var(--component-button-variant-gradient-borderColor);
+        }
+
+        .btn-gradient:hover {
+            background: var(--component-button-variant-gradient-hover-background);
+        }
+
+        /* Button Sizes */
+        .btn-xs {
+            height: var(--component-button-size-xs-height);
+            padding: var(--component-button-size-xs-paddingY) var(--component-button-size-xs-paddingX);
+            font-size: var(--component-button-size-xs-fontSize);
+            border-radius: var(--component-button-size-xs-borderRadius);
+        }
+
+        .btn-sm {
+            height: var(--component-button-size-sm-height);
+            padding: var(--component-button-size-sm-paddingY) var(--component-button-size-sm-paddingX);
+            font-size: var(--component-button-size-sm-fontSize);
+            border-radius: var(--component-button-size-sm-borderRadius);
+        }
+
+        .btn-md {
+            height: var(--component-button-size-md-height);
+            padding: var(--component-button-size-md-paddingY) var(--component-button-size-md-paddingX);
+            font-size: var(--component-button-size-md-fontSize);
+            border-radius: var(--component-button-size-md-borderRadius);
+        }
+
+        .btn-lg {
+            height: var(--component-button-size-lg-height);
+            padding: var(--component-button-size-lg-paddingY) var(--component-button-size-lg-paddingX);
+            font-size: var(--component-button-size-lg-fontSize);
+            border-radius: var(--component-button-size-lg-borderRadius);
+        }
+
+        .btn-xl {
+            height: var(--component-button-size-xl-height);
+            padding: var(--component-button-size-xl-paddingY) var(--component-button-size-xl-paddingX);
+            font-size: var(--component-button-size-xl-fontSize);
+            border-radius: var(--component-button-size-xl-borderRadius);
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--component-card-background-default);
+            border-radius: var(--component-card-borderRadius);
+            box-shadow: var(--component-card-shadow-default);
+            padding: var(--component-card-padding-md);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: var(--component-card-shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        .card-elevated {
+            background: var(--component-card-background-elevated);
+            box-shadow: var(--component-card-shadow-featured);
+        }
+
+        .card-colored {
+            background: var(--component-card-background-colored);
+        }
+
+        /* Input Styles */
+        .input {
+            width: 100%;
+            height: var(--component-input-height-md);
+            padding: var(--component-input-paddingY) var(--component-input-paddingX);
+            border: var(--component-input-borderWidth) solid var(--component-input-borderColor-default);
+            border-radius: var(--component-input-borderRadius);
+            font-size: var(--component-input-fontSize);
+            background: var(--component-input-background);
+            transition: border-color 0.2s ease;
+        }
+
+        .input:focus {
+            outline: none;
+            border-color: var(--component-input-borderColor-focus);
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+        }
+
+        .input.error {
+            border-color: var(--component-input-borderColor-error);
+        }
+
+        .input.error:focus {
+            box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+        }
+
+        /* Badge Styles */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: var(--component-badge-paddingY) var(--component-badge-paddingX);
+            border-radius: var(--component-badge-borderRadius);
+            font-size: var(--component-badge-fontSize);
+            font-weight: var(--component-badge-fontWeight);
+            white-space: nowrap;
+        }
+
+        .badge-primary {
+            background: var(--component-badge-variant-primary-background);
+            color: var(--component-badge-variant-primary-color);
+        }
+
+        .badge-secondary {
+            background: var(--component-badge-variant-secondary-background);
+            color: var(--component-badge-variant-secondary-color);
+        }
+
+        .badge-success {
+            background: var(--component-badge-variant-success-background);
+            color: var(--component-badge-variant-success-color);
+        }
+
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .text-left { text-align: left; }
+        .text-right { text-align: right; }
+
+        .mb-4 { margin-bottom: var(--spacing-size-4); }
+        .mb-6 { margin-bottom: var(--spacing-size-6); }
+        .mb-8 { margin-bottom: var(--spacing-size-8); }
+        .mb-12 { margin-bottom: var(--spacing-size-12); }
+
+        .mt-4 { margin-top: var(--spacing-size-4); }
+        .mt-6 { margin-top: var(--spacing-size-6); }
+        .mt-8 { margin-top: var(--spacing-size-8); }
+        .mt-12 { margin-top: var(--spacing-size-12); }
+
+        .flex { display: flex; }
+        .items-center { align-items: center; }
+        .justify-center { justify-content: center; }
+        .justify-between { justify-content: space-between; }
+        .gap-4 { gap: var(--spacing-size-4); }
+        .gap-6 { gap: var(--spacing-size-6); }
+
+        /* Hero Section */
+        .hero {
+            background: var(--color-gradient-hero);
+            color: var(--color-neutral-white);
+            text-align: center;
+            padding: var(--spacing-layout-section-xl) 0;
+        }
+
+        .hero h1 {
+            margin-bottom: var(--spacing-size-6);
+        }
+
+        .hero p {
+            max-width: 600px;
+            margin: 0 auto var(--spacing-size-8);
+            opacity: 0.9;
+        }
+
+        /* Feature Section */
+        .features {
+            background: var(--color-neutral-gray-50);
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--color-gradient-primary);
+            border-radius: var(--border-radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--spacing-size-4);
+            color: var(--color-neutral-white);
+            font-size: 24px;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: var(--color-brand-primary-500);
+            color: var(--color-neutral-white);
+            text-align: center;
+            padding: var(--spacing-layout-section-lg) 0;
+        }
+
+        .cta h2 {
+            margin-bottom: var(--spacing-size-4);
+        }
+
+        .cta p {
+            margin-bottom: var(--spacing-size-8);
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--color-neutral-gray-900);
+            color: var(--color-neutral-gray-300);
+            padding: var(--spacing-layout-section-md) 0;
+            text-align: center;
+        }
+
+        /* Demo Showcase */
+        .demo-showcase {
+            background: var(--color-neutral-white);
+            border: 1px solid var(--color-neutral-gray-200);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-size-6);
+            margin: var(--spacing-size-4) 0;
+        }
+
+        .demo-section h3 {
+            color: var(--color-brand-primary-600);
+            margin-bottom: var(--spacing-size-4);
+        }
+
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: var(--spacing-size-3);
+            margin-bottom: var(--spacing-size-6);
+        }
+
+        .color-swatch {
+            height: 80px;
+            border-radius: var(--border-radius-md);
+            display: flex;
+            align-items: end;
+            padding: var(--spacing-size-2);
+            color: var(--color-neutral-white);
+            font-size: var(--typography-font-size-xs);
+            font-weight: var(--typography-font-weight-medium);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav style="background: var(--color-neutral-white); border-bottom: 1px solid var(--color-neutral-gray-200); padding: var(--spacing-size-4) 0; position: sticky; top: 0; z-index: 50;">
+        <div class="container flex justify-between items-center">
+            <div style="font-weight: var(--typography-font-weight-bold); font-size: var(--typography-font-size-xl); color: var(--color-brand-primary-600);">
+                DesignTokens
+            </div>
+            <div class="flex gap-6">
+                <a href="#features" style="color: var(--color-neutral-gray-600); text-decoration: none;">Features</a>
+                <a href="#demo" style="color: var(--color-neutral-gray-600); text-decoration: none;">Demo</a>
+                <a href="#docs" style="color: var(--color-neutral-gray-600); text-decoration: none;">Docs</a>
+                <button class="btn btn-primary btn-sm">Get Started</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="text-display-1">Build Beautiful UIs with Design Tokens</h1>
+            <p class="text-body-large" style="font-size: var(--typography-font-size-xl);">
+                A comprehensive design token system that powers consistent, scalable, and maintainable user interfaces across all platforms.
+            </p>
+            <div class="flex gap-4 justify-center">
+                <button class="btn btn-primary btn-lg">Start Building</button>
+                <button class="btn btn-outline btn-lg" style="color: var(--color-neutral-white); border-color: var(--color-neutral-white);">View Demo</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section features">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h2 class="text-heading-1 mb-4">Why Design Tokens?</h2>
+                <p class="text-body-large" style="max-width: 600px; margin: 0 auto; color: var(--color-neutral-gray-600);">
+                    Design tokens bring consistency, scalability, and maintainability to your design system by centralizing design decisions.
+                </p>
+            </div>
+
+            <div class="grid grid-3">
+                <div class="card text-center">
+                    <div class="feature-icon">🎨</div>
+                    <h3 class="text-heading-3 mb-4">Consistent Design</h3>
+                    <p class="text-body-base">
+                        Single source of truth for colors, typography, spacing, and more. Ensure visual consistency across all platforms and devices.
+                    </p>
+                </div>
+
+                <div class="card text-center">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="text-heading-3 mb-4">Developer Experience</h3>
+                    <p class="text-body-base">
+                        Auto-generated CSS, SCSS, JavaScript, and Tailwind configs. No more manual token maintenance or copy-paste errors.
+                    </p>
+                </div>
+
+                <div class="card text-center">
+                    <div class="feature-icon">🔄</div>
+                    <h3 class="text-heading-3 mb-4">Multi-Platform</h3>
+                    <p class="text-body-base">
+                        Generate tokens for web, mobile, desktop, and more. One design system, multiple implementations.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Showcase -->
+    <section id="demo" class="section">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h2 class="text-heading-1 mb-4">Design Token System in Action</h2>
+                <p class="text-body-large" style="max-width: 700px; margin: 0 auto; color: var(--color-neutral-gray-600);">
+                    Every element on this page is styled using design tokens. From colors and typography to spacing and shadows - all defined in our token system.
+                </p>
+            </div>
+
+            <!-- Color Palette Demo -->
+            <div class="demo-showcase">
+                <h3>🎨 Color System</h3>
+                <div class="color-palette">
+                    <div class="color-swatch" style="background: var(--color-brand-primary-500);">Primary 500</div>
+                    <div class="color-swatch" style="background: var(--color-brand-secondary-500);">Secondary 500</div>
+                    <div class="color-swatch" style="background: var(--color-brand-accent-500);">Accent 500</div>
+                    <div class="color-swatch" style="background: var(--color-semantic-success-500);">Success 500</div>
+                    <div class="color-swatch" style="background: var(--color-semantic-warning-500);">Warning 500</div>
+                    <div class="color-swatch" style="background: var(--color-semantic-error-500);">Error 500</div>
+                    <div class="color-swatch" style="background: var(--color-neutral-gray-500);">Gray 500</div>
+                    <div class="color-swatch" style="background: var(--color-neutral-white); color: var(--color-neutral-gray-900);">White</div>
+                </div>
+
+                <p class="text-body-base mb-6">
+                    Our color system includes brand colors, semantic colors, and a comprehensive grayscale palette.
+                    All colors are available in multiple shades for flexibility.
+                </p>
+            </div>
+
+            <!-- Typography Demo -->
+            <div class="demo-showcase">
+                <h3>📝 Typography Scale</h3>
+                <div class="mb-6">
+                    <h1 class="text-display-1 mb-4">Display 1 - Hero Headlines</h1>
+                    <h2 class="text-display-2 mb-4">Display 2 - Section Headers</h2>
+                    <h1 class="text-heading-1 mb-4">Heading 1 - Page Titles</h1>
+                    <h2 class="text-heading-2 mb-4">Heading 2 - Section Titles</h2>
+                    <h3 class="text-heading-3 mb-4">Heading 3 - Card Titles</h3>
+                    <p class="text-body-large mb-3">Body Large - Primary content text with comfortable line height and optimal readability.</p>
+                    <p class="text-body-base mb-3">Body Base - Standard body text used throughout the interface for content and descriptions.</p>
+                    <p class="text-body-small mb-3">Body Small - Secondary text, captions, and metadata with reduced visual weight.</p>
+                    <span class="text-caption">Caption - Small text for labels, timestamps, and supplementary information.</span>
+                </div>
+            </div>
+
+            <!-- Component Demo -->
+            <div class="demo-showcase">
+                <h3>🧩 UI Components</h3>
+
+                <!-- Buttons -->
+                <div class="mb-8">
+                    <h4 class="text-heading-3 mb-4">Buttons</h4>
+                    <div class="flex gap-4 flex-wrap">
+                        <button class="btn btn-primary btn-sm">Primary Small</button>
+                        <button class="btn btn-primary btn-md">Primary Medium</button>
+                        <button class="btn btn-primary btn-lg">Primary Large</button>
+                        <button class="btn btn-secondary btn-md">Secondary</button>
+                        <button class="btn btn-outline btn-md">Outline</button>
+                        <button class="btn btn-gradient btn-md">Gradient</button>
+                    </div>
+                </div>
+
+                <!-- Cards -->
+                <div class="mb-8">
+                    <h4 class="text-heading-3 mb-4">Cards</h4>
+                    <div class="grid grid-3">
+                        <div class="card">
+                            <h4 class="text-heading-3 mb-3">Standard Card</h4>
+                            <p class="text-body-base mb-4">Default card styling with subtle shadow and clean design.</p>
+                            <button class="btn btn-primary btn-sm">Learn More</button>
+                        </div>
+
+                        <div class="card card-elevated">
+                            <h4 class="text-heading-3 mb-3">Elevated Card</h4>
+                            <p class="text-body-base mb-4">Enhanced shadow for important content or featured sections.</p>
+                            <button class="btn btn-secondary btn-sm">View Details</button>
+                        </div>
+
+                        <div class="card card-colored">
+                            <h4 class="text-heading-3 mb-3" style="color: var(--color-brand-primary-700);">Colored Card</h4>
+                            <p class="text-body-base mb-4">Background tinting for visual hierarchy and grouping.</p>
+                            <button class="btn btn-outline btn-sm">Explore</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Elements -->
+                <div class="mb-8">
+                    <h4 class="text-heading-3 mb-4">Form Elements</h4>
+                    <div class="grid grid-2">
+                        <div>
+                            <label class="text-body-small mb-2 block" style="display: block;">Email Address</label>
+                            <input type="email" class="input mb-4" placeholder="Enter your email">
+
+                            <label class="text-body-small mb-2 block" style="display: block;">Password</label>
+                            <input type="password" class="input" placeholder="Enter your password">
+                        </div>
+
+                        <div>
+                            <label class="text-body-small mb-2 block" style="display: block;">Error State</label>
+                            <input type="text" class="input error mb-4" placeholder="This field has an error">
+                            <span class="text-caption" style="color: var(--color-semantic-error-600);">Please enter a valid value</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Badges -->
+                <div>
+                    <h4 class="text-heading-3 mb-4">Badges</h4>
+                    <div class="flex gap-4 flex-wrap">
+                        <span class="badge badge-primary">Primary</span>
+                        <span class="badge badge-secondary">Secondary</span>
+                        <span class="badge badge-success">Success</span>
+                        <span class="badge badge-primary">New Feature</span>
+                        <span class="badge badge-secondary">Beta</span>
+                        <span class="badge badge-success">Live</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spacing Demo -->
+            <div class="demo-showcase">
+                <h3>📏 Spacing System</h3>
+                <p class="text-body-base mb-6">
+                    Our spacing system provides consistent margins, padding, and gaps throughout the interface.
+                    All spacing is based on a 4px grid system for pixel-perfect alignment.
+                </p>
+
+                <div class="grid grid-4">
+                    <div style="padding: var(--spacing-size-2); background: var(--color-neutral-gray-100); border-radius: var(--border-radius-md);">
+                        <div style="background: var(--color-brand-primary-500); height: var(--spacing-size-2); border-radius: var(--border-radius-sm);"></div>
+                        <span class="text-caption mt-2 block">2 (0.5rem)</span>
+                    </div>
+
+                    <div style="padding: var(--spacing-size-4); background: var(--color-neutral-gray-100); border-radius: var(--border-radius-md);">
+                        <div style="background: var(--color-brand-primary-500); height: var(--spacing-size-4); border-radius: var(--border-radius-sm);"></div>
+                        <span class="text-caption mt-2 block">4 (1rem)</span>
+                    </div>
+
+                    <div style="padding: var(--spacing-size-8); background: var(--color-neutral-gray-100); border-radius: var(--border-radius-md);">
+                        <div style="background: var(--color-brand-primary-500); height: var(--spacing-size-8); border-radius: var(--border-radius-sm);"></div>
+                        <span class="text-caption mt-2 block">8 (2rem)</span>
+                    </div>
+
+                    <div style="padding: var(--spacing-size-16); background: var(--color-neutral-gray-100); border-radius: var(--border-radius-md);">
+                        <div style="background: var(--color-brand-primary-500); height: var(--spacing-size-16); border-radius: var(--border-radius-sm);"></div>
+                        <span class="text-caption mt-2 block">16 (4rem)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2 class="text-heading-1">Ready to Build with Design Tokens?</h2>
+            <p class="text-body-large" style="font-size: var(--typography-font-size-lg);">
+                Join thousands of developers and designers who trust our design token system for consistent, scalable UIs.
+            </p>
+            <div class="flex gap-4 justify-center">
+                <button class="btn btn-secondary btn-lg" style="background: rgba(255, 255, 255, 0.1); border-color: var(--color-neutral-white); color: var(--color-neutral-white);">
+                    View Documentation
+                </button>
+                <button class="btn btn-gradient btn-lg" style="background: var(--color-neutral-white); color: var(--color-brand-primary-600);">
+                    Get Started Free
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="text-body-small">
+                Built with ❤️ using Design Tokens CLI. All styling powered by our comprehensive token system.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Demo Info -->
+    <script>
+        // Add some interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add hover effects to cards
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-4px)';
+                });
+
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+
+            // Add click effects to buttons
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 100);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{
+  "globalPrefix": "",
+  "keepReferences": true,
+  "preserveOrder": true,
+  "outputColorFormat": "hex",
+  "prefixes": {
+    "color": "",
+    "typography": "",
+    "spacing": "",
+    "shadow": "",
+    "border": "",
+    "component": ""
+  },
+  "transforms": [
+    {
+      "name": "ui-kit",
+      "from": "ui-kit-tokens",
+      "to": [
+        {
+          "as": "css",
+          "to": "ui-kit-output/css"
+        },
+        {
+          "as": "scss",
+          "to": "ui-kit-output/scss"
+        },
+        {
+          "as": "mjs",
+          "to": "ui-kit-output/js"
+        },
+        {
+          "as": "json",
+          "to": "ui-kit-output/json"
+        },
+        {
+          "as": "tailwind-config",
+          "to": "ui-kit-output/tailwind"
+        },
+        {
+          "as": "tailwind-theme",
+          "to": "ui-kit-output/tailwind"
+        }
+      ]
+    }
+  ]
+}

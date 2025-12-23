@@ -1,0 +1,43 @@
+{
+  "border": {
+    "$description": "Border system for landing page UI kit",
+    "width": {
+      "$description": "Border width scale",
+      "0": { "$value": "0" },
+      "1": { "$value": "1px" },
+      "2": { "$value": "2px" },
+      "4": { "$value": "4px" },
+      "8": { "$value": "8px" }
+    },
+    "radius": {
+      "$description": "Border radius scale",
+      "none": { "$value": "0" },
+      "sm": { "$value": "0.125rem" },
+      "md": { "$value": "0.375rem" },
+      "lg": { "$value": "0.5rem" },
+      "xl": { "$value": "0.75rem" },
+      "2xl": { "$value": "1rem" },
+      "3xl": { "$value": "1.5rem" },
+      "full": { "$value": "9999px" }
+    },
+    "style": {
+      "$description": "Border style presets",
+      "solid": { "$value": "solid" },
+      "dashed": { "$value": "dashed" },
+      "dotted": { "$value": "dotted" },
+      "double": { "$value": "double" },
+      "none": { "$value": "none" }
+    },
+    "color": {
+      "$description": "Border color variations",
+      "default": { "$value": "{color.neutral.gray.200}" },
+      "light": { "$value": "{color.neutral.gray.100}" },
+      "dark": { "$value": "{color.neutral.gray.300}" },
+      "primary": { "$value": "{color.brand.primary.500}" },
+      "secondary": { "$value": "{color.brand.secondary.500}" },
+      "success": { "$value": "{color.semantic.success.500}" },
+      "warning": { "$value": "{color.semantic.warning.500}" },
+      "error": { "$value": "{color.semantic.error.500}" }
+    }
+  }
+}
