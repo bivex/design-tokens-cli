@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Design Tokens UI Kit - Landing Page Demo</title>
+    <title>Design Tokens UI Kit - Interactive Landing Page Demo</title>
     <link rel="stylesheet" href="ui-kit-output/css/ui-kit.tokens.css">
     <style>
         /* Import Google Fonts for display typography */
@@ -14,6 +14,12 @@
             --font-family-display: var(--font-family-display);
             --font-family-sans: var(--font-family-sans);
             --font-family-mono: var(--font-family-mono);
+
+            /* Animation variables */
+            --animation-duration-fast: 0.15s;
+            --animation-duration-normal: 0.3s;
+            --animation-duration-slow: 0.6s;
+            --animation-easing: cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
@@ -27,6 +33,25 @@
             line-height: var(--font-lineHeight-relaxed);
             color: var(--neutral-gray-900);
             background-color: var(--neutral-white);
+            overflow-x: hidden;
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--neutral-gray-100);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
         }
 
         /* Typography Classes */
@@ -408,8 +433,287 @@
             font-weight: var(--font-weight-medium);
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
         }
+
+        /* Enhanced styles for improved demo */
+        .pulse-animation {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        /* Floating particles background */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            border-radius: 50%;
+            animation: float 20s linear infinite;
+            opacity: 0.1;
+        }
+
+        .particle:nth-child(1) { width: 4px; height: 4px; left: 10%; animation-delay: 0s; }
+        .particle:nth-child(2) { width: 6px; height: 6px; left: 20%; animation-delay: -5s; }
+        .particle:nth-child(3) { width: 3px; height: 3px; left: 30%; animation-delay: -10s; }
+        .particle:nth-child(4) { width: 5px; height: 5px; left: 40%; animation-delay: -15s; }
+        .particle:nth-child(5) { width: 4px; height: 4px; left: 50%; animation-delay: -20s; }
+        .particle:nth-child(6) { width: 7px; height: 7px; left: 60%; animation-delay: -8s; }
+        .particle:nth-child(7) { width: 3px; height: 3px; left: 70%; animation-delay: -12s; }
+        .particle:nth-child(8) { width: 5px; height: 5px; left: 80%; animation-delay: -18s; }
+        .particle:nth-child(9) { width: 4px; height: 4px; left: 90%; animation-delay: -3s; }
+        .particle:nth-child(10) { width: 6px; height: 6px; left: 15%; animation-delay: -7s; }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); }
+            100% { transform: translateY(-100px) rotate(360deg); }
+        }
+
+        /* Enhanced navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding: var(--size-4) 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all var(--animation-duration-normal) ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow-elevation-md);
+        }
+
+        .navbar-brand {
+            font-weight: var(--font-weight-black);
+            font-size: var(--font-size-2xl);
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { filter: brightness(1); }
+            to { filter: brightness(1.2); }
+        }
+
+        .nav-link {
+            color: var(--neutral-gray-600);
+            text-decoration: none;
+            font-weight: var(--font-weight-medium);
+            position: relative;
+            transition: all 0.3s ease;
+            padding: var(--size-2) var(--size-3);
+            border-radius: var(--border-radius-md);
+        }
+
+        .nav-link:hover {
+            color: var(--color-primary);
+            background: rgba(168, 85, 247, 0.1);
+            transform: translateY(-1px);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Theme Switcher */
+        .theme-switcher {
+            display: flex;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .theme-btn {
+            width: 32px;
+            height: 32px;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+
+        .theme-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .theme-btn.active {
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Enhanced hero section */
+        .hero {
+            background: linear-gradient(135deg, var(--color-primary-600) 0%, var(--color-secondary-800) 100%);
+            color: var(--neutral-white);
+            text-align: center;
+            padding: var(--size-32) 0 var(--size-20);
+            position: relative;
+            overflow: hidden;
+            margin-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            animation: hero-bg 8s ease-in-out infinite alternate;
+        }
+
+        @keyframes hero-bg {
+            0% { transform: scale(1) rotate(0deg); }
+            100% { transform: scale(1.1) rotate(1deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: clamp(var(--font-size-6xl), 8vw, var(--font-size-9xl));
+            line-height: var(--font-lineHeight-tight);
+            font-weight: var(--font-weight-black);
+            margin-bottom: var(--size-8);
+            background: linear-gradient(135deg, var(--neutral-white) 0%, rgba(255, 255, 255, 0.8) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: text-shine 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes text-shine {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        .hero p {
+            font-size: var(--font-size-xl);
+            line-height: var(--font-lineHeight-relaxed);
+            max-width: 700px;
+            margin: 0 auto var(--size-12);
+            opacity: 0.9;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--size-8);
+            margin-bottom: var(--size-12);
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius-xl);
+            padding: var(--size-6);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-elevation-xl);
+        }
+
+        .stat-number {
+            font-size: var(--font-size-4xl);
+            font-weight: var(--font-weight-black);
+            color: var(--color-accent);
+            margin-bottom: var(--size-2);
+        }
+
+        .stat-label {
+            font-size: var(--font-size-sm);
+            opacity: 0.8;
+        }
     </style>
 </head>
+<body>
+    <!-- Floating Particles Background -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Enhanced Navigation -->
+    <nav class="navbar">
+        <div class="container flex justify-between items-center">
+            <div class="navbar-brand">
+                DesignTokens
+            </div>
+            <div class="flex gap-8 items-center">
+                <a href="#hero" class="nav-link">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#components" class="nav-link">Components</a>
+                <a href="#themes" class="nav-link">Themes</a>
+
+                <!-- Theme Switcher -->
+                <div class="theme-switcher">
+                    <button class="theme-btn active" data-theme="purple" title="Purple Theme">
+                        <div style="width: 12px; height: 12px; background: #a855f7; border-radius: 50%;"></div>
+                    </button>
+                    <button class="theme-btn" data-theme="blue" title="Blue Theme">
+                        <div style="width: 12px; height: 12px; background: #3b82f6; border-radius: 50%;"></div>
+                    </button>
+                    <button class="theme-btn" data-theme="green" title="Green Theme">
+                        <div style="width: 12px; height: 12px; background: #10b981; border-radius: 50%;"></div>
+                    </button>
+                </div>
+
+                <button class="btn btn-primary btn-sm pulse-animation">Get Started</button>
+            </div>
+        </div>
+    </nav>
 <body>
     <!-- Navigation -->
     <nav style="background: var(--neutral-white); border-bottom: 1px solid var(--color-gray-200); padding: var(--size-4) 0; position: sticky; top: 0; z-index: 50;">
@@ -426,16 +730,41 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Enhanced Hero Section -->
+    <section id="hero" class="hero">
         <div class="container">
-            <h1 class="text-display-1">Build Beautiful UIs with Design Tokens</h1>
-            <p class="text-body-large" style="font-size: var(--font-size-xl);">
-                A comprehensive design token system that powers consistent, scalable, and maintainable user interfaces across all platforms.
-            </p>
-            <div class="flex gap-4 justify-center">
-                <button class="btn btn-primary btn-lg">Start Building</button>
-                <button class="btn btn-outline btn-lg" style="color: var(--neutral-white); border-color: var(--neutral-white);">View Demo</button>
+            <div class="hero-content">
+                <h1>Build Beautiful UIs with Design Tokens</h1>
+                <p>A comprehensive design token system that powers consistent, scalable, and maintainable user interfaces across all platforms.</p>
+
+                <!-- Hero Stats -->
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label">Design Tokens</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">6</div>
+                        <div class="stat-label">Output Formats</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label">Possibilities</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Manual Updates</div>
+                    </div>
+                </div>
+
+                <div class="flex gap-6 justify-center flex-wrap">
+                    <button class="btn btn-secondary btn-xl" style="background: rgba(255, 255, 255, 0.15); border-color: rgba(255, 255, 255, 0.3); color: var(--neutral-white);">
+                        🎨 View Components
+                    </button>
+                    <button class="btn btn-gradient btn-xl">
+                        🚀 Get Started
+                    </button>
+                </div>
             </div>
         </div>
     </section>
@@ -597,6 +926,26 @@
                         <span class="badge badge-success">Live</span>
                     </div>
                 </div>
+
+                <!-- Interactive Demo -->
+                <div class="mt-8 p-6 bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl border border-purple-200">
+                    <h4 class="text-heading-3 mb-4 text-purple-800">🎮 Interactive Demo</h4>
+                    <p class="text-body-base mb-4 text-purple-700">Click buttons to see micro-interactions powered by design tokens!</p>
+                    <div class="flex gap-4 flex-wrap">
+                        <button class="btn btn-primary btn-md interactive-btn" data-effect="bounce">
+                            🎈 Bounce
+                        </button>
+                        <button class="btn btn-secondary btn-md interactive-btn" data-effect="glow">
+                            ✨ Glow
+                        </button>
+                        <button class="btn btn-accent btn-md interactive-btn" data-effect="shake">
+                            📳 Shake
+                        </button>
+                        <button class="btn btn-gradient btn-md interactive-btn" data-effect="scale">
+                            🔍 Scale
+                        </button>
+                    </div>
+                </div>
             </div>
 
             <!-- Spacing Demo -->
@@ -632,6 +981,43 @@
         </div>
     </section>
 
+    <!-- Theme Showcase Section -->
+    <section id="themes" class="section" style="background: linear-gradient(135deg, var(--color-neutral-gray-50) 0%, var(--color-neutral-gray-100) 100%);">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h2 class="text-heading-1 mb-4">🎨 Instant Theme Switching</h2>
+                <p class="text-body-large" style="max-width: 600px; margin: 0 auto; color: var(--color-neutral-gray-600);">
+                    Change your entire design system theme with just one click. Watch as all components adapt instantly to new colors.
+                </p>
+            </div>
+
+            <div class="demo-showcase text-center">
+                <h3>Click Theme Buttons Above ☝️</h3>
+                <p class="text-body-base mb-6">
+                    Use the theme switcher in the navigation bar to see instant theme changes powered by design tokens.
+                    Every color, gradient, and interactive element updates automatically!
+                </p>
+
+                <div class="grid grid-3 gap-8">
+                    <div class="card" style="background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%); color: white;">
+                        <h4 class="text-heading-3 mb-3">Purple Theme</h4>
+                        <p>Vibrant purple primary with teal secondary and pink accents</p>
+                    </div>
+
+                    <div class="card" style="background: linear-gradient(135deg, #3b82f6 0%, #10b981 100%); color: white;">
+                        <h4 class="text-heading-3 mb-3">Blue Theme</h4>
+                        <p>Professional blue primary with green secondary and orange accents</p>
+                    </div>
+
+                    <div class="card" style="background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%); color: white;">
+                        <h4 class="text-heading-3 mb-3">Violet Theme</h4>
+                        <p>Deep violet primary with cyan secondary and red accents</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta">
         <div class="container">
@@ -659,33 +1045,368 @@
         </div>
     </footer>
 
-    <!-- Demo Info -->
+    <!-- Enhanced Interactive Demo -->
     <script>
-        // Add some interactive elements
         document.addEventListener('DOMContentLoaded', function() {
-            // Add hover effects to cards
+            // Enhanced card interactions
             const cards = document.querySelectorAll('.card');
             cards.forEach(card => {
                 card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-4px)';
+                    this.style.transform = 'translateY(-8px) rotateX(5deg)';
+                    this.style.boxShadow = 'var(--shadow-elevation-xl)';
                 });
 
                 card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
+                    this.style.transform = 'translateY(0) rotateX(0)';
+                    this.style.boxShadow = 'var(--shadow-elevation-sm)';
                 });
             });
 
-            // Add click effects to buttons
+            // Enhanced button interactions
             const buttons = document.querySelectorAll('.btn');
             buttons.forEach(button => {
-                button.addEventListener('click', function() {
-                    this.style.transform = 'scale(0.98)';
+                button.addEventListener('mousedown', function() {
+                    this.style.transform = 'scale(0.95)';
+                });
+
+                button.addEventListener('mouseup', function() {
+                    this.style.transform = 'scale(1)';
+                });
+
+                button.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                });
+
+                // Add ripple effect
+                button.addEventListener('click', function(e) {
+                    const ripple = document.createElement('span');
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+
+                    ripple.style.width = ripple.style.height = size + 'px';
+                    ripple.style.left = x + 'px';
+                    ripple.style.top = y + 'px';
+                    ripple.className = 'ripple';
+
+                    this.appendChild(ripple);
+
                     setTimeout(() => {
-                        this.style.transform = 'scale(1)';
-                    }, 100);
+                        ripple.remove();
+                    }, 600);
                 });
             });
+
+            // Navbar scroll effect
+            const navbar = document.querySelector('.navbar');
+            let lastScrollY = window.scrollY;
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+                lastScrollY = window.scrollY;
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+
+                    if (targetSection) {
+                        const offsetTop = targetSection.offsetTop - 100;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Intersection Observer for fade-in animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Add fade-in animation to sections
+            document.querySelectorAll('.demo-showcase, .card, .stat-item').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+
+            // Enhanced Theme Switcher
+            const themes = {
+                purple: { primary: '#a855f7', secondary: '#14b8a6', accent: '#ec4899' },
+                blue: { primary: '#3b82f6', secondary: '#10b981', accent: '#f59e0b' },
+                green: { primary: '#8b5cf6', secondary: '#06b6d4', accent: '#ef4444' }
+            };
+
+            const themeButtons = document.querySelectorAll('.theme-btn');
+            themeButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const themeName = this.dataset.theme;
+                    const theme = themes[themeName];
+
+                    // Remove active class from all buttons
+                    themeButtons.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    // Update CSS custom properties dynamically
+                    document.documentElement.style.setProperty('--color-primary', theme.primary);
+                    document.documentElement.style.setProperty('--color-secondary', theme.secondary);
+                    document.documentElement.style.setProperty('--color-accent', theme.accent);
+
+                    // Update particles color
+                    document.querySelectorAll('.particle').forEach(particle => {
+                        particle.style.background = `linear-gradient(135deg, ${theme.primary}, ${theme.accent})`;
+                    });
+
+                    // Show notification
+                    showNotification(`${themeName.charAt(0).toUpperCase() + themeName.slice(1)} theme applied! 🎨`, 'success');
+                });
+            });
+
+            // Notification system
+            function showNotification(message, type = 'info') {
+                const notification = document.createElement('div');
+                notification.className = `notification notification-${type}`;
+                notification.textContent = message;
+
+                Object.assign(notification.style, {
+                    position: 'fixed',
+                    top: '100px',
+                    right: '20px',
+                    background: type === 'success' ? 'var(--color-semantic-success-500)' : 'var(--color-primary)',
+                    color: 'white',
+                    padding: '12px 20px',
+                    borderRadius: '8px',
+                    boxShadow: 'var(--shadow-elevation-lg)',
+                    zIndex: '10000',
+                    transform: 'translateX(100%)',
+                    transition: 'transform 0.3s ease'
+                });
+
+                document.body.appendChild(notification);
+
+                // Animate in
+                setTimeout(() => {
+                    notification.style.transform = 'translateX(0)';
+                }, 100);
+
+                // Animate out
+                setTimeout(() => {
+                    notification.style.transform = 'translateX(100%)';
+                    setTimeout(() => notification.remove(), 300);
+                }, 3000);
+            }
+
+            // Interactive button effects
+            const interactiveButtons = document.querySelectorAll('.interactive-btn');
+            interactiveButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const effect = this.dataset.effect;
+
+                    // Add visual feedback
+                    this.style.animation = 'none';
+                    setTimeout(() => {
+                        this.style.animation = '';
+                    }, 10);
+
+                    // Show effect notification
+                    const effects = {
+                        bounce: '🎈 Button bounced!',
+                        glow: '✨ Button glowed!',
+                        shake: '📳 Button shook!',
+                        scale: '🔍 Button scaled!'
+                    };
+
+                    showNotification(effects[effect] || 'Effect applied!', 'success');
+                });
+            });
+
+            // Add loading animation for demo
+            const demoShowcases = document.querySelectorAll('.demo-showcase');
+            demoShowcases.forEach((showcase, index) => {
+                showcase.style.animationDelay = `${index * 0.2}s`;
+                showcase.style.animation = 'slideInUp 0.8s ease-out forwards';
+            });
+
+            // Performance monitoring (demo)
+            let interactionCount = 0;
+            document.addEventListener('click', () => {
+                interactionCount++;
+                if (interactionCount % 10 === 0) {
+                    showNotification(`🎉 ${interactionCount} interactions! Design tokens are working perfectly!`, 'success');
+                }
+            });
         });
+
+        // Add CSS for ripple effect and animations
+        const style = document.createElement('style');
+        style.textContent = `
+            .ripple {
+                position: absolute;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.6);
+                transform: scale(0);
+                animation: ripple 0.6s linear;
+                pointer-events: none;
+            }
+
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+
+            @keyframes slideInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(50px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .notification {
+                font-family: var(--font-family-sans);
+                font-weight: var(--font-weight-medium);
+                font-size: var(--font-size-sm);
+            }
+
+            /* Mobile responsive adjustments */
+            /* Interactive button effects */
+            .interactive-btn {
+                position: relative;
+                overflow: hidden;
+            }
+
+            .interactive-btn::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 0;
+                height: 0;
+                background: rgba(255, 255, 255, 0.3);
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+                transition: width 0.3s ease, height 0.3s ease;
+            }
+
+            .interactive-btn:active::before {
+                width: 300px;
+                height: 300px;
+            }
+
+            .interactive-btn[data-effect="bounce"]:active {
+                animation: bounce 0.6s ease;
+            }
+
+            .interactive-btn[data-effect="glow"]:active {
+                box-shadow: 0 0 20px var(--color-primary);
+                animation: glow-pulse 0.6s ease;
+            }
+
+            .interactive-btn[data-effect="shake"]:active {
+                animation: shake 0.5s ease;
+            }
+
+            .interactive-btn[data-effect="scale"]:active {
+                animation: scale-bounce 0.4s ease;
+            }
+
+            @keyframes bounce {
+                0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+                40% { transform: translateY(-10px); }
+                60% { transform: translateY(-5px); }
+            }
+
+            @keyframes glow-pulse {
+                0% { box-shadow: 0 0 5px var(--color-primary); }
+                50% { box-shadow: 0 0 20px var(--color-primary), 0 0 30px var(--color-primary); }
+                100% { box-shadow: 0 0 5px var(--color-primary); }
+            }
+
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+                20%, 40%, 60%, 80% { transform: translateX(2px); }
+            }
+
+            @keyframes scale-bounce {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.1); }
+                100% { transform: scale(1); }
+            }
+
+            /* Enhanced mobile styles */
+            @media (max-width: 768px) {
+                .hero-stats {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: var(--size-4);
+                }
+
+                .navbar-brand {
+                    font-size: var(--font-size-xl);
+                }
+
+                .flex.gap-8 {
+                    gap: var(--size-4);
+                }
+
+                .hero h1 {
+                    font-size: clamp(var(--font-size-4xl), 10vw, var(--font-size-7xl));
+                }
+
+                .theme-switcher {
+                    display: none; /* Hide theme switcher on mobile for space */
+                }
+            }
+
+            /* Loading animation for initial load */
+            .demo-showcase {
+                animation: fadeInUp 0.8s ease-out forwards;
+                opacity: 0;
+            }
+
+            .demo-showcase:nth-child(1) { animation-delay: 0.1s; }
+            .demo-showcase:nth-child(2) { animation-delay: 0.2s; }
+            .demo-showcase:nth-child(3) { animation-delay: 0.3s; }
+
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>
