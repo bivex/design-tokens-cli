@@ -356,11 +356,16 @@ const mapToColors = (theme, path, value) => {
 
   for (let i = 0; i < parts.length - 1; i++) {
     const part = parts[i];
-    if (!current[part]) current[part] = {};
+    if (!current[part] || typeof current[part] !== 'object') {
+      current[part] = {};
+    }
     current = current[part];
   }
 
-  current[parts[parts.length - 1]] = value;
+  const lastPart = parts[parts.length - 1];
+  if (typeof current === 'object' && current !== null) {
+    current[lastPart] = value;
+  }
 };
 
 /**
