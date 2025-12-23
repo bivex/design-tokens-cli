@@ -125,10 +125,10 @@ export default {
               "button": {
                       "size": {
                               "xs": {
-                                      "height": "1.75rem"
+                                      "height": "2.25rem"
                               },
                               "sm": {
-                                      "height": "2rem"
+                                      "height": "2.5rem"
                               },
                               "md": {
                                       "height": "2.5rem"
@@ -395,10 +395,10 @@ export default {
               }
       },
       spacing: {
-              "button-size-xs-paddingX": "{spacing.size.2}",
-              "button-size-xs-paddingY": "{spacing.size.1}",
-              "button-size-sm-paddingX": "{spacing.size.3}",
-              "button-size-sm-paddingY": "{spacing.size.1.5}",
+              "button-size-xs-paddingX": "{spacing.size.3}",
+              "button-size-xs-paddingY": "{spacing.size.1.5}",
+              "button-size-sm-paddingX": "{spacing.size.4}",
+              "button-size-sm-paddingY": "{spacing.size.2}",
               "button-size-md-paddingX": "{spacing.size.4}",
               "button-size-md-paddingY": "{spacing.size.2}",
               "button-size-lg-paddingX": "{spacing.size.6}",
@@ -427,7 +427,7 @@ export default {
               "font-letterSpacing-widest": "0.1em"
       },
       fontSize: {
-              "button--xs-fontSize": "{typography.font.size.xs}",
+              "button--xs-fontSize": "{typography.font.size.sm}",
               "button--sm-fontSize": "{typography.font.size.sm}",
               "button--md-fontSize": "{typography.font.size.sm}",
               "button--lg-fontSize": "{typography.font.size.base}",

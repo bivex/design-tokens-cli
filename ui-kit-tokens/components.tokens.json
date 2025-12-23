@@ -5,16 +5,16 @@
       "$description": "Button component tokens",
       "size": {
         "xs": {
-          "height": { "$value": "1.75rem" },
-          "paddingX": { "$value": "{spacing.size.2}" },
-          "paddingY": { "$value": "{spacing.size.1}" },
-          "fontSize": { "$value": "{typography.font.size.xs}" },
+          "height": { "$value": "2.25rem" },
+          "paddingX": { "$value": "{spacing.size.3}" },
+          "paddingY": { "$value": "{spacing.size.1.5}" },
+          "fontSize": { "$value": "{typography.font.size.sm}" },
           "borderRadius": { "$value": "{border.radius.sm}" }
         },
         "sm": {
-          "height": { "$value": "2rem" },
-          "paddingX": { "$value": "{spacing.size.3}" },
-          "paddingY": { "$value": "{spacing.size.1.5}" },
+          "height": { "$value": "2.5rem" },
+          "paddingX": { "$value": "{spacing.size.4}" },
+          "paddingY": { "$value": "{spacing.size.2}" },
           "fontSize": { "$value": "{typography.font.size.sm}" },
           "borderRadius": { "$value": "{border.radius.sm}" }
         },
