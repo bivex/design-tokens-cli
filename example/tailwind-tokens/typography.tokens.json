@@ -1,0 +1,30 @@
+{
+  "typography": {
+    "$description": "Typography tokens for Tailwind demo",
+    "font": {
+      "family": {
+        "sans": { "$value": "Inter, system-ui, sans-serif" },
+        "mono": { "$value": "'Fira Code', monospace" }
+      },
+      "size": {
+        "xs": { "$value": "12px" },
+        "sm": { "$value": "14px" },
+        "base": { "$value": "16px" },
+        "lg": { "$value": "18px" },
+        "xl": { "$value": "20px" },
+        "2xl": { "$value": "24px" }
+      },
+      "weight": {
+        "normal": { "$value": "400" },
+        "medium": { "$value": "500" },
+        "semibold": { "$value": "600" },
+        "bold": { "$value": "700" }
+      }
+    },
+    "letter-spacing": {
+      "tight": { "$value": "-0.025em" },
+      "normal": { "$value": "0" },
+      "wide": { "$value": "0.025em" }
+    }
+  }
+}

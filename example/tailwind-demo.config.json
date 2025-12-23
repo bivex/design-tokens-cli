@@ -1,0 +1,28 @@
+{
+  "globalPrefix": "",
+  "keepReferences": true,
+  "preserveOrder": true,
+  "outputColorFormat": "hex",
+  "transforms": [
+    {
+      "name": "tailwind-v3-config",
+      "from": "example/tailwind-tokens",
+      "to": [
+        {
+          "as": "tailwind-config",
+          "to": "example/tailwind-output/v3"
+        }
+      ]
+    },
+    {
+      "name": "tailwind-v4-theme",
+      "from": "example/tailwind-tokens",
+      "to": [
+        {
+          "as": "tailwind-theme",
+          "to": "example/tailwind-output/v4"
+        }
+      ]
+    }
+  ]
+}

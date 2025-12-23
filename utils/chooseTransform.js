@@ -7,7 +7,7 @@
  * https://github.com/bivex
  *
  * Created: 2025-12-23T03:06:29
- * Last Updated: 2025-12-23T03:06:29
+ * Last Updated: 2025-12-23T03:21:15
  *
  * Licensed under the MIT License.
  * Commercial licensing available upon request.
@@ -17,6 +17,8 @@ import { toCustomProps } from './transformers/toCustomProps.js';
 import { toScssVars } from './transformers/toScssVars.js';
 import { toESM } from './transformers/toESM.js';
 import { toJSON } from './transformers/toJSON.js';
+import { toTailwindConfig } from './transformers/toTailwindConfig.js';
+import { toTailwindTheme } from './transformers/toTailwindTheme.js';
 
 /**
  * Convert an object of design token name/value pairs into Scss (Sass) variables
@@ -34,7 +36,11 @@ import { toJSON } from './transformers/toJSON.js';
       return toESM(pairs, groupName, config);
     case 'json':
       return toJSON(pairs, config);
-    default: 
+    case 'tailwind-config':
+      return toTailwindConfig(pairs, config);
+    case 'tailwind-theme':
+      return toTailwindTheme(pairs, config);
+    default:
       throw new Error(`The 'as' value ${as} is not recognized.`);
   }
 }

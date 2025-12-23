@@ -1,0 +1,51 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  theme: {
+    extend: {
+      colors: {
+              "primary": {
+                      "50": "#fef2f2",
+                      "100": "#fee2e2",
+                      "500": "#ef4444",
+                      "900": "#7f1d1d"
+              },
+              "secondary": "#007bff",
+              "gray": {
+                      "50": "#f9fafb",
+                      "100": "#f3f4f6",
+                      "500": "#6b7280",
+                      "900": "#111827"
+              }
+      },
+      spacing: {
+              "xs": "4px",
+              "sm": "8px",
+              "md": "16px",
+              "lg": "24px",
+              "xl": "32px",
+              "2xl": "48px",
+              "typography-letter-spacing-tight": "-0.025em",
+              "typography-letter-spacing-normal": "0",
+              "typography-letter-spacing-wide": "0.025em"
+      },
+      fontFamily: {
+              "font--sans": "Inter, system-ui, sans-serif",
+              "font--mono": "'Fira Code', monospace"
+      },
+      fontSize: {
+              "font--xs": "12px",
+              "font--sm": "14px",
+              "font--base": "16px",
+              "font--lg": "18px",
+              "font--xl": "20px",
+              "font--2xl": "24px"
+      },
+      fontWeight: {
+              "font--normal": "400",
+              "font--medium": "500",
+              "font--semibold": "600",
+              "font--bold": "700"
+      }
+    }
+  }
+}
