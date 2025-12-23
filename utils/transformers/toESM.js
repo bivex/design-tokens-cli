@@ -25,8 +25,8 @@ const toESM = (tokensObject, groupName, config) => {
       value = `{${refName}}`;
     }
 
-    // Quote strings, leave other types as-is
-    const formattedValue = typeof value === 'string' ? `'${value}'` : value;
+    // Quote strings, leave other types as-is, and escape single quotes
+    const formattedValue = typeof value === 'string' ? `'${value.replace(/'/g, "\\'")}'` : value;
     string += `\t'${prefix}${key}': ${formattedValue}${comma}\n`;
   });
   string += `}`;

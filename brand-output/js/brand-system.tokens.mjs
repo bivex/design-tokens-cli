@@ -1,18 +1,3 @@
-/**
- * Copyright (c) 2025 Bivex
- *
- * Author: Bivex
- * Available for contact via email: support@b-b.top
- * For up-to-date contact information:
- * https://github.com/bivex
- *
- * Created: 2025-12-23T03:12:28
- * Last Updated: 2025-12-23T03:12:33
- *
- * Licensed under the MIT License.
- * Commercial licensing available upon request.
- */
-
 export const brandSystem = {
 	'radius-none': '0',
 	'radius-sm': '0.125rem',
@@ -166,8 +151,8 @@ export const brandSystem = {
 	'space-1.5': '0.375rem',
 	'space-2.5': '0.625rem',
 	'space-3.5': '0.875rem',
-	'font-family-primary': ''Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif',
-	'font-family-mono': ''JetBrains Mono', 'Fira Code', Monaco, 'Cascadia Code', monospace',
+	'font-family-primary': '\'Inter\', -apple-system, BlinkMacSystemFont, \'Segoe UI\', Roboto, sans-serif',
+	'font-family-mono': '\'JetBrains Mono\', \'Fira Code\', Monaco, \'Cascadia Code\', monospace',
 	'font-family-heading': '{typography-font-family-primary}',
 	'font-family-body': '{typography-font-family-primary}',
 	'font-family-code': '{typography-font-family-mono}',
