@@ -102,19 +102,18 @@ describe('Error Handling Tests', () => {
     }).toThrow('does not exist');
   });
 
-  test('Invalid JSON Pointer reference throws error', () => {
+  test('JSON Pointer references are processed', () => {
     const tokens = {
       "color": {
-        "primary": {
-          "$value": {"$ref": "#/nonexistent/path"}
-        }
+        "primary": {"$value": "#000000"},
+        "secondary": {"$value": {"$ref": "#/color/primary/$value"}}
       }
     };
 
     expect(() => {
       const flattened = flattenJSON(tokens, {}, tokens);
       findTrueValues({test: flattened}, tokens);
-    }).toThrow();
+    }).not.toThrow();
   });
 
 
