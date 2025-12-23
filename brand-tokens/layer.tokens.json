@@ -1,0 +1,82 @@
+{
+  "layer": {
+    "$description": "Z-index layering system for proper element stacking and depth management",
+    "zIndex": {
+      "$description": "Z-index scale following a structured layering system",
+      "base": { "$value": "0", "$description": "Base layer (default)" },
+      "content": { "$value": "1", "$description": "Content above base" },
+      "bordered": { "$value": "2", "$description": "Bordered elements" },
+      "raised": { "$value": "3", "$description": "Raised elements (buttons, cards)" },
+      "dropdown": { "$value": "1000", "$description": "Dropdown menus" },
+      "sticky": { "$value": "1020", "$description": "Sticky elements" },
+      "banner": { "$value": "1030", "$description": "Banners and notifications" },
+      "overlay": { "$value": "1040", "$description": "Modal overlays/backdrops" },
+      "modal": { "$value": "1050", "$description": "Modals and dialogs" },
+      "popover": { "$value": "1060", "$description": "Popovers and tooltips" },
+      "skipLink": { "$value": "1070", "$description": "Skip links (accessibility)" },
+      "tooltip": { "$value": "1080", "$description": "Tooltips" },
+      "toast": { "$value": "1090", "$description": "Toast notifications" }
+    },
+    "isolation": {
+      "$description": "CSS isolation modes for stacking contexts",
+      "auto": { "$value": "auto", "$description": "Default isolation" },
+      "isolate": { "$value": "isolate", "$description": "Create new stacking context" }
+    },
+    "component": {
+      "$description": "Component-specific z-index assignments",
+      "navbar": {
+        "mobile": { "$value": "{layer.zIndex.sticky}" },
+        "desktop": { "$value": "{layer.zIndex.raised}" }
+      },
+      "sidebar": {
+        "overlay": { "$value": "{layer.zIndex.overlay}" },
+        "fixed": { "$value": "{layer.zIndex.sticky}" }
+      },
+      "button": {
+        "flat": { "$value": "{layer.zIndex.base}" },
+        "raised": { "$value": "{layer.zIndex.raised}" },
+        "floating": { "$value": "{layer.zIndex.modal}" }
+      },
+      "card": {
+        "flat": { "$value": "{layer.zIndex.base}" },
+        "raised": { "$value": "{layer.zIndex.raised}" },
+        "modal": { "$value": "{layer.zIndex.modal}" }
+      },
+      "input": {
+        "base": { "$value": "{layer.zIndex.base}" },
+        "dropdown": { "$value": "{layer.zIndex.dropdown}" },
+        "autocomplete": { "$value": "{layer.zIndex.dropdown}" }
+      },
+      "notification": {
+        "inline": { "$value": "{layer.zIndex.banner}" },
+        "toast": { "$value": "{layer.zIndex.toast}" }
+      },
+      "dialog": {
+        "modal": { "$value": "{layer.zIndex.modal}" },
+        "popover": { "$value": "{layer.zIndex.popover}" },
+        "tooltip": { "$value": "{layer.zIndex.tooltip}" }
+      }
+    },
+    "context": {
+      "$description": "Context-specific layering rules",
+      "page": {
+        "background": { "$value": "{layer.zIndex.base}" },
+        "content": { "$value": "{layer.zIndex.content}" },
+        "navigation": { "$value": "{layer.zIndex.sticky}" },
+        "footer": { "$value": "{layer.zIndex.base}" }
+      },
+      "form": {
+        "labels": { "$value": "{layer.zIndex.content}" },
+        "inputs": { "$value": "{layer.zIndex.base}" },
+        "validation": { "$value": "{layer.zIndex.banner}" },
+        "dropdowns": { "$value": "{layer.zIndex.dropdown}" }
+      },
+      "media": {
+        "images": { "$value": "{layer.zIndex.base}" },
+        "overlays": { "$value": "{layer.zIndex.overlay}" },
+        "captions": { "$value": "{layer.zIndex.raised}" },
+        "controls": { "$value": "{layer.zIndex.modal}" }
+      }
+    }
+  }
+}

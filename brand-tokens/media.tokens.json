@@ -1,0 +1,203 @@
+{
+  "media": {
+    "$description": "Responsive design tokens including breakpoints, container queries, and media features",
+    "breakpoint": {
+      "$description": "Responsive breakpoints following mobile-first approach",
+      "xs": {
+        "$value": "0px",
+        "$description": "Extra small devices (portrait phones)",
+        "label": "xs",
+        "minWidth": "0px",
+        "maxWidth": "639px"
+      },
+      "sm": {
+        "$value": "640px",
+        "$description": "Small devices (landscape phones)",
+        "label": "sm",
+        "minWidth": "640px",
+        "maxWidth": "767px"
+      },
+      "md": {
+        "$value": "768px",
+        "$description": "Medium devices (tablets)",
+        "label": "md",
+        "minWidth": "768px",
+        "maxWidth": "1023px"
+      },
+      "lg": {
+        "$value": "1024px",
+        "$description": "Large devices (desktops)",
+        "label": "lg",
+        "minWidth": "1024px",
+        "maxWidth": "1279px"
+      },
+      "xl": {
+        "$value": "1280px",
+        "$description": "Extra large devices (large desktops)",
+        "label": "xl",
+        "minWidth": "1280px",
+        "maxWidth": "1535px"
+      },
+      "2xl": {
+        "$value": "1536px",
+        "$description": "2X large devices (extra large desktops)",
+        "label": "2xl",
+        "minWidth": "1536px"
+      }
+    },
+    "container": {
+      "$description": "Container max-widths for different breakpoints",
+      "xs": { "$value": "20rem", "$description": "320px" },
+      "sm": { "$value": "24rem", "$description": "384px" },
+      "md": { "$value": "28rem", "$description": "448px" },
+      "lg": { "$value": "32rem", "$description": "512px" },
+      "xl": { "$value": "36rem", "$description": "576px" },
+      "2xl": { "$value": "42rem", "$description": "672px" },
+      "3xl": { "$value": "48rem", "$description": "768px" },
+      "4xl": { "$value": "56rem", "$description": "896px" },
+      "5xl": { "$value": "64rem", "$description": "1024px" },
+      "6xl": { "$value": "72rem", "$description": "1152px" },
+      "7xl": { "$value": "80rem", "$description": "1280px" },
+      "full": { "$value": "100%", "$description": "Full width" }
+    },
+    "query": {
+      "$description": "Pre-built media queries",
+      "up": {
+        "$description": "Min-width queries (mobile-first)",
+        "xs": { "$value": "(min-width: {media.breakpoint.xs})", "$description": "Extra small and up" },
+        "sm": { "$value": "(min-width: {media.breakpoint.sm})", "$description": "Small and up" },
+        "md": { "$value": "(min-width: {media.breakpoint.md})", "$description": "Medium and up" },
+        "lg": { "$value": "(min-width: {media.breakpoint.lg})", "$description": "Large and up" },
+        "xl": { "$value": "(min-width: {media.breakpoint.xl})", "$description": "Extra large and up" },
+        "2xl": { "$value": "(min-width: {media.breakpoint.2xl})", "$description": "2X large and up" }
+      },
+      "down": {
+        "$description": "Max-width queries (desktop-first)",
+        "xs": { "$value": "(max-width: 639px)", "$description": "Up to extra small" },
+        "sm": { "$value": "(max-width: 767px)", "$description": "Up to small" },
+        "md": { "$value": "(max-width: 1023px)", "$description": "Up to medium" },
+        "lg": { "$value": "(max-width: 1279px)", "$description": "Up to large" },
+        "xl": { "$value": "(max-width: 1535px)", "$description": "Up to extra large" }
+      },
+      "between": {
+        "$description": "Between queries (range)",
+        "xs-sm": { "$value": "(min-width: {media.breakpoint.xs}) and (max-width: 767px)", "$description": "Extra small to small" },
+        "sm-md": { "$value": "(min-width: {media.breakpoint.sm}) and (max-width: 1023px)", "$description": "Small to medium" },
+        "md-lg": { "$value": "(min-width: {media.breakpoint.md}) and (max-width: 1279px)", "$description": "Medium to large" },
+        "lg-xl": { "$value": "(min-width: {media.breakpoint.lg}) and (max-width: 1535px)", "$description": "Large to extra large" },
+        "xl-2xl": { "$value": "(min-width: {media.breakpoint.xl}) and (max-width: 9999px)", "$description": "Extra large and up" }
+      },
+      "only": {
+        "$description": "Only specific breakpoint",
+        "xs": { "$value": "(min-width: {media.breakpoint.xs}) and (max-width: 639px)", "$description": "Only extra small" },
+        "sm": { "$value": "(min-width: {media.breakpoint.sm}) and (max-width: 767px)", "$description": "Only small" },
+        "md": { "$value": "(min-width: {media.breakpoint.md}) and (max-width: 1023px)", "$description": "Only medium" },
+        "lg": { "$value": "(min-width: {media.breakpoint.lg}) and (max-width: 1279px)", "$description": "Only large" },
+        "xl": { "$value": "(min-width: {media.breakpoint.xl}) and (max-width: 1535px)", "$description": "Only extra large" },
+        "2xl": { "$value": "(min-width: {media.breakpoint.2xl})", "$description": "Only 2X large" }
+      }
+    },
+    "feature": {
+      "$description": "Media feature queries for device capabilities",
+      "orientation": {
+        "portrait": { "$value": "(orientation: portrait)", "$description": "Portrait orientation" },
+        "landscape": { "$value": "(orientation: landscape)", "$description": "Landscape orientation" }
+      },
+      "aspectRatio": {
+        "square": { "$value": "(aspect-ratio: 1)", "$description": "Square aspect ratio" },
+        "wide": { "$value": "(aspect-ratio: 16/9)", "$description": "Wide aspect ratio" },
+        "ultrawide": { "$value": "(aspect-ratio: 21/9)", "$description": "Ultra-wide aspect ratio" }
+      },
+      "resolution": {
+        "low": { "$value": "(max-resolution: 150dpi)", "$description": "Low resolution screens" },
+        "high": { "$value": "(min-resolution: 150dpi)", "$description": "High resolution screens" },
+        "retina": { "$value": "(min-resolution: 2dppx)", "$description": "Retina/high-DPI screens" }
+      },
+      "color": {
+        "monochrome": { "$value": "(monochrome)", "$description": "Monochrome display" },
+        "color": { "$value": "(color)", "$description": "Color display" },
+        "minColor": { "$value": "(min-color: 8)", "$description": "At least 8-bit color" }
+      },
+      "pointer": {
+        "none": { "$value": "(pointer: none)", "$description": "No pointing device" },
+        "coarse": { "$value": "(pointer: coarse)", "$description": "Coarse pointer (touch)" },
+        "fine": { "$value": "(pointer: fine)", "$description": "Fine pointer (mouse/stylus)" }
+      },
+      "hover": {
+        "none": { "$value": "(hover: none)", "$description": "No hover capability" },
+        "hover": { "$value": "(hover: hover)", "$description": "Hover capability" }
+      },
+      "prefers": {
+        "reducedMotion": { "$value": "(prefers-reduced-motion: reduce)", "$description": "User prefers reduced motion" },
+        "reducedTransparency": { "$value": "(prefers-reduced-transparency: reduce)", "$description": "User prefers reduced transparency" },
+        "contrast": {
+          "high": { "$value": "(prefers-contrast: high)", "$description": "User prefers high contrast" },
+          "low": { "$value": "(prefers-contrast: low)", "$description": "User prefers low contrast" }
+        },
+        "colorScheme": {
+          "light": { "$value": "(prefers-color-scheme: light)", "$description": "User prefers light color scheme" },
+          "dark": { "$value": "(prefers-color-scheme: dark)", "$description": "User prefers dark color scheme" }
+        }
+      }
+    },
+    "containerQuery": {
+      "$description": "Container query size ranges",
+      "xs": { "$value": "(min-width: 0px)", "$description": "Extra small containers" },
+      "sm": { "$value": "(min-width: 20rem)", "$description": "Small containers (320px+)" },
+      "md": { "$value": "(min-width: 28rem)", "$description": "Medium containers (448px+)" },
+      "lg": { "$value": "(min-width: 36rem)", "$description": "Large containers (576px+)" },
+      "xl": { "$value": "(min-width: 48rem)", "$description": "Extra large containers (768px+)" },
+      "2xl": { "$value": "(min-width: 64rem)", "$description": "2X large containers (1024px+)" }
+    },
+    "component": {
+      "$description": "Component-specific responsive configurations",
+      "grid": {
+        "columns": {
+          "xs": { "$value": "1", "$description": "Single column on mobile" },
+          "sm": { "$value": "2", "$description": "Two columns on small screens" },
+          "md": { "$value": "3", "$description": "Three columns on medium screens" },
+          "lg": { "$value": "4", "$description": "Four columns on large screens" },
+          "xl": { "$value": "5", "$description": "Five columns on extra large screens" },
+          "2xl": { "$value": "6", "$description": "Six columns on 2X large screens" }
+        },
+        "gap": {
+          "xs": { "$value": "{spacing.scale.2}", "$description": "Tight grid gap on mobile" },
+          "sm": { "$value": "{spacing.scale.3}", "$description": "Small grid gap" },
+          "md": { "$value": "{spacing.scale.4}", "$description": "Medium grid gap" },
+          "lg": { "$value": "{spacing.scale.6}", "$description": "Large grid gap" },
+          "xl": { "$value": "{spacing.scale.8}", "$description": "Extra large grid gap" }
+        }
+      },
+      "typography": {
+        "scale": {
+          "xs": {
+            "fontSize": { "$value": "{typography.size.sm}", "$description": "Smaller text on mobile" },
+            "lineHeight": { "$value": "{typography.line.height.normal}", "$description": "Normal line height on mobile" }
+          },
+          "sm": {
+            "fontSize": { "$value": "{typography.size.base}", "$description": "Base text on small screens" },
+            "lineHeight": { "$value": "{typography.line.height.normal}", "$description": "Normal line height" }
+          },
+          "md": {
+            "fontSize": { "$value": "{typography.size.lg}", "$description": "Large text on medium screens" },
+            "lineHeight": { "$value": "{typography.line.height.relaxed}", "$description": "Relaxed line height" }
+          }
+        }
+      },
+      "spacing": {
+        "container": {
+          "xs": { "$value": "{spacing.scale.4}", "$description": "Tight container padding on mobile" },
+          "sm": { "$value": "{spacing.scale.6}", "$description": "Normal container padding" },
+          "md": { "$value": "{spacing.scale.8}", "$description": "Loose container padding" },
+          "lg": { "$value": "{spacing.scale.12}", "$description": "Extra loose container padding" }
+        },
+        "section": {
+          "xs": { "$value": "{spacing.scale.8}", "$description": "Tight section spacing on mobile" },
+          "sm": { "$value": "{spacing.scale.12}", "$description": "Normal section spacing" },
+          "md": { "$value": "{spacing.scale.16}", "$description": "Loose section spacing" },
+          "lg": { "$value": "{spacing.scale.20}", "$description": "Extra loose section spacing" }
+        }
+      }
+    }
+  }
+}

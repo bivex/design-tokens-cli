@@ -1,0 +1,107 @@
+{
+  "border": {
+    "$description": "Comprehensive border system with radius, width, and style tokens",
+    "radius": {
+      "$description": "Border radius scale for rounded corners",
+      "none": { "$value": "0px", "$description": "No border radius" },
+      "xs": { "$value": "0.125rem", "$description": "2px - Extra small radius" },
+      "sm": { "$value": "0.25rem", "$description": "4px - Small radius" },
+      "md": { "$value": "0.375rem", "$description": "6px - Medium radius" },
+      "lg": { "$value": "0.5rem", "$description": "8px - Large radius" },
+      "xl": { "$value": "0.75rem", "$description": "12px - Extra large radius" },
+      "2xl": { "$value": "1rem", "$description": "16px - 2X large radius" },
+      "3xl": { "$value": "1.5rem", "$description": "24px - 3X large radius" },
+      "full": { "$value": "9999px", "$description": "Fully rounded (pill shape)" },
+      "button": {
+        "sm": { "$value": "{border.radius.sm}" },
+        "md": { "$value": "{border.radius.md}" },
+        "lg": { "$value": "{border.radius.lg}" },
+        "xl": { "$value": "{border.radius.xl}" }
+      },
+      "input": {
+        "sm": { "$value": "{border.radius.sm}" },
+        "md": { "$value": "{border.radius.md}" },
+        "lg": { "$value": "{border.radius.lg}" }
+      },
+      "card": {
+        "sm": { "$value": "{border.radius.md}" },
+        "md": { "$value": "{border.radius.lg}" },
+        "lg": { "$value": "{border.radius.xl}" }
+      },
+      "modal": {
+        "sm": { "$value": "{border.radius.lg}" },
+        "md": { "$value": "{border.radius.xl}" },
+        "lg": { "$value": "{border.radius.2xl}" }
+      }
+    },
+    "width": {
+      "$description": "Border width scale",
+      "none": { "$value": "0px", "$description": "No border" },
+      "hairline": { "$value": "0.5px", "$description": "Hairline border (retina displays)" },
+      "thin": { "$value": "1px", "$description": "Thin border (default)" },
+      "medium": { "$value": "2px", "$description": "Medium border" },
+      "thick": { "$value": "3px", "$description": "Thick border" },
+      "heavy": { "$value": "4px", "$description": "Heavy border" }
+    },
+    "style": {
+      "$description": "Border style variants",
+      "solid": { "$value": "solid", "$description": "Solid border" },
+      "dashed": { "$value": "dashed", "$description": "Dashed border" },
+      "dotted": { "$value": "dotted", "$description": "Dotted border" },
+      "double": { "$value": "double", "$description": "Double border" },
+      "groove": { "$value": "groove", "$description": "Groove border (3D effect)" },
+      "ridge": { "$value": "ridge", "$description": "Ridge border (3D effect)" },
+      "inset": { "$value": "inset", "$description": "Inset border (3D effect)" },
+      "outset": { "$value": "outset", "$description": "Outset border (3D effect)" }
+    },
+    "component": {
+      "$description": "Component-specific border configurations",
+      "button": {
+        "primary": {
+          "width": { "$value": "{border.width.thin}" },
+          "style": { "$value": "{border.style.solid}" },
+          "color": { "$value": "transparent" }
+        },
+        "secondary": {
+          "width": { "$value": "{border.width.thin}" },
+          "style": { "$value": "{border.style.solid}" },
+          "color": { "$value": "{color.core.neutral.200}" }
+        },
+        "outline": {
+          "width": { "$value": "{border.width.medium}" },
+          "style": { "$value": "{border.style.solid}" },
+          "color": { "$value": "{color.core.luxury.primary.500}" }
+        }
+      },
+      "input": {
+        "default": {
+          "width": { "$value": "{border.width.thin}" },
+          "style": { "$value": "{border.style.solid}" },
+          "color": { "$value": "{color.core.neutral.200}" }
+        },
+        "focus": {
+          "width": { "$value": "{border.width.medium}" },
+          "style": { "$value": "{border.style.solid}" },
+          "color": { "$value": "{color.core.luxury.primary.500}" }
+        },
+        "error": {
+          "width": { "$value": "{border.width.medium}" },
+          "style": { "$value": "{border.style.solid}" },
+          "color": { "$value": "#ef4444" }
+        }
+      },
+      "card": {
+        "default": {
+          "width": { "$value": "{border.width.thin}" },
+          "style": { "$value": "{border.style.solid}" },
+          "color": { "$value": "{color.core.neutral.100}" }
+        },
+        "elevated": {
+          "width": { "$value": "{border.width.none}" },
+          "style": { "$value": "{border.style.solid}" },
+          "color": { "$value": "transparent" }
+        }
+      }
+    }
+  }
+}

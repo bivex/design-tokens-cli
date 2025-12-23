@@ -1,0 +1,180 @@
+{
+  "state": {
+    "$description": "Component state tokens for interactive elements (hover, active, focus, disabled, etc.)",
+    "interactive": {
+      "$description": "Interactive state configurations",
+      "hover": {
+        "$description": "Hover state styling",
+        "opacity": { "$value": "{effect.opacity.80}", "$description": "Hover opacity" },
+        "scale": { "$value": "{effect.transform.scale.md}", "$description": "Hover scale" },
+        "translate": { "$value": "{effect.transform.translate.xs}", "$description": "Hover lift" },
+        "transition": { "$value": "150ms cubic-bezier(0.4, 0, 0.2, 1)", "$description": "Hover transition" }
+      },
+      "active": {
+        "$description": "Active/pressed state styling",
+        "opacity": { "$value": "{effect.opacity.90}", "$description": "Active opacity" },
+        "scale": { "$value": "{effect.transform.scale.sm}", "$description": "Active scale" },
+        "translate": { "$value": "translateY(1px)", "$description": "Active press down" },
+        "transition": { "$value": "100ms cubic-bezier(0.4, 0, 0.2, 1)", "$description": "Active transition" }
+      },
+      "focus": {
+        "$description": "Focus state styling",
+        "outline": {
+          "width": { "$value": "{a11y-spacing-focus-outline-width}", "$description": "Focus outline width" },
+          "color": { "$value": "{a11y-color-focus-outline}", "$description": "Focus outline color" },
+          "style": { "$value": "solid", "$description": "Focus outline style" },
+          "offset": { "$value": "{a11y-spacing-focus-outline-offset}", "$description": "Focus outline offset" }
+        },
+        "ring": {
+          "color": { "$value": "{color.core.luxury.primary.500}", "$description": "Focus ring color" },
+          "width": { "$value": "3px", "$description": "Focus ring width" },
+          "opacity": { "$value": "0.1", "$description": "Focus ring opacity" }
+        },
+        "shadow": { "$value": "{shadow.special.focus.ring}", "$description": "Focus shadow" },
+        "transition": { "$value": "100ms cubic-bezier(0.4, 0, 0.2, 1)", "$description": "Focus transition" }
+      },
+      "disabled": {
+        "$description": "Disabled state styling",
+        "opacity": { "$value": "{effect.opacity.50}", "$description": "Disabled opacity" },
+        "cursor": { "$value": "not-allowed", "$description": "Disabled cursor" },
+        "filter": { "$value": "{effect.filter.grayscale.partial}", "$description": "Disabled grayscale" },
+        "pointerEvents": { "$value": "none", "$description": "Disabled pointer events" },
+        "userSelect": { "$value": "none", "$description": "Disabled text selection" }
+      }
+    },
+    "validation": {
+      "$description": "Form validation state configurations",
+      "valid": {
+        "$description": "Valid state styling",
+        "border": {
+          "color": { "$value": "#10b981", "$description": "Valid border color" },
+          "width": { "$value": "{border.width.medium}", "$description": "Valid border width" }
+        },
+        "background": { "$value": "#d1fae5", "$description": "Valid background" },
+        "icon": {
+          "color": { "$value": "#10b981", "$description": "Valid icon color" }
+        }
+      },
+      "invalid": {
+        "$description": "Invalid/error state styling",
+        "border": {
+          "color": { "$value": "#ef4444", "$description": "Invalid border color" },
+          "width": { "$value": "{border.width.medium}", "$description": "Invalid border width" }
+        },
+        "background": { "$value": "#fef2f2", "$description": "Invalid background" },
+        "icon": {
+          "color": { "$value": "#ef4444", "$description": "Invalid icon color" }
+        },
+        "shake": {
+          "animation": { "$value": "shake 0.5s ease-in-out", "$description": "Error shake animation" }
+        }
+      },
+      "warning": {
+        "$description": "Warning state styling",
+        "border": {
+          "color": { "$value": "#f59e0b", "$description": "Warning border color" },
+          "width": { "$value": "{border.width.medium}", "$description": "Warning border width" }
+        },
+        "background": { "$value": "#fef3c7", "$description": "Warning background" },
+        "icon": {
+          "color": { "$value": "#f59e0b", "$description": "Warning icon color" }
+        }
+      }
+    },
+    "loading": {
+      "$description": "Loading state configurations",
+      "skeleton": {
+        "$description": "Skeleton loading styling",
+        "background": {
+          "primary": { "$value": "{color.core.neutral.200}", "$description": "Skeleton primary background" },
+          "secondary": { "$value": "{color.core.neutral.100}", "$description": "Skeleton secondary background" }
+        },
+        "animation": {
+          "pulse": { "$value": "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite", "$description": "Skeleton pulse animation" },
+          "wave": { "$value": "wave 1.5s ease-in-out infinite", "$description": "Skeleton wave animation" }
+        }
+      },
+      "spinner": {
+        "$description": "Loading spinner configurations",
+        "size": {
+          "xs": { "$value": "12px", "$description": "Extra small spinner" },
+          "sm": { "$value": "16px", "$description": "Small spinner" },
+          "md": { "$value": "24px", "$description": "Medium spinner" },
+          "lg": { "$value": "32px", "$description": "Large spinner" },
+          "xl": { "$value": "48px", "$description": "Extra large spinner" }
+        },
+        "color": {
+          "primary": { "$value": "{color.core.luxury.primary.500}", "$description": "Primary spinner color" },
+          "secondary": { "$value": "{color.core.neutral.400}", "$description": "Secondary spinner color" }
+        },
+        "speed": {
+          "slow": { "$value": "2s", "$description": "Slow rotation" },
+          "normal": { "$value": "1s", "$description": "Normal rotation" },
+          "fast": { "$value": "0.5s", "$description": "Fast rotation" }
+        }
+      },
+      "overlay": {
+        "$description": "Loading overlay styling",
+        "background": { "$value": "rgba(255, 255, 255, 0.8)", "$description": "Loading overlay background" },
+        "backdrop": { "$value": "{effect.backdrop.blur.sm}", "$description": "Loading overlay backdrop blur" },
+        "zIndex": { "$value": "{layer.zIndex.overlay}", "$description": "Loading overlay z-index" }
+      }
+    },
+    "component": {
+      "$description": "Component-specific state configurations",
+      "button": {
+        "$description": "Button state configurations",
+        "solid": {
+          "hover": {
+            "background": { "$value": "{color.core.luxury.primary.600}", "$description": "Solid button hover background" },
+            "shadow": { "$value": "{shadow.colored.primary.sm}", "$description": "Solid button hover shadow" }
+          },
+          "active": {
+            "background": { "$value": "{color.core.luxury.primary.700}", "$description": "Solid button active background" },
+            "transform": { "$value": "{state.interactive.active.scale}", "$description": "Solid button active transform" }
+          },
+          "focus": {
+            "ring": { "$value": "{state.interactive.focus.ring}", "$description": "Solid button focus ring" }
+          },
+          "disabled": {
+            "background": { "$value": "{color.core.neutral.300}", "$description": "Solid button disabled background" },
+            "color": { "$value": "{color.core.neutral.500}", "$description": "Solid button disabled color" }
+          }
+        },
+        "outline": {
+          "hover": {
+            "background": { "$value": "{color.core.luxury.primary.50}", "$description": "Outline button hover background" },
+            "border": { "$value": "{color.core.luxury.primary.600}", "$description": "Outline button hover border" }
+          },
+          "active": {
+            "background": { "$value": "{color.core.luxury.primary.100}", "$description": "Outline button active background" }
+          },
+          "focus": {
+            "ring": { "$value": "{state.interactive.focus.ring}", "$description": "Outline button focus ring" }
+          },
+          "disabled": {
+            "border": { "$value": "{color.core.neutral.300}", "$description": "Outline button disabled border" },
+            "color": { "$value": "{color.core.neutral.400}", "$description": "Outline button disabled color" }
+          }
+        }
+      },
+      "input": {
+        "$description": "Input state configurations",
+        "default": {
+          "hover": {
+            "border": { "$value": "{color.core.neutral.400}", "$description": "Input hover border" }
+          },
+          "focus": {
+            "border": { "$value": "{color.core.luxury.primary.500}", "$description": "Input focus border" },
+            "ring": { "$value": "{state.interactive.focus.ring}", "$description": "Input focus ring" }
+          },
+          "disabled": {
+            "background": { "$value": "{color.core.neutral.100}", "$description": "Input disabled background" },
+            "border": { "$value": "{color.core.neutral.200}", "$description": "Input disabled border" },
+            "color": { "$value": "{color.core.neutral.400}", "$description": "Input disabled color" }
+          }
+        }
+      }
+    }
+  }
+}

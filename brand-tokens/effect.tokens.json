@@ -1,0 +1,169 @@
+{
+  "effect": {
+    "$description": "Visual effects system including opacity, transforms, and filters",
+    "opacity": {
+      "$description": "Opacity scale for transparency effects",
+      "0": { "$value": "0", "$description": "Completely transparent" },
+      "5": { "$value": "0.05", "$description": "Barely visible" },
+      "10": { "$value": "0.1", "$description": "Very subtle" },
+      "20": { "$value": "0.2", "$description": "Subtle transparency" },
+      "25": { "$value": "0.25", "$description": "Quarter opacity" },
+      "30": { "$value": "0.3", "$description": "Low opacity" },
+      "40": { "$value": "0.4", "$description": "Medium-low opacity" },
+      "50": { "$value": "0.5", "$description": "Half opacity" },
+      "60": { "$value": "0.6", "$description": "Medium-high opacity" },
+      "70": { "$value": "0.7", "$description": "High opacity" },
+      "75": { "$value": "0.75", "$description": "Three-quarter opacity" },
+      "80": { "$value": "0.8", "$description": "Very high opacity" },
+      "90": { "$value": "0.9", "$description": "Almost opaque" },
+      "95": { "$value": "0.95", "$description": "Nearly opaque" },
+      "100": { "$value": "1", "$description": "Completely opaque" }
+    },
+    "transform": {
+      "$description": "Transform values for scaling, rotating, and translating elements",
+      "scale": {
+        "$description": "Scale transform values",
+        "none": { "$value": "scale(1)", "$description": "No scaling" },
+        "xs": { "$value": "scale(0.95)", "$description": "Extra small scale" },
+        "sm": { "$value": "scale(0.98)", "$description": "Small scale" },
+        "md": { "$value": "scale(1.02)", "$description": "Medium scale (hover effect)" },
+        "lg": { "$value": "scale(1.05)", "$description": "Large scale" },
+        "xl": { "$value": "scale(1.1)", "$description": "Extra large scale" },
+        "2xl": { "$value": "scale(1.2)", "$description": "2X large scale" }
+      },
+      "rotate": {
+        "$description": "Rotation transform values",
+        "none": { "$value": "rotate(0deg)", "$description": "No rotation" },
+        "1": { "$value": "rotate(1deg)", "$description": "Minimal rotation" },
+        "3": { "$value": "rotate(3deg)", "$description": "Small rotation" },
+        "6": { "$value": "rotate(6deg)", "$description": "Medium rotation" },
+        "12": { "$value": "rotate(12deg)", "$description": "Large rotation" },
+        "45": { "$value": "rotate(45deg)", "$description": "Quarter turn" },
+        "90": { "$value": "rotate(90deg)", "$description": "Quarter turn" },
+        "180": { "$value": "rotate(180deg)", "$description": "Half turn" }
+      },
+      "translate": {
+        "$description": "Translation transform values",
+        "none": { "$value": "translate(0, 0)", "$description": "No translation" },
+        "xs": { "$value": "translateY(-1px)", "$description": "Extra small lift" },
+        "sm": { "$value": "translateY(-2px)", "$description": "Small lift" },
+        "md": { "$value": "translateY(-4px)", "$description": "Medium lift" },
+        "lg": { "$value": "translateY(-8px)", "$description": "Large lift" },
+        "xl": { "$value": "translateY(-16px)", "$description": "Extra large lift" }
+      }
+    },
+    "filter": {
+      "$description": "CSS filter effects",
+      "blur": {
+        "$description": "Blur filter values",
+        "none": { "$value": "blur(0)", "$description": "No blur" },
+        "sm": { "$value": "blur(2px)", "$description": "Small blur" },
+        "md": { "$value": "blur(4px)", "$description": "Medium blur" },
+        "lg": { "$value": "blur(8px)", "$description": "Large blur" },
+        "xl": { "$value": "blur(12px)", "$description": "Extra large blur" },
+        "2xl": { "$value": "blur(24px)", "$description": "2X large blur" }
+      },
+      "brightness": {
+        "$description": "Brightness filter values",
+        "darkest": { "$value": "brightness(0.2)", "$description": "Very dark" },
+        "dark": { "$value": "brightness(0.5)", "$description": "Dark" },
+        "normal": { "$value": "brightness(1)", "$description": "Normal brightness" },
+        "light": { "$value": "brightness(1.2)", "$description": "Light" },
+        "lightest": { "$value": "brightness(1.5)", "$description": "Very light" }
+      },
+      "contrast": {
+        "$description": "Contrast filter values",
+        "low": { "$value": "contrast(0.8)", "$description": "Low contrast" },
+        "normal": { "$value": "contrast(1)", "$description": "Normal contrast" },
+        "high": { "$value": "contrast(1.2)", "$description": "High contrast" },
+        "highest": { "$value": "contrast(1.5)", "$description": "Very high contrast" }
+      },
+      "saturate": {
+        "$description": "Saturation filter values",
+        "muted": { "$value": "saturate(0.5)", "$description": "Muted colors" },
+        "normal": { "$value": "saturate(1)", "$description": "Normal saturation" },
+        "vibrant": { "$value": "saturate(1.2)", "$description": "Vibrant colors" },
+        "intense": { "$value": "saturate(1.5)", "$description": "Very intense colors" }
+      },
+      "grayscale": {
+        "$description": "Grayscale filter values",
+        "none": { "$value": "grayscale(0)", "$description": "Full color" },
+        "partial": { "$value": "grayscale(0.5)", "$description": "50% grayscale" },
+        "full": { "$value": "grayscale(1)", "$description": "Full grayscale" }
+      },
+      "sepia": {
+        "$description": "Sepia filter values",
+        "none": { "$value": "sepia(0)", "$description": "No sepia" },
+        "vintage": { "$value": "sepia(0.3)", "$description": "Vintage sepia" },
+        "strong": { "$value": "sepia(0.8)", "$description": "Strong sepia" },
+        "full": { "$value": "sepia(1)", "$description": "Full sepia" }
+      }
+    },
+    "backdrop": {
+      "$description": "Backdrop filter effects (blur, etc.)",
+      "blur": {
+        "none": { "$value": "blur(0)", "$description": "No backdrop blur" },
+        "sm": { "$value": "blur(4px)", "$description": "Small backdrop blur" },
+        "md": { "$value": "blur(8px)", "$description": "Medium backdrop blur" },
+        "lg": { "$value": "blur(12px)", "$description": "Large backdrop blur" },
+        "xl": { "$value": "blur(20px)", "$description": "Extra large backdrop blur" }
+      },
+      "opacity": {
+        "subtle": { "$value": "opacity(0.8)", "$description": "Subtle backdrop" },
+        "medium": { "$value": "opacity(0.6)", "$description": "Medium backdrop" },
+        "strong": { "$value": "opacity(0.4)", "$description": "Strong backdrop" }
+      }
+    },
+    "component": {
+      "$description": "Component-specific effect configurations",
+      "button": {
+        "hover": {
+          "scale": { "$value": "{effect.transform.scale.md}" },
+          "opacity": { "$value": "{effect.opacity.100}" }
+        },
+        "pressed": {
+          "scale": { "$value": "{effect.transform.scale.sm}" },
+          "opacity": { "$value": "{effect.opacity.80}" }
+        },
+        "disabled": {
+          "opacity": { "$value": "{effect.opacity.50}" },
+          "filter": { "$value": "{effect.filter.grayscale.full}" }
+        }
+      },
+      "card": {
+        "hover": {
+          "translate": { "$value": "{effect.transform.translate.sm}" },
+          "shadow": { "$value": "0 10px 25px rgb(0 0 0 / 0.15)" }
+        },
+        "loading": {
+          "opacity": { "$value": "{effect.opacity.70}" },
+          "filter": { "$value": "{effect.filter.blur.sm}" }
+        }
+      },
+      "modal": {
+        "backdrop": {
+          "opacity": { "$value": "{effect.backdrop.opacity.medium}" },
+          "blur": { "$value": "{effect.backdrop.blur.md}" }
+        },
+        "enter": {
+          "scale": { "$value": "scale(0.9)" },
+          "opacity": { "$value": "{effect.opacity.0}" }
+        },
+        "exit": {
+          "scale": { "$value": "scale(0.95)" },
+          "opacity": { "$value": "{effect.opacity.0}" }
+        }
+      },
+      "image": {
+        "loading": {
+          "filter": { "$value": "{effect.filter.blur.md}" },
+          "opacity": { "$value": "{effect.opacity.50}" }
+        },
+        "hover": {
+          "scale": { "$value": "{effect.transform.scale.lg}" },
+          "filter": { "$value": "{effect.filter.brightness.light}" }
+        }
+      }
+    }
+  }
+}

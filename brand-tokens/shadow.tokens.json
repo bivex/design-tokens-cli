@@ -1,0 +1,110 @@
+{
+  "shadow": {
+    "$description": "Comprehensive shadow system for depth, elevation, and visual hierarchy",
+    "elevation": {
+      "$description": "Elevation-based shadows following Material Design principles",
+      "none": { "$value": "none", "$description": "No shadow" },
+      "xs": {
+        "$value": "0 1px 2px 0 rgb(0 0 0 / 0.05)",
+        "$description": "Extra small elevation (tooltips, small elements)"
+      },
+      "sm": {
+        "$value": "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)",
+        "$description": "Small elevation (cards, inputs)"
+      },
+      "md": {
+        "$value": "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
+        "$description": "Medium elevation (modals, dropdowns)"
+      },
+      "lg": {
+        "$value": "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
+        "$description": "Large elevation (popovers, notifications)"
+      },
+      "xl": {
+        "$value": "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
+        "$description": "Extra large elevation (hero sections, overlays)"
+      },
+      "2xl": {
+        "$value": "0 25px 50px -12px rgb(0 0 0 / 0.25)",
+        "$description": "2X large elevation (major overlays)"
+      },
+      "inner": {
+        "$value": "inset 0 2px 4px 0 rgb(0 0 0 / 0.05)",
+        "$description": "Inner shadow for depth within elements"
+      }
+    },
+    "colored": {
+      "$description": "Colored shadows using brand colors",
+      "primary": {
+        "sm": { "$value": "0 1px 3px 0 rgb(187 143 87 / 0.1), 0 1px 2px -1px rgb(187 143 87 / 0.1)" },
+        "md": { "$value": "0 4px 6px -1px rgb(187 143 87 / 0.1), 0 2px 4px -2px rgb(187 143 87 / 0.1)" },
+        "lg": { "$value": "0 10px 15px -3px rgb(187 143 87 / 0.15), 0 4px 6px -4px rgb(187 143 87 / 0.1)" }
+      },
+      "accent": {
+        "sm": { "$value": "0 1px 3px 0 rgb(155 77 136 / 0.1), 0 1px 2px -1px rgb(155 77 136 / 0.1)" },
+        "md": { "$value": "0 4px 6px -1px rgb(155 77 136 / 0.1), 0 2px 4px -2px rgb(155 77 136 / 0.1)" },
+        "lg": { "$value": "0 10px 15px -3px rgb(155 77 136 / 0.15), 0 4px 6px -4px rgb(155 77 136 / 0.1)" }
+      },
+      "success": {
+        "sm": { "$value": "0 1px 3px 0 rgb(22 101 77 / 0.1), 0 1px 2px -1px rgb(22 101 77 / 0.1)" },
+        "md": { "$value": "0 4px 6px -1px rgb(22 101 77 / 0.1), 0 2px 4px -2px rgb(22 101 77 / 0.1)" }
+      },
+      "warning": {
+        "$value": "0 1px 3px 0 rgb(146 64 14 / 0.1), 0 1px 2px -1px rgb(146 64 14 / 0.1)"
+      },
+      "error": {
+        "$value": "0 1px 3px 0 rgb(185 28 28 / 0.1), 0 1px 2px -1px rgb(185 28 28 / 0.1)"
+      }
+    },
+    "special": {
+      "$description": "Special-purpose shadows",
+      "glow": {
+        "primary": { "$value": "0 0 20px rgb(187 143 87 / 0.3)", "$description": "Glowing effect for primary elements" },
+        "accent": { "$value": "0 0 20px rgb(155 77 136 / 0.3)", "$description": "Glowing effect for accent elements" }
+      },
+      "text": {
+        "sm": { "$value": "0 1px 2px rgb(0 0 0 / 0.05)", "$description": "Subtle text shadow" },
+        "md": { "$value": "0 2px 4px rgb(0 0 0 / 0.1)", "$description": "Medium text shadow" }
+      },
+      "focus": {
+        "ring": { "$value": "0 0 0 3px rgb(187 143 87 / 0.1)", "$description": "Focus ring shadow" },
+        "inset": { "$value": "inset 0 0 0 2px rgb(187 143 87 / 0.8)", "$description": "Inset focus shadow" }
+      }
+    },
+    "component": {
+      "$description": "Component-specific shadow configurations",
+      "button": {
+        "flat": { "$value": "{shadow.elevation.none}" },
+        "raised": { "$value": "{shadow.elevation.sm}" },
+        "floating": { "$value": "{shadow.elevation.md}" },
+        "pressed": { "$value": "{shadow.elevation.xs}" }
+      },
+      "card": {
+        "flat": { "$value": "{shadow.elevation.none}" },
+        "raised": { "$value": "{shadow.elevation.sm}" },
+        "elevated": { "$value": "{shadow.elevation.md}" },
+        "overlay": { "$value": "{shadow.elevation.lg}" },
+        "modal": { "$value": "{shadow.elevation.xl}" }
+      },
+      "input": {
+        "flat": { "$value": "{shadow.elevation.none}" },
+        "raised": { "$value": "inset 0 1px 3px rgb(0 0 0 / 0.1)" },
+        "focus": { "$value": "{shadow.special.focus.ring}" }
+      },
+      "dropdown": {
+        "default": { "$value": "{shadow.elevation.md}" },
+        "large": { "$value": "{shadow.elevation.lg}" }
+      },
+      "tooltip": {
+        "default": { "$value": "{shadow.elevation.sm}" }
+      },
+      "popover": {
+        "default": { "$value": "{shadow.elevation.lg}" }
+      },
+      "modal": {
+        "default": { "$value": "{shadow.elevation.xl}" },
+        "fullscreen": { "$value": "{shadow.elevation.2xl}" }
+      }
+    }
+  }
+}

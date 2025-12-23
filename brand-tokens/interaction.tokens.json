@@ -1,0 +1,162 @@
+{
+  "interaction": {
+    "$description": "Interactive element tokens including cursors, scrollbars, focus styles, and user interaction patterns",
+    "cursor": {
+      "$description": "Cursor types for different interaction contexts",
+      "default": { "$value": "default", "$description": "Default cursor" },
+      "pointer": { "$value": "pointer", "$description": "Pointer cursor for clickable elements" },
+      "text": { "$value": "text", "$description": "Text cursor for text input" },
+      "move": { "$value": "move", "$description": "Move cursor for draggable elements" },
+      "grab": { "$value": "grab", "$description": "Grab cursor for draggable elements" },
+      "grabbing": { "$value": "grabbing", "$description": "Grabbing cursor while dragging" },
+      "notAllowed": { "$value": "not-allowed", "$description": "Not allowed cursor for disabled elements" },
+      "wait": { "$value": "wait", "$description": "Wait cursor for loading states" },
+      "help": { "$value": "help", "$description": "Help cursor" },
+      "crosshair": { "$value": "crosshair", "$description": "Crosshair cursor for precision" },
+      "zoomIn": { "$value": "zoom-in", "$description": "Zoom in cursor" },
+      "zoomOut": { "$value": "zoom-out", "$description": "Zoom out cursor" },
+      "resize": {
+        "n": { "$value": "n-resize", "$description": "North resize cursor" },
+        "s": { "$value": "s-resize", "$description": "South resize cursor" },
+        "e": { "$value": "e-resize", "$description": "East resize cursor" },
+        "w": { "$value": "w-resize", "$description": "West resize cursor" },
+        "ne": { "$value": "ne-resize", "$description": "Northeast resize cursor" },
+        "nw": { "$value": "nw-resize", "$description": "Northwest resize cursor" },
+        "se": { "$value": "se-resize", "$description": "Southeast resize cursor" },
+        "sw": { "$value": "sw-resize", "$description": "Southwest resize cursor" },
+        "ew": { "$value": "ew-resize", "$description": "East-west resize cursor" },
+        "ns": { "$value": "ns-resize", "$description": "North-south resize cursor" },
+        "nesw": { "$value": "nesw-resize", "$description": "Northeast-southwest resize cursor" },
+        "nwse": { "$value": "nwse-resize", "$description": "Northwest-southeast resize cursor" }
+      }
+    },
+    "scrollbar": {
+      "$description": "Scrollbar styling tokens",
+      "width": {
+        "thin": { "$value": "thin", "$description": "Thin scrollbar" },
+        "auto": { "$value": "auto", "$description": "Auto scrollbar width" },
+        "none": { "$value": "none", "$description": "Hidden scrollbar" }
+      },
+      "color": {
+        "track": { "$value": "{color.core.neutral.100}", "$description": "Scrollbar track color" },
+        "thumb": { "$value": "{color.core.neutral.300}", "$description": "Scrollbar thumb color" },
+        "thumbHover": { "$value": "{color.core.neutral.400}", "$description": "Scrollbar thumb hover color" },
+        "thumbActive": { "$value": "{color.core.neutral.500}", "$description": "Scrollbar thumb active color" }
+      },
+      "borderRadius": { "$value": "{border.radius.full}", "$description": "Scrollbar border radius" }
+    },
+    "focus": {
+      "$description": "Focus management and styling",
+      "outline": {
+        "$description": "Focus outline styles",
+        "none": { "$value": "none", "$description": "No outline" },
+        "auto": { "$value": "auto", "$description": "Browser default outline" },
+        "solid": {
+          "thin": { "$value": "0.125rem solid #d3ac74", "$description": "Thin solid outline" },
+          "medium": { "$value": "2px solid #d3ac74", "$description": "Medium solid outline" },
+          "thick": { "$value": "3px solid #d3ac74", "$description": "Thick solid outline" }
+        },
+        "dashed": { "$value": "2px dashed {color-focus-outline}", "$description": "Dashed outline" },
+        "dotted": { "$value": "2px dotted {color-focus-outline}", "$description": "Dotted outline" }
+      },
+      "ring": {
+        "$description": "Focus ring (box-shadow based) styles",
+        "primary": { "$value": "0 0 0 3px rgb(187 143 87 / 0.1)", "$description": "Primary focus ring" },
+        "secondary": { "$value": "0 0 0 3px rgb(155 77 136 / 0.1)", "$description": "Secondary focus ring" },
+        "success": { "$value": "0 0 0 3px rgb(22 101 77 / 0.1)", "$description": "Success focus ring" },
+        "warning": { "$value": "0 0 0 3px rgb(146 64 14 / 0.1)", "$description": "Warning focus ring" },
+        "error": { "$value": "0 0 0 3px rgb(185 28 28 / 0.1)", "$description": "Error focus ring" },
+        "neutral": { "$value": "0 0 0 3px rgb(107 114 128 / 0.1)", "$description": "Neutral focus ring" }
+      },
+      "visible": {
+        "$description": "Focus visible pseudo-class styles",
+        "skipLink": { "$value": "2px solid {color.core.luxury.primary.600}", "$description": "Skip link focus style" }
+      }
+    },
+    "userSelect": {
+      "$description": "Text selection control",
+      "none": { "$value": "none", "$description": "Disable text selection" },
+      "text": { "$value": "text", "$description": "Allow text selection" },
+      "all": { "$value": "all", "$description": "Select all on click" },
+      "auto": { "$value": "auto", "$description": "Browser default selection" }
+    },
+    "pointerEvents": {
+      "$description": "Pointer events control",
+      "none": { "$value": "none", "$description": "Disable pointer events" },
+      "auto": { "$value": "auto", "$description": "Enable pointer events" },
+      "all": { "$value": "all", "$description": "Enable all pointer events" }
+    },
+    "touchAction": {
+      "$description": "Touch action control for mobile",
+      "none": { "$value": "none", "$description": "Disable touch actions" },
+      "auto": { "$value": "auto", "$description": "Allow all touch actions" },
+      "panX": { "$value": "pan-x", "$description": "Allow horizontal panning" },
+      "panY": { "$value": "pan-y", "$description": "Allow vertical panning" },
+      "pinchZoom": { "$value": "pinch-zoom", "$description": "Allow pinch zoom" },
+      "manipulation": { "$value": "manipulation", "$description": "Allow scroll and zoom" }
+    },
+    "component": {
+      "$description": "Component-specific interaction configurations",
+      "button": {
+        "cursor": {
+          "default": { "$value": "{interaction.cursor.pointer}", "$description": "Button cursor" },
+          "disabled": { "$value": "{interaction.cursor.notAllowed}", "$description": "Disabled button cursor" },
+          "loading": { "$value": "{interaction.cursor.wait}", "$description": "Loading button cursor" }
+        },
+        "focus": {
+          "outline": { "$value": "{interaction.focus.outline.none}", "$description": "Button focus outline" },
+          "ring": { "$value": "{interaction.focus.ring.primary}", "$description": "Button focus ring" }
+        }
+      },
+      "input": {
+        "cursor": { "$value": "{interaction.cursor.text}", "$description": "Input cursor" },
+        "focus": {
+          "outline": { "$value": "{interaction.focus.outline.none}", "$description": "Input focus outline" },
+          "ring": { "$value": "{interaction.focus.ring.primary}", "$description": "Input focus ring" }
+        },
+        "userSelect": { "$value": "{interaction.userSelect.text}", "$description": "Input text selection" }
+      },
+      "link": {
+        "cursor": { "$value": "{interaction.cursor.pointer}", "$description": "Link cursor" },
+        "focus": {
+          "outline": { "$value": "{interaction.focus.outline.solid.thin}", "$description": "Link focus outline" }
+        }
+      },
+      "modal": {
+        "backdrop": {
+          "cursor": { "$value": "{interaction.cursor.default}", "$description": "Modal backdrop cursor" },
+          "pointerEvents": { "$value": "{interaction.pointerEvents.none}", "$description": "Modal backdrop pointer events" }
+        }
+      },
+      "draggable": {
+        "cursor": {
+          "default": { "$value": "{interaction.cursor.grab}", "$description": "Draggable element cursor" },
+          "active": { "$value": "{interaction.cursor.grabbing}", "$description": "Dragging cursor" }
+        },
+        "userSelect": { "$value": "{interaction.userSelect.none}", "$description": "Disable selection on drag" }
+      },
+      "resizable": {
+        "cursor": {
+          "n": { "$value": "{interaction.cursor.resize.n}", "$description": "North resize cursor" },
+          "s": { "$value": "{interaction.cursor.resize.s}", "$description": "South resize cursor" },
+          "e": { "$value": "{interaction.cursor.resize.e}", "$description": "East resize cursor" },
+          "w": { "$value": "{interaction.cursor.resize.w}", "$description": "West resize cursor" },
+          "ne": { "$value": "{interaction.cursor.resize.ne}", "$description": "Northeast resize cursor" },
+          "nw": { "$value": "{interaction.cursor.resize.nw}", "$description": "Northwest resize cursor" },
+          "se": { "$value": "{interaction.cursor.resize.se}", "$description": "Southeast resize cursor" },
+          "sw": { "$value": "{interaction.cursor.resize.sw}", "$description": "Southwest resize cursor" }
+        }
+      },
+      "scrollable": {
+        "scrollbar": {
+          "width": { "$value": "{interaction.scrollbar.width.thin}", "$description": "Scrollable content scrollbar width" },
+          "color": {
+            "thumb": { "$value": "{interaction.scrollbar.color.thumb}", "$description": "Scrollbar thumb color" },
+            "track": { "$value": "{interaction.scrollbar.color.track}", "$description": "Scrollbar track color" }
+          }
+        },
+        "touchAction": { "$value": "{interaction.touchAction.panY}", "$description": "Vertical scrolling touch action" }
+      }
+    }
+  }
+}
