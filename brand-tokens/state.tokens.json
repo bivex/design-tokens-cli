@@ -20,10 +20,10 @@
       "focus": {
         "$description": "Focus state styling",
         "outline": {
-          "width": { "$value": "{a11y-spacing-focus-outline-width}", "$description": "Focus outline width" },
-          "color": { "$value": "{a11y-color-focus-outline}", "$description": "Focus outline color" },
+          "width": { "$value": "0.125rem", "$description": "Focus outline width" },
+          "color": { "$value": "#d3ac74", "$description": "Focus outline color" },
           "style": { "$value": "solid", "$description": "Focus outline style" },
-          "offset": { "$value": "{a11y-spacing-focus-outline-offset}", "$description": "Focus outline offset" }
+          "offset": { "$value": "0.125rem", "$description": "Focus outline offset" }
         },
         "ring": {
           "color": { "$value": "{color.core.luxury.primary.500}", "$description": "Focus ring color" },
@@ -134,7 +134,7 @@
             "transform": { "$value": "{state.interactive.active.scale}", "$description": "Solid button active transform" }
           },
           "focus": {
-            "ring": { "$value": "{state.interactive.focus.ring}", "$description": "Solid button focus ring" }
+            "ring": { "$value": "0 0 0 3px rgb(187 143 87 / 0.1)", "$description": "Solid button focus ring" }
           },
           "disabled": {
             "background": { "$value": "{color.core.neutral.300}", "$description": "Solid button disabled background" },
@@ -150,7 +150,7 @@
             "background": { "$value": "{color.core.luxury.primary.100}", "$description": "Outline button active background" }
           },
           "focus": {
-            "ring": { "$value": "{state.interactive.focus.ring}", "$description": "Outline button focus ring" }
+            "ring": { "$value": "0 0 0 3px rgb(187 143 87 / 0.1)", "$description": "Outline button focus ring" }
           },
           "disabled": {
             "border": { "$value": "{color.core.neutral.300}", "$description": "Outline button disabled border" },
@@ -166,7 +166,7 @@
           },
           "focus": {
             "border": { "$value": "{color.core.luxury.primary.500}", "$description": "Input focus border" },
-            "ring": { "$value": "{state.interactive.focus.ring}", "$description": "Input focus ring" }
+            "ring": { "$value": "0 0 0 3px rgb(187 143 87 / 0.1)", "$description": "Input focus ring" }
           },
           "disabled": {
             "background": { "$value": "{color.core.neutral.100}", "$description": "Input disabled background" },

@@ -160,11 +160,45 @@
   --shadow-lg: var(--lg);
   --shadow-xl: var(--xl);
 
-  /* Animation - Using Generated Tokens */
+  /* Animation & Effects - Using Generated Tokens */
   --transition-fast: var(--animation-duration-fast) var(--animation-easing-smooth);
   --transition-normal: var(--animation-duration-normal) var(--animation-easing-smooth);
   --hover-scale: var(--a11y-interaction-active-scale);
   --hover-opacity: var(--a11y-interaction-hover-opacity);
+
+  /* Transform Effects - Using Generated Tokens */
+  --transform-scale-hover: var(--animation-interaction-button-hover-transform);
+  --transform-scale-press: var(--animation-interaction-button-pressed-transform);
+
+  /* Opacity Effects - Using Generated Tokens */
+  --opacity-hover: var(--state-interactive-hover-opacity);
+  --opacity-active: var(--state-interactive-active-opacity);
+  --opacity-disabled: var(--state-interactive-disabled-opacity);
+
+  /* Shadows - Using Generated Tokens */
+  --shadow-none: var(--elevation-none);
+  --shadow-xs: var(--elevation-xs);
+  --shadow-sm: var(--elevation-sm);
+  --shadow-md: var(--elevation-md);
+  --shadow-lg: var(--elevation-lg);
+  --shadow-xl: var(--elevation-xl);
+
+  /* Border Radius - Using Generated Tokens */
+  --radius-none: var(--border-radius-none);
+  --radius-sm: var(--border-radius-sm);
+  --radius-md: var(--border-radius-md);
+  --radius-lg: var(--border-radius-lg);
+  --radius-xl: var(--border-radius-xl);
+  --radius-full: var(--border-radius-full);
+
+  /* Z-Index Layers - Using Generated Tokens */
+  --z-base: var(--layer-zIndex-base);
+  --z-content: var(--layer-zIndex-content);
+  --z-dropdown: var(--layer-zIndex-dropdown);
+  --z-sticky: var(--layer-zIndex-sticky);
+  --z-modal: var(--layer-zIndex-modal);
+  --z-tooltip: var(--layer-zIndex-tooltip);
+  --z-toast: var(--layer-zIndex-toast);
 
   /* Layout */
   --container-max-width: 1200px;

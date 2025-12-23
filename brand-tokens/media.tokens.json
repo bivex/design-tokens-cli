@@ -64,12 +64,12 @@
       "$description": "Pre-built media queries",
       "up": {
         "$description": "Min-width queries (mobile-first)",
-        "xs": { "$value": "(min-width: {media.breakpoint.xs})", "$description": "Extra small and up" },
-        "sm": { "$value": "(min-width: {media.breakpoint.sm})", "$description": "Small and up" },
-        "md": { "$value": "(min-width: {media.breakpoint.md})", "$description": "Medium and up" },
-        "lg": { "$value": "(min-width: {media.breakpoint.lg})", "$description": "Large and up" },
-        "xl": { "$value": "(min-width: {media.breakpoint.xl})", "$description": "Extra large and up" },
-        "2xl": { "$value": "(min-width: {media.breakpoint.2xl})", "$description": "2X large and up" }
+        "xs": { "$value": "(min-width: 0px)", "$description": "Extra small and up" },
+        "sm": { "$value": "(min-width: 640px)", "$description": "Small and up" },
+        "md": { "$value": "(min-width: 768px)", "$description": "Medium and up" },
+        "lg": { "$value": "(min-width: 1024px)", "$description": "Large and up" },
+        "xl": { "$value": "(min-width: 1280px)", "$description": "Extra large and up" },
+        "2xl": { "$value": "(min-width: 1536px)", "$description": "2X large and up" }
       },
       "down": {
         "$description": "Max-width queries (desktop-first)",
@@ -81,20 +81,20 @@
       },
       "between": {
         "$description": "Between queries (range)",
-        "xs-sm": { "$value": "(min-width: {media.breakpoint.xs}) and (max-width: 767px)", "$description": "Extra small to small" },
-        "sm-md": { "$value": "(min-width: {media.breakpoint.sm}) and (max-width: 1023px)", "$description": "Small to medium" },
-        "md-lg": { "$value": "(min-width: {media.breakpoint.md}) and (max-width: 1279px)", "$description": "Medium to large" },
-        "lg-xl": { "$value": "(min-width: {media.breakpoint.lg}) and (max-width: 1535px)", "$description": "Large to extra large" },
-        "xl-2xl": { "$value": "(min-width: {media.breakpoint.xl}) and (max-width: 9999px)", "$description": "Extra large and up" }
+        "xs-sm": { "$value": "(min-width: 0px) and (max-width: 767px)", "$description": "Extra small to small" },
+        "sm-md": { "$value": "(min-width: 640px) and (max-width: 1023px)", "$description": "Small to medium" },
+        "md-lg": { "$value": "(min-width: 768px) and (max-width: 1279px)", "$description": "Medium to large" },
+        "lg-xl": { "$value": "(min-width: 1024px) and (max-width: 1535px)", "$description": "Large to extra large" },
+        "xl-2xl": { "$value": "(min-width: 1280px) and (max-width: 9999px)", "$description": "Extra large and up" }
       },
       "only": {
         "$description": "Only specific breakpoint",
-        "xs": { "$value": "(min-width: {media.breakpoint.xs}) and (max-width: 639px)", "$description": "Only extra small" },
-        "sm": { "$value": "(min-width: {media.breakpoint.sm}) and (max-width: 767px)", "$description": "Only small" },
-        "md": { "$value": "(min-width: {media.breakpoint.md}) and (max-width: 1023px)", "$description": "Only medium" },
-        "lg": { "$value": "(min-width: {media.breakpoint.lg}) and (max-width: 1279px)", "$description": "Only large" },
-        "xl": { "$value": "(min-width: {media.breakpoint.xl}) and (max-width: 1535px)", "$description": "Only extra large" },
-        "2xl": { "$value": "(min-width: {media.breakpoint.2xl})", "$description": "Only 2X large" }
+        "xs": { "$value": "(min-width: 0px) and (max-width: 639px)", "$description": "Only extra small" },
+        "sm": { "$value": "(min-width: 640px) and (max-width: 767px)", "$description": "Only small" },
+        "md": { "$value": "(min-width: 768px) and (max-width: 1023px)", "$description": "Only medium" },
+        "lg": { "$value": "(min-width: 1024px) and (max-width: 1279px)", "$description": "Only large" },
+        "xl": { "$value": "(min-width: 1280px) and (max-width: 1535px)", "$description": "Only extra large" },
+        "2xl": { "$value": "(min-width: 1536px)", "$description": "Only 2X large" }
       }
     },
     "feature": {
