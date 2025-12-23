@@ -1,89 +1,158 @@
 /* Design Tokens UI Kit - Base Styles */
 
-/* Import Generated Design Tokens */
-@import url('brand-system.tokens.css');
+/* Import Comprehensive Design Tokens */
+@import url('../brand-output/css/brand-system.tokens.css');
 
-/* Map Generated Tokens to UI Kit Variables */
+/* Advanced Design Token System Integration */
 :root {
-  /* Colors - Map to generated brand tokens */
-  --color-primary: var(--base-primary-500);
-  --color-secondary: var(--base-secondary-500);
-  --color-success: var(--semantic-success-success);
-  --color-danger: var(--base-accent-500);
-  --color-warning: var(--semantic-warning-warning);
-  --color-info: var(--base-primary-400);
-  --color-light: var(--base-secondary-50);
-  --color-dark: var(--base-secondary-900);
-  --color-white: #ffffff;
-  --color-gray-100: var(--base-secondary-50);
-  --color-gray-200: var(--base-secondary-100);
-  --color-gray-300: var(--base-secondary-200);
-  --color-gray-400: var(--base-secondary-300);
-  --color-gray-500: var(--base-secondary-400);
-  --color-gray-600: var(--base-secondary-500);
-  --color-gray-700: var(--base-secondary-600);
-  --color-gray-800: var(--base-secondary-700);
-  --color-gray-900: var(--base-secondary-800);
+  /* Core Color System - New Granular Control */
+  --color-core-neutral-0: var(--color-core-neutral-0);
+  --color-core-neutral-50: var(--color-core-neutral-50);
+  --color-core-neutral-100: var(--color-core-neutral-100);
+  --color-core-neutral-200: var(--color-core-neutral-200);
+  --color-core-neutral-300: var(--color-core-neutral-300);
+  --color-core-neutral-400: var(--color-core-neutral-400);
+  --color-core-neutral-500: var(--color-core-neutral-500);
+  --color-core-neutral-600: var(--color-core-neutral-600);
+  --color-core-neutral-700: var(--color-core-neutral-700);
+  --color-core-neutral-800: var(--color-core-neutral-800);
+  --color-core-neutral-900: var(--color-core-neutral-900);
+  --color-core-neutral-950: var(--color-core-neutral-950);
 
-  /* Spacing - Use generated spacing tokens */
-  --spacing-xs: var(--space-1);      /* 4px */
-  --spacing-sm: var(--space-2);      /* 8px */
-  --spacing-md: var(--space-4);      /* 16px */
-  --spacing-lg: var(--space-6);      /* 24px */
-  --spacing-xl: var(--space-8);      /* 32px */
-  --spacing-xxl: var(--space-12);    /* 48px */
+  /* Luxury Brand Colors */
+  --color-core-luxury-primary-50: var(--color-core-luxury-primary-50);
+  --color-core-luxury-primary-500: var(--color-core-luxury-primary-500);
+  --color-core-luxury-primary-600: var(--color-core-luxury-primary-600);
+  --color-core-luxury-primary-700: var(--color-core-luxury-primary-700);
+  --color-core-luxury-primary-900: var(--color-core-luxury-primary-900);
+  --color-core-luxury-primary-950: var(--color-core-luxury-primary-950);
 
-  /* Typography - Use luxury generated font tokens */
-  --font-family-base: var(--font-family-body);
-  --font-family-heading: var(--font-family-heading);
-  --font-family-accent: var(--font-family-accent);
-  --font-family-serif: var(--font-family-primary);
-  --font-family-sans: var(--font-family-secondary);
+  --color-core-luxury-secondary-50: var(--color-core-luxury-secondary-50);
+  --color-core-luxury-secondary-500: var(--color-core-luxury-secondary-500);
+  --color-core-luxury-secondary-600: var(--color-core-luxury-secondary-600);
 
-  --font-size-xs: var(--size-xs);      /* 12px */
-  --font-size-sm: var(--size-sm);      /* 14px */
-  --font-size-base: var(--size-base);  /* 16px */
-  --font-size-lg: var(--size-lg);      /* 18px */
-  --font-size-xl: var(--size-xl);      /* 20px */
-  --font-size-2xl: var(--size-2xl);    /* 24px */
-  --font-size-3xl: var(--size-3xl);    /* 30px */
-  --font-size-4xl: var(--size-4xl);    /* 36px */
-  --font-size-5xl: var(--size-5xl);    /* 48px */
+  --color-core-luxury-accent-500: var(--color-core-luxury-accent-500);
+  --color-core-luxury-accent-600: var(--color-core-luxury-accent-600);
+  --color-core-luxury-accent-700: var(--color-core-luxury-accent-700);
 
-  --font-weight-light: var(--font-weight-light);
-  --font-weight-normal: var(--font-weight-regular);
-  --font-weight-medium: var(--font-weight-medium);
-  --font-weight-semibold: var(--font-weight-semibold);
-  --font-weight-bold: var(--font-weight-bold);
+  /* Semantic Colors with Full Control */
+  --color-semantic-background-primary: var(--color-semantic-background-primary);
+  --color-semantic-background-secondary: var(--color-semantic-background-secondary);
+  --color-semantic-content-primary: var(--color-semantic-content-primary);
+  --color-semantic-content-secondary: var(--color-semantic-content-secondary);
+  --color-semantic-border-default: var(--color-semantic-border-default);
+  --color-semantic-border-subtle: var(--color-semantic-border-subtle);
 
-  --line-height-tight: var(--line-height-tight);
-  --line-height-normal: var(--line-height-normal);
-  --line-height-relaxed: var(--line-height-relaxed);
+  --color-semantic-feedback-success-default: var(--color-semantic-feedback-success-default);
+  --color-semantic-feedback-success-light: var(--color-semantic-feedback-success-light);
+  --color-semantic-feedback-warning-default: var(--color-semantic-feedback-warning-default);
+  --color-semantic-feedback-warning-light: var(--color-semantic-feedback-warning-light);
+  --color-semantic-feedback-error-default: var(--color-semantic-feedback-error-default);
+  --color-semantic-feedback-error-light: var(--color-semantic-feedback-error-light);
 
-  /* Borders - Use generated border tokens */
-  --border-width-thin: var(--width-1);
-  --border-width-medium: var(--width-2);
-  --border-width-thick: var(--width-4);
+  /* Action Colors - Complete State Control */
+  --color-semantic-action-primary-default: var(--color-semantic-action-primary-default);
+  --color-semantic-action-primary-hover: var(--color-semantic-action-primary-hover);
+  --color-semantic-action-primary-pressed: var(--color-semantic-action-primary-pressed);
+  --color-semantic-action-secondary-default: var(--color-semantic-action-secondary-default);
+  --color-semantic-action-secondary-hover: var(--color-semantic-action-secondary-hover);
+  --color-semantic-action-accent-default: var(--color-semantic-action-accent-default);
 
-  --border-radius-none: var(--radius-none);
-  --border-radius-sm: var(--radius-sm);     /* 2px */
-  --border-radius-md: var(--radius-md);     /* 6px */
-  --border-radius-lg: var(--radius-lg);     /* 8px */
-  --border-radius-xl: var(--radius-xl);     /* 12px */
-  --border-radius-full: var(--radius-full);
+  /* Component-Specific Colors */
+  --color-component-button-primary-background: var(--color-component-button-primary-background);
+  --color-component-button-primary-backgroundHover: var(--color-component-button-primary-backgroundHover);
+  --color-component-button-primary-backgroundPressed: var(--color-component-button-primary-backgroundPressed);
+  --color-component-button-primary-text: var(--color-component-button-primary-text);
+  --color-component-button-primary-border: var(--color-component-button-primary-border);
 
-  /* Shadows - Use generated shadow tokens */
-  --shadow-sm: var(--sm);
-  --shadow-md: var(--md);
-  --shadow-lg: var(--lg);
-  --shadow-xl: var(--xl);
+  --color-component-button-secondary-background: var(--color-component-button-secondary-background);
+  --color-component-button-secondary-backgroundHover: var(--color-component-button-secondary-backgroundHover);
+  --color-component-button-secondary-text: var(--color-component-button-secondary-text);
+  --color-component-button-secondary-border: var(--color-component-button-secondary-border);
 
-  /* Layout */
+  --color-component-card-background: var(--color-component-card-background);
+  --color-component-card-border: var(--color-component-card-border);
+
+  --color-component-input-background: var(--color-component-input-background);
+  --color-component-input-border: var(--color-component-input-border);
+  --color-component-input-borderFocus: var(--color-component-input-borderFocus);
+  --color-component-input-text: var(--color-component-input-text);
+  --color-component-input-placeholder: var(--color-component-input-placeholder);
+
+  /* Typography System - Complete Control */
+  --typography-font-family-body: var(--typography-font-family-body);
+  --typography-font-family-heading: var(--typography-font-family-heading);
+  --typography-font-family-accent: var(--typography-font-family-accent);
+
+  --typography-font-weight-thin: var(--typography-font-weight-thin);
+  --typography-font-weight-regular: var(--typography-font-weight-regular);
+  --typography-font-weight-medium: var(--typography-font-weight-medium);
+  --typography-font-weight-semibold: var(--typography-font-weight-semibold);
+  --typography-font-weight-bold: var(--typography-font-weight-bold);
+
+  /* Typography Scale - Comprehensive */
+  --typography-size-xs: var(--typography-size-xs);
+  --typography-size-sm: var(--typography-size-sm);
+  --typography-size-base: var(--typography-size-base);
+  --typography-size-lg: var(--typography-size-lg);
+  --typography-size-xl: var(--typography-size-xl);
+  --typography-size-2xl: var(--typography-size-2xl);
+  --typography-size-3xl: var(--typography-size-3xl);
+  --typography-size-4xl: var(--typography-size-4xl);
+  --typography-size-5xl: var(--typography-size-5xl);
+  --typography-size-6xl: var(--typography-size-6xl);
+
+  /* Line Heights */
+  --typography-line-height-tight: var(--typography-line-height-tight);
+  --typography-line-height-snug: var(--typography-line-height-snug);
+  --typography-line-height-normal: var(--typography-line-height-normal);
+  --typography-line-height-relaxed: var(--typography-line-height-relaxed);
+
+  /* Letter Spacing */
+  --typography-letter-spacing-tight: var(--typography-letter-spacing-tight);
+  --typography-letter-spacing-normal: var(--typography-letter-spacing-normal);
+  --typography-letter-spacing-wide: var(--typography-letter-spacing-wide);
+
+  /* Component-Specific Sizing - Complete Control */
+  --component-button-size-md-height: var(--component-button-size-md-height);
+  --component-button-size-md-paddingX: var(--component-button-size-md-paddingX);
+  --component-button-size-md-paddingY: var(--component-button-size-md-paddingY);
+  --component-button-size-md-fontSize: var(--component-button-size-md-fontSize);
+  --component-button-size-md-borderRadius: var(--component-button-size-md-borderRadius);
+
+  --component-card-padding-md: var(--component-card-padding-md);
+  --component-card-borderRadius-md: var(--component-card-borderRadius-md);
+  --component-card-shadow: var(--component-card-shadow);
+
+  --component-input-height-md: var(--component-input-height-md);
+  --component-input-paddingX-md: var(--component-input-paddingX-md);
+  --component-input-borderRadius-md: var(--component-input-borderRadius-md);
+  --component-input-fontSize-md: var(--component-input-fontSize-md);
+
+  /* Animation System - Complete Control */
+  --animation-duration-instant: var(--animation-duration-instant);
+  --animation-duration-fastest: var(--animation-duration-fastest);
+  --animation-duration-fast: var(--animation-duration-fast);
+  --animation-duration-normal: var(--animation-duration-normal);
+  --animation-duration-slow: var(--animation-duration-slow);
+
+  --animation-easing-linear: var(--animation-easing-linear);
+  --animation-easing-in: var(--animation-easing-in);
+  --animation-easing-out: var(--animation-easing-out);
+  --animation-easing-inOut: var(--animation-easing-inOut);
+  --animation-easing-smooth: var(--animation-easing-smooth);
+  --animation-easing-bounce: var(--animation-easing-bounce);
+
+  /* Layout and Spacing */
   --container-max-width: 1200px;
   --navbar-height: 4rem;
 
-  /* Z-index */
+  /* Z-index System */
   --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-tooltip: 1030;
+  --z-modal: 1040;
+  --z-popover: 1050;
   --z-sticky: 1020;
   --z-fixed: 1030;
   --z-modal-backdrop: 1040;
@@ -104,7 +173,7 @@
   --transition-timing: var(--a11y-interaction-transition-timing);
 }
 
-/* Reset and Base Styles */
+/* Advanced Reset and Base Styles with Comprehensive Token Integration */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -112,18 +181,21 @@
 }
 
 html {
-  font-size: var(--font-size-base);
-  line-height: var(--line-height-normal);
+  font-size: var(--typography-size-base);
+  line-height: var(--typography-line-height-normal);
 }
 
 body {
-  font-family: var(--font-family-base);
-  color: var(--color-gray-900);
-  background-color: var(--color-white);
+  font-family: var(--typography-font-family-body);
+  font-size: var(--typography-size-base);
+  font-weight: var(--typography-font-weight-regular);
+  line-height: var(--typography-line-height-normal);
+  color: var(--color-semantic-content-primary);
+  background-color: var(--color-core-luxury-secondary-50);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-weight: var(--font-weight-regular);
-  letter-spacing: var(--letter-spacing-normal);
+  letter-spacing: var(--typography-letter-spacing-normal);
+  transition: background-color var(--animation-duration-normal) var(--animation-easing-smooth);
 }
 
 /* Container */
@@ -211,25 +283,45 @@ a:hover {
 .w-100 { width: 100%; }
 .h-100 { height: 100%; }
 
-/* Section Headers */
+/* Advanced Section Headers with Luxury Styling */
 .section-header {
   text-align: center;
-  margin-bottom: var(--spacing-xxl);
+  margin-bottom: calc(var(--typography-size-4xl) * 1.5);
+  position: relative;
 }
 
 .section-header h2 {
-  font-family: var(--font-family-serif);
-  font-size: var(--font-size-4xl);
-  margin-bottom: var(--spacing-sm);
-  color: var(--color-gray-900);
-  letter-spacing: var(--letter-spacing-tight);
+  font-family: var(--typography-font-family-accent);
+  font-size: var(--typography-size-4xl);
+  font-weight: var(--typography-font-weight-bold);
+  margin-bottom: var(--typography-size-base);
+  color: var(--color-semantic-content-primary);
+  letter-spacing: var(--typography-letter-spacing-tight);
+  position: relative;
+  display: inline-block;
+}
+
+.section-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg,
+    var(--color-core-luxury-primary-600),
+    var(--color-core-luxury-accent-600));
+  border-radius: var(--component-card-borderRadius-sm);
 }
 
 .section-header p {
-  font-size: var(--font-size-lg);
-  color: var(--color-gray-600);
+  font-size: var(--typography-size-lg);
+  font-weight: var(--typography-font-weight-regular);
+  line-height: var(--typography-line-height-relaxed);
+  color: var(--color-semantic-content-secondary);
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0 auto var(--typography-size-lg);
 }
 
 /* Code Styles */
@@ -278,5 +370,421 @@ pre code {
   .section-header h2 {
     font-size: var(--font-size-3xl);
     letter-spacing: var(--letter-spacing-tight);
+  }
+}
+
+/* ==================================================
+   Advanced Landing Page Component Styling
+   ================================================== */
+
+/* Statistics Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--typography-size-xl);
+  margin: var(--typography-size-2xl) 0;
+}
+
+.stat-item {
+  text-align: center;
+  padding: var(--typography-size-xl);
+  background: var(--color-component-card-background);
+  border: 1px solid var(--color-component-card-border);
+  border-radius: var(--component-card-borderRadius-lg);
+  box-shadow: var(--component-card-shadow);
+  transition: all var(--animation-duration-normal) var(--animation-easing-smooth);
+}
+
+.stat-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--component-card-shadow), 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.stat-number {
+  font-family: var(--typography-font-family-accent);
+  font-size: var(--typography-size-5xl);
+  font-weight: var(--typography-font-weight-bold);
+  color: var(--color-core-luxury-primary-600);
+  margin-bottom: var(--typography-size-sm);
+  display: block;
+}
+
+.stat-label {
+  font-size: var(--typography-size-base);
+  font-weight: var(--typography-font-weight-medium);
+  color: var(--color-semantic-content-secondary);
+  text-transform: uppercase;
+  letter-spacing: var(--typography-letter-spacing-wide);
+}
+
+/* Testimonials Grid */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--typography-size-xl);
+  margin: var(--typography-size-2xl) 0;
+}
+
+.testimonial-card {
+  background: var(--color-component-card-background);
+  border: 1px solid var(--color-component-card-border);
+  border-radius: var(--component-card-borderRadius-lg);
+  padding: var(--typography-size-xl);
+  box-shadow: var(--component-card-shadow);
+  transition: all var(--animation-duration-normal) var(--animation-easing-smooth);
+  position: relative;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--component-card-shadow), 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: -10px;
+  left: var(--typography-size-lg);
+  font-size: var(--typography-size-6xl);
+  color: var(--color-core-luxury-primary-200);
+  font-family: var(--typography-font-family-accent);
+  line-height: 1;
+}
+
+.testimonial-stars {
+  color: var(--color-semantic-feedback-warning-default);
+  font-size: var(--typography-size-lg);
+  margin-bottom: var(--typography-size-base);
+}
+
+.testimonial-text {
+  font-size: var(--typography-size-base);
+  line-height: var(--typography-line-height-relaxed);
+  color: var(--color-semantic-content-secondary);
+  margin-bottom: var(--typography-size-xl);
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: var(--typography-size-base);
+}
+
+.author-avatar {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg,
+    var(--color-core-luxury-primary-500),
+    var(--color-core-luxury-accent-500));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: var(--typography-size-lg);
+  font-weight: var(--typography-font-weight-bold);
+}
+
+.author-info h4 {
+  margin: 0;
+  font-size: var(--typography-size-sm);
+  font-weight: var(--typography-font-weight-semibold);
+  color: var(--color-semantic-content-primary);
+}
+
+.author-info p {
+  margin: 0;
+  font-size: var(--typography-size-xs);
+  color: var(--color-semantic-content-tertiary);
+}
+
+/* Pricing Grid */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--typography-size-xl);
+  margin: var(--typography-size-2xl) 0;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pricing-card {
+  background: var(--color-component-card-background);
+  border: 2px solid var(--color-component-card-border);
+  border-radius: var(--component-card-borderRadius-xl);
+  padding: var(--typography-size-2xl);
+  text-align: center;
+  transition: all var(--animation-duration-normal) var(--animation-easing-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.pricing-card.pricing-popular {
+  border-color: var(--color-core-luxury-primary-500);
+  transform: scale(1.05);
+}
+
+.pricing-card.pricing-popular::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg,
+    var(--color-core-luxury-primary-500),
+    var(--color-core-luxury-accent-500));
+}
+
+.pricing-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg,
+    var(--color-core-luxury-primary-600),
+    var(--color-core-luxury-accent-600));
+  color: white;
+  padding: var(--typography-size-xs) var(--typography-size-base);
+  border-radius: var(--component-card-borderRadius-lg);
+  font-size: var(--typography-size-xs);
+  font-weight: var(--typography-font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--typography-letter-spacing-wide);
+  box-shadow: var(--component-card-shadow);
+}
+
+.pricing-header h4 {
+  font-family: var(--typography-font-family-accent);
+  font-size: var(--typography-size-2xl);
+  font-weight: var(--typography-font-weight-bold);
+  color: var(--color-semantic-content-primary);
+  margin-bottom: var(--typography-size-base);
+}
+
+.pricing-price {
+  margin-bottom: var(--typography-size-xl);
+}
+
+.price-amount {
+  font-family: var(--typography-font-family-accent);
+  font-size: var(--typography-size-5xl);
+  font-weight: var(--typography-font-weight-bold);
+  color: var(--color-core-luxury-primary-600);
+  display: block;
+}
+
+.price-period {
+  font-size: var(--typography-size-base);
+  color: var(--color-semantic-content-secondary);
+  font-weight: var(--typography-font-weight-regular);
+}
+
+.pricing-features {
+  text-align: left;
+  margin-bottom: var(--typography-size-xl);
+}
+
+.pricing-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pricing-features li {
+  padding: var(--typography-size-sm) 0;
+  color: var(--color-semantic-content-secondary);
+  position: relative;
+  padding-left: var(--typography-size-lg);
+}
+
+.pricing-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-semantic-feedback-success-default);
+  font-weight: var(--typography-font-weight-bold);
+}
+
+.pricing-card button {
+  width: 100%;
+  padding: var(--component-button-size-md-paddingY) var(--component-button-size-md-paddingX);
+  background: var(--color-component-button-primary-background);
+  color: var(--color-component-button-primary-text);
+  border: 2px solid var(--color-component-button-primary-border);
+  border-radius: var(--component-button-size-md-borderRadius);
+  font-family: var(--typography-font-family-body);
+  font-size: var(--component-button-size-md-fontSize);
+  font-weight: var(--typography-font-weight-semibold);
+  transition: all var(--animation-duration-fast) var(--animation-easing-smooth);
+  cursor: pointer;
+}
+
+.pricing-card button:hover {
+  background: var(--color-component-button-primary-backgroundHover);
+  border-color: var(--color-component-button-primary-borderHover);
+  transform: translateY(-2px);
+  box-shadow: var(--component-card-shadow);
+}
+
+/* Enhanced Button Styling */
+.btn {
+  font-family: var(--typography-font-family-body);
+  font-weight: var(--typography-font-weight-semibold);
+  border-radius: var(--component-button-size-md-borderRadius);
+  transition: all var(--animation-duration-fast) var(--animation-easing-smooth);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border: 2px solid transparent;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width var(--animation-duration-normal), height var(--animation-duration-normal);
+}
+
+.btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-primary {
+  background: var(--color-component-button-primary-background);
+  color: var(--color-component-button-primary-text);
+  border-color: var(--color-component-button-primary-border);
+}
+
+.btn-primary:hover {
+  background: var(--color-component-button-primary-backgroundHover);
+  color: var(--color-component-button-primary-text);
+  border-color: var(--color-component-button-primary-borderHover);
+  transform: translateY(-2px);
+  box-shadow: var(--component-card-shadow);
+}
+
+.btn-secondary {
+  background: var(--color-component-button-secondary-background);
+  color: var(--color-component-button-secondary-text);
+  border-color: var(--color-component-button-secondary-border);
+}
+
+.btn-secondary:hover {
+  background: var(--color-component-button-secondary-backgroundHover);
+  color: var(--color-component-button-secondary-textHover);
+  border-color: var(--color-component-button-secondary-borderHover);
+  transform: translateY(-2px);
+  box-shadow: var(--component-card-shadow);
+}
+
+.btn-lg {
+  padding: var(--component-button-size-lg-paddingY) var(--component-button-size-lg-paddingX);
+  font-size: var(--component-button-size-lg-fontSize);
+  border-radius: var(--component-button-size-lg-borderRadius);
+}
+
+/* Card Enhancements */
+.card {
+  background: var(--color-component-card-background);
+  border: 1px solid var(--color-component-card-border);
+  border-radius: var(--component-card-borderRadius-lg);
+  box-shadow: var(--component-card-shadow);
+  transition: all var(--animation-duration-normal) var(--animation-easing-smooth);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--component-card-shadow), 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Navigation Layout */
+.nav-links {
+  display: flex;
+  gap: var(--typography-size-lg);
+  align-items: center;
+}
+
+/* Theme Switcher */
+.theme-switcher {
+  display: flex;
+  gap: var(--typography-size-sm);
+  margin-left: var(--typography-size-xl);
+  align-items: center;
+}
+
+.theme-btn {
+  padding: var(--typography-size-xs) var(--typography-size-sm);
+  border: 2px solid var(--color-semantic-border-default);
+  border-radius: var(--component-card-borderRadius-md);
+  background: var(--color-component-card-background);
+  color: var(--color-semantic-content-primary);
+  font-size: var(--typography-size-sm);
+  font-weight: var(--typography-font-weight-medium);
+  cursor: pointer;
+  transition: all var(--animation-duration-fast) var(--animation-easing-smooth);
+}
+
+.theme-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--component-card-shadow);
+}
+
+.theme-btn.active {
+  border-color: var(--color-core-luxury-primary-600);
+  background: var(--color-core-luxury-primary-50);
+  color: var(--color-core-luxury-primary-700);
+}
+
+.theme-btn-light.active {
+  border-color: var(--color-semantic-feedback-warning-default);
+  background: var(--color-semantic-feedback-warning-light);
+  color: var(--color-semantic-feedback-warning-dark);
+}
+
+.theme-btn-dark.active {
+  border-color: var(--color-core-neutral-600);
+  background: var(--color-core-neutral-800);
+  color: var(--color-core-neutral-100);
+}
+
+/* Enhanced Focus States */
+.btn:focus,
+.theme-btn:focus,
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(187, 143, 87, 0.1);
+}
+
+/* Responsive Theme Switcher */
+@media (max-width: 768px) {
+  .theme-switcher {
+    margin-left: 0;
+    margin-top: var(--typography-size-base);
+    flex-wrap: wrap;
+  }
+
+  .navbar-menu {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

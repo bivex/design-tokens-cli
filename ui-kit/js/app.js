@@ -13,11 +13,12 @@
  * Commercial licensing available upon request.
  */
 
-// Design Tokens UI Kit - Interactive Demo
+// Enhanced Design Tokens UI Kit - Interactive Demo with Comprehensive Token System
 
 document.addEventListener('DOMContentLoaded', function() {
     initializeDemo();
     initializeNavigation();
+    initializeThemeSwitcher();
 });
 
 /**
@@ -136,6 +137,117 @@ function initializeNavigation() {
             }
         });
     });
+}
+
+/**
+ * Initialize theme switcher functionality
+ */
+function initializeThemeSwitcher() {
+    // Create theme switcher buttons
+    const themeSwitcher = document.createElement('div');
+    themeSwitcher.className = 'theme-switcher';
+    themeSwitcher.innerHTML = `
+        <button class="theme-btn theme-btn-light" data-theme="light">☀️ Светлая</button>
+        <button class="theme-btn theme-btn-luxury active" data-theme="luxury">💎 Роскошная</button>
+        <button class="theme-btn theme-btn-dark" data-theme="dark">🌙 Темная</button>
+    `;
+
+    // Add to navbar
+    const navbar = document.querySelector('.navbar-menu');
+    if (navbar) {
+        navbar.appendChild(themeSwitcher);
+    }
+
+    // Theme switching functionality
+    const themeButtons = document.querySelectorAll('.theme-btn');
+    themeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const theme = this.getAttribute('data-theme');
+
+            // Remove active class from all buttons
+            themeButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+
+            // Apply theme
+            applyTheme(theme);
+        });
+    });
+}
+
+/**
+ * Apply theme using comprehensive design tokens
+ */
+function applyTheme(theme) {
+    const root = document.documentElement;
+
+    const themes = {
+        light: {
+            // Background colors
+            '--color-core-neutral-0': '#ffffff',
+            '--color-core-neutral-50': '#fafafa',
+            '--color-core-neutral-900': '#111827',
+
+            // Content colors
+            '--color-semantic-content-primary': '#111827',
+            '--color-semantic-content-secondary': '#6b7280',
+            '--color-semantic-background-primary': '#ffffff',
+            '--color-semantic-background-secondary': '#f9fafb',
+
+            // Border colors
+            '--color-semantic-border-default': '#e5e5e5',
+            '--color-component-card-background': '#ffffff',
+            '--color-component-card-border': '#e5e5e5'
+        },
+        luxury: {
+            // Background colors
+            '--color-core-neutral-0': '#ffffff',
+            '--color-core-neutral-50': '#fafafa',
+            '--color-core-neutral-900': '#181018',
+
+            // Luxury colors
+            '--color-core-luxury-secondary-50': '#fefdfb',
+            '--color-core-luxury-primary-600': '#bb8f57',
+            '--color-core-luxury-accent-500': '#9b4d88',
+
+            // Content colors
+            '--color-semantic-content-primary': '#181018',
+            '--color-semantic-content-secondary': '#6b7280',
+            '--color-semantic-background-primary': '#ffffff',
+            '--color-semantic-background-secondary': '#fefdfb',
+
+            // Border colors
+            '--color-semantic-border-default': '#e5e5e5',
+            '--color-component-card-background': '#ffffff',
+            '--color-component-card-border': '#e5e5e5'
+        },
+        dark: {
+            // Background colors
+            '--color-core-neutral-0': '#1f2937',
+            '--color-core-neutral-50': '#111827',
+            '--color-core-neutral-900': '#ffffff',
+
+            // Content colors
+            '--color-semantic-content-primary': '#ffffff',
+            '--color-semantic-content-secondary': '#9ca3af',
+            '--color-semantic-background-primary': '#1f2937',
+            '--color-semantic-background-secondary': '#111827',
+
+            // Border colors
+            '--color-semantic-border-default': '#374151',
+            '--color-component-card-background': '#1f2937',
+            '--color-component-card-border': '#374151'
+        }
+    };
+
+    if (themes[theme]) {
+        Object.entries(themes[theme]).forEach(([property, value]) => {
+            root.style.setProperty(property, value);
+        });
+
+        // Update body background for theme
+        document.body.style.backgroundColor = themes[theme]['--color-semantic-background-primary'] || '#ffffff';
+    }
 }
 
 /**
