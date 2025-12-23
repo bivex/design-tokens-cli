@@ -9,6 +9,8 @@ A design-tokens-format-adhering token transformation CLI (Command Line Interface
 - [x] ...to Sass (scss) variables
 - [x] ...to ES modules
 - [x] ...to JSON (flattened to name/value pairs)
+- [x] ...to Tailwind CSS v3 configuration (JavaScript)
+- [x] ...to Tailwind CSS v4 @theme directive (CSS)
 - [x] (Chained) token reference resolution
 - [x] **Keeping references as variable references** (optional)
 - [x] Reference resolution _between_ separate tokens files in one transform
@@ -65,7 +67,14 @@ Transformations are defined using a master config file. Here is a configuration 
 
 #### Formats
 
-The `to` array for each transformation lists the formats you want and their respective output folders. The `as` property must be the file extension for the output format. Both `mjs` and `js` output ES modules.
+The `to` array for each transformation lists the formats you want and their respective output folders. The `as` property must be one of the supported format identifiers:
+
+- `css` - CSS custom properties
+- `scss` - Sass variables
+- `mjs` or `js` - ES modules
+- `json` - JSON output
+- `tailwind-config` - Tailwind CSS v3 JavaScript configuration
+- `tailwind-theme` - Tailwind CSS v4 CSS @theme directive
 
 ### Running the transforms
 
@@ -196,6 +205,209 @@ $token-color-weiss: $token-color-blanche;
 ```
 
 This ensures proper dependency ordering and allows for more maintainable stylesheets where changing a base token automatically updates all dependent tokens.
+
+## `outputColorFormat`
+
+Control the output format for color tokens across all transformers. By default, colors are output in their original format, but you can standardize all colors to use hex, RGB, or HSL notation.
+
+```json
+{
+  "outputColorFormat": "hex",
+  "transforms": [...]
+}
+```
+
+**Supported formats:**
+- `"hex"` - Convert all colors to hexadecimal format (#rrggbb or #rrggbbaa for transparency)
+- `"rgb"` - Convert all colors to RGB/RGBA format (rgb(r, g, b) or rgba(r, g, b, a))
+- `"hsl"` - Convert all colors to HSL/HSLA format (hsl(h, s%, l%) or hsla(h, s%, l%, a))
+- `"auto"` - Preserve original color formats (default behavior)
+
+**Example:**
+
+**Input tokens:**
+```json
+{
+  "colors": {
+    "primary": { "$value": "#ff6b35" },
+    "secondary": { "$value": "rgb(0, 255, 0)" },
+    "accent": { "$value": "hsl(240, 100%, 50%)" },
+    "transparent": { "$value": "#ff000080" }
+  }
+}
+```
+
+**CSS Output with `"outputColorFormat": "rgb"`:**
+```css
+:root {
+  --colors-primary: rgb(255, 107, 53);
+  --colors-secondary: rgb(0, 255, 0);
+  --colors-accent: rgb(0, 0, 255);
+  --colors-transparent: rgba(255, 0, 0, 0.502);
+}
+```
+
+**Note:** Color conversion only applies to resolved color values. When `keepReferences: true`, color tokens that are references (like `{color.primary}`) will not be converted until they are resolved by the consuming application.
+
+**Try it out:** See the `example/color-demo.html` and `example/color-demo.config.json` for a complete working example of color format conversion.
+
+## Tailwind CSS Support
+
+The CLI supports generating configuration files for both Tailwind CSS v3 and v4. Design tokens are automatically mapped to appropriate Tailwind theme sections based on naming conventions.
+
+### Tailwind CSS v3 Configuration
+
+Use `tailwind-config` as the output format to generate a JavaScript configuration file compatible with Tailwind CSS v3.
+
+```json
+{
+  "transforms": [
+    {
+      "name": "tailwind-config",
+      "from": "tokens",
+      "to": [
+        {
+          "as": "tailwind-config",
+          "to": "config"
+        }
+      ]
+    }
+  ]
+}
+```
+
+**Output:** `config/tailwind-config.tailwind-config.js`
+
+```js
+/** @type {import('tailwindcss').Config} */
+export default {
+  theme: {
+    extend: {
+      colors: {
+        "primary": "#ff6b35",
+        "secondary": "#007bff"
+      },
+      spacing: {
+        "sm": "8px",
+        "md": "16px"
+      },
+      fontSize: {
+        "sm": "14px",
+        "base": "16px"
+      }
+    }
+  }
+}
+```
+
+### Tailwind CSS v4 @theme Directive
+
+Use `tailwind-theme` as the output format to generate CSS with the `@theme` directive for Tailwind CSS v4.
+
+```json
+{
+  "transforms": [
+    {
+      "name": "tailwind-theme",
+      "from": "tokens",
+      "to": [
+        {
+          "as": "tailwind-theme",
+          "to": "css"
+        }
+      ]
+    }
+  ]
+}
+```
+
+**Output:** `css/tailwind-theme.tailwind-theme.css`
+
+```css
+@theme {
+  --color-primary: #ff6b35;
+  --color-secondary: #007bff;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+}
+```
+
+### Token Mapping
+
+Design tokens are automatically categorized and mapped to Tailwind theme sections:
+
+| Token Pattern | Tailwind v3 Section | Tailwind v4 CSS Variable |
+|---------------|-------------------|-------------------------|
+| `color-*`, `bg-*`, `text-*` | `theme.colors` | `--color-*` |
+| `spacing-*`, `space-*`, `margin-*`, `padding-*` | `theme.spacing` | `--spacing-*` |
+| `font-size-*` | `theme.fontSize` | `--font-size-*` |
+| `font-family-*` | `theme.fontFamily` | `--font-family-*` |
+| `font-weight-*` | `theme.fontWeight` | `--font-weight-*` |
+| `border-radius-*` | `theme.borderRadius` | `--border-radius-*` |
+| `border-width-*` | `theme.borderWidth` | `--border-width-*` |
+| `shadow-*`, `box-shadow-*` | `theme.boxShadow` | `--box-shadow-*` |
+| `z-index-*` | `theme.zIndex` | `--z-index-*` |
+| `line-height-*` | `theme.lineHeight` | `--line-height-*` |
+| `letter-spacing-*` | `theme.letterSpacing` | `--letter-spacing-*` |
+
+### Nested Color Tokens
+
+Tokens with nested structures like `color.primary.500` are properly handled:
+
+**Input:**
+```json
+{
+  "color": {
+    "primary": {
+      "50": { "$value": "#fef2f2" },
+      "500": { "$value": "#ef4444" },
+      "900": { "$value": "#7f1d1d" }
+    }
+  }
+}
+```
+
+**Tailwind v3 Output:**
+```js
+colors: {
+  primary: {
+    "50": "#fef2f2",
+    "500": "#ef4444",
+    "900": "#7f1d1d"
+  }
+}
+```
+
+**Tailwind v4 Output:**
+```css
+@theme {
+  --color-primary-50: #fef2f2;
+  --color-primary-500: #ef4444;
+  --color-primary-900: #7f1d1d;
+}
+```
+
+### Integration with Color Format Conversion
+
+Tailwind outputs respect the `outputColorFormat` configuration, allowing you to standardize colors across your Tailwind theme:
+
+```json
+{
+  "outputColorFormat": "hex",
+  "transforms": [
+    {
+      "as": "tailwind-config",
+      "to": "config"
+    }
+  ]
+}
+```
+
+### Try It Out
+
+See the `example/tailwind-demo.html` and `example/tailwind-demo.config.json` for complete working examples of both Tailwind v3 and v4 output formats.
 
 ## Cross-Transform References
 

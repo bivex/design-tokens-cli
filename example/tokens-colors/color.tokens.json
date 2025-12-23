@@ -1,0 +1,21 @@
+{
+  "color": {
+    "$description": "Example color tokens in various formats",
+    "primary": {
+      "hex": { "$value": "#ff6b35" },
+      "rgb": { "$value": "rgb(255, 107, 53)" },
+      "hsl": { "$value": "hsl(14, 100%, 60%)" },
+      "transparent": { "$value": "#ff6b3580" }
+    },
+    "secondary": {
+      "hex": { "$value": "#007bff" },
+      "rgb": { "$value": "rgb(0, 123, 255)" },
+      "hsl": { "$value": "hsl(207, 100%, 50%)" }
+    },
+    "semantic": {
+      "background": { "$value": "{color.primary.hex}" },
+      "text": { "$value": "{color.secondary.hex}" },
+      "border": { "$value": "rgb(200, 200, 200)" }
+    }
+  }
+}

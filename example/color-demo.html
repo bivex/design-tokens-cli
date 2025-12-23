@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Tokens CLI - Color Format Conversion Demo</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .demo-section {
+            margin-bottom: 40px;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 20px;
+        }
+        .demo-section h2 {
+            color: #444;
+            margin-top: 0;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .color-card {
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 15px;
+            text-align: center;
+        }
+        .color-swatch {
+            width: 60px;
+            height: 60px;
+            border-radius: 4px;
+            margin: 0 auto 10px;
+            border: 1px solid #ccc;
+        }
+        .color-info {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        .color-value {
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 11px;
+            background: #f8f8f8;
+            padding: 4px 8px;
+            border-radius: 3px;
+            word-break: break-all;
+        }
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 13px;
+            overflow-x: auto;
+        }
+        .feature-highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .feature-highlight h3 {
+            margin: 0 0 10px 0;
+            font-size: 24px;
+        }
+        .feature-highlight p {
+            margin: 0;
+            opacity: 0.9;
+        }
+    </style>
+    <!-- Import the generated CSS with color conversion -->
+    <link rel="stylesheet" href="color-output/css/color-demo.tokens.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Color Format Conversion Demo</h1>
+        <p class="subtitle">See how the Design Tokens CLI converts colors to consistent formats</p>
+
+        <div class="feature-highlight">
+            <h3>✨ New Feature: outputColorFormat</h3>
+            <p>Automatically convert all color tokens to hex, RGB, or HSL format for consistency across your design system</p>
+        </div>
+
+        <div class="demo-section">
+            <h2>Color Format Conversion in Action</h2>
+            <p>This demo shows how the <code>outputColorFormat: "hex"</code> configuration converts all color tokens to hexadecimal format, regardless of their original format in the token files.</p>
+
+            <div class="color-grid">
+                <!-- Primary colors -->
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--primary-hex);"></div>
+                    <div class="color-info">Primary (originally hex)</div>
+                    <div class="color-value">#ff6b35</div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--primary-rgb);"></div>
+                    <div class="color-info">Primary (originally RGB)</div>
+                    <div class="color-value">rgb(255, 107, 53)</div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--primary-hsl);"></div>
+                    <div class="color-info">Primary (originally HSL)</div>
+                    <div class="color-value">hsl(14, 100%, 60%)</div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--primary-transparent);"></div>
+                    <div class="color-info">Primary Transparent</div>
+                    <div class="color-value">#ff6b3580</div>
+                </div>
+
+                <!-- Secondary colors -->
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--secondary-hex);"></div>
+                    <div class="color-info">Secondary (originally hex)</div>
+                    <div class="color-value">#007bff</div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--secondary-rgb);"></div>
+                    <div class="color-info">Secondary (originally RGB)</div>
+                    <div class="color-value">rgb(0, 123, 255)</div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--secondary-hsl);"></div>
+                    <div class="color-info">Secondary (originally HSL)</div>
+                    <div class="color-value">hsl(207, 100%, 50%)</div>
+                </div>
+
+                <!-- Semantic colors with references -->
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--semantic-background);"></div>
+                    <div class="color-info">Background (reference)</div>
+                    <div class="color-value">var(--color-primary-hex)</div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--semantic-text);"></div>
+                    <div class="color-info">Text (reference)</div>
+                    <div class="color-value">var(--color-secondary-hex)</div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background-color: var(--semantic-border);"></div>
+                    <div class="color-info">Border (converted from RGB)</div>
+                    <div class="color-value">#c8c8c8</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>Configuration</h2>
+            <p>The color conversion is controlled by the <code>outputColorFormat</code> property in your config file:</p>
+
+            <div class="code-block">
+{
+  "outputColorFormat": "hex",
+  "keepReferences": true,
+  "transforms": [
+    {
+      "name": "color-demo",
+      "from": "example/tokens-colors",
+      "to": [
+        {"as": "css", "to": "example/color-output/css"},
+        {"as": "scss", "to": "example/color-output/scss"},
+        {"as": "mjs", "to": "example/color-output/js"},
+        {"as": "json", "to": "example/color-output/json"}
+      ]
+    }
+  ]
+}
+            </div>
+
+            <p><strong>Supported formats:</strong></p>
+            <ul>
+                <li><code>"hex"</code> - Convert to hexadecimal (#rrggbb, #rrggbbaa)</li>
+                <li><code>"rgb"</code> - Convert to RGB/RGBA format</li>
+                <li><code>"hsl"</code> - Convert to HSL/HSLA format</li>
+                <li><code>"auto"</code> - Preserve original formats (default)</li>
+            </ul>
+        </div>
+
+        <div class="demo-section">
+            <h2>Generated CSS Output</h2>
+            <p>Here's what the CSS output looks like with color conversion applied:</p>
+
+            <div class="code-block">
+:root {
+  --primary-hex: #ff6b35;
+  --primary-rgb: rgb(255, 107, 53);
+  --primary-hsl: hsl(14, 100%, 60%);
+  --primary-transparent: #ff6b3580;
+  --secondary-hex: #007bff;
+  --secondary-rgb: rgb(0, 123, 255);
+  --secondary-hsl: hsl(207, 100%, 50%);
+  --semantic-background: var(--color-primary-hex);
+  --semantic-text: var(--color-secondary-hex);
+  --semantic-border: #c8c8c8;
+}
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>Token Input</h2>
+            <p>The original tokens were defined in various formats:</p>
+
+            <div class="code-block">
+{
+  "color": {
+    "primary": {
+      "hex": { "$value": "#ff6b35" },
+      "rgb": { "$value": "rgb(255, 107, 53)" },
+      "hsl": { "$value": "hsl(14, 100%, 60%)" },
+      "transparent": { "$value": "#ff6b3580" }
+    },
+    "secondary": {
+      "hex": { "$value": "#007bff" },
+      "rgb": { "$value": "rgb(0, 123, 255)" },
+      "hsl": { "$value": "hsl(207, 100%, 50%)" }
+    },
+    "semantic": {
+      "background": { "$value": "{color.primary.hex}" },
+      "text": { "$value": "{color.secondary.hex}" },
+      "border": { "$value": "rgb(200, 200, 200)" }
+    }
+  }
+}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,4 +1,20 @@
+/**
+ * Copyright (c) 2025 Bivex
+ *
+ * Author: Bivex
+ * Available for contact via email: support@b-b.top
+ * For up-to-date contact information:
+ * https://github.com/bivex
+ *
+ * Created: 2025-12-23T03:22:29
+ * Last Updated: 2025-12-23T03:22:29
+ *
+ * Licensed under the MIT License.
+ * Commercial licensing available upon request.
+ */
+
 import { refToName } from "../refToName.js";
+import { convertColor, isColorToken } from "../colorConverter.js";
 
 /**
  * Convert an object of design token name/value pairs into an ES module
@@ -23,6 +39,10 @@ const toESM = (tokensObject, groupName, config) => {
       // For JS, we'll keep the reference as a string that indicates the variable name
       // This can be resolved by consumers of the module
       value = `{${refName}}`;
+    }
+    // Apply color format conversion if specified and token is a color (but not a reference)
+    else if (config.outputColorFormat && config.outputColorFormat !== 'auto' && isColorToken(key, value)) {
+      value = convertColor(value, config.outputColorFormat);
     }
 
     // Quote strings, leave other types as-is, and escape single quotes

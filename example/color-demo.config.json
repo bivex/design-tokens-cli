@@ -1,0 +1,33 @@
+{
+  "globalPrefix": "",
+  "keepReferences": true,
+  "preserveOrder": true,
+  "outputColorFormat": "hex",
+  "prefixes": {
+    "color": ""
+  },
+  "transforms": [
+    {
+      "name": "color-demo",
+      "from": "example/tokens-colors",
+      "to": [
+        {
+          "as": "css",
+          "to": "example/color-output/css"
+        },
+        {
+          "as": "scss",
+          "to": "example/color-output/scss"
+        },
+        {
+          "as": "mjs",
+          "to": "example/color-output/js"
+        },
+        {
+          "as": "json",
+          "to": "example/color-output/json"
+        }
+      ]
+    }
+  ]
+}
