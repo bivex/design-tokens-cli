@@ -97,11 +97,14 @@ Based on the included brand tokens, here are some examples of the tokens being u
 - **Space Scale**: `--space-0`, `--space-1`, `--space-2`, `--space-4`, `--space-6`, `--space-8`, `--space-12`, etc.
 - **Consistent**: All component spacing uses these standardized values
 
-### Typography
-- **Font Families**: `--font-family-body`, `--font-family-heading`, `--font-family-mono`
-- **Font Sizes**: `--size-xs`, `--size-sm`, `--size-base`, `--size-lg`, `--size-xl`, `--size-2xl`, etc.
-- **Font Weights**: `--font-weight-light`, `--font-weight-regular`, `--font-weight-medium`, `--font-weight-bold`, etc.
-- **Line Heights**: `--line-height-tight`, `--line-height-normal`, `--line-height-relaxed`
+### Luxury Typography
+- **Primary (Serif)**: `--font-family-primary` - Crimson Text for headings
+- **Secondary (Sans)**: `--font-family-secondary` - Source Sans Pro for body text
+- **Accent**: `--font-family-accent` - Playfair Display for hero titles
+- **Font Sizes**: `--size-xs` to `--size-6xl` with sophisticated scaling
+- **Font Weights**: `--font-weight-thin` to `--font-weight-black`
+- **Letter Spacing**: `--letter-spacing-tighter` to `--letter-spacing-widest`
+- **Line Heights**: Premium spacing for elegant reading experience
 
 ### Borders & Shadows
 - **Border Radius**: `--radius-sm`, `--radius-md`, `--radius-lg`, `--radius-xl`
@@ -175,11 +178,15 @@ DesignTokens.randomColor();
 ```
 
 #### Generated Token Names
-The demo uses actual token names from your generated CSS:
-- **Colors**: `--base-primary-500`, `--base-secondary-500`, `--semantic-success-success`
-- **Spacing**: `--space-1`, `--space-2`, `--space-4`
-- **Typography**: `--size-base`, `--font-weight-bold`, `--line-height-normal`
-- **Borders**: `--radius-md`, `--width-1`
+The demo uses actual token names from your generated luxury CSS:
+- **Colors**: `--base-primary-500` (champagne gold), `--base-secondary-500` (warm ivory)
+- **Spacing**: `--space-1`, `--space-2`, `--space-4`, `--space-6`, `--space-8`
+- **Typography**:
+  - **Fonts**: `--font-family-primary` (Crimson Text), `--font-family-secondary` (Source Sans Pro)
+  - **Sizes**: `--size-base`, `--size-lg`, `--size-xl`, `--size-2xl`, `--size-3xl`
+  - **Weights**: `--font-weight-regular`, `--font-weight-medium`, `--font-weight-bold`
+  - **Spacing**: `--letter-spacing-tight`, `--letter-spacing-normal`, `--line-height-normal`
+- **Borders**: `--radius-md`, `--radius-lg`, `--width-1`, `--width-2`
 
 ## 📱 Responsive Design
 

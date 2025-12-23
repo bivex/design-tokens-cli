@@ -33,9 +33,12 @@
   --spacing-xl: var(--space-8);      /* 32px */
   --spacing-xxl: var(--space-12);    /* 48px */
 
-  /* Typography - Use generated font tokens */
+  /* Typography - Use luxury generated font tokens */
   --font-family-base: var(--font-family-body);
   --font-family-heading: var(--font-family-heading);
+  --font-family-accent: var(--font-family-accent);
+  --font-family-serif: var(--font-family-primary);
+  --font-family-sans: var(--font-family-secondary);
 
   --font-size-xs: var(--size-xs);      /* 12px */
   --font-size-sm: var(--size-sm);      /* 14px */
@@ -107,6 +110,8 @@ body {
   background-color: var(--color-white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-weight: var(--font-weight-regular);
+  letter-spacing: var(--letter-spacing-normal);
 }
 
 /* Container */
@@ -124,9 +129,16 @@ h1, h2, h3, h4, h5, h6 {
   line-height: var(--line-height-tight);
   margin-bottom: var(--spacing-md);
   color: var(--color-gray-900);
+  letter-spacing: var(--letter-spacing-tight);
 }
 
-h1 { font-size: var(--font-size-5xl); }
+h1 {
+  font-family: var(--font-family-accent);
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-tighter);
+}
+
 h2 { font-size: var(--font-size-4xl); }
 h3 { font-size: var(--font-size-3xl); }
 h4 { font-size: var(--font-size-2xl); }
@@ -194,9 +206,11 @@ a:hover {
 }
 
 .section-header h2 {
+  font-family: var(--font-family-serif);
   font-size: var(--font-size-4xl);
   margin-bottom: var(--spacing-sm);
   color: var(--color-gray-900);
+  letter-spacing: var(--letter-spacing-tight);
 }
 
 .section-header p {
@@ -238,7 +252,10 @@ pre code {
     padding: 0 var(--spacing-sm);
   }
 
-  h1 { font-size: var(--font-size-3xl); }
+  h1 {
+    font-size: var(--font-size-3xl);
+    letter-spacing: var(--letter-spacing-tight);
+  }
   h2 { font-size: var(--font-size-2xl); }
   h3 { font-size: var(--font-size-xl); }
 
@@ -248,5 +265,6 @@ pre code {
 
   .section-header h2 {
     font-size: var(--font-size-3xl);
+    letter-spacing: var(--letter-spacing-tight);
   }
 }

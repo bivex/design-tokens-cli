@@ -1,13 +1,15 @@
 {
   "typography": {
-    "$description": "Typography system for Bivex brand",
+    "$description": "Luxury Italian Vogue typography system with elegant serif and refined sans-serif fonts",
     "font": {
       "family": {
-        "primary": { "$value": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" },
+        "primary": { "$value": "'Crimson Text', 'Times New Roman', serif" },
+        "secondary": { "$value": "'Source Sans Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" },
         "mono": { "$value": "'JetBrains Mono', 'Fira Code', Monaco, 'Cascadia Code', monospace" },
         "heading": { "$value": "{typography.font.family.primary}" },
-        "body": { "$value": "{typography.font.family.primary}" },
-        "code": { "$value": "{typography.font.family.mono}" }
+        "body": { "$value": "{typography.font.family.secondary}" },
+        "code": { "$value": "{typography.font.family.mono}" },
+        "accent": { "$value": "'Playfair Display', 'Times New Roman', serif" }
       },
       "weight": {
         "thin": { "$value": "100" },

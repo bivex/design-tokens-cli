@@ -145,11 +145,13 @@
 }
 
 .hero-title {
+  font-family: var(--font-family-accent);
   font-size: var(--font-size-5xl);
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--spacing-lg);
   line-height: var(--line-height-tight);
   color: var(--color-white);
+  letter-spacing: var(--letter-spacing-tighter);
 }
 
 .hero-subtitle {
