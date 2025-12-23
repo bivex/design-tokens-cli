@@ -17,61 +17,269 @@
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-        /* Apply Design Tokens to Bootstrap Components */
+        /* Advanced Design Token System Integration with Granular Control */
 
-        /* Typography System */
-        body {
-            font-family: var(--typography-font-family-body, 'Source Sans Pro', sans-serif);
-            line-height: var(--typography-line-height-normal, 1.5);
+        /* Bootstrap Variable Overrides with Complete Token System */
+        :root {
+            /* Primary Bootstrap Theme Colors */
+            --bs-primary: var(--color-core-luxury-primary-600);
+            --bs-primary-rgb: 187, 143, 87;
+            --bs-secondary: var(--color-core-luxury-secondary-600);
+            --bs-secondary-rgb: 188, 177, 155;
+            --bs-success: var(--color-semantic-feedback-success-default);
+            --bs-success-rgb: 21, 103, 77;
+            --bs-info: var(--color-core-luxury-accent-600);
+            --bs-info-rgb: 127, 42, 107;
+            --bs-warning: var(--color-semantic-feedback-warning-default);
+            --bs-warning-rgb: 178, 117, 22;
+            --bs-danger: var(--color-semantic-feedback-error-default);
+            --bs-danger-rgb: 220, 38, 38;
+            --bs-light: var(--color-core-neutral-50);
+            --bs-light-rgb: 250, 250, 250;
+            --bs-dark: var(--color-core-neutral-900);
+            --bs-dark-rgb: 24, 16, 24;
+
+            /* Enhanced Color Palette */
+            --bs-accent: var(--color-core-luxury-accent-500);
+            --bs-accent-rgb: 155, 77, 136;
+
+            /* Complete Typography System Integration */
+            --bs-body-font-family: var(--typography-font-family-body);
+            --bs-body-font-size: var(--typography-size-base);
+            --bs-body-font-weight: var(--typography-font-weight-regular);
+            --bs-body-line-height: var(--typography-line-height-normal);
+            --bs-body-color: var(--color-semantic-content-primary);
+
+            /* Heading Typography Scale */
+            --bs-headings-font-family: var(--typography-font-family-heading);
+            --bs-headings-font-weight: var(--typography-font-weight-semibold);
+            --bs-headings-line-height: var(--typography-line-height-tight);
+            --bs-headings-color: var(--color-semantic-content-primary);
+
+            /* Individual Heading Sizes */
+            --bs-h1-font-size: var(--typography-size-4xl);
+            --bs-h2-font-size: var(--typography-size-3xl);
+            --bs-h3-font-size: var(--typography-size-2xl);
+            --bs-h4-font-size: var(--typography-size-xl);
+            --bs-h5-font-size: var(--typography-size-lg);
+            --bs-h6-font-size: var(--typography-size-base);
+
+            /* Border Radius System */
+            --bs-border-radius: var(--component-card-borderRadius-md);
+            --bs-border-radius-sm: var(--component-card-borderRadius-sm);
+            --bs-border-radius-lg: var(--component-card-borderRadius-lg);
+            --bs-border-radius-xl: var(--component-card-borderRadius-lg);
+            --bs-border-radius-xxl: 1rem;
+            --bs-border-radius-pill: 9999px;
+
+            /* Shadow System */
+            --bs-box-shadow: var(--component-card-shadow);
+            --bs-box-shadow-sm: var(--component-card-shadow);
+            --bs-box-shadow-lg: var(--component-card-shadow);
+            --bs-box-shadow-inset: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+
+            /* Button System - Complete State Control */
+            --bs-btn-padding-x: var(--component-button-size-md-paddingX);
+            --bs-btn-padding-y: var(--component-button-size-md-paddingY);
+            --bs-btn-font-size: var(--component-button-size-md-fontSize);
+            --bs-btn-border-radius: var(--component-button-size-md-borderRadius);
+
+            /* Primary Button States */
+            --bs-btn-color: var(--color-component-button-primary-text);
+            --bs-btn-bg: var(--color-component-button-primary-background);
+            --bs-btn-border-color: var(--color-component-button-primary-border);
+            --bs-btn-hover-color: var(--color-component-button-primary-text);
+            --bs-btn-hover-bg: var(--color-component-button-primary-backgroundHover);
+            --bs-btn-hover-border-color: var(--color-component-button-primary-borderHover);
+            --bs-btn-active-color: var(--color-component-button-primary-text);
+            --bs-btn-active-bg: var(--color-component-button-primary-backgroundPressed);
+            --bs-btn-active-border-color: var(--color-component-button-primary-borderPressed);
+
+            /* Form Controls */
+            --bs-form-control-color: var(--color-component-input-text);
+            --bs-form-control-bg: var(--color-component-input-background);
+            --bs-form-control-border-color: var(--color-component-input-border);
+            --bs-form-control-focus-color: var(--color-component-input-text);
+            --bs-form-control-focus-bg: var(--color-component-input-background);
+            --bs-form-control-focus-border-color: var(--color-component-input-borderFocus);
+            --bs-form-control-focus-box-shadow: 0 0 0 0.2rem rgba(187, 143, 87, 0.25);
+
+            /* Animation Integration */
+            --bs-transition-duration: var(--animation-duration-normal);
+            --bs-transition-timing: var(--animation-easing-smooth);
         }
 
-        h1, h2, h3, h4, h5, h6, .display-4, .display-5 {
-            font-family: var(--typography-font-family-heading, 'Crimson Text', serif);
-            font-weight: var(--typography-font-weight-medium, 500);
-            line-height: var(--typography-line-height-tight, 1.25);
+        /* Luxury Italian Vogue Theme Implementation */
+        body {
+            font-family: var(--typography-font-family-body);
+            background-color: var(--color-core-luxury-secondary-50);
+            color: var(--color-semantic-content-primary);
+            line-height: var(--typography-line-height-normal);
+        }
+
+        /* Heading Hierarchy with Luxury Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--typography-font-family-heading);
+            font-weight: var(--typography-font-weight-semibold);
+            line-height: var(--typography-line-height-tight);
+            color: var(--color-semantic-content-primary);
+            margin-bottom: var(--typography-size-lg);
         }
 
         .display-4 {
-            font-size: var(--typography-size-5xl, 3rem);
-            font-weight: var(--typography-font-weight-bold, 700);
+            font-size: var(--typography-size-5xl);
+            font-weight: var(--typography-font-weight-bold);
+            line-height: var(--typography-line-height-tight);
         }
 
         .display-5 {
-            font-size: var(--typography-size-4xl, 2.25rem);
-            font-weight: var(--typography-font-weight-semibold, 600);
+            font-size: var(--typography-size-4xl);
+            font-weight: var(--typography-font-weight-semibold);
+            line-height: var(--typography-line-height-tight);
         }
 
-        /* Color System - Override Bootstrap Defaults */
-        :root {
-            --bs-primary: var(--base-primary-600, #bb8f57);
-            --bs-primary-rgb: 187, 143, 87;
-            --bs-secondary: var(--base-secondary-500, #dbd3c1);
-            --bs-secondary-rgb: 219, 211, 193;
-            --bs-success: var(--semantic-success-success, #15674d);
-            --bs-success-rgb: 21, 103, 77;
-            --bs-info: var(--base-accent-400, #bf85ae);
-            --bs-info-rgb: 191, 133, 174;
-            --bs-warning: var(--semantic-warning-warning, #b27516);
-            --bs-warning-rgb: 178, 117, 22;
-            --bs-danger: var(--semantic-error-error, #dc2626);
-            --bs-danger-rgb: 220, 38, 38;
-            --bs-light: var(--base-secondary-100, #fdfcf9);
-            --bs-light-rgb: 253, 252, 249;
-            --bs-dark: var(--base-base, #181018);
-            --bs-dark-rgb: 24, 16, 24;
-
-            /* Accent color for special elements */
-            --bs-accent: var(--base-accent-500, #9b4d88);
-            --bs-accent-rgb: 155, 77, 136;
+        /* Navigation with Luxury Styling */
+        .navbar {
+            background: linear-gradient(135deg, var(--color-core-luxury-primary-950) 0%, var(--color-core-neutral-900) 100%);
+            border-bottom: 2px solid var(--color-core-luxury-primary-600);
+            box-shadow: var(--component-card-shadow);
         }
 
-        /* Button Customizations */
-        .btn-primary {
-            background-color: var(--bs-primary);
-            border-color: var(--bs-primary);
+        .navbar-brand {
+            font-family: var(--typography-font-family-accent);
+            font-size: var(--typography-size-xl);
+            font-weight: var(--typography-font-weight-bold);
+            color: var(--color-core-luxury-primary-100) !important;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-link {
+            color: var(--color-core-luxury-primary-200) !important;
+            font-weight: var(--typography-font-weight-medium);
+            transition: color var(--animation-duration-fast) var(--animation-easing-smooth);
+        }
+
+        .nav-link:hover {
+            color: var(--color-core-luxury-primary-400) !important;
+            transform: translateY(-1px);
+        }
+
+        /* Enhanced Button Styling with Component Tokens */
+        .btn {
             font-family: var(--typography-font-family-body);
             font-weight: var(--typography-font-weight-medium);
-            border-radius: var(--radius-lg, 0.5rem);
+            transition: all var(--animation-duration-fast) var(--animation-easing-smooth);
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--component-button-size-md-borderRadius);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width var(--animation-duration-normal), height var(--animation-duration-normal);
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Card Enhancements with Token System */
+        .card {
+            border: 1px solid var(--color-component-card-border);
+            border-radius: var(--component-card-borderRadius-lg);
+            box-shadow: var(--component-card-shadow);
+            background: var(--color-component-card-background);
+            transition: all var(--animation-duration-normal) var(--animation-easing-smooth);
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--component-card-shadow), 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Alert Variants with Semantic Feedback Colors */
+        .alert-success {
+            background-color: var(--color-semantic-feedback-success-light);
+            color: var(--color-semantic-feedback-success-dark);
+            border-color: var(--color-semantic-feedback-success-default);
+        }
+
+        .alert-warning {
+            background-color: var(--color-semantic-feedback-warning-light);
+            color: var(--color-semantic-feedback-warning-dark);
+            border-color: var(--color-semantic-feedback-warning-default);
+        }
+
+        .alert-danger {
+            background-color: var(--color-semantic-feedback-error-light);
+            color: var(--color-semantic-feedback-error-dark);
+            border-color: var(--color-semantic-feedback-error-default);
+        }
+
+        /* Progress Bar Luxury Styling */
+        .progress-bar {
+            background: linear-gradient(90deg,
+                var(--color-core-luxury-primary-400) 0%,
+                var(--color-core-luxury-primary-600) 50%,
+                var(--color-core-luxury-primary-800) 100%);
+            transition: width var(--animation-duration-slow) var(--animation-easing-smooth);
+        }
+
+        /* Form Enhancements with Input Tokens */
+        .form-control {
+            border-radius: var(--component-input-borderRadius-md);
+            border: 2px solid var(--color-component-input-border);
+            transition: all var(--animation-duration-fast) var(--animation-easing-smooth);
+            font-family: var(--typography-font-family-body);
+            font-size: var(--component-input-fontSize-md);
+        }
+
+        .form-control:focus {
+            border-color: var(--color-component-input-borderFocus);
+            box-shadow: var(--bs-form-control-focus-box-shadow);
+            transform: translateY(-1px);
+        }
+
+        /* Modal Enhancements */
+        .modal-content {
+            border-radius: var(--component-card-borderRadius-lg);
+            border: none;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Animation Classes */
+        .animate-fade-in {
+            animation: fadeIn var(--animation-duration-normal) var(--animation-easing-smooth);
+        }
+
+        .animate-slide-up {
+            animation: slideUp var(--animation-duration-normal) var(--animation-easing-bounce);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
             transition: all var(--a11y-interaction-transition-duration) var(--a11y-interaction-transition-timing);
         }
 
@@ -451,6 +659,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#tokens">🎨 Дизайн-Токены</a></li>
                     <li class="nav-item"><a class="nav-link" href="#accordion">Accordion</a></li>
                     <li class="nav-item"><a class="nav-link" href="#alerts">Alerts</a></li>
                     <li class="nav-item"><a class="nav-link" href="#badge">Badge</a></li>
@@ -481,6 +690,145 @@
                 <p class="lead">Luxury Italian Vogue inspired design system applied to all Bootstrap 5 components. Featuring elegant typography, sophisticated colors, and refined interactions.</p>
                 <div class="alert alert-primary mt-4">
                     <strong>✨ Design System Features:</strong> Crimson Text serif headings, Source Sans Pro body text, golden primary palette, accessibility-first spacing, and smooth micro-interactions.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Design Token System Showcase -->
+    <div class="component-section" id="tokens">
+        <div class="container">
+            <h2 class="display-5 mb-4">🎨 Продвинутая Система Дизайн-Токенов</h2>
+            <p class="lead mb-5">Теперь у вас есть полный контроль над каждым аспектом дизайна с гранулярными токенами</p>
+
+            <!-- Color System Showcase -->
+            <div class="row mb-5">
+                <div class="col-md-6">
+                    <h4 class="h5 mb-3">🎯 Семантические Цвета</h4>
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                        <div class="badge bg-primary">Primary</div>
+                        <div class="badge bg-secondary">Secondary</div>
+                        <div class="badge bg-success">Success</div>
+                        <div class="badge bg-info">Info</div>
+                        <div class="badge bg-warning">Warning</div>
+                        <div class="badge bg-danger">Danger</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="h5 mb-3">🏗️ Компонентные Цвета</h4>
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                        <button class="btn btn-primary btn-sm">Primary</button>
+                        <button class="btn btn-secondary btn-sm">Secondary</button>
+                        <button class="btn btn-outline-primary btn-sm">Outline</button>
+                        <button class="btn btn-ghost btn-sm" style="background: transparent; border: 1px solid var(--bs-primary); color: var(--bs-primary);">Ghost</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Typography Scale -->
+            <div class="mb-5">
+                <h4 class="h5 mb-3">📝 Типографическая Шкала</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="text-xs">text-xs: Очень мелкий текст</p>
+                        <p class="text-sm">text-sm: Мелкий текст</p>
+                        <p class="text-base">text-base: Базовый текст</p>
+                        <p class="text-lg">text-lg: Крупный текст</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h1 class="h6">Заголовок H6</h1>
+                        <h1 class="h5">Заголовок H5</h1>
+                        <h1 class="h4">Заголовок H4</h1>
+                        <h1 class="h3">Заголовок H3</h1>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Button Size Variants -->
+            <div class="mb-5">
+                <h4 class="h5 mb-3">🔘 Размеры Кнопок с Токенами</h4>
+                <div class="d-flex align-items-end gap-2 flex-wrap">
+                    <button class="btn btn-primary btn-xs" style="font-size: var(--component-button-size-xs-fontSize); padding: var(--component-button-size-xs-paddingY) var(--component-button-size-xs-paddingX); border-radius: var(--component-button-size-xs-borderRadius);">XS</button>
+                    <button class="btn btn-primary btn-sm" style="font-size: var(--component-button-size-sm-fontSize); padding: var(--component-button-size-sm-paddingY) var(--component-button-size-sm-paddingX); border-radius: var(--component-button-size-sm-borderRadius);">SM</button>
+                    <button class="btn btn-primary" style="font-size: var(--component-button-size-md-fontSize); padding: var(--component-button-size-md-paddingY) var(--component-button-size-md-paddingX); border-radius: var(--component-button-size-md-borderRadius);">MD</button>
+                    <button class="btn btn-primary btn-lg" style="font-size: var(--component-button-size-lg-fontSize); padding: var(--component-button-size-lg-paddingY) var(--component-button-size-lg-paddingX); border-radius: var(--component-button-size-lg-borderRadius);">LG</button>
+                    <button class="btn btn-primary btn-xl" style="font-size: var(--component-button-size-xl-fontSize); padding: var(--component-button-size-xl-paddingY) var(--component-button-size-xl-paddingX); border-radius: var(--component-button-size-xl-borderRadius);">XL</button>
+                </div>
+            </div>
+
+            <!-- Input States -->
+            <div class="mb-5">
+                <h4 class="h5 mb-3">📝 Состояния Форм</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label">Обычное состояние</label>
+                            <input type="text" class="form-control" placeholder="Обычное поле">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">В фокусе</label>
+                            <input type="text" class="form-control focus" placeholder="Поле в фокусе" autofocus>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label">Ошибка</label>
+                            <input type="text" class="form-control is-invalid" placeholder="Поле с ошибкой">
+                            <div class="invalid-feedback">Это поле обязательно для заполнения.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Отключено</label>
+                            <input type="text" class="form-control" placeholder="Отключенное поле" disabled>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Animation Showcase -->
+            <div class="mb-5">
+                <h4 class="h5 mb-3">✨ Анимации и Переходы</h4>
+                <div class="d-flex gap-3 flex-wrap">
+                    <button class="btn btn-primary animate-fade-in">Fade In</button>
+                    <button class="btn btn-secondary animate-slide-up">Slide Up</button>
+                    <div class="card animate-fade-in" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Анимированная Карточка</h5>
+                            <p class="card-text">Карточки тоже могут иметь анимации при наведении.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shadow System -->
+            <div class="mb-5">
+                <h4 class="h5 mb-3">🌑 Система Теней</h4>
+                <div class="d-flex gap-3 flex-wrap">
+                    <div class="card" style="width: 12rem; box-shadow: var(--component-card-shadow);">
+                        <div class="card-body">
+                            <h6>SM Shadow</h6>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 12rem; box-shadow: var(--component-card-shadow);">
+                        <div class="card-body">
+                            <h6>MD Shadow</h6>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 12rem; box-shadow: var(--component-card-shadow);">
+                        <div class="card-body">
+                            <h6>LG Shadow</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Border Radius Scale -->
+            <div class="mb-5">
+                <h4 class="h5 mb-3">🔄 Радиусы Скругления</h4>
+                <div class="d-flex gap-3 flex-wrap align-items-center">
+                    <div class="border p-3" style="border-radius: var(--component-card-borderRadius-sm);">SM</div>
+                    <div class="border p-3" style="border-radius: var(--component-card-borderRadius-md);">MD</div>
+                    <div class="border p-3" style="border-radius: var(--component-card-borderRadius-lg);">LG</div>
+                    <div class="border p-3" style="border-radius: 9999px;">Full</div>
                 </div>
             </div>
         </div>

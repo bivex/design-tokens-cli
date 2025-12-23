@@ -1,7 +1,196 @@
 {
   "color": {
     "$type": "color",
-    "$description": "Luxury Italian Vogue inspired color palette - sophisticated jewel tones and elegant neutrals",
+    "$description": "Sophisticated design token color system with semantic, component, and state variants",
+    "core": {
+      "$description": "Core brand colors - foundation of the design system",
+      "neutral": {
+        "0": { "$value": "#ffffff" },
+        "50": { "$value": "#fafafa" },
+        "100": { "$value": "#f5f5f5" },
+        "200": { "$value": "#e5e5e5" },
+        "300": { "$value": "#d4d4d4" },
+        "400": { "$value": "#a3a3a3" },
+        "500": { "$value": "#737373" },
+        "600": { "$value": "#525252" },
+        "700": { "$value": "#404040" },
+        "800": { "$value": "#262626" },
+        "900": { "$value": "#171717" },
+        "950": { "$value": "#0a0a0a" }
+      },
+      "luxury": {
+        "$description": "Italian Vogue inspired luxury palette",
+        "primary": {
+          "50": { "$value": "#fefdfb" },
+          "100": { "$value": "#fcf7f0" },
+          "200": { "$value": "#f8eddc" },
+          "300": { "$value": "#f2debf" },
+          "400": { "$value": "#e6c595" },
+          "500": { "$value": "#d3ac74" },
+          "600": { "$value": "#bb8f57" },
+          "700": { "$value": "#a0713a" },
+          "800": { "$value": "#875724" },
+          "900": { "$value": "#6e4215" },
+          "950": { "$value": "#4c2a0c" }
+        },
+        "secondary": {
+          "50": { "$value": "#fefefc" },
+          "100": { "$value": "#fdfcf9" },
+          "200": { "$value": "#faf8f3" },
+          "300": { "$value": "#f4f1ea" },
+          "400": { "$value": "#eae5d9" },
+          "500": { "$value": "#dbd3c1" },
+          "600": { "$value": "#bcb19b" },
+          "700": { "$value": "#9b8f74" },
+          "800": { "$value": "#7b6e52" },
+          "900": { "$value": "#5b4d30" },
+          "950": { "$value": "#352b18" }
+        },
+        "accent": {
+          "50": { "$value": "#fbf2f8" },
+          "100": { "$value": "#f5e4ef" },
+          "200": { "$value": "#eacee0" },
+          "300": { "$value": "#dfbacf" },
+          "400": { "$value": "#bf85ae" },
+          "500": { "$value": "#9b4d88" },
+          "600": { "$value": "#7f2a6b" },
+          "700": { "$value": "#681656" },
+          "800": { "$value": "#530c44" },
+          "900": { "$value": "#7f1d1d" },
+          "950": { "$value": "#450a0a" }
+        }
+      }
+    },
+    "semantic": {
+      "$description": "Semantic colors for specific UI contexts",
+      "background": {
+        "primary": { "$value": "{color.core.neutral.0}" },
+        "secondary": { "$value": "{color.core.neutral.50}" },
+        "tertiary": { "$value": "{color.core.neutral.100}" },
+        "inverse": { "$value": "{color.core.neutral.900}" }
+      },
+      "content": {
+        "primary": { "$value": "{color.core.neutral.900}" },
+        "secondary": { "$value": "{color.core.neutral.600}" },
+        "tertiary": { "$value": "{color.core.neutral.500}" },
+        "inverse": { "$value": "{color.core.neutral.0}" }
+      },
+      "border": {
+        "default": { "$value": "{color.core.neutral.200}" },
+        "subtle": { "$value": "{color.core.neutral.100}" },
+        "strong": { "$value": "{color.core.neutral.300}" },
+        "inverse": { "$value": "{color.core.neutral.600}" }
+      },
+      "action": {
+        "primary": {
+          "default": { "$value": "{color.core.luxury.primary.600}" },
+          "hover": { "$value": "{color.core.luxury.primary.700}" },
+          "pressed": { "$value": "{color.core.luxury.primary.800}" },
+          "disabled": { "$value": "{color.core.neutral.200}" }
+        },
+        "secondary": {
+          "default": { "$value": "{color.core.luxury.secondary.600}" },
+          "hover": { "$value": "{color.core.luxury.secondary.700}" },
+          "pressed": { "$value": "{color.core.luxury.secondary.800}" },
+          "disabled": { "$value": "{color.core.neutral.200}" }
+        },
+        "accent": {
+          "default": { "$value": "{color.core.luxury.accent.600}" },
+          "hover": { "$value": "{color.core.luxury.accent.700}" },
+          "pressed": { "$value": "{color.core.luxury.accent.800}" },
+          "disabled": { "$value": "{color.core.neutral.200}" }
+        }
+      },
+      "feedback": {
+        "success": {
+          "default": { "$value": "#10b981" },
+          "light": { "$value": "#d1fae5" },
+          "dark": { "$value": "#065f46" }
+        },
+        "warning": {
+          "default": { "$value": "#f59e0b" },
+          "light": { "$value": "#fef3c7" },
+          "dark": { "$value": "#92400e" }
+        },
+        "error": {
+          "default": { "$value": "#ef4444" },
+          "light": { "$value": "#fee2e2" },
+          "dark": { "$value": "#991b1b" }
+        },
+        "info": {
+          "default": { "$value": "#3b82f6" },
+          "light": { "$value": "#dbeafe" },
+          "dark": { "$value": "#1e3a8a" }
+        }
+      }
+    },
+    "component": {
+      "$description": "Component-specific color overrides",
+      "button": {
+        "primary": {
+          "background": { "$value": "#d3ac74" },
+          "backgroundHover": { "$value": "#bb8f57" },
+          "backgroundPressed": { "$value": "#a0713a" },
+          "backgroundDisabled": { "$value": "#e9ecef" },
+          "text": { "$value": "#ffffff" },
+          "textDisabled": { "$value": "#6c757d" },
+          "border": { "$value": "#d3ac74" },
+          "borderHover": { "$value": "#bb8f57" },
+          "borderPressed": { "$value": "#a0713a" }
+        },
+        "secondary": {
+          "background": { "$value": "#ffffff" },
+          "backgroundHover": { "$value": "#f8f9fa" },
+          "backgroundPressed": { "$value": "#e9ecef" },
+          "backgroundDisabled": { "$value": "#e9ecef" },
+          "text": { "$value": "#181018" },
+          "textHover": { "$value": "#181018" },
+          "textDisabled": { "$value": "#6c757d" },
+          "border": { "$value": "#dee2e6" },
+          "borderHover": { "$value": "#adb5bd" },
+          "borderPressed": { "$value": "#adb5bd" }
+        }
+      },
+      "card": {
+        "background": { "$value": "#ffffff" },
+        "border": { "$value": "#e5e5e5" },
+        "shadow": { "$value": "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)" }
+      },
+      "input": {
+        "background": { "$value": "#ffffff" },
+        "backgroundDisabled": { "$value": "#f9fafb" },
+        "border": { "$value": "#d1d5db" },
+        "borderFocus": { "$value": "#d3ac74" },
+        "borderError": { "$value": "#ef4444" },
+        "text": { "$value": "#181018" },
+        "placeholder": { "$value": "#9ca3af" }
+      }
+    },
+    "theme": {
+      "$description": "Theme variants for different contexts",
+      "light": {
+        "background": { "$value": "{color.core.neutral.0}" },
+        "surface": { "$value": "{color.core.neutral.0}" },
+        "text": { "$value": "{color.core.neutral.900}" },
+        "textSecondary": { "$value": "{color.core.neutral.600}" },
+        "border": { "$value": "{color.core.neutral.200}" }
+      },
+      "dark": {
+        "background": { "$value": "{color.core.neutral.900}" },
+        "surface": { "$value": "{color.core.neutral.800}" },
+        "text": { "$value": "{color.core.neutral.0}" },
+        "textSecondary": { "$value": "{color.core.neutral.300}" },
+        "border": { "$value": "{color.core.neutral.700}" }
+      },
+      "luxury": {
+        "background": { "$value": "{color.core.luxury.secondary.50}" },
+        "surface": { "$value": "{color.core.neutral.0}" },
+        "text": { "$value": "{color.core.neutral.900}" },
+        "textSecondary": { "$value": "{color.core.luxury.primary.700}" },
+        "accent": { "$value": "{color.core.luxury.primary.600}" },
+        "border": { "$value": "{color.core.luxury.secondary.300}" }
+      }
+    },
     "base": {
       "$root": {
         "$value": {

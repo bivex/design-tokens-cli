@@ -1,56 +1,277 @@
 {
   "typography": {
-    "$description": "Luxury Italian Vogue typography system with elegant serif and refined sans-serif fonts",
+    "$description": "Sophisticated typography system with luxury fonts and granular control",
     "font": {
       "family": {
-        "primary": { "$value": "'Crimson Text', 'Times New Roman', serif" },
-        "secondary": { "$value": "'Source Sans Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" },
-        "mono": { "$value": "'JetBrains Mono', 'Fira Code', Monaco, 'Cascadia Code', monospace" },
-        "heading": { "$value": "{typography.font.family.primary}" },
-        "body": { "$value": "{typography.font.family.secondary}" },
-        "code": { "$value": "{typography.font.family.mono}" },
-        "accent": { "$value": "'Playfair Display', 'Times New Roman', serif" }
+        "$description": "Font family definitions with comprehensive fallbacks",
+        "primary": {
+          "$value": "'Crimson Text', 'Times New Roman', serif",
+          "$description": "Elegant serif for headings - inspired by Italian Vogue luxury"
+        },
+        "secondary": {
+          "$value": "'Source Sans Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif",
+          "$description": "Refined sans-serif for body text with system font fallbacks"
+        },
+        "mono": {
+          "$value": "'JetBrains Mono', 'Fira Code', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', monospace",
+          "$description": "Premium monospace for code with extensive fallbacks"
+        },
+        "heading": {
+          "$value": "{typography.font.family.primary}",
+          "$description": "Default heading font family"
+        },
+        "body": {
+          "$value": "{typography.font.family.secondary}",
+          "$description": "Default body font family"
+        },
+        "code": {
+          "$value": "{typography.font.family.mono}",
+          "$description": "Default code font family"
+        },
+        "accent": {
+          "$value": "'Playfair Display', 'Crimson Text', 'Times New Roman', serif",
+          "$description": "Display font for special headings and accents"
+        },
+        "display": {
+          "$value": "'Playfair Display', 'Crimson Text', 'Times New Roman', serif",
+          "$description": "Large display typography"
+        },
+        "ui": {
+          "$value": "'Source Sans Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+          "$description": "UI elements and buttons"
+        }
       },
       "weight": {
-        "thin": { "$value": "100" },
-        "light": { "$value": "300" },
-        "regular": { "$value": "400" },
-        "medium": { "$value": "500" },
-        "semibold": { "$value": "600" },
-        "bold": { "$value": "700" },
-        "extrabold": { "$value": "800" },
-        "black": { "$value": "900" }
+        "$description": "Font weight scale from thin to black",
+        "thin": { "$value": "100", "$description": "Ultra light weight" },
+        "extralight": { "$value": "200", "$description": "Extra light weight" },
+        "light": { "$value": "300", "$description": "Light weight" },
+        "regular": { "$value": "400", "$description": "Regular weight" },
+        "medium": { "$value": "500", "$description": "Medium weight" },
+        "semibold": { "$value": "600", "$description": "Semi-bold weight" },
+        "bold": { "$value": "700", "$description": "Bold weight" },
+        "extrabold": { "$value": "800", "$description": "Extra bold weight" },
+        "black": { "$value": "900", "$description": "Ultra bold weight" }
+      },
+      "stretch": {
+        "$description": "Font stretch/width variations",
+        "ultra-condensed": { "$value": "ultra-condensed" },
+        "extra-condensed": { "$value": "extra-condensed" },
+        "condensed": { "$value": "condensed" },
+        "semi-condensed": { "$value": "semi-condensed" },
+        "normal": { "$value": "normal" },
+        "semi-expanded": { "$value": "semi-expanded" },
+        "expanded": { "$value": "expanded" },
+        "extra-expanded": { "$value": "extra-expanded" },
+        "ultra-expanded": { "$value": "ultra-expanded" }
       }
     },
     "size": {
-      "xs": { "$value": "0.75rem" },
-      "sm": { "$value": "0.875rem" },
-      "base": { "$value": "1rem" },
-      "lg": { "$value": "1.125rem" },
-      "xl": { "$value": "1.25rem" },
-      "2xl": { "$value": "1.5rem" },
-      "3xl": { "$value": "1.875rem" },
-      "4xl": { "$value": "2.25rem" },
-      "5xl": { "$value": "3rem" },
-      "6xl": { "$value": "3.75rem" }
+      "$description": "Comprehensive font size scale with precise control",
+      "xs": {
+        "$value": "0.75rem",
+        "$description": "Extra small - captions and fine print",
+        "lineHeight": { "$value": "1rem" },
+        "letterSpacing": { "$value": "0.025em" }
+      },
+      "sm": {
+        "$value": "0.875rem",
+        "$description": "Small - secondary text and labels",
+        "lineHeight": { "$value": "1.25rem" },
+        "letterSpacing": { "$value": "0.0125em" }
+      },
+      "base": {
+        "$value": "1rem",
+        "$description": "Base - primary body text",
+        "lineHeight": { "$value": "1.5rem" },
+        "letterSpacing": { "$value": "0em" }
+      },
+      "lg": {
+        "$value": "1.125rem",
+        "$description": "Large - emphasized body text",
+        "lineHeight": { "$value": "1.75rem" },
+        "letterSpacing": { "$value": "-0.00625em" }
+      },
+      "xl": {
+        "$value": "1.25rem",
+        "$description": "Extra large - subheadings",
+        "lineHeight": { "$value": "1.75rem" },
+        "letterSpacing": { "$value": "-0.0125em" }
+      },
+      "2xl": {
+        "$value": "1.5rem",
+        "$description": "2X large - section headings",
+        "lineHeight": { "$value": "2rem" },
+        "letterSpacing": { "$value": "-0.01875em" }
+      },
+      "3xl": {
+        "$value": "1.875rem",
+        "$description": "3X large - page headings",
+        "lineHeight": { "$value": "2.25rem" },
+        "letterSpacing": { "$value": "-0.025em" }
+      },
+      "4xl": {
+        "$value": "2.25rem",
+        "$description": "4X large - hero headings",
+        "lineHeight": { "$value": "2.5rem" },
+        "letterSpacing": { "$value": "-0.03125em" }
+      },
+      "5xl": {
+        "$value": "3rem",
+        "$description": "5X large - display headings",
+        "lineHeight": { "$value": "3rem" },
+        "letterSpacing": { "$value": "-0.0375em" }
+      },
+      "6xl": {
+        "$value": "3.75rem",
+        "$description": "6X large - hero display",
+        "lineHeight": { "$value": "3.75rem" },
+        "letterSpacing": { "$value": "-0.04375em" }
+      },
+      "7xl": {
+        "$value": "4.5rem",
+        "$description": "7X large - massive display",
+        "lineHeight": { "$value": "4.5rem" },
+        "letterSpacing": { "$value": "-0.05em" }
+      },
+      "8xl": {
+        "$value": "6rem",
+        "$description": "8X large - billboard text",
+        "lineHeight": { "$value": "6rem" },
+        "letterSpacing": { "$value": "-0.05625em" }
+      },
+      "9xl": {
+        "$value": "8rem",
+        "$description": "9X large - poster text",
+        "lineHeight": { "$value": "8rem" },
+        "letterSpacing": { "$value": "-0.0625em" }
+      }
     },
     "line": {
       "height": {
-        "tight": { "$value": "1.25" },
-        "snug": { "$value": "1.375" },
-        "normal": { "$value": "1.5" },
-        "relaxed": { "$value": "1.625" },
-        "loose": { "$value": "2" }
+        "$description": "Line height variations for different text contexts",
+        "none": { "$value": "1", "$description": "No additional line spacing" },
+        "tight": { "$value": "1.25", "$description": "Tight line spacing for headings" },
+        "snug": { "$value": "1.375", "$description": "Snug spacing for dense text" },
+        "normal": { "$value": "1.5", "$description": "Standard readable line height" },
+        "relaxed": { "$value": "1.625", "$description": "Relaxed spacing for comfortable reading" },
+        "loose": { "$value": "2", "$description": "Loose spacing for display text" }
       }
     },
     "letter": {
       "spacing": {
-        "tighter": { "$value": "-0.05em" },
-        "tight": { "$value": "-0.025em" },
-        "normal": { "$value": "0em" },
-        "wide": { "$value": "0.025em" },
-        "wider": { "$value": "0.05em" },
-        "widest": { "$value": "0.1em" }
+        "$description": "Letter spacing variations for different contexts",
+        "tighter": { "$value": "-0.05em", "$description": "Very tight letter spacing" },
+        "tight": { "$value": "-0.025em", "$description": "Tight letter spacing" },
+        "normal": { "$value": "0em", "$description": "Standard letter spacing" },
+        "wide": { "$value": "0.025em", "$description": "Wide letter spacing" },
+        "wider": { "$value": "0.05em", "$description": "Very wide letter spacing" },
+        "widest": { "$value": "0.1em", "$description": "Maximum letter spacing" },
+        "tracking-tight": { "$value": "-0.025em", "$description": "CSS tracking equivalent" },
+        "tracking-normal": { "$value": "0em", "$description": "CSS tracking normal" },
+        "tracking-wide": { "$value": "0.025em", "$description": "CSS tracking wide" }
+      }
+    },
+    "text": {
+      "transform": {
+        "$description": "Text transformation options",
+        "none": { "$value": "none" },
+        "uppercase": { "$value": "uppercase" },
+        "lowercase": { "$value": "lowercase" },
+        "capitalize": { "$value": "capitalize" }
+      },
+      "decoration": {
+        "$description": "Text decoration options",
+        "none": { "$value": "none" },
+        "underline": { "$value": "underline" },
+        "line-through": { "$value": "line-through" },
+        "overline": { "$value": "overline" }
+      }
+    },
+    "heading": {
+      "$description": "Heading-specific typography tokens",
+      "h1": {
+        "fontFamily": { "$value": "{typography.font.family.heading}" },
+        "fontSize": { "$value": "{typography.size.4xl}" },
+        "fontWeight": { "$value": "{typography.font.weight.semibold}" },
+        "lineHeight": { "$value": "{typography.line.height.tight}" },
+        "letterSpacing": { "$value": "{typography.letter.spacing.tight}" }
+      },
+      "h2": {
+        "fontFamily": { "$value": "{typography.font.family.heading}" },
+        "fontSize": { "$value": "{typography.size.3xl}" },
+        "fontWeight": { "$value": "{typography.font.weight.semibold}" },
+        "lineHeight": { "$value": "{typography.line.height.tight}" },
+        "letterSpacing": { "$value": "{typography.letter.spacing.tight}" }
+      },
+      "h3": {
+        "fontFamily": { "$value": "{typography.font.family.heading}" },
+        "fontSize": { "$value": "{typography.size.2xl}" },
+        "fontWeight": { "$value": "{typography.font.weight.medium}" },
+        "lineHeight": { "$value": "{typography.line.height.snug}" },
+        "letterSpacing": { "$value": "{typography.letter.spacing.normal}" }
+      },
+      "h4": {
+        "fontFamily": { "$value": "{typography.font.family.heading}" },
+        "fontSize": { "$value": "{typography.size.xl}" },
+        "fontWeight": { "$value": "{typography.font.weight.medium}" },
+        "lineHeight": { "$value": "{typography.line.height.snug}" },
+        "letterSpacing": { "$value": "{typography.letter.spacing.normal}" }
+      },
+      "h5": {
+        "fontFamily": { "$value": "{typography.font.family.secondary}" },
+        "fontSize": { "$value": "{typography.size.lg}" },
+        "fontWeight": { "$value": "{typography.font.weight.semibold}" },
+        "lineHeight": { "$value": "{typography.line.height.normal}" },
+        "letterSpacing": { "$value": "{typography.letter.spacing.normal}" }
+      },
+      "h6": {
+        "fontFamily": { "$value": "{typography.font.family.secondary}" },
+        "fontSize": { "$value": "{typography.size.base}" },
+        "fontWeight": { "$value": "{typography.font.weight.semibold}" },
+        "lineHeight": { "$value": "{typography.line.height.normal}" },
+        "letterSpacing": { "$value": "{typography.letter.spacing.wide}" }
+      }
+    },
+    "body": {
+      "$description": "Body text typography tokens",
+      "large": {
+        "fontFamily": { "$value": "{typography.font.family.body}" },
+        "fontSize": { "$value": "{typography.size.lg}" },
+        "fontWeight": { "$value": "{typography.font.weight.regular}" },
+        "lineHeight": { "$value": "{typography.line.height.relaxed}" },
+        "letterSpacing": { "$value": "{typography.letter.spacing.normal}" }
+      },
+      "base": {
+        "fontFamily": { "$value": "{typography.font.family.body}" },
+        "fontSize": { "$value": "{typography.size.base}" },
+        "fontWeight": { "$value": "{typography.font.weight.regular}" },
+        "lineHeight": { "$value": "{typography.line.height.normal}" },
+        "letterSpacing": { "$value": "{typography.letter.spacing.normal}" }
+      },
+      "small": {
+        "fontFamily": { "$value": "{typography.font.family.body}" },
+        "fontSize": { "$value": "{typography.size.sm}" },
+        "fontWeight": { "$value": "{typography.font.weight.regular}" },
+        "lineHeight": { "$value": "{typography.line.height.normal}" },
+        "letterSpacing": { "$value": "{typography.letter.spacing.wide}" }
+      }
+    },
+    "code": {
+      "$description": "Code and monospace typography",
+      "inline": {
+        "fontFamily": { "$value": "{typography.font.family.code}" },
+        "fontSize": { "$value": "0.875em" },
+        "fontWeight": { "$value": "{typography.font.weight.regular}" },
+        "lineHeight": { "$value": "1" },
+        "letterSpacing": { "$value": "{typography.letter.spacing.normal}" }
+      },
+      "block": {
+        "fontFamily": { "$value": "{typography.font.family.code}" },
+        "fontSize": { "$value": "{typography.size.sm}" },
+        "fontWeight": { "$value": "{typography.font.weight.regular}" },
+        "lineHeight": { "$value": "1.5" },
+        "letterSpacing": { "$value": "{typography.letter.spacing.normal}" }
       }
     }
   }

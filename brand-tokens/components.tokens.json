@@ -1,58 +1,284 @@
 {
   "component": {
-    "$type": "color",
-    "$description": "Component-specific design tokens using 2025.10 features",
+    "$description": "Component-specific design tokens for granular control",
     "button": {
-      "$extends": "{color.semantic}",
-      "$description": "Button component color variants",
-      "primary": {
-        "background": { "$value": { "$ref": "#/color/base/primary/600/$value" } },
-        "hover": { "$value": { "$ref": "#/color/base/primary/700/$value" } },
-        "active": { "$value": { "$ref": "#/color/base/primary/800/$value" } },
-        "text": { "$value": "#ffffff" },
-        "border": { "$value": { "$ref": "#/color/base/primary/600/$value" } }
+      "$description": "Button component variants and states",
+      "size": {
+        "xs": {
+          "height": { "$value": "1.5rem" },
+          "paddingX": { "$value": "0.5rem" },
+          "paddingY": { "$value": "0.125rem" },
+          "fontSize": { "$value": "0.75rem" },
+          "fontWeight": { "$value": "500" },
+          "borderRadius": { "$value": "0.25rem" },
+          "iconSize": { "$value": "0.75rem" }
+        },
+        "sm": {
+          "height": { "$value": "2rem" },
+          "paddingX": { "$value": "0.75rem" },
+          "paddingY": { "$value": "0.25rem" },
+          "fontSize": { "$value": "0.875rem" },
+          "fontWeight": { "$value": "500" },
+          "borderRadius": { "$value": "0.375rem" },
+          "iconSize": { "$value": "0.875rem" }
+        },
+        "md": {
+          "height": { "$value": "2.5rem" },
+          "paddingX": { "$value": "1rem" },
+          "paddingY": { "$value": "0.375rem" },
+          "fontSize": { "$value": "0.875rem" },
+          "fontWeight": { "$value": "500" },
+          "borderRadius": { "$value": "0.5rem" },
+          "iconSize": { "$value": "1rem" }
+        },
+        "lg": {
+          "height": { "$value": "3rem" },
+          "paddingX": { "$value": "1.25rem" },
+          "paddingY": { "$value": "0.5rem" },
+          "fontSize": { "$value": "1rem" },
+          "fontWeight": { "$value": "500" },
+          "borderRadius": { "$value": "0.625rem" },
+          "iconSize": { "$value": "1.125rem" }
+        },
+        "xl": {
+          "height": { "$value": "3.5rem" },
+          "paddingX": { "$value": "1.5rem" },
+          "paddingY": { "$value": "0.625rem" },
+          "fontSize": { "$value": "1.125rem" },
+          "fontWeight": { "$value": "500" },
+          "borderRadius": { "$value": "0.75rem" },
+          "iconSize": { "$value": "1.25rem" }
+        }
       },
-      "secondary": {
-        "background": { "$value": "#ffffff" },
-        "hover": { "$value": { "$ref": "#/color/base/secondary/50/$value" } },
-        "active": { "$value": { "$ref": "#/color/base/secondary/100/$value" } },
-        "text": { "$value": { "$ref": "#/color/base/secondary/900/$value" } },
-        "border": { "$value": { "$ref": "#/color/base/secondary/300/$value" } }
+      "variant": {
+        "primary": {
+          "solid": {
+            "background": { "$value": "#d3ac74" },
+            "backgroundHover": { "$value": "#bb8f57" },
+            "backgroundPressed": { "$value": "#a0713a" },
+            "backgroundDisabled": { "$value": "#e9ecef" },
+            "text": { "$value": "#ffffff" },
+            "textDisabled": { "$value": "#6c757d" },
+            "border": { "$value": "transparent" },
+            "shadow": { "$value": "0 1px 2px 0 rgb(0 0 0 / 0.05)" },
+            "shadowHover": { "$value": "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)" }
+          },
+          "outline": {
+            "background": { "$value": "transparent" },
+            "backgroundHover": { "$value": "#d3ac74" },
+            "backgroundPressed": { "$value": "#a0713a" },
+            "backgroundDisabled": { "$value": "transparent" },
+            "text": { "$value": "#d3ac74" },
+            "textHover": { "$value": "#ffffff" },
+            "textDisabled": { "$value": "#6c757d" },
+            "border": { "$value": "#d3ac74" },
+            "borderHover": { "$value": "#bb8f57" },
+            "shadow": { "$value": "none" }
+          },
+          "ghost": {
+            "background": { "$value": "transparent" },
+            "backgroundHover": { "$value": "rgba(211, 172, 116, 0.1)" },
+            "backgroundPressed": { "$value": "rgba(211, 172, 116, 0.15)" },
+            "backgroundDisabled": { "$value": "transparent" },
+            "text": { "$value": "#d3ac74" },
+            "textHover": { "$value": "#d3ac74" },
+            "textDisabled": { "$value": "#6c757d" },
+            "border": { "$value": "transparent" },
+            "shadow": { "$value": "none" }
+          }
+        },
+        "secondary": {
+          "solid": {
+            "background": { "$value": "#ffffff" },
+            "backgroundHover": { "$value": "#f8f9fa" },
+            "backgroundPressed": { "$value": "#e9ecef" },
+            "backgroundDisabled": { "$value": "#e9ecef" },
+            "text": { "$value": "#181018" },
+            "textDisabled": { "$value": "#6c757d" },
+            "border": { "$value": "#dee2e6" },
+            "shadow": { "$value": "0 1px 2px 0 rgb(0 0 0 / 0.05)" }
+          },
+          "outline": {
+            "background": { "$value": "transparent" },
+            "backgroundHover": { "$value": "#ffffff" },
+            "backgroundPressed": { "$value": "#e9ecef" },
+            "backgroundDisabled": { "$value": "transparent" },
+            "text": { "$value": "#181018" },
+            "textHover": { "$value": "#181018" },
+            "textDisabled": { "$value": "#6c757d" },
+            "border": { "$value": "#dee2e6" },
+            "borderHover": { "$value": "#adb5bd" },
+            "shadow": { "$value": "none" }
+          }
+        }
+      }
+    },
+    "card": {
+      "$description": "Card component tokens",
+      "padding": {
+        "sm": { "$value": "1rem" },
+        "md": { "$value": "1.5rem" },
+        "lg": { "$value": "2rem" }
       },
-      "success": {
-        "background": { "$value": { "$ref": "#/color/semantic/success/$root/$value" } },
-        "hover": { "$value": { "$ref": "#/color/semantic/success/light/$value" } },
-        "active": { "$value": { "$ref": "#/color/semantic/success/dark/$value" } },
-        "text": { "$value": "#ffffff" },
-        "border": { "$value": { "$ref": "#/color/semantic/success/$root/$value/hex" } }
+      "borderRadius": {
+        "sm": { "$value": "0.5rem" },
+        "md": { "$value": "0.75rem" },
+        "lg": { "$value": "1rem" }
       },
-      "danger": {
-        "background": { "$value": { "$ref": "#/color/base/accent/600/$value" } },
-        "hover": { "$value": { "$ref": "#/color/base/accent/700/$value" } },
-        "active": { "$value": { "$ref": "#/color/base/accent/800/$value" } },
-        "text": { "$value": "#ffffff" },
-        "border": { "$value": { "$ref": "#/color/base/accent/600/$value/hex" } }
+      "shadow": {
+        "sm": { "$value": "0 1px 2px 0 rgb(0 0 0 / 0.05)" },
+        "md": { "$value": "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)" },
+        "lg": { "$value": "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)" },
+        "xl": { "$value": "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)" }
+      },
+      "border": {
+        "default": { "$value": "1px solid #e5e5e5" },
+        "subtle": { "$value": "1px solid #f3f4f6" }
       }
     },
     "input": {
-      "background": { "$value": "#ffffff" },
-      "border": { "$value": { "$ref": "#/color/base/secondary/300/$value" } },
-      "focus": { "$value": { "$ref": "#/color/base/primary/500/$value" } },
-      "error": { "$value": { "$ref": "#/color/semantic/error/$root/$value" } },
-      "text": { "$value": { "$ref": "#/color/base/secondary/900/$value" } },
-      "placeholder": { "$value": { "$ref": "#/color/base/secondary/500/$value" } }
-    },
-    "card": {
-      "background": { "$value": "#ffffff" },
-      "border": { "$value": { "$ref": "#/color/base/secondary/200/$value" } },
-      "shadow": {
-        "$value": {
-          "color": { "$ref": "#/color/base/secondary/900/$value" },
-          "offsetX": { "value": 0, "unit": "px" },
-          "offsetY": { "value": 1, "unit": "px" },
-          "blur": { "value": 3, "unit": "px" },
-          "spread": { "value": 0, "unit": "px" }
+      "$description": "Form input component tokens",
+      "height": {
+        "sm": { "$value": "2rem" },
+        "md": { "$value": "2.5rem" },
+        "lg": { "$value": "3rem" }
+      },
+      "paddingX": {
+        "sm": { "$value": "0.75rem" },
+        "md": { "$value": "1rem" },
+        "lg": { "$value": "1.25rem" }
+      },
+      "borderRadius": {
+        "sm": { "$value": "0.375rem" },
+        "md": { "$value": "0.5rem" },
+        "lg": { "$value": "0.625rem" }
+      },
+      "borderWidth": {
+        "default": { "$value": "1px" },
+        "focus": { "$value": "2px" }
+      },
+      "fontSize": {
+        "sm": { "$value": "0.875rem" },
+        "md": { "$value": "0.875rem" },
+        "lg": { "$value": "1rem" }
+      },
+      "state": {
+        "default": {
+          "borderColor": { "$value": "#d1d5db" },
+          "backgroundColor": { "$value": "#ffffff" },
+          "color": { "$value": "#181018" }
+        },
+        "focus": {
+          "borderColor": { "$value": "#d3ac74" },
+          "backgroundColor": { "$value": "#ffffff" },
+          "color": { "$value": "#181018" },
+          "boxShadow": { "$value": "0 0 0 3px rgba(211, 172, 116, 0.1)" }
+        },
+        "error": {
+          "borderColor": { "$value": "#ef4444" },
+          "backgroundColor": { "$value": "#ffffff" },
+          "color": { "$value": "#181018" },
+          "boxShadow": { "$value": "0 0 0 3px rgba(239, 68, 68, 0.1)" }
+        },
+        "disabled": {
+          "borderColor": { "$value": "#e5e5e5" },
+          "backgroundColor": { "$value": "#f9fafb" },
+          "color": { "$value": "#9ca3af" }
         }
+      }
+    },
+    "modal": {
+      "$description": "Modal dialog component tokens",
+      "size": {
+        "sm": {
+          "width": { "$value": "20rem" },
+          "maxWidth": { "$value": "90vw" }
+        },
+        "md": {
+          "width": { "$value": "28rem" },
+          "maxWidth": { "$value": "90vw" }
+        },
+        "lg": {
+          "width": { "$value": "35rem" },
+          "maxWidth": { "$value": "90vw" }
+        },
+        "xl": {
+          "width": { "$value": "42rem" },
+          "maxWidth": { "$value": "90vw" }
+        },
+        "fullscreen": {
+          "width": { "$value": "100vw" },
+          "maxWidth": { "$value": "100vw" }
+        }
+      },
+      "backdrop": {
+        "color": { "$value": "rgba(0, 0, 0, 0.5)" },
+        "blur": { "$value": "4px" }
+      },
+      "animation": {
+        "duration": { "$value": "0.3s" },
+        "easing": { "$value": "cubic-bezier(0.4, 0, 0.2, 1)" }
+      }
+    },
+    "tooltip": {
+      "$description": "Tooltip component tokens",
+      "padding": { "$value": "0.5rem 0.75rem" },
+      "borderRadius": { "$value": "0.375rem" },
+      "fontSize": { "$value": "0.875rem" },
+      "fontWeight": { "$value": "400" },
+      "lineHeight": { "$value": "1.25rem" },
+      "maxWidth": { "$value": "12rem" },
+      "backgroundColor": { "$value": "{color.core.neutral.800}" },
+      "color": { "$value": "{color.core.neutral.0}" },
+      "boxShadow": { "$value": "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)" },
+      "arrow": {
+        "size": { "$value": "0.5rem" },
+        "color": { "$value": "{color.core.neutral.800}" }
+      },
+      "animation": {
+        "duration": { "$value": "0.2s" },
+        "delay": { "$value": "0.5s" }
+      }
+    },
+    "notification": {
+      "$description": "Toast/notification component tokens",
+      "padding": { "$value": "1rem" },
+      "borderRadius": { "$value": "0.5rem" },
+      "fontSize": { "$value": "0.875rem" },
+      "lineHeight": { "$value": "1.25rem" },
+      "minWidth": { "$value": "20rem" },
+      "maxWidth": { "$value": "32rem" },
+      "variant": {
+        "success": {
+          "backgroundColor": { "$value": "#d1fae5" },
+          "borderColor": { "$value": "#10b981" },
+          "color": { "$value": "#065f46" },
+          "iconColor": { "$value": "#10b981" }
+        },
+        "warning": {
+          "backgroundColor": { "$value": "#fef3c7" },
+          "borderColor": { "$value": "#f59e0b" },
+          "color": { "$value": "#92400e" },
+          "iconColor": { "$value": "#f59e0b" }
+        },
+        "error": {
+          "backgroundColor": { "$value": "#fee2e2" },
+          "borderColor": { "$value": "#ef4444" },
+          "color": { "$value": "#991b1b" },
+          "iconColor": { "$value": "#ef4444" }
+        },
+        "info": {
+          "backgroundColor": { "$value": "#dbeafe" },
+          "borderColor": { "$value": "#3b82f6" },
+          "color": { "$value": "#1e3a8a" },
+          "iconColor": { "$value": "#3b82f6" }
+        }
+      },
+      "animation": {
+        "duration": { "$value": "0.3s" },
+        "easing": { "$value": "ease-out" },
+        "enter": { "$value": "translateX(100%)" },
+        "exit": { "$value": "translateX(400px)" }
       }
     }
   }

@@ -1,0 +1,173 @@
+{
+  "animation": {
+    "$description": "Animation and interaction tokens for micro-interactions and transitions",
+    "duration": {
+      "$description": "Animation duration tokens",
+      "instant": { "$value": "0ms" },
+      "fastest": { "$value": "100ms" },
+      "fast": { "$value": "150ms" },
+      "normal": { "$value": "200ms" },
+      "slow": { "$value": "300ms" },
+      "slowest": { "$value": "500ms" }
+    },
+    "easing": {
+      "$description": "Easing function tokens",
+      "linear": { "$value": "linear" },
+      "in": { "$value": "ease-in" },
+      "out": { "$value": "ease-out" },
+      "inOut": { "$value": "ease-in-out" },
+      "bounce": { "$value": "cubic-bezier(0.68, -0.55, 0.265, 1.55)" },
+      "elastic": { "$value": "cubic-bezier(0.68, -0.55, 0.265, 1.55)" },
+      "smooth": { "$value": "cubic-bezier(0.4, 0, 0.2, 1)" },
+      "sharp": { "$value": "cubic-bezier(0.4, 0, 0.6, 1)" }
+    },
+    "delay": {
+      "$description": "Animation delay tokens",
+      "none": { "$value": "0ms" },
+      "short": { "$value": "100ms" },
+      "medium": { "$value": "200ms" },
+      "long": { "$value": "400ms" }
+    },
+    "interaction": {
+      "$description": "Interaction-specific animation tokens",
+      "button": {
+        "hover": {
+          "duration": { "$value": "{animation.duration.fast}" },
+          "easing": { "$value": "{animation.easing.smooth}" },
+          "transform": { "$value": "scale(1.02)" }
+        },
+        "pressed": {
+          "duration": { "$value": "{animation.duration.fastest}" },
+          "easing": { "$value": "{animation.easing.sharp}" },
+          "transform": { "$value": "scale(0.98)" }
+        },
+        "focus": {
+          "duration": { "$value": "{animation.duration.fastest}" },
+          "easing": { "$value": "{animation.easing.smooth}" }
+        }
+      },
+      "input": {
+        "focus": {
+          "duration": { "$value": "{animation.duration.fast}" },
+          "easing": { "$value": "{animation.easing.smooth}" }
+        },
+        "error": {
+          "duration": { "$value": "{animation.duration.normal}" },
+          "easing": { "$value": "{animation.easing.sharp}" },
+          "shake": {
+            "keyframes": { "$value": "shake 0.5s ease-in-out" }
+          }
+        }
+      },
+      "card": {
+        "hover": {
+          "duration": { "$value": "{animation.duration.normal}" },
+          "easing": { "$value": "{animation.easing.smooth}" },
+          "transform": { "$value": "translateY(-2px)" },
+          "shadow": { "$value": "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)" }
+        }
+      },
+      "modal": {
+        "enter": {
+          "duration": { "$value": "{animation.duration.slow}" },
+          "easing": { "$value": "{animation.easing.bounce}" },
+          "transform": { "$value": "scale(0.9)" },
+          "opacity": { "$value": "0" }
+        },
+        "exit": {
+          "duration": { "$value": "{animation.duration.normal}" },
+          "easing": { "$value": "{animation.easing.smooth}" },
+          "transform": { "$value": "scale(0.95)" },
+          "opacity": { "$value": "0" }
+        }
+      },
+      "dropdown": {
+        "enter": {
+          "duration": { "$value": "{animation.duration.fast}" },
+          "easing": { "$value": "{animation.easing.smooth}" },
+          "transform": { "$value": "translateY(-10px)" },
+          "opacity": { "$value": "0" }
+        },
+        "exit": {
+          "duration": { "$value": "{animation.duration.fast}" },
+          "easing": { "$value": "{animation.easing.smooth}" },
+          "transform": { "$value": "translateY(-10px)" },
+          "opacity": { "$value": "0" }
+        }
+      },
+      "notification": {
+        "enter": {
+          "duration": { "$value": "{animation.duration.slow}" },
+          "easing": { "$value": "{animation.easing.bounce}" },
+          "transform": { "$value": "translateX(100%)" }
+        },
+        "exit": {
+          "duration": { "$value": "{animation.duration.normal}" },
+          "easing": { "$value": "{animation.easing.smooth}" },
+          "transform": { "$value": "translateX(400px)" },
+          "opacity": { "$value": "0" }
+        }
+      }
+    },
+    "loading": {
+      "$description": "Loading animation tokens",
+      "spinner": {
+        "duration": { "$value": "1s" },
+        "easing": { "$value": "linear" }
+      },
+      "pulse": {
+        "duration": { "$value": "2s" },
+        "easing": { "$value": "{animation.easing.smooth}" }
+      },
+      "bounce": {
+        "duration": { "$value": "1.4s" },
+        "easing": { "$value": "cubic-bezier(0.68, -0.55, 0.265, 1.55)" }
+      },
+      "shimmer": {
+        "duration": { "$value": "1.5s" },
+        "easing": { "$value": "ease-in-out" }
+      }
+    },
+    "page": {
+      "$description": "Page transition animations",
+      "fade": {
+        "enter": {
+          "duration": { "$value": "{animation.duration.normal}" },
+          "easing": { "$value": "{animation.easing.smooth}" },
+          "opacity": { "$value": "0" }
+        },
+        "exit": {
+          "duration": { "$value": "{animation.duration.fast}" },
+          "easing": { "$value": "{animation.easing.smooth}" },
+          "opacity": { "$value": "0" }
+        }
+      },
+      "slide": {
+        "left": {
+          "enter": {
+            "duration": { "$value": "{animation.duration.slow}" },
+            "easing": { "$value": "{animation.easing.smooth}" },
+            "transform": { "$value": "translateX(-100%)" }
+          },
+          "exit": {
+            "duration": { "$value": "{animation.duration.normal}" },
+            "easing": { "$value": "{animation.easing.smooth}" },
+            "transform": { "$value": "translateX(100%)" }
+          }
+        },
+        "right": {
+          "enter": {
+            "duration": { "$value": "{animation.duration.slow}" },
+            "easing": { "$value": "{animation.easing.smooth}" },
+            "transform": { "$value": "translateX(100%)" }
+          },
+          "exit": {
+            "duration": { "$value": "{animation.duration.normal}" },
+            "easing": { "$value": "{animation.easing.smooth}" },
+            "transform": { "$value": "translateX(-100%)" }
+          }
+        }
+      }
+    }
+  }
+}
