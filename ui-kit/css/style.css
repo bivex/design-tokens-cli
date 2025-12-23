@@ -90,6 +90,18 @@
   --z-modal: 1050;
   --z-popover: 1060;
   --z-tooltip: 1070;
+
+  /* Accessibility - 48px touch targets and focus states */
+  --touch-target-min: var(--a11y-spacing-touch-target-minimum);
+  --touch-target-recommended: var(--a11y-spacing-touch-target-recommended);
+  --focus-outline-width: var(--a11y-spacing-focus-outline-width);
+  --focus-outline-color: var(--a11y-color-focus-outline);
+  --focus-background: var(--a11y-color-focus-background);
+  --hover-opacity: var(--a11y-interaction-hover-opacity);
+  --active-scale: var(--a11y-interaction-active-scale);
+  --disabled-opacity: var(--a11y-interaction-disabled-opacity);
+  --transition-duration: var(--a11y-interaction-transition-duration);
+  --transition-timing: var(--a11y-interaction-transition-timing);
 }
 
 /* Reset and Base Styles */

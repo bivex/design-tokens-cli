@@ -33,20 +33,36 @@
 }
 
 .nav-link {
+  display: flex;
+  align-items: center;
+  min-height: var(--touch-target-recommended);
+  padding: var(--spacing-sm) var(--spacing-md);
   color: var(--color-gray-700);
   font-weight: var(--font-weight-medium);
-  transition: color 0.2s ease;
+  text-decoration: none;
+  border-radius: var(--border-radius-sm);
+  transition: color var(--transition-duration) var(--transition-timing),
+              background-color var(--transition-duration) var(--transition-timing);
 }
 
 .nav-link:hover {
   color: var(--color-primary);
+  background-color: var(--focus-background);
 }
 
-/* Buttons */
+.nav-link:focus {
+  outline: var(--focus-outline-width) solid var(--focus-outline-color);
+  outline-offset: var(--focus-outline-offset);
+  background-color: var(--focus-background);
+}
+
+/* Buttons - WCAG AA compliant with 48px touch targets */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  min-width: var(--touch-target-recommended);
+  min-height: var(--touch-target-recommended);
   padding: var(--spacing-sm) var(--spacing-lg);
   border: var(--border-width-thin) solid transparent;
   border-radius: var(--border-radius-md);
@@ -54,17 +70,18 @@
   font-weight: var(--font-weight-medium);
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all var(--transition-duration) var(--transition-timing);
   white-space: nowrap;
 }
 
 .btn:focus {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
+  outline: var(--focus-outline-width) solid var(--focus-outline-color);
+  outline-offset: var(--focus-outline-offset);
+  background-color: var(--focus-background);
 }
 
 .btn:disabled {
-  opacity: 0.6;
+  opacity: var(--disabled-opacity);
   cursor: not-allowed;
   pointer-events: none;
 }
@@ -76,9 +93,8 @@
 }
 
 .btn-primary:hover:not(:disabled) {
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
-  transform: translateY(-1px);
+  opacity: var(--hover-opacity);
+  transform: scale(var(--active-scale));
   box-shadow: var(--shadow-md);
 }
 
@@ -91,6 +107,7 @@
 .btn-secondary:hover:not(:disabled) {
   background-color: var(--color-gray-800);
   border-color: var(--color-gray-800);
+  opacity: var(--hover-opacity);
 }
 
 .btn-success {
@@ -100,9 +117,7 @@
 }
 
 .btn-success:hover:not(:disabled) {
-  background-color: var(--color-success);
-  border-color: var(--color-success);
-  opacity: 0.9;
+  opacity: var(--hover-opacity);
 }
 
 .btn-danger {
@@ -112,9 +127,7 @@
 }
 
 .btn-danger:hover:not(:disabled) {
-  background-color: var(--color-danger);
-  border-color: var(--color-danger);
-  opacity: 0.9;
+  opacity: var(--hover-opacity);
 }
 
 .btn-lg {
@@ -298,18 +311,22 @@
 
 .form-input {
   width: 100%;
+  min-height: var(--touch-target-recommended);
   padding: var(--spacing-sm) var(--spacing-md);
   border: var(--border-width-thin) solid var(--color-gray-300);
   border-radius: var(--border-radius-md);
   font-size: var(--font-size-base);
   font-family: var(--font-family-base);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color var(--transition-duration) var(--transition-timing),
+              box-shadow var(--transition-duration) var(--transition-timing),
+              background-color var(--transition-duration) var(--transition-timing);
 }
 
 .form-input:focus {
-  outline: none;
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+  outline: var(--focus-outline-width) solid var(--focus-outline-color);
+  outline-offset: var(--focus-outline-offset);
+  border-color: var(--focus-outline-color);
+  background-color: var(--focus-background);
 }
 
 .form-check {
@@ -426,24 +443,40 @@
 }
 
 .control-group input[type="color"] {
-  width: 60px;
-  height: 40px;
-  border: none;
+  width: var(--touch-target-recommended);
+  height: var(--touch-target-recommended);
+  border: var(--border-width-thin) solid var(--color-gray-300);
   border-radius: var(--border-radius-md);
   cursor: pointer;
+  transition: border-color var(--transition-duration) var(--transition-timing);
+}
+
+.control-group input[type="color"]:focus {
+  outline: var(--focus-outline-width) solid var(--focus-outline-color);
+  outline-offset: var(--focus-outline-offset);
+  border-color: var(--focus-outline-color);
 }
 
 .control-group input[type="range"] {
   width: 100%;
-  height: 6px;
-  border-radius: 3px;
+  height: 8px;
+  border-radius: 4px;
   background: var(--color-gray-300);
   outline: none;
   appearance: none;
+  cursor: pointer;
+  transition: background-color var(--transition-duration) var(--transition-timing);
+}
+
+.control-group input[type="range"]:focus {
+  outline: var(--focus-outline-width) solid var(--focus-outline-color);
+  outline-offset: var(--focus-outline-offset);
 }
 
 .control-group input[type="range"]::-webkit-slider-thumb {
   appearance: none;
+  width: var(--touch-target-minimum);
+  height: var(--touch-target-minimum);
   width: 20px;
   height: 20px;
   border-radius: 50%;

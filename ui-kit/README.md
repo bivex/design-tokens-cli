@@ -93,9 +93,11 @@ Based on the included brand tokens, here are some examples of the tokens being u
 - **Plum Accents**: `--base-accent-50` through `--base-accent-950` (deep plum jewel tones)
 - **Semantic Luxury**: `--semantic-success-success` (forest green), `--semantic-warning-warning` (amber gold)
 
-### Spacing
+### Spacing & Accessibility
 - **Space Scale**: `--space-0`, `--space-1`, `--space-2`, `--space-4`, `--space-6`, `--space-8`, `--space-12`, etc.
-- **Consistent**: All component spacing uses these standardized values
+- **Touch Targets**: `--a11y-spacing-touch-target-recommended` (48px), `--a11y-spacing-touch-target-minimum` (44px)
+- **Focus States**: `--a11y-spacing-focus-outline-width`, `--a11y-spacing-focus-outline-offset`
+- **WCAG AA Compliant**: All interactive elements meet 48px minimum touch target requirements
 
 ### Luxury Typography
 - **Primary (Serif)**: `--font-family-primary` - Crimson Text for headings

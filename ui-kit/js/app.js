@@ -253,7 +253,7 @@ document.addEventListener('keydown', function(e) {
     // Ctrl/Cmd + Shift + T = Cycle themes
     if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'T') {
         e.preventDefault();
-        const themes = ['light', 'dark', 'colorful'];
+        const themes = ['light', 'dark', 'elegant'];
         const currentTheme = document.body.dataset.theme || 'light';
         const nextThemeIndex = (themes.indexOf(currentTheme) + 1) % themes.length;
         const nextTheme = themes[nextThemeIndex];

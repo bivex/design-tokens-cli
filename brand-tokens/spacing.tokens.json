@@ -1,6 +1,6 @@
 {
   "spacing": {
-    "$description": "Spacing scale for Bivex design system",
+    "$description": "Accessibility-first spacing scale with 48px minimum touch targets - WCAG AA compliant",
     "0": { "$value": "0" },
     "px": { "$value": "1px" },
     "0.5": { "$value": "0.125rem" },
@@ -36,5 +36,14 @@
     "72": { "$value": "18rem" },
     "80": { "$value": "20rem" },
     "96": { "$value": "24rem" }
+  },
+  "accessibility": {
+    "$description": "Accessibility-specific spacing for WCAG AA compliance",
+    "touch-target-min": { "$value": "2.75rem" },
+    "touch-target-recommended": { "$value": "3rem" },
+    "focus-outline": { "$value": "0.125rem" },
+    "focus-offset": { "$value": "0.125rem" },
+    "text-spacing-min": { "$value": "0.125rem" },
+    "icon-padding": { "$value": "0.75rem" }
   }
 }

@@ -1,0 +1,38 @@
+{
+  "accessibility": {
+    "$description": "WCAG AA compliant accessibility design tokens - 48px touch targets, focus states, contrast ratios",
+    "spacing": {
+      "$description": "Accessibility spacing for touch targets and interactive elements",
+      "touch-target-minimum": { "$value": "2.75rem" },
+      "touch-target-recommended": { "$value": "3rem" },
+      "interactive-element-min": { "$value": "2.25rem" },
+      "focus-outline-width": { "$value": "0.125rem" },
+      "focus-outline-offset": { "$value": "0.125rem" },
+      "text-line-height-min": { "$value": "1.5" },
+      "paragraph-spacing-min": { "$value": "1.5rem" }
+    },
+    "color": {
+      "$description": "Accessibility color tokens for focus states and high contrast",
+      "focus-outline": { "$value": "#d3ac74" },
+      "focus-background": { "$value": "#fefdfb" },
+      "error-focus": { "$value": "#9b4d88" },
+      "success-focus": { "$value": "#15674d" },
+      "warning-focus": { "$value": "#b27516" }
+    },
+    "interaction": {
+      "$description": "Interaction states for accessibility compliance",
+      "hover-opacity": { "$value": "0.8" },
+      "active-scale": { "$value": "0.98" },
+      "disabled-opacity": { "$value": "0.5" },
+      "transition-duration": { "$value": "0.2s" },
+      "transition-timing": { "$value": "ease-in-out" }
+    },
+    "typography": {
+      "$description": "Typography accessibility requirements",
+      "font-size-min": { "$value": "1rem" },
+      "line-height-min": { "$value": "1.5" },
+      "letter-spacing-min": { "$value": "0.01em" },
+      "word-spacing-min": { "$value": "0.1em" }
+    }
+  }
+}
