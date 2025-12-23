@@ -1,7 +1,11 @@
 {
-  "globalPrefix": "token",
+  "globalPrefix": "",
   "keepReferences": true,
   "preserveOrder": true,
+  "prefixes": {
+    "colors": "",
+    "sizes": ""
+  },
   "transforms": [
     {
       "name": "layout",

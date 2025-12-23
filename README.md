@@ -33,9 +33,14 @@ Transformations are defined using a master config file. Here is a configuration 
 
 ```json
 {
-  "globalPrefix": "token",
+  "globalPrefix": "",
   "preserveOrder": true,
   "keepReferences": false,
+  "prefixes": {
+    "colors": "",
+    "sizes": "",
+    "spacing": ""
+  },
   "transforms": [
     {
       "from": "origin/tokens",
@@ -100,6 +105,46 @@ You can prefix all tokens with a common string using the top-level `globalPrefix
 ## `preserveOrder`
 
 By default, tokens are output in the same order they appear in your input files, which helps maintain logical grouping (e.g., all spacing tokens together, all color tokens together). If you prefer alphabetical sorting, set `preserveOrder: false`.
+
+## `prefixes`
+
+Control the prefixes added to token names on a per-group basis. By default, tokens are prefixed with their group name (e.g., `colors-error`, `sizes-small`). Use the `prefixes` option to customize or disable prefixes for specific groups.
+
+```json
+{
+  "prefixes": {
+    "colors": "",      // No prefix for colors group
+    "sizes": "size-",  // Custom prefix for sizes group
+    "spacing": ""      // No prefix for spacing group
+  }
+}
+```
+
+**Example:**
+```json
+{
+  "colors": {
+    "error": { "$value": "red" },
+    "success": { "$value": "green" }
+  },
+  "sizes": {
+    "small": { "$value": "16px" },
+    "large": { "$value": "32px" }
+  }
+}
+```
+
+**Output:**
+```css
+:root {
+  --error: red;      /* No prefix */
+  --success: green;  /* No prefix */
+  --size-small: 16px;  /* Custom prefix */
+  --size-large: 32px;  /* Custom prefix */
+}
+```
+
+Groups not specified in `prefixes` use the default behavior (group name as prefix).
 
 ## `keepReferences`
 

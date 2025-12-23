@@ -94,3 +94,43 @@ test('preserveOrder maintains logical grouping from input files', () => {
     'spacing-tiny'
   ]);
 });
+
+test('configurable prefixes allow custom or no prefixes per group', () => {
+  const inputTokens = {
+    "colors": {
+      "error": { "$value": "red" },
+      "success": { "$value": "green" }
+    },
+    "sizes": {
+      "small": { "$value": "16px" },
+      "large": { "$value": "32px" }
+    },
+    "spacing": {
+      "margin": { "$value": "8px" }
+    }
+  };
+
+  // With custom prefixes - colors get no prefix, sizes get "size-" prefix
+  const withPrefixes = flattenJSON(inputTokens, {
+    prefixes: {
+      "colors": "",      // No prefix for colors
+      "sizes": "size-"   // Custom prefix for sizes
+      // spacing uses default behavior (no config = "spacing-" prefix)
+    }
+  });
+
+  const keys = Object.keys(withPrefixes);
+  expect(keys).toEqual([
+    'error',        // colors group with no prefix
+    'success',      // colors group with no prefix
+    'size-small',   // sizes group with custom prefix
+    'size-large',   // sizes group with custom prefix
+    'spacing-margin' // spacing group with default prefix
+  ]);
+
+  expect(withPrefixes['error']).toBe('red');
+  expect(withPrefixes['success']).toBe('green');
+  expect(withPrefixes['size-small']).toBe('16px');
+  expect(withPrefixes['size-large']).toBe('32px');
+  expect(withPrefixes['spacing-margin']).toBe('8px');
+});

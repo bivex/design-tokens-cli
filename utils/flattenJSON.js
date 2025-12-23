@@ -7,7 +7,7 @@
  * https://github.com/bivex
  *
  * Created: 2025-12-23T03:06:20
- * Last Updated: 2025-12-23T03:06:20
+ * Last Updated: 2025-12-23T03:07:41
  *
  * Licensed under the MIT License.
  * Commercial licensing available upon request.
@@ -60,7 +60,25 @@ const flattenJSON = (tokens, config = {}) => {
     const keys = arr.slice(0, -1).map(k => {
       return k.split(' ').join('-');
     });
-    const key = keys.join('-');
+
+    // Apply configurable prefixes for group names
+    let finalKeys = [...keys];
+    if (keys.length >= 2 && config.prefixes && config.prefixes[keys[0]] !== undefined) {
+      const groupName = keys[0];
+      const tokenName = keys[1];
+      const customPrefix = config.prefixes[groupName];
+
+      // Replace the first two keys with the custom prefix + token name
+      if (customPrefix === "") {
+        // Empty prefix means no group prefix at all
+        finalKeys = [tokenName, ...keys.slice(2)];
+      } else {
+        // Custom prefix
+        finalKeys = [customPrefix + tokenName, ...keys.slice(2)];
+      }
+    }
+
+    const key = finalKeys.join('-');
     const value = arr.at(-1);
     newObject[key] = value;
   });
