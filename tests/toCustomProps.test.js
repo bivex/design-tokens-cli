@@ -14,6 +14,6 @@ test('Converts tokens to CSS custom properties', () => {
     }
   `;
 
-  const returnedString = toCustomProps(tokens);
+  const returnedString = toCustomProps(tokens, {});
   expect(expectedString.replace(/\s/g, '')).toEqual(returnedString.replace(/\s/g, ''));
 });
