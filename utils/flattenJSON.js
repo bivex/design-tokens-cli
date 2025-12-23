@@ -1,11 +1,27 @@
+/**
+ * Copyright (c) 2025 Bivex
+ *
+ * Author: Bivex
+ * Available for contact via email: support@b-b.top
+ * For up-to-date contact information:
+ * https://github.com/bivex
+ *
+ * Created: 2025-12-23T03:06:20
+ * Last Updated: 2025-12-23T03:06:20
+ *
+ * Licensed under the MIT License.
+ * Commercial licensing available upon request.
+ */
+
 import { sortKeys } from './sortKeys.js';
 
 /**
  * Create a simple object of design token name/value pairs from sped-adhering design tokens JSON
  * @param {Array} tokens A standard design tokens object (JSON))
+ * @param {Object} config Configuration object
  * @returns {Object} of token names and values
  */
-const flattenJSON = tokens => {
+const flattenJSON = (tokens, config = {}) => {
   const existingObjects = [];
   const path = [];
   const tokensArrays = [];
@@ -48,7 +64,11 @@ const flattenJSON = tokens => {
     const value = arr.at(-1);
     newObject[key] = value;
   });
-  return sortKeys(newObject); 
+
+  // Preserve input order unless explicitly set to sort alphabetically
+  // Use preserveOrder (default true) or sortTokens (legacy) config options
+  const shouldSort = config.sortTokens === true || config.preserveOrder === false;
+  return shouldSort ? sortKeys(newObject) : newObject; 
 }
 
 export { flattenJSON }

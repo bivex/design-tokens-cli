@@ -1,3 +1,18 @@
+/**
+ * Copyright (c) 2025 Bivex
+ *
+ * Author: Bivex
+ * Available for contact via email: support@b-b.top
+ * For up-to-date contact information:
+ * https://github.com/bivex
+ *
+ * Created: 2025-12-23T03:06:01
+ * Last Updated: 2025-12-23T03:06:19
+ *
+ * Licensed under the MIT License.
+ * Commercial licensing available upon request.
+ */
+
 import jetpack from 'fs-jetpack';
 import { findDuplicates } from "./findDuplicates.js";
 import { findTrueValues, keepReferences } from "./findTrueValues.js";
@@ -22,7 +37,7 @@ const transform = (configPath, options) => {
     let allTokens = {};
     from.find({ matching: ['*.tokens.json', '*.tokens'] }).forEach(path => {
       const json = from.read(path, 'json');
-      let pairs = flattenJSON(json);
+      let pairs = flattenJSON(json, config);
       allTokens[path.split('.')[0]] = pairs;
     });
     

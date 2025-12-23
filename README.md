@@ -34,6 +34,7 @@ Transformations are defined using a master config file. Here is a configuration 
 ```json
 {
   "globalPrefix": "token",
+  "preserveOrder": true,
   "keepReferences": false,
   "transforms": [
     {
@@ -95,6 +96,10 @@ You can prefix all tokens with a common string using the top-level `globalPrefix
 ```
 
 ...`color-brand-light` becomes `token--color-brand-light`.
+
+## `preserveOrder`
+
+By default, tokens are output in the same order they appear in your input files, which helps maintain logical grouping (e.g., all spacing tokens together, all color tokens together). If you prefer alphabetical sorting, set `preserveOrder: false`.
 
 ## `keepReferences`
 

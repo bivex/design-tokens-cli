@@ -1,6 +1,7 @@
 {
   "globalPrefix": "token",
   "keepReferences": true,
+  "preserveOrder": true,
   "transforms": [
     {
       "name": "layout",
