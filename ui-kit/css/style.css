@@ -177,6 +177,14 @@
   --z-modal: var(--z-index-modal);
   --z-popover: var(--z-index-popover);
 
+  /* Text Selection Styling - Using Generated Tokens */
+  --selection-background: var(--selection-default-backgroundColor);
+  --selection-color: var(--selection-default-color);
+  --selection-text-shadow: var(--selection-default-textShadow);
+
+  /* Caret Styling - Using Generated Tokens */
+  --caret-color: var(--caret-default);
+
   /* Accessibility - 48px touch targets and focus states */
   --touch-target-min: var(--a11y-spacing-touch-target-minimum);
   --touch-target-recommended: var(--a11y-spacing-touch-target-recommended);
@@ -835,4 +843,87 @@ pre code {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+/* =================================================================
+   TEXT SELECTION STYLING - ЧИСТО НА ТОКЕНАХ
+   ================================================================= */
+
+/* Default text selection styling */
+::selection {
+  background-color: var(--selection-background);
+  color: var(--selection-color);
+  text-shadow: var(--selection-text-shadow);
+}
+
+/* Alternative selection styles for different contexts */
+.selection-primary::selection {
+  background-color: var(--selection-primary-backgroundColor);
+  color: var(--selection-primary-color);
+  text-shadow: var(--selection-primary-textShadow);
+}
+
+.selection-secondary::selection {
+  background-color: var(--selection-secondary-backgroundColor);
+  color: var(--selection-secondary-color);
+  text-shadow: var(--selection-secondary-textShadow);
+}
+
+.selection-muted::selection {
+  background-color: var(--selection-muted-backgroundColor);
+  color: var(--selection-muted-color);
+  text-shadow: var(--selection-muted-textShadow);
+}
+
+.selection-accent::selection {
+  background-color: var(--selection-accent-backgroundColor);
+  color: var(--selection-accent-color);
+  text-shadow: var(--selection-accent-textShadow);
+}
+
+/* Dark theme selection */
+.dark-theme::selection {
+  background-color: var(--selection-dark-backgroundColor);
+  color: var(--selection-dark-color);
+  text-shadow: var(--selection-dark-textShadow);
+}
+
+/* High contrast selection for accessibility */
+.high-contrast::selection {
+  background-color: var(--selection-contrast-backgroundColor);
+  color: var(--selection-contrast-color);
+  text-shadow: var(--selection-contrast-textShadow);
+}
+
+/* =================================================================
+   INPUT CARET STYLING - ЧИСТО НА ТОКЕНАХ
+   ================================================================= */
+
+input, textarea, [contenteditable] {
+  caret-color: var(--caret-color);
+}
+
+/* Alternative caret colors */
+input.caret-primary,
+textarea.caret-primary,
+[contenteditable].caret-primary {
+  caret-color: var(--caret-primary);
+}
+
+input.caret-secondary,
+textarea.caret-secondary,
+[contenteditable].caret-secondary {
+  caret-color: var(--caret-secondary);
+}
+
+input.caret-accent,
+textarea.caret-accent,
+[contenteditable].caret-accent {
+  caret-color: var(--caret-accent);
+}
+
+input.caret-neutral,
+textarea.caret-neutral,
+[contenteditable].caret-neutral {
+  caret-color: var(--caret-neutral);
 }

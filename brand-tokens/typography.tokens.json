@@ -273,6 +273,74 @@
         "lineHeight": { "$value": "1.5" },
         "letterSpacing": { "$value": "{typography.letter.spacing.normal}" }
       }
+    },
+    "selection": {
+      "$description": "Text selection styling with ::selection pseudo-element",
+      "default": {
+        "$description": "Default text selection styling",
+        "backgroundColor": { "$value": "{color.core.luxury.primary.500}", "$description": "Primary luxury color for text selection background" },
+        "color": { "$value": "{color.core.neutral.0}", "$description": "White text on primary background for contrast" },
+        "textShadow": { "$value": "none", "$description": "No text shadow for clean selection" }
+      },
+      "primary": {
+        "$description": "Primary brand selection styling",
+        "backgroundColor": { "$value": "{color.core.luxury.primary.600}", "$description": "Darker primary for stronger selection" },
+        "color": { "$value": "{color.core.neutral.0}", "$description": "White text for maximum contrast" },
+        "textShadow": { "$value": "0 0 0.5rem rgba(0, 0, 0, 0.3)", "$description": "Subtle shadow for depth" }
+      },
+      "secondary": {
+        "$description": "Secondary selection styling",
+        "backgroundColor": { "$value": "{color.core.luxury.secondary.500}", "$description": "Secondary luxury color" },
+        "color": { "$value": "{color.core.neutral.900}", "$description": "Dark text on light background" },
+        "textShadow": { "$value": "none", "$description": "Clean selection without shadow" }
+      },
+      "muted": {
+        "$description": "Subtle selection styling",
+        "backgroundColor": { "$value": "{color.core.neutral.100}", "$description": "Subtle neutral background color" },
+        "color": { "$value": "{color.core.neutral.900}", "$description": "Dark content color" },
+        "textShadow": { "$value": "none", "$description": "No shadow for minimal styling" }
+      },
+      "accent": {
+        "$description": "Accent selection styling",
+        "backgroundColor": { "$value": "{color.core.luxury.accent.500}", "$description": "Accent color for selection" },
+        "color": { "$value": "{color.core.neutral.0}", "$description": "White text on accent background" },
+        "textShadow": { "$value": "0 0 0.25rem rgba(0, 0, 0, 0.2)", "$description": "Light shadow for elegance" }
+      },
+      "dark": {
+        "$description": "Dark theme selection styling",
+        "backgroundColor": { "$value": "{color.core.luxury.primary.700}", "$description": "Dark primary for dark themes" },
+        "color": { "$value": "{color.core.neutral.100}", "$description": "Light text for dark backgrounds" },
+        "textShadow": { "$value": "0 0 0.5rem rgba(0, 0, 0, 0.5)", "$description": "Stronger shadow for dark themes" }
+      },
+      "contrast": {
+        "$description": "High contrast selection for accessibility",
+        "backgroundColor": { "$value": "{color.core.neutral.900}", "$description": "Pure black background" },
+        "color": { "$value": "{color.core.neutral.0}", "$description": "Pure white text" },
+        "textShadow": { "$value": "0 0 0.125rem rgba(0, 0, 0, 0.8)", "$description": "Strong outline for maximum visibility" }
+      }
+    },
+    "caret": {
+      "$description": "Text input caret (cursor) styling",
+      "default": {
+        "$value": "{color.core.luxury.primary.600}",
+        "$description": "Primary brand color for input caret"
+      },
+      "primary": {
+        "$value": "{color.core.luxury.primary.500}",
+        "$description": "Primary color for caret"
+      },
+      "secondary": {
+        "$value": "{color.core.luxury.secondary.600}",
+        "$description": "Secondary color for caret"
+      },
+      "accent": {
+        "$value": "{color.core.luxury.accent.500}",
+        "$description": "Accent color for caret"
+      },
+      "neutral": {
+        "$value": "{color.core.neutral.700}",
+        "$description": "Neutral color for caret"
+      }
     }
   }
 }

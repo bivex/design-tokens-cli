@@ -2330,6 +2330,50 @@ export default {
                               "through": "line-through"
                       },
                       "overline": "overline"
+              },
+              "selection": {
+                      "default": {
+                              "backgroundColor": "#d3ac74",
+                              "color": "#ffffff",
+                              "textShadow": "none"
+                      },
+                      "primary": {
+                              "backgroundColor": "#bb8f57",
+                              "color": "#ffffff",
+                              "textShadow": "0 0 0.5rem rgba(0, 0, 0, 0.3)"
+                      },
+                      "secondary": {
+                              "backgroundColor": "#dbd3c1",
+                              "color": "#171717",
+                              "textShadow": "none"
+                      },
+                      "muted": {
+                              "backgroundColor": "#f5f5f5",
+                              "color": "#171717",
+                              "textShadow": "none"
+                      },
+                      "accent": {
+                              "backgroundColor": "#9b4d88",
+                              "color": "#ffffff",
+                              "textShadow": "0 0 0.25rem rgba(0, 0, 0, 0.2)"
+                      },
+                      "dark": {
+                              "backgroundColor": "#a0713a",
+                              "color": "#f5f5f5",
+                              "textShadow": "0 0 0.5rem rgba(0, 0, 0, 0.5)"
+                      },
+                      "contrast": {
+                              "backgroundColor": "#171717",
+                              "color": "#ffffff",
+                              "textShadow": "0 0 0.125rem rgba(0, 0, 0, 0.8)"
+                      }
+              },
+              "caret": {
+                      "default": "#bb8f57",
+                      "primary": "#d3ac74",
+                      "secondary": "#bcb19b",
+                      "accent": "#9b4d88",
+                      "neutral": "#404040"
               }
       },
       fontSize: {
