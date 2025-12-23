@@ -165,13 +165,14 @@ Commands:
 
 ### Testing & Verification
 
-This implementation includes comprehensive test coverage with 93 passing tests covering:
+This implementation includes comprehensive test coverage with 106 passing tests across 15 test suites:
 
 - ✅ All 2025.10 specification features (group extensions, root tokens, JSON Pointer references, type inheritance)
 - ✅ Reference resolution (both curly brace `{token}` and JSON Pointer `$ref` syntax)
 - ✅ All output formats (CSS, SCSS, ESM, JSON, Tailwind v3/v4)
-- ✅ Cross-transform references and concatenation
 - ✅ Color format conversion and composite token handling
+- ✅ Configuration validation and error handling
+- ✅ Integration testing for full workflow
 
 Run tests with:
 ```bash
