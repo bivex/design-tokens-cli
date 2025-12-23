@@ -42,7 +42,16 @@ const toCustomProps = (tokensObject, config, includeRoot = true) => {
       value = convertColor(value, config.outputColorFormat);
     }
 
-    string += `\t--${prefix}${key}: ${value};\n`;
+    // Special handling for composite color tokens - only output the hex value for the main variable
+    // Skip the other properties (colorSpace, components, alpha) to avoid cluttering CSS
+    if (key.includes('-hex') && key.includes('$type') === false) {
+      // This is a hex property of a color token, use the simplified name
+      const colorName = key.replace(/-hex$/, '');
+      string += `\t--${prefix}${colorName}: ${value};\n`;
+    } else if (!key.includes('-colorSpace') && !key.includes('-components') && !key.includes('-alpha') && !key.includes('-$type')) {
+      // Only output non-color-component properties and non-type properties
+      string += `\t--${prefix}${key}: ${value};\n`;
+    }
   });
   if (includeRoot) string += '}\n';
   return string;
