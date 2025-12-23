@@ -1,0 +1,1950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 5 Components Demo</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700&family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- Design Tokens CSS -->
+    <link href="../brand-output/css/brand-system.tokens.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* Apply Design Tokens to Bootstrap Components */
+
+        /* Typography System */
+        body {
+            font-family: var(--typography-font-family-body, 'Source Sans Pro', sans-serif);
+            line-height: var(--typography-line-height-normal, 1.5);
+        }
+
+        h1, h2, h3, h4, h5, h6, .display-4, .display-5 {
+            font-family: var(--typography-font-family-heading, 'Crimson Text', serif);
+            font-weight: var(--typography-font-weight-medium, 500);
+            line-height: var(--typography-line-height-tight, 1.25);
+        }
+
+        .display-4 {
+            font-size: var(--typography-size-5xl, 3rem);
+            font-weight: var(--typography-font-weight-bold, 700);
+        }
+
+        .display-5 {
+            font-size: var(--typography-size-4xl, 2.25rem);
+            font-weight: var(--typography-font-weight-semibold, 600);
+        }
+
+        /* Color System - Override Bootstrap Defaults */
+        :root {
+            --bs-primary: var(--base-primary-600, #bb8f57);
+            --bs-primary-rgb: 187, 143, 87;
+            --bs-secondary: var(--base-secondary-500, #dbd3c1);
+            --bs-secondary-rgb: 219, 211, 193;
+            --bs-success: var(--semantic-success-success, #15674d);
+            --bs-success-rgb: 21, 103, 77;
+            --bs-info: var(--base-accent-400, #bf85ae);
+            --bs-info-rgb: 191, 133, 174;
+            --bs-warning: var(--semantic-warning-warning, #b27516);
+            --bs-warning-rgb: 178, 117, 22;
+            --bs-danger: var(--semantic-error-error, #dc2626);
+            --bs-danger-rgb: 220, 38, 38;
+            --bs-light: var(--base-secondary-100, #fdfcf9);
+            --bs-light-rgb: 253, 252, 249;
+            --bs-dark: var(--base-base, #181018);
+            --bs-dark-rgb: 24, 16, 24;
+
+            /* Accent color for special elements */
+            --bs-accent: var(--base-accent-500, #9b4d88);
+            --bs-accent-rgb: 155, 77, 136;
+        }
+
+        /* Button Customizations */
+        .btn-primary {
+            background-color: var(--bs-primary);
+            border-color: var(--bs-primary);
+            font-family: var(--typography-font-family-body);
+            font-weight: var(--typography-font-weight-medium);
+            border-radius: var(--radius-lg, 0.5rem);
+            transition: all var(--a11y-interaction-transition-duration) var(--a11y-interaction-transition-timing);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--base-primary-700, #a0713a);
+            border-color: var(--base-primary-700, #a0713a);
+            transform: scale(var(--a11y-interaction-active-scale, 0.98));
+        }
+
+        .btn-secondary {
+            background-color: var(--bs-secondary);
+            border-color: var(--bs-secondary);
+            color: var(--base-base);
+            font-family: var(--typography-font-family-body);
+            border-radius: var(--radius-lg, 0.5rem);
+        }
+
+        .btn-outline-primary {
+            color: var(--bs-primary);
+            border-color: var(--bs-primary);
+            border-radius: var(--radius-lg, 0.5rem);
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--bs-primary);
+            border-color: var(--bs-primary);
+        }
+
+        /* Alert Customizations */
+        .alert {
+            border-radius: var(--radius-lg, 0.5rem);
+            font-family: var(--typography-font-family-body);
+            border: none;
+        }
+
+        .alert-primary {
+            background-color: rgba(var(--bs-primary-rgb), 0.1);
+            color: var(--bs-primary);
+        }
+
+        .alert-success {
+            background-color: rgba(var(--semantic-success-success, 21, 103, 77), 0.1);
+            color: var(--semantic-success-success);
+        }
+
+        .alert-warning {
+            background-color: rgba(var(--bs-warning-rgb), 0.1);
+            color: var(--bs-warning);
+        }
+
+        .alert-danger {
+            background-color: rgba(var(--bs-danger-rgb), 0.1);
+            color: var(--bs-danger);
+        }
+
+        /* Card Customizations */
+        .card {
+            border-radius: var(--radius-xl, 0.75rem);
+            border: 1px solid var(--base-secondary-300, #f4f1ea);
+            box-shadow: var(--sm, 0 1px 2px 0 rgb(0 0 0 / 0.05));
+            font-family: var(--typography-font-family-body);
+        }
+
+        .card-header {
+            background-color: var(--base-secondary-50, #fefefc);
+            border-bottom: 1px solid var(--base-secondary-200, #faf8f3);
+            border-radius: var(--radius-xl, 0.75rem) var(--radius-xl, 0.75rem) 0 0 !important;
+            font-weight: var(--typography-font-weight-semibold, 600);
+            color: var(--base-base);
+        }
+
+        .card-body {
+            padding: var(--spacing-6, 1.5rem);
+        }
+
+        /* Navigation Customizations */
+        .navbar {
+            background: linear-gradient(135deg, var(--base-primary-600, #bb8f57) 0%, var(--base-primary-800, #875724) 100%);
+            border-bottom: 2px solid var(--base-accent-600, #7f2a6b);
+            box-shadow: var(--md, 0 4px 6px -1px rgb(0 0 0 / 0.1));
+        }
+
+        .navbar-brand {
+            font-family: var(--typography-font-family-accent, 'Playfair Display', serif);
+            font-weight: var(--typography-font-weight-bold, 700);
+            font-size: var(--typography-size-xl, 1.25rem);
+            color: var(--base-secondary-50, #fefefc) !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: rgba(var(--base-secondary-50-rgb, 254, 254, 252), 0.8) !important;
+            font-weight: var(--typography-font-weight-medium, 500);
+            transition: color var(--a11y-interaction-transition-duration) var(--a11y-interaction-transition-timing);
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--base-secondary-50, #fefefc) !important;
+        }
+
+        .navbar-toggler {
+            border-color: rgba(var(--base-secondary-50-rgb, 254, 254, 252), 0.3);
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28254, 254, 252, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* Badge Customizations */
+        .badge {
+            font-family: var(--typography-font-family-body);
+            font-weight: var(--typography-font-weight-medium, 500);
+            border-radius: var(--radius-full, 9999px);
+            padding: var(--spacing-1, 0.25rem) var(--spacing-2, 0.5rem);
+        }
+
+        .badge.bg-primary {
+            background-color: var(--bs-primary) !important;
+        }
+
+        .badge.bg-secondary {
+            background-color: var(--bs-secondary) !important;
+            color: var(--base-base) !important;
+        }
+
+        /* Progress Bar Customizations */
+        .progress {
+            background-color: var(--base-secondary-200, #faf8f3);
+            border-radius: var(--radius-full, 9999px);
+            height: var(--spacing-4, 1rem);
+        }
+
+        .progress-bar {
+            background: linear-gradient(135deg, var(--bs-primary) 0%, var(--base-primary-700, #a0713a) 100%);
+            border-radius: var(--radius-full, 9999px);
+            transition: width var(--a11y-interaction-transition-duration) var(--a11y-interaction-transition-timing);
+        }
+
+        /* Form Control Customizations */
+        .form-control, .form-select {
+            border: 2px solid var(--base-secondary-300, #f4f1ea);
+            border-radius: var(--radius-lg, 0.5rem);
+            font-family: var(--typography-font-family-body);
+            transition: border-color var(--a11y-interaction-transition-duration) var(--a11y-interaction-transition-timing),
+                        box-shadow var(--a11y-interaction-transition-duration) var(--a11y-interaction-transition-timing);
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--bs-primary);
+            box-shadow: 0 0 0 var(--a11y-spacing-focus-outline-offset, 0.125rem) rgba(var(--bs-primary-rgb), 0.25);
+        }
+
+        /* Modal Customizations */
+        .modal-content {
+            border-radius: var(--radius-xl, 0.75rem);
+            border: none;
+            box-shadow: var(--xl, 0 20px 25px -5px rgb(0 0 0 / 0.1));
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, var(--base-secondary-50, #fefefc) 0%, var(--base-secondary-100, #fdfcf9) 100%);
+            border-bottom: 1px solid var(--base-secondary-200, #faf8f3);
+            border-radius: var(--radius-xl, 0.75rem) var(--radius-xl, 0.75rem) 0 0;
+        }
+
+        .modal-footer {
+            border-top: 1px solid var(--base-secondary-200, #faf8f3);
+            background-color: var(--base-secondary-50, #fefefc);
+        }
+
+        /* Dropdown Customizations */
+        .dropdown-menu {
+            border-radius: var(--radius-lg, 0.5rem);
+            border: 1px solid var(--base-secondary-300, #f4f1ea);
+            box-shadow: var(--lg, 0 10px 15px -3px rgb(0 0 0 / 0.1));
+            font-family: var(--typography-font-family-body);
+        }
+
+        .dropdown-item {
+            padding: var(--spacing-3, 0.75rem) var(--spacing-4, 1rem);
+            transition: background-color var(--a11y-interaction-transition-duration) var(--a11y-interaction-transition-timing);
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--base-secondary-100, #fdfcf9);
+            color: var(--base-base);
+        }
+
+        /* Accordion Customizations */
+        .accordion-item {
+            border-radius: var(--radius-lg, 0.5rem) !important;
+            border: 1px solid var(--base-secondary-300, #f4f1ea);
+            margin-bottom: var(--spacing-3, 0.75rem);
+            overflow: hidden;
+        }
+
+        .accordion-button {
+            background: linear-gradient(135deg, var(--base-secondary-50, #fefefc) 0%, var(--base-secondary-100, #fdfcf9) 100%);
+            border: none;
+            font-family: var(--typography-font-family-heading);
+            font-weight: var(--typography-font-weight-medium, 500);
+            color: var(--base-base);
+            padding: var(--spacing-4, 1rem) var(--spacing-6, 1.5rem);
+        }
+
+        .accordion-button:not(.collapsed) {
+            background: linear-gradient(135deg, var(--bs-primary) 0%, var(--base-primary-700, #a0713a) 100%);
+            color: var(--base-secondary-50, #fefefc);
+        }
+
+        .accordion-body {
+            background-color: var(--base-secondary-50, #fefefc);
+            border-top: 1px solid var(--base-secondary-200, #faf8f3);
+        }
+
+        /* List Group Customizations */
+        .list-group-item {
+            border-color: var(--base-secondary-300, #f4f1ea);
+            font-family: var(--typography-font-family-body);
+        }
+
+        .list-group-item.active {
+            background-color: var(--bs-primary);
+            border-color: var(--bs-primary);
+        }
+
+        /* Carousel Customizations */
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: var(--base-base);
+            border-radius: var(--radius-full, 9999px);
+            padding: var(--spacing-2, 0.5rem);
+        }
+
+        .carousel-indicators button {
+            background-color: var(--base-secondary-400, #eae5d9);
+        }
+
+        .carousel-indicators .active {
+            background-color: var(--bs-primary);
+        }
+
+        /* Pagination Customizations */
+        .pagination .page-link {
+            color: var(--bs-primary);
+            border-color: var(--base-secondary-300, #f4f1ea);
+            background-color: var(--base-secondary-50, #fefefc);
+            font-weight: var(--typography-font-weight-medium, 500);
+            border-radius: var(--radius-lg, 0.5rem) !important;
+            margin: 0 var(--spacing-1, 0.25rem);
+            transition: all var(--a11y-interaction-transition-duration) var(--a11y-interaction-transition-timing);
+        }
+
+        .pagination .page-link:hover {
+            color: var(--base-secondary-50, #fefefc);
+            background-color: var(--bs-primary);
+            border-color: var(--bs-primary);
+            transform: translateY(-1px);
+            box-shadow: var(--sm, 0 1px 2px 0 rgb(0 0 0 / 0.05));
+        }
+
+        .pagination .page-item.active .page-link {
+            background-color: var(--bs-primary);
+            border-color: var(--bs-primary);
+            color: var(--base-secondary-50, #fefefc);
+            box-shadow: var(--md, 0 4px 6px -1px rgb(0 0 0 / 0.1));
+        }
+
+        /* Spinners Customizations */
+        .spinner-border, .spinner-grow {
+            color: var(--bs-primary);
+        }
+
+        /* Component Section Styling */
+        .component-section {
+            margin-bottom: var(--spacing-16, 4rem);
+            padding-top: var(--spacing-8, 2rem);
+            border-top: 1px solid var(--base-secondary-300, #f4f1ea);
+        }
+
+        .component-section:first-child {
+            border-top: none;
+        }
+
+        /* Custom Progress Circle */
+        .progress-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--radius-full, 9999px);
+            background: conic-gradient(var(--bs-primary) 0% 75%, var(--base-secondary-200, #faf8f3) 75% 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .progress-circle::before {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            border-radius: var(--radius-full, 9999px);
+            background: var(--base-secondary-50, #fefefc);
+        }
+
+        .progress-text {
+            position: relative;
+            z-index: 1;
+            font-weight: var(--typography-font-weight-bold, 700);
+            color: var(--bs-primary);
+            font-family: var(--typography-font-family-accent, 'Playfair Display', serif);
+        }
+
+        .progress-circle[data-progress="50"] {
+            background: conic-gradient(var(--bs-primary) 0% 50%, var(--base-secondary-200, #faf8f3) 50% 100%);
+        }
+
+        .progress-circle[data-progress="25"] {
+            background: conic-gradient(var(--bs-primary) 0% 25%, var(--base-secondary-200, #faf8f3) 25% 100%);
+        }
+
+        /* Custom Spinners */
+        .custom-spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid var(--base-secondary-200, #faf8f3);
+            border-top: 4px solid var(--bs-primary);
+            border-radius: var(--radius-full, 9999px);
+            animation: spin 1s linear infinite;
+        }
+
+        .custom-spinner.pulse {
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        .custom-spinner.bounce {
+            animation: bounce 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.7; }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .display-4 {
+                font-size: var(--typography-size-4xl, 2.25rem);
+            }
+
+            .display-5 {
+                font-size: var(--typography-size-3xl, 1.875rem);
+            }
+
+            .navbar-nav .nav-link {
+                padding: var(--spacing-2, 0.5rem) var(--spacing-3, 0.75rem);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#top">🎨 Design Tokens + Bootstrap 5</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#accordion">Accordion</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#alerts">Alerts</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#badge">Badge</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#breadcrumb">Breadcrumb</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#buttons">Buttons</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#button-group">Button Group</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#card">Card</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#carousel">Carousel</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#close-button">Close Button</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#collapse">Collapse</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#dropdowns">Dropdowns</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#list-group">List Group</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#modal">Modal</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#navs-tabs">Navs & Tabs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#navbar">Navbar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pagination">Pagination</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#progress">Progress</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#spinners">Spinners</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5" id="top">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="display-4 mb-4">🎨 Design Tokens + Bootstrap 5</h1>
+                <p class="lead">Luxury Italian Vogue inspired design system applied to all Bootstrap 5 components. Featuring elegant typography, sophisticated colors, and refined interactions.</p>
+                <div class="alert alert-primary mt-4">
+                    <strong>✨ Design System Features:</strong> Crimson Text serif headings, Source Sans Pro body text, golden primary palette, accessibility-first spacing, and smooth micro-interactions.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Accordion Section -->
+    <div class="component-section" id="accordion">
+        <div class="container">
+            <h2 class="display-5 mb-4">Accordion</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <h3>Basic Accordion</h3>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Accordion Item #1
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Accordion Item #2
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Accordion Item #3
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="mt-5">Flush Accordion</h3>
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                    Accordion Item #1
+                                </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">This is the first item's accordion body with flush styling.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                    Accordion Item #2
+                                </button>
+                            </h2>
+                            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">This is the second item's accordion body with flush styling.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>Accordion Classes</h5>
+                            <ul class="list-unstyled small">
+                                <li><code>.accordion</code> - Container</li>
+                                <li><code>.accordion-item</code> - Individual item</li>
+                                <li><code>.accordion-header</code> - Header container</li>
+                                <li><code>.accordion-button</code> - Toggle button</li>
+                                <li><code>.accordion-collapse</code> - Collapsible content</li>
+                                <li><code>.accordion-body</code> - Content area</li>
+                                <li><code>.accordion-flush</code> - Remove borders</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alerts Section -->
+    <div class="component-section" id="alerts">
+        <div class="container">
+            <h2 class="display-5 mb-4">Alerts</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <h3>Alert Variants</h3>
+                    <div class="alert alert-primary" role="alert">A simple primary alert—check it out!</div>
+                    <div class="alert alert-secondary" role="alert">A simple secondary alert—check it out!</div>
+                    <div class="alert alert-success" role="alert">A simple success alert—check it out!</div>
+                    <div class="alert alert-danger" role="alert">A simple danger alert—check it out!</div>
+                    <div class="alert alert-warning" role="alert">A simple warning alert—check it out!</div>
+                    <div class="alert alert-info" role="alert">A simple info alert—check it out!</div>
+                    <div class="alert alert-light" role="alert">A simple light alert—check it out!</div>
+                    <div class="alert alert-dark" role="alert">A simple dark alert—check it out!</div>
+
+                    <h3 class="mt-5">Dismissible Alert</h3>
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+
+                    <div id="liveAlertPlaceholder"></div>
+                    <button type="button" class="btn btn-primary" id="liveAlertBtn">Show live alert</button>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>Alert Classes</h5>
+                            <ul class="list-unstyled small">
+                                <li><code>.alert</code> - Base alert</li>
+                                <li><code>.alert-primary/secondary/etc</code> - Color variants</li>
+                                <li><code>.alert-dismissible</code> - Makes dismissible</li>
+                                <li><code>.fade.show</code> - Animation classes</li>
+                                <li><code>role="alert"</code> - Accessibility</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Badge Section -->
+    <div class="component-section" id="badge">
+        <div class="container">
+            <h2 class="display-5 mb-4">Badge</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <h3>Badge Variants</h3>
+                    <span class="badge bg-primary">Primary</span>
+                    <span class="badge bg-secondary">Secondary</span>
+                    <span class="badge bg-success">Success</span>
+                    <span class="badge bg-danger">Danger</span>
+                    <span class="badge bg-warning text-dark">Warning</span>
+                    <span class="badge bg-info text-dark">Info</span>
+                    <span class="badge bg-light text-dark">Light</span>
+                    <span class="badge bg-dark">Dark</span>
+
+                    <h3 class="mt-5">Pill Badges</h3>
+                    <span class="badge rounded-pill bg-primary">Primary</span>
+                    <span class="badge rounded-pill bg-secondary">Secondary</span>
+                    <span class="badge rounded-pill bg-success">Success</span>
+                    <span class="badge rounded-pill bg-danger">Danger</span>
+                    <span class="badge rounded-pill bg-warning text-dark">Warning</span>
+                    <span class="badge rounded-pill bg-info text-dark">Info</span>
+                    <span class="badge rounded-pill bg-light text-dark">Light</span>
+                    <span class="badge rounded-pill bg-dark">Dark</span>
+
+                    <h3 class="mt-5">Badges in Buttons</h3>
+                    <button type="button" class="btn btn-primary">
+                        Notifications <span class="badge bg-secondary">4</span>
+                    </button>
+                    <button type="button" class="btn btn-primary position-relative">
+                        Inbox
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            99+
+                            <span class="visually-hidden">unread messages</span>
+                        </span>
+                    </button>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>Badge Classes</h5>
+                            <ul class="list-unstyled small">
+                                <li><code>.badge</code> - Base badge</li>
+                                <li><code>.bg-primary/secondary/etc</code> - Background colors</li>
+                                <li><code>.rounded-pill</code> - Pill shape</li>
+                                <li><code>.text-dark</code> - Dark text for light backgrounds</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Breadcrumb Section -->
+    <div class="component-section" id="breadcrumb">
+        <div class="container">
+            <h2 class="display-5 mb-4">Breadcrumb</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <h3>Basic Breadcrumb</h3>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item active" aria-current="page">Home</li>
+                        </ol>
+                    </nav>
+
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Library</li>
+                        </ol>
+                    </nav>
+
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#">Library</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Data</li>
+                        </ol>
+                    </nav>
+
+                    <h3 class="mt-5">Breadcrumb with Custom Divider</h3>
+                    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Library</li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>Breadcrumb Classes</h5>
+                            <ul class="list-unstyled small">
+                                <li><code>.breadcrumb</code> - Container</li>
+                                <li><code>.breadcrumb-item</code> - Individual items</li>
+                                <li><code>aria-current="page"</code> - Current page</li>
+                                <li><code>--bs-breadcrumb-divider</code> - Custom divider</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Buttons Section -->
+    <div class="component-section" id="buttons">
+        <div class="container">
+            <h2 class="display-5 mb-4">Buttons</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <h3>Basic Button Variants</h3>
+                    <button type="button" class="btn btn-primary">Primary</button>
+                    <button type="button" class="btn btn-secondary">Secondary</button>
+                    <button type="button" class="btn btn-success">Success</button>
+                    <button type="button" class="btn btn-danger">Danger</button>
+                    <button type="button" class="btn btn-warning">Warning</button>
+                    <button type="button" class="btn btn-info">Info</button>
+                    <button type="button" class="btn btn-light">Light</button>
+                    <button type="button" class="btn btn-dark">Dark</button>
+                    <button type="button" class="btn btn-link">Link</button>
+
+                    <h3 class="mt-5">Outline Buttons</h3>
+                    <button type="button" class="btn btn-outline-primary">Primary</button>
+                    <button type="button" class="btn btn-outline-secondary">Secondary</button>
+                    <button type="button" class="btn btn-outline-success">Success</button>
+                    <button type="button" class="btn btn-outline-danger">Danger</button>
+                    <button type="button" class="btn btn-outline-warning">Warning</button>
+                    <button type="button" class="btn btn-outline-info">Info</button>
+                    <button type="button" class="btn btn-outline-light">Light</button>
+                    <button type="button" class="btn btn-outline-dark">Dark</button>
+
+                    <h3 class="mt-5">Button Sizes</h3>
+                    <button type="button" class="btn btn-primary btn-lg">Large button</button>
+                    <button type="button" class="btn btn-primary">Normal button</button>
+                    <button type="button" class="btn btn-primary btn-sm">Small button</button>
+
+                    <h3 class="mt-5">Disabled State</h3>
+                    <button type="button" class="btn btn-primary" disabled>Primary button</button>
+                    <button type="button" class="btn btn-outline-primary" disabled>Primary outline button</button>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>Button Classes</h5>
+                            <ul class="list-unstyled small">
+                                <li><code>.btn</code> - Base button</li>
+                                <li><code>.btn-primary/secondary/etc</code> - Color variants</li>
+                                <li><code>.btn-outline-*</code> - Outline variants</li>
+                                <li><code>.btn-lg/btn-sm</code> - Sizes</li>
+                                <li><code>disabled</code> - Disabled state</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Button Group Section -->
+    <div class="component-section" id="button-group">
+        <div class="container">
+            <h2 class="display-5 mb-4">Button Group</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <h3>Basic Button Group</h3>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-primary">Left</button>
+                        <button type="button" class="btn btn-primary">Middle</button>
+                        <button type="button" class="btn btn-primary">Right</button>
+                    </div>
+
+                    <h3 class="mt-5">Button Toolbar</h3>
+                    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                        <div class="btn-group me-2" role="group" aria-label="First group">
+                            <button type="button" class="btn btn-outline-secondary">1</button>
+                            <button type="button" class="btn btn-outline-secondary">2</button>
+                            <button type="button" class="btn btn-outline-secondary">3</button>
+                            <button type="button" class="btn btn-outline-secondary">4</button>
+                        </div>
+                        <div class="btn-group me-2" role="group" aria-label="Second group">
+                            <button type="button" class="btn btn-outline-secondary">5</button>
+                            <button type="button" class="btn btn-outline-secondary">6</button>
+                            <button type="button" class="btn btn-outline-secondary">7</button>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Third group">
+                            <button type="button" class="btn btn-outline-secondary">8</button>
+                        </div>
+                    </div>
+
+                    <h3 class="mt-5">Vertical Button Group</h3>
+                    <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                        <button type="button" class="btn btn-dark">Button</button>
+                        <button type="button" class="btn btn-dark">Button</button>
+                        <button type="button" class="btn btn-dark">Button</button>
+                        <button type="button" class="btn btn-dark">Button</button>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>Button Group Classes</h5>
+                            <ul class="list-unstyled small">
+                                <li><code>.btn-group</code> - Horizontal group</li>
+                                <li><code>.btn-group-vertical</code> - Vertical group</li>
+                                <li><code>.btn-toolbar</code> - Toolbar container</li>
+                                <li><code>.btn-group-lg/sm</code> - Sizes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card Section -->
+    <div class="component-section" id="card">
+        <div class="container">
+            <h2 class="display-5 mb-4">Card</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <h3>Basic Card</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            This is some text within a card body.
+                        </div>
+                    </div>
+
+                    <h3 class="mt-5">Card with Header and Footer</h3>
+                    <div class="card">
+                        <div class="card-header">
+                            Featured
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Special title treatment</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                        <div class="card-footer text-muted">
+                            2 days ago
+                        </div>
+                    </div>
+
+                    <h3 class="mt-5">Card with Image</h3>
+                    <div class="card" style="width: 18rem;">
+                        <img src="https://via.placeholder.com/286x180" class="card-img-top" alt="Card image">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+
+                    <h3 class="mt-5">Card Groups</h3>
+                    <div class="card-group">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Card image">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Card image">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Card image">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>Card Classes</h5>
+                            <ul class="list-unstyled small">
+                                <li><code>.card</code> - Main container</li>
+                                <li><code>.card-body</code> - Content area</li>
+                                <li><code>.card-header</code> - Header section</li>
+                                <li><code>.card-footer</code> - Footer section</li>
+                                <li><code>.card-img-top</code> - Top image</li>
+                                <li><code>.card-group</code> - Equal width cards</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Carousel Section -->
+    <div class="component-section" id="carousel">
+        <div class="container">
+            <h2 class="display-5 mb-4">Carousel</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <h3>Basic Carousel</h3>
+                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="https://via.placeholder.com/800x400/007bff/ffffff?text=First+slide" class="d-block w-100" alt="First slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://via.placeholder.com/800x400/28a745/ffffff?text=Second+slide" class="d-block w-100" alt="Second slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://via.placeholder.com/800x400/dc3545/ffffff?text=Third+slide" class="d-block w-100" alt="Third slide">
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="mt-5">Carousel with Controls</h3>
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="https://via.placeholder.com/800x400/007bff/ffffff?text=First+slide" class="d-block w-100" alt="First slide">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>First slide label</h5>
+                                    <p>Some representative placeholder content for the first slide.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://via.placeholder.com/800x400/28a745/ffffff?text=Second+slide" class="d-block w-100" alt="Second slide">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Second slide label</h5>
+                                    <p>Some representative placeholder content for the second slide.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://via.placeholder.com/800x400/dc3545/ffffff?text=Third+slide" class="d-block w-100" alt="Third slide">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Third slide label</h5>
+                                    <p>Some representative placeholder content for the third slide.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>Carousel Classes</h5>
+                            <ul class="list-unstyled small">
+                                <li><code>.carousel</code> - Main container</li>
+                                <li><code>.carousel-inner</code> - Slides container</li>
+                                <li><code>.carousel-item</code> - Individual slides</li>
+                                <li><code>.carousel-control-prev/next</code> - Navigation</li>
+                                <li><code>.carousel-indicators</code> - Dot indicators</li>
+                                <li><code>.carousel-caption</code> - Slide captions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Close Button Section -->
+    <div class="component-section" id="close-button">
+        <div class="container">
+            <h2 class="display-5 mb-4">Close Button</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <h3>Basic Close Button</h3>
+                    <button type="button" class="btn-close" aria-label="Close"></button>
+
+                    <h3 class="mt-5">Disabled Close Button</h3>
+                    <button type="button" class="btn-close" disabled aria-label="Close"></button>
+
+                    <h3 class="mt-5">White Close Button</h3>
+                    <div class="bg-dark p-3">
+                        <button type="button" class="btn-close btn-close-white" aria-label="Close"></button>
+                        <button type="button" class="btn-close btn-close-white" disabled aria-label="Close"></button>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>Close Button Classes</h5>
+                            <ul class="list-unstyled small">
+                                <li><code>.btn-close</code> - Basic close button</li>
+                                <li><code>.btn-close-white</code> - White variant</li>
+                                <li><code>disabled</code> - Disabled state</li>
+                                <li><code>aria-label="Close"</code> - Required for accessibility</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Collapse Section -->
+    <div class="component-section" id="collapse">
+        <div class="container">
+            <h2 class="display-5 mb-4">Collapse</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <h3>Basic Collapse</h3>
+                    <p>
+                        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            Link with href
+                        </a>
+                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            Button with data-bs-target
+                        </button>
+                    </p>
+                    <div class="collapse" id="collapseExample">
+                        <div class="card card-body">
+                            Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                        </div>
+                    </div>
+
+                    <h3 class="mt-5">Horizontal Collapse</h3>
+                    <p>
+                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+                            Toggle width collapse
+                        </button>
+                    </p>
+                    <div style="min-height: 120px;">
+                        <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                            <div class="card card-body" style="width: 300px;">
+                                This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>Collapse Classes</h5>
+                            <ul class="list-unstyled small">
+                                <li><code>.collapse</code> - Hidden content</li>
+                                <li><code>.collapse.show</code> - Visible content</li>
+                                <li><code>.collapse-horizontal</code> - Horizontal collapse</li>
+                                <li><code>.collapsing</code> - Transition state</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dropdowns Section -->
+    <div class="component-section" id="dropdowns">
+        <div class="container">
+            <h2 class="display-5 mb-4">Dropdowns</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <h3>Single Button Dropdown</h3>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown button
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+
+                    <h3 class="mt-5">Split Button Dropdown</h3>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-danger">Action</button>
+                        <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+
+                    <h3 class="mt-5">Dropdown Directions</h3>
+                    <div class="btn-group dropup">
+                        <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropup
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="btn-group dropend ms-2">
+                        <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropend
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="btn-group dropstart ms-2">
+                        <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropstart
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>Dropdown Classes</h5>
+                            <ul class="list-unstyled small">
+                                <li><code>.dropdown</code> - Container</li>
+                                <li><code>.dropdown-toggle</code> - Trigger button</li>
+                                <li><code>.dropdown-menu</code> - Menu container</li>
+                                <li><code>.dropdown-item</code> - Menu items</li>
+                                <li><code>.dropup/dropend/dropstart</code> - Directions</li>
+                                <li><code>.dropdown-divider</code> - Dividers</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- List Group Section -->
+    <div class="component-section" id="list-group">
+        <div class="container">
+            <h2 class="display-5 mb-4">List Group</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <h3>Basic List Group</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">An item</li>
+                        <li class="list-group-item">A second item</li>
+                        <li class="list-group-item">A third item</li>
+                        <li class="list-group-item">A fourth item</li>
+                        <li class="list-group-item">And a fifth one</li>
+                    </ul>
+
+                    <h3 class="mt-5">Active and Disabled Items</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item active" aria-current="true">An active item</li>
+                        <li class="list-group-item">A second item</li>
+                        <li class="list-group-item">A third item</li>
+                        <li class="list-group-item">A fourth item</li>
+                        <li class="list-group-item disabled" aria-disabled="true">A disabled item</li>
+                    </ul>
+
+                    <h3 class="mt-5">Links and Buttons</h3>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action">A simple default list group item</a>
+                        <a href="#" class="list-group-item list-group-item-action list-group-item-primary">A simple primary list group item</a>
+                        <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">A simple secondary list group item</a>
+                        <a href="#" class="list-group-item list-group-item-action list-group-item-success">A simple success list group item</a>
+                        <a href="#" class="list-group-item list-group-item-action list-group-item-danger">A simple danger list group item</a>
+                        <a href="#" class="list-group-item list-group-item-action list-group-item-warning">A simple warning list group item</a>
+                        <a href="#" class="list-group-item list-group-item-action list-group-item-info">A simple info list group item</a>
+                        <a href="#" class="list-group-item list-group-item-action list-group-item-light">A simple light list group item</a>
+                        <a href="#" class="list-group-item list-group-item-action list-group-item-dark">A simple dark list group item</a>
+                    </div>
+
+                    <h3 class="mt-5">Flush List Group</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">An item</li>
+                        <li class="list-group-item">A second item</li>
+                        <li class="list-group-item">A third item</li>
+                        <li class="list-group-item">A fourth item</li>
+                        <li class="list-group-item">And a fifth one</li>
+                    </ul>
+
+                    <h3 class="mt-5">Numbered List Group</h3>
+                    <ol class="list-group list-group-numbered">
+                        <li class="list-group-item">A list item</li>
+                        <li class="list-group-item">A list item</li>
+                        <li class="list-group-item">A list item</li>
+                        <li class="list-group-item">A list item</li>
+                        <li class="list-group-item">A list item</li>
+                    </ol>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>List Group Classes</h5>
+                            <ul class="list-unstyled small">
+                                <li><code>.list-group</code> - Container</li>
+                                <li><code>.list-group-item</code> - List items</li>
+                                <li><code>.list-group-item-action</code> - Clickable items</li>
+                                <li><code>.list-group-flush</code> - Remove borders</li>
+                                <li><code>.list-group-numbered</code> - Numbered list</li>
+                                <li><code>.active</code> - Active state</li>
+                                <li><code>.disabled</code> - Disabled state</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Section -->
+    <div class="component-section" id="modal">
+        <div class="container">
+            <h2 class="display-5 mb-4">Modal</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <h3>Basic Modal</h3>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Launch demo modal
+                    </button>
+
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    ...
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="mt-5">Modal Sizes</h3>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#smallModal">
+                        Small modal
+                    </button>
+                    <button type="button" class="btn btn-primary ms-2" data-bs-toggle="modal" data-bs-target="#largeModal">
+                        Large modal
+                    </button>
+                    <button type="button" class="btn btn-primary ms-2" data-bs-toggle="modal" data-bs-target="#extraLargeModal">
+                        Extra large modal
+                    </button>
+
+                    <div class="modal fade" id="smallModal" tabindex="-1" aria-labelledby="smallModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="smallModalLabel">Small Modal</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    This is a small modal.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="largeModal" tabindex="-1" aria-labelledby="largeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="largeModalLabel">Large Modal</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>This is a large modal. It has a wider maximum width and more space for content.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="extraLargeModal" tabindex="-1" aria-labelledby="extraLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="extraLargeModalLabel">Extra Large Modal</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>This is an extra large modal. It has the maximum width for displaying extensive content.</p>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <h6>Column 1</h6>
+                                            <p>Some content here</p>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h6>Column 2</h6>
+                                            <p>Some content here</p>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h6>Column 3</h6>
+                                            <p>Some content here</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="mt-5">Vertically Centered Modal</h3>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#verticallyCenteredModal">
+                        Vertically centered modal
+                    </button>
+
+                    <div class="modal fade" id="verticallyCenteredModal" tabindex="-1" aria-labelledby="verticallyCenteredModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="verticallyCenteredModalLabel">Vertically Centered Modal</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    This modal is vertically centered. The modal-dialog-centered class centers the modal vertically within the viewport.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="mt-5">Static Backdrop Modal</h3>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdropModal">
+                        Launch static backdrop modal
+                    </button>
+
+                    <div class="modal fade" id="staticBackdropModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Static Backdrop Modal</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    This modal cannot be closed by clicking outside or pressing Escape. You must click the close button or use JavaScript to close it.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Understood</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>Modal Classes</h5>
+                            <ul class="list-unstyled small">
+                                <li><code>.modal</code> - Main container</li>
+                                <li><code>.modal-dialog</code> - Dialog wrapper</li>
+                                <li><code>.modal-content</code> - Content area</li>
+                                <li><code>.modal-header</code> - Header section</li>
+                                <li><code>.modal-body</code> - Body content</li>
+                                <li><code>.modal-footer</code> - Footer section</li>
+                                <li><code>.modal-sm/lg/xl</code> - Sizes</li>
+                                <li><code>.modal-dialog-centered</code> - Vertical center</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navs & Tabs Section -->
+    <div class="component-section" id="navs-tabs">
+        <div class="container">
+            <h2 class="display-5 mb-4">Navs & Tabs</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <h3>Tabs</h3>
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Home</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Profile</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Contact</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                            <p>This is the home tab content. It uses Bootstrap's tab JavaScript plugin to toggle between different content panes.</p>
+                        </div>
+                        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                            <p>This is the profile tab content. Each tab pane has its own content that becomes visible when the corresponding tab is clicked.</p>
+                        </div>
+                        <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                            <p>This is the contact tab content. The tab plugin manages the visibility and accessibility of the content areas.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="mt-5">Pills</h3>
+                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Home Tab</h5>
+                                    <p class="card-text">This is the home pill content. Pills work similarly to tabs but have a different visual appearance.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Profile Tab</h5>
+                                    <p class="card-text">This is the profile pill content. Each pill pane can contain different types of content.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Contact Tab</h5>
+                                    <p class="card-text">This is the contact pill content. You can put forms, lists, or any other content here.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>Nav Classes</h5>
+                            <ul class="list-unstyled small">
+                                <li><code>.nav</code> - Base navigation</li>
+                                <li><code>.nav-tabs</code> - Tab style</li>
+                                <li><code>.nav-pills</code> - Pill style</li>
+                                <li><code>.nav-fill</code> - Equal width</li>
+                                <li><code>.nav-justified</code> - Justified width</li>
+                                <li><code>.tab-content</code> - Content container</li>
+                                <li><code>.tab-pane</code> - Content pane</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar Section -->
+    <div class="component-section" id="navbar">
+        <div class="container">
+            <h2 class="display-5 mb-4">Navbar</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <h3>Basic Navbar</h3>
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="#">Navbar</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Link</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Dropdown
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <li><a class="dropdown-item" href="#">Action</a></li>
+                                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                                            <li><hr class="dropdown-divider"></li>
+                                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                                    </li>
+                                </ul>
+                                <form class="d-flex">
+                                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                    <button class="btn btn-outline-success" type="submit">Search</button>
+                                </form>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <h3 class="mt-5">Color Schemes</h3>
+                    <nav class="navbar navbar-dark bg-dark">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="#">Navbar</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarColor01">
+                                <ul class="navbar-nav me-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="#">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Features</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Pricing</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">About</a>
+                                    </li>
+                                </ul>
+                                <form class="d-flex">
+                                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                    <button class="btn btn-outline-light" type="submit">Search</button>
+                                </form>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <nav class="navbar navbar-dark bg-primary mt-3">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="#">Navbar</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarColor02">
+                                <ul class="navbar-nav me-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="#">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Features</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Pricing</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">About</a>
+                                    </li>
+                                </ul>
+                                <form class="d-flex">
+                                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                    <button class="btn btn-outline-light" type="submit">Search</button>
+                                </form>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>Navbar Classes</h5>
+                            <ul class="list-unstyled small">
+                                <li><code>.navbar</code> - Main container</li>
+                                <li><code>.navbar-brand</code> - Brand/logo</li>
+                                <li><code>.navbar-nav</code> - Navigation list</li>
+                                <li><code>.navbar-toggler</code> - Mobile toggle</li>
+                                <li><code>.navbar-collapse</code> - Collapsible content</li>
+                                <li><code>.navbar-light</code> - Light theme</li>
+                                <li><code>.navbar-dark</code> - Dark theme</li>
+                                <li><code>.bg-*</code> - Background colors</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pagination Section -->
+    <div class="component-section" id="pagination">
+        <div class="container">
+            <h2 class="display-5 mb-4">Pagination</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <h3>Basic Pagination</h3>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                        </ul>
+                    </nav>
+
+                    <h3 class="mt-5">Disabled and Active States</h3>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item active" aria-current="page">
+                                <a class="page-link" href="#">2</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <h3 class="mt-5">Sizing</h3>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination pagination-lg">
+                            <li class="page-item active" aria-current="page">
+                                <span class="page-link">1</span>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        </ul>
+                    </nav>
+
+                    <nav aria-label="Page navigation example" class="mt-3">
+                        <ul class="pagination pagination-sm">
+                            <li class="page-item active" aria-current="page">
+                                <span class="page-link">1</span>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        </ul>
+                    </nav>
+
+                    <h3 class="mt-5">Alignment</h3>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>Pagination Classes</h5>
+                            <ul class="list-unstyled small">
+                                <li><code>.pagination</code> - Main container</li>
+                                <li><code>.page-item</code> - Individual page items</li>
+                                <li><code>.page-link</code> - Page links/buttons</li>
+                                <li><code>.active</code> - Current page</li>
+                                <li><code>.disabled</code> - Disabled state</li>
+                                <li><code>.pagination-lg/sm</code> - Sizes</li>
+                                <li><code>.justify-content-center</code> - Center align</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress Section -->
+    <div class="component-section" id="progress">
+        <div class="container">
+            <h2 class="display-5 mb-4">Progress</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <h3>Basic Progress Bar</h3>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="progress mt-2">
+                        <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="progress mt-2">
+                        <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="progress mt-2">
+                        <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="progress mt-2">
+                        <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+
+                    <h3 class="mt-5">Progress Bar with Label</h3>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                    </div>
+
+                    <h3 class="mt-5">Backgrounds</h3>
+                    <div class="progress mt-2">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="progress mt-2">
+                        <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="progress mt-2">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="progress mt-2">
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+
+                    <h3 class="mt-5">Multiple Bars</h3>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar bg-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+
+                    <h3 class="mt-5">Striped</h3>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+
+                    <h3 class="mt-5">Animated Stripes</h3>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                    </div>
+
+                    <h3 class="mt-5">Interactive Progress</h3>
+                    <div class="mb-3">
+                        <label for="progressInput" class="form-label">Progress Value: <span id="progressValue">50</span>%</label>
+                        <input type="range" class="form-range" id="progressInput" min="0" max="100" value="50">
+                    </div>
+                    <div class="progress">
+                        <div id="interactiveProgress" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>Progress Classes</h5>
+                            <ul class="list-unstyled small">
+                                <li><code>.progress</code> - Container</li>
+                                <li><code>.progress-bar</code> - Progress bar</li>
+                                <li><code>.progress-bar-striped</code> - Striped pattern</li>
+                                <li><code>.progress-bar-animated</code> - Animation</li>
+                                <li><code>.bg-primary/secondary/etc</code> - Colors</li>
+                                <li><code>role="progressbar"</code> - ARIA role</li>
+                                <li><code>aria-valuenow</code> - Current value</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Spinners Section -->
+    <div class="component-section" id="spinners">
+        <div class="container">
+            <h2 class="display-5 mb-4">Spinners</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <h3>Border Spinner</h3>
+                    <div class="spinner-border" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+
+                    <h3 class="mt-5">Colors</h3>
+                    <div class="d-flex justify-content-around">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-border text-secondary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-border text-success" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-border text-danger" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-border text-warning" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-border text-info" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-border text-light" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-border text-dark" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+
+                    <h3 class="mt-5">Growing Spinner</h3>
+                    <div class="spinner-grow" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+
+                    <h3 class="mt-5">Growing Spinner Colors</h3>
+                    <div class="d-flex justify-content-around">
+                        <div class="spinner-grow text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-secondary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-success" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-danger" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-warning" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-info" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-light" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-dark" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+
+                    <h3 class="mt-5">Sizes</h3>
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="spinner-border spinner-border-sm me-3" role="status" aria-hidden="true"></div>
+                        <strong>Small</strong>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="spinner-border me-3" role="status" aria-hidden="true"></div>
+                        <strong>Default</strong>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="spinner-border me-3" style="width: 3rem; height: 3rem;" role="status" aria-hidden="true"></div>
+                        <strong>Large (Custom)</strong>
+                    </div>
+
+                    <h3 class="mt-5">Buttons with Spinners</h3>
+                    <button class="btn btn-primary me-2" type="button" disabled>
+                        <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                        Loading...
+                    </button>
+                    <button class="btn btn-primary" type="button" disabled>
+                        <span class="spinner-grow spinner-grow-sm me-2" role="status" aria-hidden="true"></span>
+                        Loading...
+                    </button>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>Spinner Classes</h5>
+                            <ul class="list-unstyled small">
+                                <li><code>.spinner-border</code> - Border spinner</li>
+                                <li><code>.spinner-grow</code> - Growing spinner</li>
+                                <li><code>.text-primary/secondary/etc</code> - Colors</li>
+                                <li><code>.spinner-border-sm</code> - Small size</li>
+                                <li><code>role="status"</code> - ARIA role</li>
+                                <li><code>.visually-hidden</code> - Screen reader text</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+        const appendAlert = (message, type) => {
+            const wrapper = document.createElement('div')
+            wrapper.innerHTML = [
+                `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+                `   <div>${message}</div>`,
+                '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+                '</div>'
+            ].join('')
+
+            alertPlaceholder.append(wrapper)
+        }
+
+        const alertTrigger = document.getElementById('liveAlertBtn')
+        if (alertTrigger) {
+            alertTrigger.addEventListener('click', () => {
+                appendAlert('Nice, you triggered this alert message!', 'success')
+            })
+        }
+
+        // Interactive progress bar
+        const progressInput = document.getElementById('progressInput');
+        const progressBar = document.getElementById('interactiveProgress');
+        const progressValue = document.getElementById('progressValue');
+
+        progressInput.addEventListener('input', function() {
+            const value = this.value;
+            progressBar.style.width = value + '%';
+            progressBar.setAttribute('aria-valuenow', value);
+            progressBar.textContent = value + '%';
+            progressValue.textContent = value;
+        });
+    </script>
+</body>
+</html>
