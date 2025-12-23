@@ -12,6 +12,6 @@ test('Converts tokens to CSS Sass (scss) variables', () => {
     $token-color-2: #fff;
   `;
 
-  const returnedString = toScssVars(tokens);
+  const returnedString = toScssVars(tokens, {});
   expect(expectedString.replace(/\s/g, '')).toEqual(returnedString.replace(/\s/g, ''));
 });

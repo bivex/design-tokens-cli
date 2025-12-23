@@ -16,6 +16,6 @@ test('Converts tokens to ES modules', () => {
     }
   `;
 
-  const returnedString = toESM(tokens, groupName);
+  const returnedString = toESM(tokens, groupName, {});
   expect(expectedString.replace(/\s/g, '')).toEqual(returnedString.replace(/\s/g, ''));
 });

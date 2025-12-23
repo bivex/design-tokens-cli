@@ -14,6 +14,6 @@ test('Converts tokens to (flat) JSON', () => {
     }
   `;
 
-  const returnedString = toJSON(tokens);
+  const returnedString = toJSON(tokens, {});
   expect(expectedString.replace(/\s/g, '')).toEqual(returnedString.replace(/\s/g, ''));
 });

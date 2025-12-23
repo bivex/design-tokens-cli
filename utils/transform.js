@@ -1,6 +1,6 @@
 import jetpack from 'fs-jetpack';
 import { findDuplicates } from "./findDuplicates.js";
-import { findTrueValues } from "./findTrueValues.js";
+import { findTrueValues, keepReferences } from "./findTrueValues.js";
 import { flattenJSON } from './flattenJSON.js';
 import { chooseTransform } from './chooseTransform.js';
 
@@ -26,25 +26,35 @@ const transform = (configPath, options) => {
       allTokens[path.split('.')[0]] = pairs;
     });
     
-    // Resolve token references
-    const resolvedPairs = findTrueValues(allTokens);
-    // Exit if there are duplicate token names
-    const duplicates = findDuplicates(Object.keys(resolvedPairs));
-    if (duplicates.length) {
-      throw new Error(`You have duplicate token names: ${duplicates.join(', ')}`);
+    // Resolve token references or keep them as variable references
+    let processedTokens;
+    if (config.keepReferences) {
+      processedTokens = keepReferences(allTokens);
+      // Exit if there are duplicate token names
+      const duplicates = findDuplicates(Object.keys(processedTokens.pairs));
+      if (duplicates.length) {
+        throw new Error(`You have duplicate token names: ${duplicates.join(', ')}`);
+      }
+    } else {
+      processedTokens = { pairs: findTrueValues(allTokens) };
+      // Exit if there are duplicate token names
+      const duplicates = findDuplicates(Object.keys(processedTokens.pairs));
+      if (duplicates.length) {
+        throw new Error(`You have duplicate token names: ${duplicates.join(', ')}`);
+      }
     }
 
-    // Place true values back into categorized object
+    // Place processed values back into categorized object
     for (let group in allTokens) {
       Object.keys(allTokens[group]).forEach(token => {
-        allTokens[group][token] = resolvedPairs[token];
+        allTokens[group][token] = processedTokens.pairs[token];
       });
     }
 
     // If the transform has a name, concatenate under name
     if (transform.name) {
       transform.to.forEach(format => {
-        let code = chooseTransform(resolvedPairs, format.as, transform.name, config);
+        let code = chooseTransform(processedTokens.pairs, format.as, transform.name, config);
         let formatTo = jetpack.cwd(format.to);
         let newPath = `${transform.name}.tokens.${format.as}`;
         formatTo.write(newPath, code);
@@ -58,7 +68,7 @@ const transform = (configPath, options) => {
           let formatTo = jetpack.cwd(format.to);
           let newPath = `${group}.tokens.${format.as}`;
           formatTo.write(newPath, code);
-        });        
+        });
       }
     }
   });
