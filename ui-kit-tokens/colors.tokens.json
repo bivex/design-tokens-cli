@@ -2,45 +2,45 @@
   "color": {
     "$description": "Comprehensive color system for landing page UI kit",
     "brand": {
-      "$description": "Primary brand colors",
+      "$description": "Primary brand colors - Vibrant Purple/Pink/Teal theme",
       "primary": {
-        "50": { "$value": "#f0f9ff" },
-        "100": { "$value": "#e0f2fe" },
-        "200": { "$value": "#bae6fd" },
-        "300": { "$value": "#7dd3fc" },
-        "400": { "$value": "#38bdf8" },
-        "500": { "$value": "#0ea5e9" },
-        "600": { "$value": "#0284c7" },
-        "700": { "$value": "#0369a1" },
-        "800": { "$value": "#075985" },
-        "900": { "$value": "#0c4a6e" },
-        "950": { "$value": "#082f49" }
+        "50": { "$value": "#faf5ff" },
+        "100": { "$value": "#f3e8ff" },
+        "200": { "$value": "#e9d5ff" },
+        "300": { "$value": "#d8b4fe" },
+        "400": { "$value": "#c084fc" },
+        "500": { "$value": "#a855f7" },
+        "600": { "$value": "#9333ea" },
+        "700": { "$value": "#7c3aed" },
+        "800": { "$value": "#6b21a8" },
+        "900": { "$value": "#581c87" },
+        "950": { "$value": "#3b0764" }
       },
       "secondary": {
-        "50": { "$value": "#f8fafc" },
-        "100": { "$value": "#f1f5f9" },
-        "200": { "$value": "#e2e8f0" },
-        "300": { "$value": "#cbd5e1" },
-        "400": { "$value": "#94a3b8" },
-        "500": { "$value": "#64748b" },
-        "600": { "$value": "#475569" },
-        "700": { "$value": "#334155" },
-        "800": { "$value": "#1e293b" },
-        "900": { "$value": "#0f172a" },
-        "950": { "$value": "#020617" }
+        "50": { "$value": "#f0fdfa" },
+        "100": { "$value": "#ccfbf1" },
+        "200": { "$value": "#99f6e4" },
+        "300": { "$value": "#5eead4" },
+        "400": { "$value": "#2dd4bf" },
+        "500": { "$value": "#14b8a6" },
+        "600": { "$value": "#0d9488" },
+        "700": { "$value": "#0f766e" },
+        "800": { "$value": "#115e59" },
+        "900": { "$value": "#134e4a" },
+        "950": { "$value": "#042f2e" }
       },
       "accent": {
-        "50": { "$value": "#fef2f2" },
-        "100": { "$value": "#fee2e2" },
-        "200": { "$value": "#fecaca" },
-        "300": { "$value": "#fca5a5" },
-        "400": { "$value": "#f87171" },
-        "500": { "$value": "#ef4444" },
-        "600": { "$value": "#dc2626" },
-        "700": { "$value": "#b91c1c" },
-        "800": { "$value": "#991b1b" },
-        "900": { "$value": "#7f1d1d" },
-        "950": { "$value": "#450a0a" }
+        "50": { "$value": "#fdf2f8" },
+        "100": { "$value": "#fce7f3" },
+        "200": { "$value": "#fbcfe8" },
+        "300": { "$value": "#f9a8d4" },
+        "400": { "$value": "#f472b6" },
+        "500": { "$value": "#ec4899" },
+        "600": { "$value": "#db2777" },
+        "700": { "$value": "#be185d" },
+        "800": { "$value": "#9d174d" },
+        "900": { "$value": "#831843" },
+        "950": { "$value": "#500724" }
       }
     },
     "neutral": {
@@ -79,17 +79,18 @@
         "700": { "$value": "#b91c1c" }
       },
       "info": {
-        "50": { "$value": "#eff6ff" },
-        "500": { "$value": "#3b82f6" },
-        "700": { "$value": "#1d4ed8" }
+        "50": { "$value": "#f0f9ff" },
+        "500": { "$value": "{color.brand.primary.500}" },
+        "700": { "$value": "{color.brand.primary.700}" }
       }
     },
     "gradient": {
-      "$description": "Gradient definitions",
+      "$description": "Gradient definitions - Vibrant new color scheme",
       "primary": { "$value": "linear-gradient(135deg, {color.brand.primary.500} 0%, {color.brand.primary.700} 100%)" },
       "secondary": { "$value": "linear-gradient(135deg, {color.brand.secondary.500} 0%, {color.brand.secondary.700} 100%)" },
       "accent": { "$value": "linear-gradient(135deg, {color.brand.accent.500} 0%, {color.brand.accent.700} 100%)" },
-      "hero": { "$value": "linear-gradient(135deg, {color.brand.primary.600} 0%, {color.brand.secondary.800} 100%)" }
+      "hero": { "$value": "linear-gradient(135deg, {color.brand.primary.600} 0%, {color.brand.secondary.800} 100%)" },
+      "sunset": { "$value": "linear-gradient(135deg, {color.brand.primary.500} 0%, {color.brand.accent.600} 50%, {color.brand.secondary.700} 100%)" }
     }
   }
 }
