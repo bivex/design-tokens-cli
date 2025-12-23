@@ -1,76 +1,79 @@
 /* Design Tokens UI Kit - Base Styles */
 
-/* CSS Custom Properties (Design Tokens) */
+/* Import Generated Design Tokens */
+@import url('brand-system.tokens.css');
+
+/* Map Generated Tokens to UI Kit Variables */
 :root {
-  /* Colors */
-  --color-primary: #007bff;
-  --color-secondary: #6c757d;
-  --color-success: #28a745;
-  --color-danger: #dc3545;
-  --color-warning: #ffc107;
-  --color-info: #17a2b8;
-  --color-light: #f8f9fa;
-  --color-dark: #343a40;
+  /* Colors - Map to generated brand tokens */
+  --color-primary: var(--base-primary-500);
+  --color-secondary: var(--base-secondary-500);
+  --color-success: var(--semantic-success-success);
+  --color-danger: var(--base-accent-500);
+  --color-warning: var(--semantic-warning-warning);
+  --color-info: var(--base-primary-400);
+  --color-light: var(--base-secondary-50);
+  --color-dark: var(--base-secondary-900);
   --color-white: #ffffff;
-  --color-gray-100: #f8f9fa;
-  --color-gray-200: #e9ecef;
-  --color-gray-300: #dee2e6;
-  --color-gray-400: #ced4da;
-  --color-gray-500: #adb5bd;
-  --color-gray-600: #6c757d;
-  --color-gray-700: #495057;
-  --color-gray-800: #343a40;
-  --color-gray-900: #212529;
+  --color-gray-100: var(--base-secondary-50);
+  --color-gray-200: var(--base-secondary-100);
+  --color-gray-300: var(--base-secondary-200);
+  --color-gray-400: var(--base-secondary-300);
+  --color-gray-500: var(--base-secondary-400);
+  --color-gray-600: var(--base-secondary-500);
+  --color-gray-700: var(--base-secondary-600);
+  --color-gray-800: var(--base-secondary-700);
+  --color-gray-900: var(--base-secondary-800);
 
-  /* Spacing */
-  --spacing-xs: 0.25rem;    /* 4px */
-  --spacing-sm: 0.5rem;     /* 8px */
-  --spacing-md: 1rem;       /* 16px */
-  --spacing-lg: 1.5rem;     /* 24px */
-  --spacing-xl: 2rem;       /* 32px */
-  --spacing-xxl: 3rem;      /* 48px */
+  /* Spacing - Use generated spacing tokens */
+  --spacing-xs: var(--space-1);      /* 4px */
+  --spacing-sm: var(--space-2);      /* 8px */
+  --spacing-md: var(--space-4);      /* 16px */
+  --spacing-lg: var(--space-6);      /* 24px */
+  --spacing-xl: var(--space-8);      /* 32px */
+  --spacing-xxl: var(--space-12);    /* 48px */
 
-  /* Typography */
-  --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-family-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  /* Typography - Use generated font tokens */
+  --font-family-base: var(--font-family-body);
+  --font-family-heading: var(--font-family-heading);
 
-  --font-size-xs: 0.75rem;   /* 12px */
-  --font-size-sm: 0.875rem;  /* 14px */
-  --font-size-base: 1rem;    /* 16px */
-  --font-size-lg: 1.125rem;  /* 18px */
-  --font-size-xl: 1.25rem;   /* 20px */
-  --font-size-2xl: 1.5rem;   /* 24px */
-  --font-size-3xl: 1.875rem; /* 30px */
-  --font-size-4xl: 2.25rem;  /* 36px */
-  --font-size-5xl: 3rem;     /* 48px */
+  --font-size-xs: var(--size-xs);      /* 12px */
+  --font-size-sm: var(--size-sm);      /* 14px */
+  --font-size-base: var(--size-base);  /* 16px */
+  --font-size-lg: var(--size-lg);      /* 18px */
+  --font-size-xl: var(--size-xl);      /* 20px */
+  --font-size-2xl: var(--size-2xl);    /* 24px */
+  --font-size-3xl: var(--size-3xl);    /* 30px */
+  --font-size-4xl: var(--size-4xl);    /* 36px */
+  --font-size-5xl: var(--size-5xl);    /* 48px */
 
-  --font-weight-light: 300;
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
+  --font-weight-light: var(--font-weight-light);
+  --font-weight-normal: var(--font-weight-regular);
+  --font-weight-medium: var(--font-weight-medium);
+  --font-weight-semibold: var(--font-weight-semibold);
+  --font-weight-bold: var(--font-weight-bold);
 
-  --line-height-tight: 1.25;
-  --line-height-normal: 1.5;
-  --line-height-relaxed: 1.75;
+  --line-height-tight: var(--line-height-tight);
+  --line-height-normal: var(--line-height-normal);
+  --line-height-relaxed: var(--line-height-relaxed);
 
-  /* Borders */
-  --border-width-thin: 1px;
-  --border-width-medium: 2px;
-  --border-width-thick: 4px;
+  /* Borders - Use generated border tokens */
+  --border-width-thin: var(--width-1);
+  --border-width-medium: var(--width-2);
+  --border-width-thick: var(--width-4);
 
-  --border-radius-none: 0;
-  --border-radius-sm: 0.125rem;   /* 2px */
-  --border-radius-md: 0.25rem;    /* 4px */
-  --border-radius-lg: 0.5rem;     /* 8px */
-  --border-radius-xl: 1rem;       /* 16px */
-  --border-radius-full: 9999px;
+  --border-radius-none: var(--radius-none);
+  --border-radius-sm: var(--radius-sm);     /* 2px */
+  --border-radius-md: var(--radius-md);     /* 6px */
+  --border-radius-lg: var(--radius-lg);     /* 8px */
+  --border-radius-xl: var(--radius-xl);     /* 12px */
+  --border-radius-full: var(--radius-full);
 
-  /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  /* Shadows - Use generated shadow tokens */
+  --shadow-sm: var(--sm);
+  --shadow-md: var(--md);
+  --shadow-lg: var(--lg);
+  --shadow-xl: var(--xl);
 
   /* Layout */
   --container-max-width: 1200px;

@@ -1,3 +1,18 @@
+/**
+ * Copyright (c) 2025 Bivex
+ *
+ * Author: Bivex
+ * Available for contact via email: support@b-b.top
+ * For up-to-date contact information:
+ * https://github.com/bivex
+ *
+ * Created: 2025-12-23T04:42:14
+ * Last Updated: 2025-12-23T04:42:48
+ *
+ * Licensed under the MIT License.
+ * Commercial licensing available upon request.
+ */
+
 // Design Tokens UI Kit - Interactive Demo
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -24,8 +39,8 @@ function initializeDemo() {
     // Primary color change
     primaryColorInput.addEventListener('input', function(e) {
         const color = e.target.value;
-        document.documentElement.style.setProperty('--color-primary', color);
-
+        // Update the generated token directly
+        document.documentElement.style.setProperty('--base-primary-500', color);
         // Update button background
         demoBtn.style.backgroundColor = color;
         demoBtn.style.borderColor = color;
@@ -34,14 +49,16 @@ function initializeDemo() {
     // Border radius change
     borderRadiusInput.addEventListener('input', function(e) {
         const radius = e.target.value + 'px';
-        document.documentElement.style.setProperty('--border-radius-md', radius);
+        // Update the generated radius token
+        document.documentElement.style.setProperty('--radius-md', radius);
         updateRadiusValue(e.target.value);
     });
 
     // Font size change
     fontSizeInput.addEventListener('input', function(e) {
         const fontSize = e.target.value + 'px';
-        document.documentElement.style.setProperty('--font-size-base', fontSize);
+        // Update the generated size token
+        document.documentElement.style.setProperty('--size-base', fontSize);
         updateFontValue(e.target.value);
     });
 
@@ -133,28 +150,28 @@ const DesignTokens = {
     },
 
     /**
-     * Apply a theme preset
+     * Apply a theme preset using generated tokens
      * @param {string} theme - Theme name ('light', 'dark', 'colorful')
      */
     applyTheme: function(theme) {
         const themes = {
             light: {
-                'color-primary': '#007bff',
-                'color-secondary': '#6c757d',
-                'color-background': '#ffffff',
-                'color-text': '#212529'
+                'base-primary-500': '#007bff',
+                'base-secondary-500': '#6c757d',
+                'base-secondary-50': '#ffffff',
+                'base-secondary-900': '#212529'
             },
             dark: {
-                'color-primary': '#4dabf7',
-                'color-secondary': '#868e96',
-                'color-background': '#212529',
-                'color-text': '#ffffff'
+                'base-primary-500': '#4dabf7',
+                'base-secondary-500': '#868e96',
+                'base-secondary-50': '#212529',
+                'base-secondary-900': '#ffffff'
             },
             colorful: {
-                'color-primary': '#ff6b35',
-                'color-secondary': '#f7931e',
-                'color-success': '#28a745',
-                'color-danger': '#dc3545'
+                'base-primary-500': '#ff6b35',
+                'base-secondary-500': '#f7931e',
+                'semantic-success-success': '#28a745',
+                'base-accent-500': '#dc3545'
             }
         };
 
@@ -163,6 +180,58 @@ const DesignTokens = {
                 this.setToken(property, value);
             });
         }
+    },
+
+    /**
+     * Get all available design tokens
+     * @returns {Object} Object with all token categories
+     */
+    getAllTokens: function() {
+        return {
+            colors: {
+                primary: this.getToken('base-primary-500'),
+                secondary: this.getToken('base-secondary-500'),
+                success: this.getToken('semantic-success-success'),
+                danger: this.getToken('base-accent-500'),
+                warning: this.getToken('semantic-warning-warning'),
+                info: this.getToken('base-primary-400')
+            },
+            spacing: {
+                xs: this.getToken('space-1'),
+                sm: this.getToken('space-2'),
+                md: this.getToken('space-4'),
+                lg: this.getToken('space-6'),
+                xl: this.getToken('space-8')
+            },
+            typography: {
+                family: {
+                    base: this.getToken('font-family-body'),
+                    heading: this.getToken('font-family-heading')
+                },
+                size: {
+                    base: this.getToken('size-base'),
+                    lg: this.getToken('size-lg'),
+                    xl: this.getToken('size-xl')
+                },
+                weight: {
+                    normal: this.getToken('font-weight-regular'),
+                    medium: this.getToken('font-weight-medium'),
+                    bold: this.getToken('font-weight-bold')
+                }
+            },
+            borders: {
+                radius: {
+                    sm: this.getToken('radius-sm'),
+                    md: this.getToken('radius-md'),
+                    lg: this.getToken('radius-lg')
+                }
+            },
+            shadows: {
+                sm: this.getToken('sm'),
+                md: this.getToken('md'),
+                lg: this.getToken('lg')
+            }
+        };
     }
 };
 
@@ -176,7 +245,7 @@ document.addEventListener('keydown', function(e) {
         e.preventDefault();
         const randomColor = DesignTokens.randomColor();
         document.getElementById('primary-color').value = randomColor;
-        DesignTokens.setToken('color-primary', randomColor);
+        DesignTokens.setToken('base-primary-500', randomColor);
         document.querySelector('.demo-btn').style.backgroundColor = randomColor;
     }
 
@@ -190,6 +259,11 @@ document.addEventListener('keydown', function(e) {
 
         DesignTokens.applyTheme(nextTheme);
         document.body.dataset.theme = nextTheme;
+
+        // Update demo button color after theme change
+        const newPrimaryColor = DesignTokens.getToken('base-primary-500');
+        document.querySelector('.demo-btn').style.backgroundColor = newPrimaryColor;
+        document.querySelector('.demo-btn').style.borderColor = newPrimaryColor;
 
         // Show notification
         showNotification(`Applied ${nextTheme} theme`);
@@ -261,18 +335,21 @@ document.head.appendChild(notificationStyles);
 
 // Console welcome message
 console.log(`
-🎨 Design Tokens UI Kit Demo
-============================
+🎨 Design Tokens UI Kit Demo (Generated Tokens)
+==============================================
 
-Welcome to the interactive demo!
+This demo uses tokens generated by the Design Tokens CLI!
 
 Try these commands in the console:
 
-// Change primary color
-DesignTokens.setToken('color-primary', '#ff6b35');
+// Change primary color using generated token names
+DesignTokens.setToken('base-primary-500', '#ff6b35');
 
 // Apply a theme
 DesignTokens.applyTheme('dark');
+
+// View all available tokens
+console.table(DesignTokens.getAllTokens());
 
 // Generate random color
 DesignTokens.randomColor();
@@ -281,5 +358,11 @@ DesignTokens.randomColor();
 // Ctrl/Cmd + Shift + R: Random primary color
 // Ctrl/Cmd + Shift + T: Cycle themes
 
-Happy experimenting! 🚀
+Token names are based on your design system:
+- Colors: --base-primary-500, --base-secondary-500, etc.
+- Spacing: --space-1, --space-2, --space-4, etc.
+- Typography: --size-base, --font-weight-bold, etc.
+- Borders: --radius-md, --width-1, etc.
+
+Happy experimenting with real design tokens! 🚀
 `);
