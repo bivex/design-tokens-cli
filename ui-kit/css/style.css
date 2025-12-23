@@ -7,21 +7,175 @@
 
 @import url('../../brand-output/css/brand-system.tokens.css');
 
-/* Layout Constants */
+/* Advanced Design Token System Integration - Using Generated Tokens */
 :root {
+  /* Core Brand Colors - Using Generated Tokens */
+  --primary-50: var(--color-core-luxury-primary-50);
+  --primary-500: var(--color-core-luxury-primary-500);
+  --primary-600: var(--color-core-luxury-primary-600);
+  --primary-700: var(--color-core-luxury-primary-700);
+  --primary-900: var(--color-core-luxury-primary-900);
+  --primary-950: var(--color-core-luxury-primary-950);
+
+  --secondary-50: var(--color-core-luxury-secondary-50);
+  --secondary-500: var(--color-core-luxury-secondary-500);
+  --secondary-600: var(--color-core-luxury-secondary-600);
+
+  --accent-500: var(--color-core-luxury-accent-500);
+  --accent-600: var(--color-core-luxury-accent-600);
+  --accent-700: var(--color-core-luxury-accent-700);
+
+  /* Neutral Colors */
+  --neutral-0: var(--color-core-neutral-0);
+  --neutral-50: var(--color-core-neutral-50);
+  --neutral-100: var(--color-core-neutral-100);
+  --neutral-200: var(--color-core-neutral-200);
+  --neutral-300: var(--color-core-neutral-300);
+  --neutral-400: var(--color-core-neutral-400);
+  --neutral-500: var(--color-core-neutral-500);
+  --neutral-600: var(--color-core-neutral-600);
+  --neutral-700: var(--color-core-neutral-700);
+  --neutral-800: var(--color-core-neutral-800);
+  --neutral-900: var(--color-core-neutral-900);
+
+  /* Semantic Colors */
+  --success: var(--color-semantic-feedback-success-default);
+  --success-light: var(--color-semantic-feedback-success-light);
+  --warning: var(--color-semantic-feedback-warning-default);
+  --warning-light: var(--color-semantic-feedback-warning-light);
+  --error: var(--color-semantic-feedback-error-default);
+  --error-light: var(--color-semantic-feedback-error-light);
+
+  /* Typography System - Using Generated Tokens */
+  --font-family-body: var(--typography-font-family-body);
+  --font-family-heading: var(--typography-font-family-heading);
+  --font-family-accent: var(--typography-font-family-accent);
+
+  --font-weight-regular: var(--typography-font-weight-regular);
+  --font-weight-medium: var(--typography-font-weight-medium);
+  --font-weight-semibold: var(--typography-font-weight-semibold);
+  --font-weight-bold: var(--typography-font-weight-bold);
+
+  /* Typography Scale */
+  --font-size-xs: var(--typography-size-xs);
+  --font-size-sm: var(--typography-size-sm);
+  --font-size-base: var(--typography-size-base);
+  --font-size-lg: var(--typography-size-lg);
+  --font-size-xl: var(--typography-size-xl);
+  --font-size-2xl: var(--typography-size-2xl);
+  --font-size-3xl: var(--typography-size-3xl);
+  --font-size-4xl: var(--typography-size-4xl);
+  --font-size-5xl: var(--typography-size-5xl);
+  --font-size-6xl: var(--typography-size-6xl);
+
+  /* Line Heights */
+  --line-height-tight: var(--typography-line-height-tight);
+  --line-height-normal: var(--typography-line-height-normal);
+  --line-height-relaxed: var(--typography-line-height-relaxed);
+
+  /* Letter Spacing */
+  --letter-spacing-tight: var(--typography-letter-spacing-tight);
+  --letter-spacing-normal: var(--typography-letter-spacing-normal);
+  --letter-spacing-wide: var(--typography-letter-spacing-wide);
+
+  /* Comprehensive Spacing Scale - Using Generated Tokens */
+  --space-0: var(--scale-0);
+  --space-px: var(--scale-px);
+  --space-0.5: var(--scale-0.5);
+  --space-1: var(--scale-1);
+  --space-1.5: var(--scale-1.5);
+  --space-2: var(--scale-2);
+  --space-2.5: var(--scale-2.5);
+  --space-3: var(--scale-3);
+  --space-3.5: var(--scale-3.5);
+  --space-4: var(--scale-4);
+  --space-5: var(--scale-5);
+  --space-6: var(--scale-6);
+  --space-7: var(--scale-7);
+  --space-8: var(--scale-8);
+  --space-9: var(--scale-9);
+  --space-10: var(--scale-10);
+  --space-11: var(--scale-11);
+  --space-12: var(--scale-12);
+  --space-14: var(--scale-14);
+  --space-16: var(--scale-16);
+  --space-18: var(--scale-18);
+  --space-20: var(--scale-20);
+  --space-24: var(--scale-24);
+  --space-28: var(--scale-28);
+  --space-32: var(--scale-32);
+  --space-36: var(--scale-36);
+  --space-40: var(--scale-40);
+  --space-44: var(--scale-44);
+  --space-48: var(--scale-48);
+  --space-52: var(--scale-52);
+  --space-56: var(--scale-56);
+  --space-60: var(--scale-60);
+  --space-64: var(--scale-64);
+  --space-72: var(--scale-72);
+  --space-80: var(--scale-80);
+  --space-96: var(--scale-96);
+
+  /* Layout Spacing - Using Generated Tokens */
+  --layout-page-padding-x: var(--layout-page-padding-x);
+  --layout-page-padding-y: var(--layout-page-padding-y);
+  --layout-page-margin-x: var(--layout-page-margin-x);
+  --layout-page-margin-y: var(--layout-page-margin-y);
+  --layout-section-gap: var(--layout-section-gap);
+  --layout-section-padding-top: var(--layout-section-padding-top);
+  --layout-section-padding-bottom: var(--layout-section-padding-bottom);
+
+  /* Container Spacing - Using Generated Tokens */
+  --container-padding-x: var(--layout-container-padding-x);
+  --container-padding-y: var(--layout-container-padding-y);
+
+  /* Component Spacing - Using Generated Tokens */
+  --component-stack-xs: var(--component-stack-xs);
+  --component-stack-sm: var(--component-stack-sm);
+  --component-stack-md: var(--component-stack-md);
+  --component-stack-lg: var(--component-stack-lg);
+  --component-stack-xl: var(--component-stack-xl);
+
+  --component-inline-xs: var(--component-inline-xs);
+  --component-inline-sm: var(--component-inline-sm);
+  --component-inline-md: var(--component-inline-md);
+  --component-inline-lg: var(--component-inline-lg);
+  --component-inline-xl: var(--component-inline-xl);
+
+  --component-inset-xs: var(--component-inset-xs);
+  --component-inset-sm: var(--component-inset-sm);
+  --component-inset-md: var(--component-inset-md);
+  --component-inset-lg: var(--component-inset-lg);
+  --component-inset-xl: var(--component-inset-xl);
+
+  /* Borders - Using Generated Tokens */
+  --border-radius-sm: var(--radius-sm);
+  --border-radius-md: var(--radius-md);
+  --border-radius-lg: var(--radius-lg);
+  --border-radius-xl: var(--radius-xl);
+
+  /* Shadows - Using Generated Tokens */
+  --shadow-sm: var(--sm);
+  --shadow-md: var(--md);
+  --shadow-lg: var(--lg);
+  --shadow-xl: var(--xl);
+
+  /* Animation - Using Generated Tokens */
+  --transition-fast: var(--animation-duration-fast) var(--animation-easing-smooth);
+  --transition-normal: var(--animation-duration-normal) var(--animation-easing-smooth);
+  --hover-scale: var(--a11y-interaction-active-scale);
+  --hover-opacity: var(--a11y-interaction-hover-opacity);
+
+  /* Layout */
   --container-max-width: 1200px;
   --navbar-height: 4rem;
-  --z-dropdown: 1000;
-  --z-sticky: 1020;
-  --z-tooltip: 1030;
-  --z-modal: 1040;
-  --z-popover: 1050;
-}
-  --z-fixed: 1030;
-  --z-modal-backdrop: 1040;
-  --z-modal: 1050;
-  --z-popover: 1060;
-  --z-tooltip: 1070;
+
+  /* Z-index */
+  --z-dropdown: var(--z-index-dropdown);
+  --z-sticky: var(--z-index-sticky);
+  --z-tooltip: var(--z-index-tooltip);
+  --z-modal: var(--z-index-modal);
+  --z-popover: var(--z-index-popover);
 
   /* Accessibility - 48px touch targets and focus states */
   --touch-target-min: var(--a11y-spacing-touch-target-minimum);
@@ -70,7 +224,7 @@ body {
   width: 100%;
   max-width: var(--container-max-width);
   margin: 0 auto;
-  padding: 0 var(--spacing-md);
+  padding: 0 var(--space-4);
 }
 
 /* Typography */
@@ -79,7 +233,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--typography-font-family-heading);
   font-weight: var(--typography-font-weight-semibold);
   line-height: var(--typography-line-height-tight);
-  margin-bottom: var(--spacing-6);
+  margin-bottom: var(--space-6);
   color: var(--semantic-content-primary);
   letter-spacing: var(--typography-letter-spacing-tight);
 }
@@ -96,7 +250,7 @@ h5 { font-size: var(--typography-size-lg); }
 h6 { font-size: var(--typography-size-base); }
 
 p {
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--space-md);
   color: var(--color-gray-700);
 }
 
@@ -139,18 +293,18 @@ a:hover::after {
 
 .mb-0 { margin-bottom: 0; }
 /* SPACING UTILITIES - ЧИСТО НА ТОКЕНАХ */
-.mb-1 { margin-bottom: var(--spacing-1); }
-.mb-2 { margin-bottom: var(--spacing-2); }
-.mb-3 { margin-bottom: var(--spacing-4); }
-.mb-4 { margin-bottom: var(--spacing-6); }
-.mb-5 { margin-bottom: var(--spacing-8); }
+.mb-1 { margin-bottom: var(--space-1); }
+.mb-2 { margin-bottom: var(--space-2); }
+.mb-3 { margin-bottom: var(--space-4); }
+.mb-4 { margin-bottom: var(--space-6); }
+.mb-5 { margin-bottom: var(--space-8); }
 
 .mt-0 { margin-top: 0; }
-.mt-1 { margin-top: var(--spacing-1); }
-.mt-2 { margin-top: var(--spacing-2); }
-.mt-3 { margin-top: var(--spacing-4); }
-.mt-4 { margin-top: var(--spacing-6); }
-.mt-5 { margin-top: var(--spacing-8); }
+.mt-1 { margin-top: var(--space-1); }
+.mt-2 { margin-top: var(--space-2); }
+.mt-3 { margin-top: var(--space-4); }
+.mt-4 { margin-top: var(--space-6); }
+.mt-5 { margin-top: var(--space-8); }
 
 .d-flex { display: flex; }
 .d-block { display: block; }
@@ -182,7 +336,7 @@ a:hover::after {
   font-family: var(--typography-font-family-accent);
   font-size: var(--typography-size-4xl);
   font-weight: var(--typography-font-weight-bold);
-  margin-bottom: var(--spacing-4);
+  margin-bottom: var(--space-4);
   color: var(--semantic-content-primary);
   letter-spacing: var(--typography-letter-spacing-tight);
   position: relative;
@@ -209,7 +363,7 @@ a:hover::after {
   line-height: var(--typography-line-height-relaxed);
   color: var(--semantic-content-secondary);
   max-width: 600px;
-  margin: 0 auto var(--spacing-6);
+  margin: 0 auto var(--space-6);
 }
 
 /* Code Styles */
@@ -217,7 +371,7 @@ code {
   font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
   font-size: var(--font-size-sm);
   background-color: var(--color-gray-100);
-  padding: var(--spacing-xs) var(--spacing-sm);
+  padding: var(--space-xs) var(--space-sm);
   border-radius: var(--border-radius-sm);
   color: var(--color-danger);
 }
@@ -225,10 +379,10 @@ code {
 pre {
   background-color: var(--color-gray-900);
   color: var(--color-light);
-  padding: var(--spacing-lg);
+  padding: var(--space-lg);
   border-radius: var(--border-radius-md);
   overflow-x: auto;
-  margin: var(--spacing-lg) 0;
+  margin: var(--space-lg) 0;
 }
 
 pre code {
@@ -241,7 +395,7 @@ pre code {
 /* Responsive Design */
 @media (max-width: 768px) {
   .container {
-    padding: 0 var(--spacing-sm);
+    padding: 0 var(--space-sm);
   }
 
   h1 {
@@ -252,7 +406,7 @@ pre code {
   h3 { font-size: var(--font-size-xl); }
 
   .section-header {
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--space-xl);
   }
 
   .section-header h2 {
@@ -273,13 +427,13 @@ pre code {
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--spacing-8);
-  margin: var(--spacing-16) 0;
+  gap: var(--space-8);
+  margin: var(--space-16) 0;
 }
 
 .stat-item {
   text-align: center;
-  padding: var(--spacing-8);
+  padding: var(--space-8);
   background: #ffffff;
   border: 1px solid #e5e5e5;
   border-radius: var(--radius-lg);
@@ -297,7 +451,7 @@ pre code {
   font-size: var(--typography-size-5xl);
   font-weight: var(--typography-font-weight-bold);
   color: var(--base-primary-600);
-  margin-bottom: var(--spacing-2);
+  margin-bottom: var(--space-2);
   display: block;
 }
 
@@ -540,7 +694,7 @@ pre code {
   justify-content: center;
   text-decoration: none;
   border: 2px solid transparent;
-  padding: var(--spacing-3) var(--spacing-6);
+  padding: var(--space-3) var(--space-6);
   font-size: var(--typography-size-base);
 }
 
@@ -591,7 +745,7 @@ pre code {
 }
 
 .btn-lg {
-  padding: var(--spacing-4) var(--spacing-8);
+  padding: var(--space-4) var(--space-8);
   font-size: var(--typography-size-lg);
   border-radius: var(--radius-lg);
 }

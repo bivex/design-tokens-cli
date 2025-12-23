@@ -3,36 +3,6 @@ export default {
   theme: {
     extend: {
       spacing: {
-              "0": "0",
-              "1": "0.25rem",
-              "2": "0.5rem",
-              "3": "0.75rem",
-              "4": "1rem",
-              "5": "1.25rem",
-              "6": "1.5rem",
-              "7": "1.75rem",
-              "8": "2rem",
-              "9": "2.25rem",
-              "10": "2.5rem",
-              "11": "2.75rem",
-              "12": "3rem",
-              "14": "3.5rem",
-              "16": "4rem",
-              "20": "5rem",
-              "24": "6rem",
-              "28": "7rem",
-              "32": "8rem",
-              "36": "9rem",
-              "40": "10rem",
-              "44": "11rem",
-              "48": "12rem",
-              "52": "13rem",
-              "56": "14rem",
-              "60": "15rem",
-              "64": "16rem",
-              "72": "18rem",
-              "80": "20rem",
-              "96": "24rem",
               "a11y-spacing-touch-target-minimum": "2.75rem",
               "a11y-spacing-touch-target-recommended": "3rem",
               "a11y-spacing-interactive-element-min": "2.25rem",
@@ -154,12 +124,30 @@ export default {
               "responsive-component-card-md-padding": "1.5rem",
               "responsive-component-card-lg-padding": "2rem",
               "responsive-component-card-xl-padding": "2rem",
-              "px": "1px",
-              "0.5": "0.125rem",
-              "1.5": "0.375rem",
-              "2.5": "0.625rem",
-              "3.5": "0.875rem",
-              "a11y-icon-padding": "0.75rem",
+              "layout-page-padding-x": "1.5rem",
+              "layout-page-padding-y": "3rem",
+              "layout-page-margin-x": "1rem",
+              "layout-page-margin-y": "2rem",
+              "layout-section-gap": "4rem",
+              "layout-section-padding-top": "5rem",
+              "layout-section-padding-bottom": "5rem",
+              "layout-container-padding-x": "1rem",
+              "layout-container-padding-y": "1.5rem",
+              "component-inset-xs": "0.5rem",
+              "component-inset-sm": "0.75rem",
+              "component-inset-md": "1rem",
+              "component-inset-lg": "1.5rem",
+              "component-inset-xl": "2rem",
+              "grid-columns-gap-xs": "0.5rem",
+              "grid-columns-gap-sm": "0.75rem",
+              "grid-columns-gap-md": "1rem",
+              "grid-columns-gap-lg": "1.5rem",
+              "grid-columns-gap-xl": "2rem",
+              "grid-container-padding-xs": "1rem",
+              "grid-container-padding-sm": "1rem",
+              "grid-container-padding-md": "1.5rem",
+              "grid-container-padding-lg": "2rem",
+              "grid-container-padding-xl": "3rem",
               "size-xs-letterSpacing": "0.025em",
               "size-sm-letterSpacing": "0.0125em",
               "size-base-letterSpacing": "0em",
@@ -233,21 +221,6 @@ export default {
                               "transition": {
                                       "duration": "0.2s",
                                       "timing": "ease-in-out"
-                              }
-                      },
-                      "touch": {
-                              "target": {
-                                      "min": "2.75rem",
-                                      "recommended": "3rem"
-                              }
-                      },
-                      "focus": {
-                              "outline": "0.125rem",
-                              "offset": "0.125rem"
-                      },
-                      "text": {
-                              "spacing": {
-                                      "min": "0.125rem"
                               }
                       }
               },
@@ -1330,6 +1303,20 @@ export default {
                               "borderError": "#ef4444",
                               "text": "#181018",
                               "placeholder": "#9ca3af"
+                      },
+                      "stack": {
+                              "xs": "0.25rem",
+                              "sm": "0.5rem",
+                              "md": "1rem",
+                              "lg": "1.5rem",
+                              "xl": "2rem"
+                      },
+                      "inline": {
+                              "xs": "0.25rem",
+                              "sm": "0.5rem",
+                              "md": "0.75rem",
+                              "lg": "1rem",
+                              "xl": "1.5rem"
                       }
               },
               "theme": {
@@ -2153,6 +2140,145 @@ export default {
                                       "xl": {
                                               "width": "42rem",
                                               "maxWidth": "90vw"
+                                      }
+                              }
+                      },
+                      "mobile": {
+                              "scale": {
+                                      "1": "0.25rem",
+                                      "2": "0.5rem",
+                                      "3": "0.75rem",
+                                      "4": "1rem",
+                                      "6": "1.5rem",
+                                      "8": "2rem",
+                                      "12": "3rem",
+                                      "16": "4rem"
+                              }
+                      },
+                      "tablet": {
+                              "scale": {
+                                      "1": "0.25rem",
+                                      "2": "0.5rem",
+                                      "3": "0.75rem",
+                                      "4": "1rem",
+                                      "6": "1.5rem",
+                                      "8": "2rem",
+                                      "12": "3rem",
+                                      "16": "4rem",
+                                      "20": "5rem",
+                                      "24": "6rem"
+                              }
+                      },
+                      "desktop": {
+                              "scale": {
+                                      "1": "0.25rem",
+                                      "2": "0.5rem",
+                                      "3": "0.75rem",
+                                      "4": "1rem",
+                                      "6": "1.5rem",
+                                      "8": "2rem",
+                                      "12": "3rem",
+                                      "16": "4rem",
+                                      "20": "5rem",
+                                      "24": "6rem",
+                                      "32": "8rem",
+                                      "40": "10rem"
+                              }
+                      }
+              },
+              "scale": {
+                      "0": {
+                              "5": "0.125rem"
+                      },
+                      "1": {
+                              "5": "0.375rem"
+                      },
+                      "2": {
+                              "5": "0.625rem"
+                      },
+                      "3": {
+                              "5": "0.875rem"
+                      },
+                      "4": "1rem",
+                      "5": "1.25rem",
+                      "6": "1.5rem",
+                      "7": "1.75rem",
+                      "8": "2rem",
+                      "9": "2.25rem",
+                      "10": "2.5rem",
+                      "11": "2.75rem",
+                      "12": "3rem",
+                      "14": "3.5rem",
+                      "16": "4rem",
+                      "18": "4.5rem",
+                      "20": "5rem",
+                      "24": "6rem",
+                      "28": "7rem",
+                      "32": "8rem",
+                      "36": "9rem",
+                      "40": "10rem",
+                      "44": "11rem",
+                      "48": "12rem",
+                      "52": "13rem",
+                      "56": "14rem",
+                      "60": "15rem",
+                      "64": "16rem",
+                      "72": "18rem",
+                      "80": "20rem",
+                      "96": "24rem",
+                      "px": "1px"
+              },
+              "layout": {
+                      "container": {
+                              "maxWidth": {
+                                      "xs": "20rem",
+                                      "sm": "24rem",
+                                      "md": "28rem",
+                                      "lg": "32rem",
+                                      "xl": "36rem",
+                                      "2xl": "42rem",
+                                      "3xl": "48rem",
+                                      "4xl": "56rem",
+                                      "5xl": "64rem",
+                                      "6xl": "72rem",
+                                      "7xl": "80rem",
+                                      "full": "100%"
+                              }
+                      }
+              },
+              "grid": {
+                      "columns": {
+                              "count": "12"
+                      },
+                      "breakpoints": {
+                              "xs": "0px",
+                              "sm": "640px",
+                              "md": "768px",
+                              "lg": "1024px",
+                              "xl": "1280px",
+                              "2xl": "1536px"
+                      }
+              },
+              "accessibility": {
+                      "touch": {
+                              "target": {
+                                      "minimum": "2.75rem",
+                                      "recommended": "3rem"
+                              }
+                      },
+                      "focus": {
+                              "outline": {
+                                      "width": "0.125rem",
+                                      "offset": "0.125rem"
+                              }
+                      },
+                      "text": {
+                              "lineHeight": {
+                                      "minimum": "1.5"
+                              },
+                              "paragraph": {
+                                      "spacing": {
+                                              "minimum": "1.5rem"
                                       }
                               }
                       }
