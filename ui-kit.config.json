@@ -9,7 +9,8 @@
     "spacing": "",
     "shadow": "",
     "border": "",
-    "component": ""
+    "component": "",
+    "opacity": "opacity"
   },
   "transforms": [
     {

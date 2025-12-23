@@ -281,7 +281,7 @@
         .input:focus {
             outline: none;
             border-color: var(--component-input-borderColor-focus);
-            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+            box-shadow: 0 0 0 3px rgba(168, 85, 247, var(--opacity10));
         }
 
         .input.error {
@@ -289,7 +289,7 @@
         }
 
         .input.error:focus {
-            box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+            box-shadow: 0 0 0 3px rgba(236, 72, 153, var(--opacity10));
         }
 
         /* Badge Styles */
@@ -342,7 +342,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #9333ea 0%, #115e59 100%);
+            background: var(--gradient-hero);
             color: var(--neutral-white);
             text-align: center;
             padding: var(--layout-section-xl) 0;
@@ -366,7 +366,7 @@
         .feature-icon {
             width: 64px;
             height: 64px;
-            background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+            background: var(--gradient-primary);
             border-radius: var(--radius-full);
             display: flex;
             align-items: center;
@@ -482,9 +482,9 @@
 
         /* Enhanced navigation */
         .navbar {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, var(--opacity95));
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, var(--opacity20));
             padding: var(--size-4) 0;
             position: fixed;
             top: 0;
@@ -495,7 +495,7 @@
         }
 
         .navbar.scrolled {
-            background: rgba(255, 255, 255, 0.98);
+            background: rgba(255, 255, 255, var(--opacity98));
             box-shadow: var(--shadow-elevation-md);
         }
 
@@ -550,10 +550,10 @@
         .theme-switcher {
             display: flex;
             gap: 8px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, var(--opacity10));
             border-radius: 20px;
             padding: 4px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, var(--opacity20));
         }
 
         .theme-btn {
@@ -574,8 +574,29 @@
         }
 
         .theme-btn.active {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, var(--opacity20));
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Theme showcase cards */
+        .theme-card {
+            position: relative;
+            overflow: hidden;
+            color: var(--neutral-white);
+        }
+
+        .theme-card .card-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+
+        .theme-card .card-content {
+            position: relative;
+            z-index: 2;
         }
 
         /* Enhanced hero section */
@@ -596,8 +617,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, var(--opacity10)) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(255, 255, 255, var(--opacity10)) 0%, transparent 50%);
             animation: hero-bg 8s ease-in-out infinite alternate;
         }
 
@@ -616,7 +637,7 @@
             line-height: var(--font-lineHeight-tight);
             font-weight: var(--font-weight-black);
             margin-bottom: var(--size-8);
-            background: linear-gradient(135deg, var(--neutral-white) 0%, rgba(255, 255, 255, 0.8) 100%);
+            background: linear-gradient(135deg, var(--neutral-white) 0%, rgba(255, 255, 255, var(--opacity80)) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -644,11 +665,11 @@
         }
 
         .stat-item {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, var(--opacity10));
             backdrop-filter: blur(10px);
             border-radius: var(--border-radius-xl);
             padding: var(--size-6);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, var(--opacity20));
             transition: all 0.3s ease;
         }
 
@@ -700,13 +721,13 @@
                 <!-- Theme Switcher -->
                 <div class="theme-switcher">
                     <button class="theme-btn active" data-theme="purple" title="Purple Theme">
-                        <div style="width: 12px; height: 12px; background: #a855f7; border-radius: 50%;"></div>
+                        <div style="width: 12px; height: 12px; background: var(--color-primary); border-radius: 50%;"></div>
                     </button>
                     <button class="theme-btn" data-theme="blue" title="Blue Theme">
                         <div style="width: 12px; height: 12px; background: #3b82f6; border-radius: 50%;"></div>
                     </button>
                     <button class="theme-btn" data-theme="green" title="Green Theme">
-                        <div style="width: 12px; height: 12px; background: #10b981; border-radius: 50%;"></div>
+                        <div style="width: 12px; height: 12px; background: #8b5cf6; border-radius: 50%;"></div>
                     </button>
                 </div>
 
@@ -758,7 +779,7 @@
                 </div>
 
                 <div class="flex gap-6 justify-center flex-wrap">
-                    <button class="btn btn-secondary btn-xl" style="background: rgba(255, 255, 255, 0.15); border-color: rgba(255, 255, 255, 0.3); color: var(--neutral-white);">
+                    <button class="btn btn-secondary btn-xl" style="background: rgba(255, 255, 255, var(--opacity15)); border-color: rgba(255, 255, 255, var(--opacity30)); color: var(--neutral-white);">
                         🎨 View Components
                     </button>
                     <button class="btn btn-gradient btn-xl">
@@ -999,19 +1020,28 @@
                 </p>
 
                 <div class="grid grid-3 gap-8">
-                    <div class="card" style="background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%); color: white;">
-                        <h4 class="text-heading-3 mb-3">Purple Theme</h4>
-                        <p>Vibrant purple primary with teal secondary and pink accents</p>
+                    <div class="card theme-card" data-theme="purple">
+                        <div class="card-bg" style="background: var(--gradient-primary);"></div>
+                        <div class="card-content">
+                            <h4 class="text-heading-3 mb-3">Purple Theme</h4>
+                            <p>Vibrant purple primary with teal secondary and pink accents</p>
+                        </div>
                     </div>
 
-                    <div class="card" style="background: linear-gradient(135deg, #3b82f6 0%, #10b981 100%); color: white;">
-                        <h4 class="text-heading-3 mb-3">Blue Theme</h4>
-                        <p>Professional blue primary with green secondary and orange accents</p>
+                    <div class="card theme-card" data-theme="blue">
+                        <div class="card-bg" style="background: linear-gradient(135deg, #3b82f6 0%, #10b981 100%);"></div>
+                        <div class="card-content">
+                            <h4 class="text-heading-3 mb-3">Blue Theme</h4>
+                            <p>Professional blue primary with green secondary and orange accents</p>
+                        </div>
                     </div>
 
-                    <div class="card" style="background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%); color: white;">
-                        <h4 class="text-heading-3 mb-3">Violet Theme</h4>
-                        <p>Deep violet primary with cyan secondary and red accents</p>
+                    <div class="card theme-card" data-theme="green">
+                        <div class="card-bg" style="background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);"></div>
+                        <div class="card-content">
+                            <h4 class="text-heading-3 mb-3">Violet Theme</h4>
+                            <p>Deep violet primary with cyan secondary and red accents</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1026,7 +1056,7 @@
                 Join thousands of developers and designers who trust our design token system for consistent, scalable UIs.
             </p>
             <div class="flex gap-4 justify-center">
-                <button class="btn btn-secondary btn-lg" style="background: rgba(255, 255, 255, 0.1); border-color: var(--neutral-white); color: var(--neutral-white);">
+                <button class="btn btn-secondary btn-lg" style="background: rgba(255, 255, 255, var(--opacity10)); border-color: var(--neutral-white); color: var(--neutral-white);">
                     View Documentation
                 </button>
                 <button class="btn btn-gradient btn-lg" style="background: var(--neutral-white); color: var(--color-primary-600);">
@@ -1151,11 +1181,26 @@
                 observer.observe(el);
             });
 
-            // Enhanced Theme Switcher
+            // Enhanced Theme Switcher - using design token values
             const themes = {
-                purple: { primary: '#a855f7', secondary: '#14b8a6', accent: '#ec4899' },
-                blue: { primary: '#3b82f6', secondary: '#10b981', accent: '#f59e0b' },
-                green: { primary: '#8b5cf6', secondary: '#06b6d4', accent: '#ef4444' }
+                purple: {
+                    primary: '#a855f7',
+                    secondary: '#14b8a6',
+                    accent: '#ec4899',
+                    gradient: 'linear-gradient(135deg, #a855f7 0%, #7c3aed 100%)'
+                },
+                blue: {
+                    primary: '#3b82f6',
+                    secondary: '#10b981',
+                    accent: '#f59e0b',
+                    gradient: 'linear-gradient(135deg, #3b82f6 0%, #10b981 100%)'
+                },
+                green: {
+                    primary: '#8b5cf6',
+                    secondary: '#06b6d4',
+                    accent: '#ef4444',
+                    gradient: 'linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%)'
+                }
             };
 
             const themeButtons = document.querySelectorAll('.theme-btn');
@@ -1173,10 +1218,19 @@
                     document.documentElement.style.setProperty('--color-primary', theme.primary);
                     document.documentElement.style.setProperty('--color-secondary', theme.secondary);
                     document.documentElement.style.setProperty('--color-accent', theme.accent);
+                    document.documentElement.style.setProperty('--gradient-primary', theme.gradient);
 
                     // Update particles color
                     document.querySelectorAll('.particle').forEach(particle => {
                         particle.style.background = `linear-gradient(135deg, ${theme.primary}, ${theme.accent})`;
+                    });
+
+                    // Update theme showcase cards
+                    document.querySelectorAll('.theme-card').forEach(card => {
+                        const cardTheme = card.dataset.theme;
+                        if (cardTheme === themeName) {
+                            card.querySelector('.card-bg').style.background = theme.gradient;
+                        }
                     });
 
                     // Show notification
@@ -1265,7 +1319,7 @@
             .ripple {
                 position: absolute;
                 border-radius: 50%;
-                background: rgba(255, 255, 255, 0.6);
+                background: rgba(255, 255, 255, var(--opacity60));
                 transform: scale(0);
                 animation: ripple 0.6s linear;
                 pointer-events: none;
@@ -1309,7 +1363,7 @@
                 left: 50%;
                 width: 0;
                 height: 0;
-                background: rgba(255, 255, 255, 0.3);
+                background: rgba(255, 255, 255, var(--opacity30));
                 border-radius: 50%;
                 transform: translate(-50%, -50%);
                 transition: width 0.3s ease, height 0.3s ease;
