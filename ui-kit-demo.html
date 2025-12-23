@@ -11,9 +11,9 @@
 
         /* Base styles using design tokens */
         :root {
-            --font-family-display: 'Cal Sans', var(--typography-font-family-display);
-            --font-family-sans: var(--typography-font-family-sans);
-            --font-family-mono: var(--typography-font-family-mono);
+            --font-family-display: var(--font-family-display);
+            --font-family-sans: var(--font-family-sans);
+            --font-family-mono: var(--font-family-mono);
         }
 
         * {
@@ -23,89 +23,89 @@
         }
 
         body {
-            font-family: var(--typography-font-family-sans);
-            line-height: var(--typography-font-lineHeight-relaxed);
-            color: var(--color-neutral-gray-900);
-            background-color: var(--color-neutral-white);
+            font-family: var(--font-family-sans);
+            line-height: var(--font-lineHeight-relaxed);
+            color: var(--neutral-gray-900);
+            background-color: var(--neutral-white);
         }
 
         /* Typography Classes */
         .text-display-1 {
-            font-size: var(--typography-text-display-1-fontSize);
-            line-height: var(--typography-text-display-1-lineHeight);
-            font-weight: var(--typography-text-display-1-fontWeight);
-            letter-spacing: var(--typography-text-display-1-letterSpacing);
+            font-size: var(--font-size-8xl);
+            line-height: var(--font-lineHeight-tight);
+            font-weight: var(--font-weight-bold);
+            letter-spacing: var(--font-letterSpacing-tight);
             font-family: var(--font-family-display);
         }
 
         .text-display-2 {
-            font-size: var(--typography-text-display-2-fontSize);
-            line-height: var(--typography-text-display-2-lineHeight);
-            font-weight: var(--typography-text-display-2-fontWeight);
-            letter-spacing: var(--typography-text-display-2-letterSpacing);
+            font-size: var(--font-size-7xl);
+            line-height: var(--font-lineHeight-tight);
+            font-weight: var(--font-weight-bold);
+            letter-spacing: var(--font-letterSpacing-tight);
             font-family: var(--font-family-display);
         }
 
         .text-heading-1 {
-            font-size: var(--typography-text-heading-1-fontSize);
-            line-height: var(--typography-text-heading-1-lineHeight);
-            font-weight: var(--typography-text-heading-1-fontWeight);
-            letter-spacing: var(--typography-text-heading-1-letterSpacing);
+            font-size: var(--font-size-5xl);
+            line-height: var(--font-lineHeight-tight);
+            font-weight: var(--font-weight-bold);
+            letter-spacing: var(--font-letterSpacing-tight);
         }
 
         .text-heading-2 {
-            font-size: var(--typography-text-heading-2-fontSize);
-            line-height: var(--typography-text-heading-2-lineHeight);
-            font-weight: var(--typography-text-heading-2-fontWeight);
-            letter-spacing: var(--typography-text-heading-2-letterSpacing);
+            font-size: var(--font-size-4xl);
+            line-height: var(--font-lineHeight-tight);
+            font-weight: var(--font-weight-bold);
+            letter-spacing: var(--font-letterSpacing-tight);
         }
 
         .text-heading-3 {
-            font-size: var(--typography-text-heading-3-fontSize);
-            line-height: var(--typography-text-heading-3-lineHeight);
-            font-weight: var(--typography-text-heading-3-fontWeight);
-            letter-spacing: var(--typography-text-heading-3-letterSpacing);
+            font-size: var(--font-size-3xl);
+            line-height: var(--font-lineHeight-snug);
+            font-weight: var(--font-weight-semibold);
+            letter-spacing: var(--font-letterSpacing-normal);
         }
 
         .text-body-large {
-            font-size: var(--typography-text-body-large-fontSize);
-            line-height: var(--typography-text-body-large-lineHeight);
-            font-weight: var(--typography-text-body-large-fontWeight);
+            font-size: var(--font-size-lg);
+            line-height: var(--font-lineHeight-relaxed);
+            font-weight: var(--font-weight-normal);
         }
 
         .text-body-base {
-            font-size: var(--typography-text-body-base-fontSize);
-            line-height: var(--typography-text-body-base-lineHeight);
-            font-weight: var(--typography-text-body-base-fontWeight);
+            font-size: var(--font-size-base);
+            line-height: var(--font-lineHeight-relaxed);
+            font-weight: var(--font-weight-normal);
         }
 
         .text-body-small {
-            font-size: var(--typography-text-body-small-fontSize);
-            line-height: var(--typography-text-body-small-lineHeight);
-            font-weight: var(--typography-text-body-small-fontWeight);
+            font-size: var(--font-size-sm);
+            line-height: var(--font-lineHeight-relaxed);
+            font-weight: var(--font-weight-normal);
         }
 
         .text-caption {
-            font-size: var(--typography-text-caption-fontSize);
-            line-height: var(--typography-text-caption-lineHeight);
-            font-weight: var(--typography-text-caption-fontWeight);
-            letter-spacing: var(--typography-text-caption-letterSpacing);
+            font-size: var(--font-size-xs);
+            line-height: var(--font-lineHeight-normal);
+            font-weight: var(--font-weight-medium);
+            letter-spacing: var(--font-letterSpacing-wide);
         }
 
         /* Layout */
         .container {
-            max-width: var(--spacing-layout-container-xl);
+            max-width: var(--layout-container-xl);
             margin: 0 auto;
-            padding: 0 var(--spacing-size-4);
+            padding: 0 var(--size-4);
         }
 
         .section {
-            padding: var(--spacing-layout-section-xl) 0;
+            padding: var(--layout-section-xl) 0;
         }
 
         .grid {
             display: grid;
-            gap: var(--spacing-layout-gap-lg);
+            gap: var(--layout-gap-lg);
         }
 
         .grid-2 {
@@ -125,8 +125,8 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            font-family: var(--typography-font-family-sans);
-            font-weight: var(--typography-font-weight-medium);
+            font-family: var(--font-family-sans);
+            font-weight: var(--font-weight-medium);
             text-decoration: none;
             border: var(--border-width-1) solid transparent;
             cursor: pointer;
@@ -135,7 +135,7 @@
         }
 
         .btn:focus {
-            outline: 2px solid var(--color-brand-primary-500);
+            outline: 2px solid var(--color-primary-500);
             outline-offset: 2px;
         }
 
@@ -298,129 +298,129 @@
         .text-left { text-align: left; }
         .text-right { text-align: right; }
 
-        .mb-4 { margin-bottom: var(--spacing-size-4); }
-        .mb-6 { margin-bottom: var(--spacing-size-6); }
-        .mb-8 { margin-bottom: var(--spacing-size-8); }
-        .mb-12 { margin-bottom: var(--spacing-size-12); }
+        .mb-4 { margin-bottom: var(--size-4); }
+        .mb-6 { margin-bottom: var(--size-6); }
+        .mb-8 { margin-bottom: var(--size-8); }
+        .mb-12 { margin-bottom: var(--size-12); }
 
-        .mt-4 { margin-top: var(--spacing-size-4); }
-        .mt-6 { margin-top: var(--spacing-size-6); }
-        .mt-8 { margin-top: var(--spacing-size-8); }
-        .mt-12 { margin-top: var(--spacing-size-12); }
+        .mt-4 { margin-top: var(--size-4); }
+        .mt-6 { margin-top: var(--size-6); }
+        .mt-8 { margin-top: var(--size-8); }
+        .mt-12 { margin-top: var(--size-12); }
 
         .flex { display: flex; }
         .items-center { align-items: center; }
         .justify-center { justify-content: center; }
         .justify-between { justify-content: space-between; }
-        .gap-4 { gap: var(--spacing-size-4); }
-        .gap-6 { gap: var(--spacing-size-6); }
+        .gap-4 { gap: var(--size-4); }
+        .gap-6 { gap: var(--size-6); }
 
         /* Hero Section */
         .hero {
-            background: var(--color-gradient-hero);
-            color: var(--color-neutral-white);
+            background: linear-gradient(135deg, #0284c7 0%, #1e293b 100%);
+            color: var(--neutral-white);
             text-align: center;
-            padding: var(--spacing-layout-section-xl) 0;
+            padding: var(--layout-section-xl) 0;
         }
 
         .hero h1 {
-            margin-bottom: var(--spacing-size-6);
+            margin-bottom: var(--size-6);
         }
 
         .hero p {
             max-width: 600px;
-            margin: 0 auto var(--spacing-size-8);
+            margin: 0 auto var(--size-8);
             opacity: 0.9;
         }
 
         /* Feature Section */
         .features {
-            background: var(--color-neutral-gray-50);
+            background: var(--color-gray-50);
         }
 
         .feature-icon {
             width: 64px;
             height: 64px;
-            background: var(--color-gradient-primary);
-            border-radius: var(--border-radius-full);
+            background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
+            border-radius: var(--radius-full);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: var(--spacing-size-4);
-            color: var(--color-neutral-white);
+            margin-bottom: var(--size-4);
+            color: var(--neutral-white);
             font-size: 24px;
         }
 
         /* CTA Section */
         .cta {
-            background: var(--color-brand-primary-500);
-            color: var(--color-neutral-white);
+            background: var(--color-primary-500);
+            color: var(--neutral-white);
             text-align: center;
-            padding: var(--spacing-layout-section-lg) 0;
+            padding: var(--layout-section-lg) 0;
         }
 
         .cta h2 {
-            margin-bottom: var(--spacing-size-4);
+            margin-bottom: var(--size-4);
         }
 
         .cta p {
-            margin-bottom: var(--spacing-size-8);
+            margin-bottom: var(--size-8);
             opacity: 0.9;
         }
 
         /* Footer */
         .footer {
-            background: var(--color-neutral-gray-900);
-            color: var(--color-neutral-gray-300);
-            padding: var(--spacing-layout-section-md) 0;
+            background: var(--neutral-gray-900);
+            color: var(--color-gray-300);
+            padding: var(--layout-section-md) 0;
             text-align: center;
         }
 
         /* Demo Showcase */
         .demo-showcase {
-            background: var(--color-neutral-white);
-            border: 1px solid var(--color-neutral-gray-200);
-            border-radius: var(--border-radius-lg);
-            padding: var(--spacing-size-6);
-            margin: var(--spacing-size-4) 0;
+            background: var(--neutral-white);
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-lg);
+            padding: var(--size-6);
+            margin: var(--size-4) 0;
         }
 
         .demo-section h3 {
-            color: var(--color-brand-primary-600);
-            margin-bottom: var(--spacing-size-4);
+            color: var(--color-primary-600);
+            margin-bottom: var(--size-4);
         }
 
         .color-palette {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: var(--spacing-size-3);
-            margin-bottom: var(--spacing-size-6);
+            gap: var(--size-3);
+            margin-bottom: var(--size-6);
         }
 
         .color-swatch {
             height: 80px;
-            border-radius: var(--border-radius-md);
+            border-radius: var(--radius-md);
             display: flex;
             align-items: end;
-            padding: var(--spacing-size-2);
-            color: var(--color-neutral-white);
-            font-size: var(--typography-font-size-xs);
-            font-weight: var(--typography-font-weight-medium);
+            padding: var(--size-2);
+            color: var(--neutral-white);
+            font-size: var(--font-size-xs);
+            font-weight: var(--font-weight-medium);
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav style="background: var(--color-neutral-white); border-bottom: 1px solid var(--color-neutral-gray-200); padding: var(--spacing-size-4) 0; position: sticky; top: 0; z-index: 50;">
+    <nav style="background: var(--neutral-white); border-bottom: 1px solid var(--color-gray-200); padding: var(--size-4) 0; position: sticky; top: 0; z-index: 50;">
         <div class="container flex justify-between items-center">
-            <div style="font-weight: var(--typography-font-weight-bold); font-size: var(--typography-font-size-xl); color: var(--color-brand-primary-600);">
+            <div style="font-weight: var(--font-weight-bold); font-size: var(--font-size-xl); color: var(--color-primary-600);">
                 DesignTokens
             </div>
             <div class="flex gap-6">
-                <a href="#features" style="color: var(--color-neutral-gray-600); text-decoration: none;">Features</a>
-                <a href="#demo" style="color: var(--color-neutral-gray-600); text-decoration: none;">Demo</a>
-                <a href="#docs" style="color: var(--color-neutral-gray-600); text-decoration: none;">Docs</a>
+                <a href="#features" style="color: var(--color-gray-600); text-decoration: none;">Features</a>
+                <a href="#demo" style="color: var(--color-gray-600); text-decoration: none;">Demo</a>
+                <a href="#docs" style="color: var(--color-gray-600); text-decoration: none;">Docs</a>
                 <button class="btn btn-primary btn-sm">Get Started</button>
             </div>
         </div>
@@ -430,12 +430,12 @@
     <section class="hero">
         <div class="container">
             <h1 class="text-display-1">Build Beautiful UIs with Design Tokens</h1>
-            <p class="text-body-large" style="font-size: var(--typography-font-size-xl);">
+            <p class="text-body-large" style="font-size: var(--font-size-xl);">
                 A comprehensive design token system that powers consistent, scalable, and maintainable user interfaces across all platforms.
             </p>
             <div class="flex gap-4 justify-center">
                 <button class="btn btn-primary btn-lg">Start Building</button>
-                <button class="btn btn-outline btn-lg" style="color: var(--color-neutral-white); border-color: var(--color-neutral-white);">View Demo</button>
+                <button class="btn btn-outline btn-lg" style="color: var(--neutral-white); border-color: var(--neutral-white);">View Demo</button>
             </div>
         </div>
     </section>
@@ -445,7 +445,7 @@
         <div class="container">
             <div class="text-center mb-12">
                 <h2 class="text-heading-1 mb-4">Why Design Tokens?</h2>
-                <p class="text-body-large" style="max-width: 600px; margin: 0 auto; color: var(--color-neutral-gray-600);">
+                <p class="text-body-large" style="max-width: 600px; margin: 0 auto; color: var(--color-gray-600);">
                     Design tokens bring consistency, scalability, and maintainability to your design system by centralizing design decisions.
                 </p>
             </div>
@@ -483,7 +483,7 @@
         <div class="container">
             <div class="text-center mb-12">
                 <h2 class="text-heading-1 mb-4">Design Token System in Action</h2>
-                <p class="text-body-large" style="max-width: 700px; margin: 0 auto; color: var(--color-neutral-gray-600);">
+                <p class="text-body-large" style="max-width: 700px; margin: 0 auto; color: var(--color-gray-600);">
                     Every element on this page is styled using design tokens. From colors and typography to spacing and shadows - all defined in our token system.
                 </p>
             </div>
@@ -492,14 +492,14 @@
             <div class="demo-showcase">
                 <h3>🎨 Color System</h3>
                 <div class="color-palette">
-                    <div class="color-swatch" style="background: var(--color-brand-primary-500);">Primary 500</div>
+                    <div class="color-swatch" style="background: var(--color-primary-500);">Primary 500</div>
                     <div class="color-swatch" style="background: var(--color-brand-secondary-500);">Secondary 500</div>
                     <div class="color-swatch" style="background: var(--color-brand-accent-500);">Accent 500</div>
                     <div class="color-swatch" style="background: var(--color-semantic-success-500);">Success 500</div>
                     <div class="color-swatch" style="background: var(--color-semantic-warning-500);">Warning 500</div>
                     <div class="color-swatch" style="background: var(--color-semantic-error-500);">Error 500</div>
-                    <div class="color-swatch" style="background: var(--color-neutral-gray-500);">Gray 500</div>
-                    <div class="color-swatch" style="background: var(--color-neutral-white); color: var(--color-neutral-gray-900);">White</div>
+                    <div class="color-swatch" style="background: var(--color-gray-500);">Gray 500</div>
+                    <div class="color-swatch" style="background: var(--neutral-white); color: var(--neutral-gray-900);">White</div>
                 </div>
 
                 <p class="text-body-base mb-6">
@@ -558,7 +558,7 @@
                         </div>
 
                         <div class="card card-colored">
-                            <h4 class="text-heading-3 mb-3" style="color: var(--color-brand-primary-700);">Colored Card</h4>
+                            <h4 class="text-heading-3 mb-3" style="color: var(--color-primary-700);">Colored Card</h4>
                             <p class="text-body-base mb-4">Background tinting for visual hierarchy and grouping.</p>
                             <button class="btn btn-outline btn-sm">Explore</button>
                         </div>
@@ -608,23 +608,23 @@
                 </p>
 
                 <div class="grid grid-4">
-                    <div style="padding: var(--spacing-size-2); background: var(--color-neutral-gray-100); border-radius: var(--border-radius-md);">
-                        <div style="background: var(--color-brand-primary-500); height: var(--spacing-size-2); border-radius: var(--border-radius-sm);"></div>
+                    <div style="padding: var(--size-2); background: var(--color-gray-100); border-radius: var(--radius-md);">
+                        <div style="background: var(--color-primary-500); height: var(--size-2); border-radius: var(--radius-sm);"></div>
                         <span class="text-caption mt-2 block">2 (0.5rem)</span>
                     </div>
 
-                    <div style="padding: var(--spacing-size-4); background: var(--color-neutral-gray-100); border-radius: var(--border-radius-md);">
-                        <div style="background: var(--color-brand-primary-500); height: var(--spacing-size-4); border-radius: var(--border-radius-sm);"></div>
+                    <div style="padding: var(--size-4); background: var(--color-gray-100); border-radius: var(--radius-md);">
+                        <div style="background: var(--color-primary-500); height: var(--size-4); border-radius: var(--radius-sm);"></div>
                         <span class="text-caption mt-2 block">4 (1rem)</span>
                     </div>
 
-                    <div style="padding: var(--spacing-size-8); background: var(--color-neutral-gray-100); border-radius: var(--border-radius-md);">
-                        <div style="background: var(--color-brand-primary-500); height: var(--spacing-size-8); border-radius: var(--border-radius-sm);"></div>
+                    <div style="padding: var(--size-8); background: var(--color-gray-100); border-radius: var(--radius-md);">
+                        <div style="background: var(--color-primary-500); height: var(--size-8); border-radius: var(--radius-sm);"></div>
                         <span class="text-caption mt-2 block">8 (2rem)</span>
                     </div>
 
-                    <div style="padding: var(--spacing-size-16); background: var(--color-neutral-gray-100); border-radius: var(--border-radius-md);">
-                        <div style="background: var(--color-brand-primary-500); height: var(--spacing-size-16); border-radius: var(--border-radius-sm);"></div>
+                    <div style="padding: var(--size-16); background: var(--color-gray-100); border-radius: var(--radius-md);">
+                        <div style="background: var(--color-primary-500); height: var(--size-16); border-radius: var(--radius-sm);"></div>
                         <span class="text-caption mt-2 block">16 (4rem)</span>
                     </div>
                 </div>
@@ -636,14 +636,14 @@
     <section class="cta">
         <div class="container">
             <h2 class="text-heading-1">Ready to Build with Design Tokens?</h2>
-            <p class="text-body-large" style="font-size: var(--typography-font-size-lg);">
+            <p class="text-body-large" style="font-size: var(--font-size-lg);">
                 Join thousands of developers and designers who trust our design token system for consistent, scalable UIs.
             </p>
             <div class="flex gap-4 justify-center">
-                <button class="btn btn-secondary btn-lg" style="background: rgba(255, 255, 255, 0.1); border-color: var(--color-neutral-white); color: var(--color-neutral-white);">
+                <button class="btn btn-secondary btn-lg" style="background: rgba(255, 255, 255, 0.1); border-color: var(--neutral-white); color: var(--neutral-white);">
                     View Documentation
                 </button>
-                <button class="btn btn-gradient btn-lg" style="background: var(--color-neutral-white); color: var(--color-brand-primary-600);">
+                <button class="btn btn-gradient btn-lg" style="background: var(--neutral-white); color: var(--color-primary-600);">
                     Get Started Free
                 </button>
             </div>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Kit Test</title>
+    <link rel="stylesheet" href="ui-kit-output/css/ui-kit.tokens.css">
+    <style>
+        body {
+            font-family: var(--font-family-sans);
+            margin: 0;
+            padding: var(--size-4);
+            background: var(--neutral-white);
+            color: var(--neutral-gray-900);
+        }
+        .test {
+            padding: var(--size-4);
+            margin: var(--size-4) 0;
+            border: 1px solid var(--color-primary);
+            border-radius: var(--radius-md);
+        }
+        .heading {
+            font-size: var(--font-size-4xl);
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--size-4);
+        }
+        .button {
+            background: var(--color-primary);
+            color: var(--neutral-white);
+            padding: var(--size-2) var(--size-4);
+            border-radius: var(--radius-md);
+            border: none;
+            font-weight: var(--font-weight-medium);
+        }
+    </style>
+</head>
+<body>
+    <div class="test">
+        <h1 class="heading">UI Kit Test</h1>
+        <p>If you can see this with proper styling, the design tokens are working!</p>
+        <button class="button">Test Button</button>
+    </div>
+</body>
+</html>
